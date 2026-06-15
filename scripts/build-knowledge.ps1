@@ -4,9 +4,9 @@ $repoRoot = Split-Path -Parent $PSScriptRoot
 $outputDirectory = Join-Path $repoRoot "dist"
 $outputPath = Join-Path $outputDirectory "cityu-campus-assistant.md"
 $sources = @(
-    "SKILL.md",
-    "knowledge-base/freshman.md",
-    "knowledge-base/fds.md"
+    "skills/cityu-macau-campus-assistant/SKILL.md",
+    "skills/cityu-macau-campus-assistant/references/freshman.md",
+    "skills/cityu-macau-campus-assistant/references/fds.md"
 )
 
 $sections = [System.Collections.Generic.List[string]]::new()

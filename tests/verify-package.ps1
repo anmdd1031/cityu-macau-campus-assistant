@@ -7,7 +7,11 @@ $requiredFiles = @(
     "dist/cityu-campus-assistant.md",
     "scripts/build-knowledge.ps1",
     "scripts/build-knowledge.sh",
-    "config/mcp.filesystem.example.json"
+    "config/mcp.filesystem.example.json",
+    "skills/cityu-macau-campus-assistant/SKILL.md",
+    "skills/cityu-macau-campus-assistant/agents/openai.yaml",
+    "skills/cityu-macau-campus-assistant/references/freshman.md",
+    "skills/cityu-macau-campus-assistant/references/fds.md"
 )
 
 foreach ($relativePath in $requiredFiles) {
@@ -20,9 +24,9 @@ foreach ($relativePath in $requiredFiles) {
 $bundlePath = Join-Path $repoRoot "dist/cityu-campus-assistant.md"
 $bundle = Get-Content -Raw -Encoding utf8 $bundlePath
 $requiredMarkers = @(
-    "<!-- SOURCE: SKILL.md -->",
-    "<!-- SOURCE: knowledge-base/freshman.md -->",
-    "<!-- SOURCE: knowledge-base/fds.md -->"
+    "<!-- SOURCE: skills/cityu-macau-campus-assistant/SKILL.md -->",
+    "<!-- SOURCE: skills/cityu-macau-campus-assistant/references/freshman.md -->",
+    "<!-- SOURCE: skills/cityu-macau-campus-assistant/references/fds.md -->"
 )
 
 $lastIndex = -1
@@ -38,15 +42,53 @@ foreach ($marker in $requiredMarkers) {
 }
 
 foreach ($sourcePath in @(
-    "SKILL.md",
-    "knowledge-base/freshman.md",
-    "knowledge-base/fds.md"
+    "skills/cityu-macau-campus-assistant/SKILL.md",
+    "skills/cityu-macau-campus-assistant/references/freshman.md",
+    "skills/cityu-macau-campus-assistant/references/fds.md"
 )) {
     $source = Get-Content -Raw -Encoding utf8 (Join-Path $repoRoot $sourcePath)
     $source = $source -replace "`r`n", "`n"
     $source = ($source -replace "[ `t]+(?=`n|$)", "").Trim()
     if (-not $bundle.Contains($source.Trim())) {
         throw "Bundle does not contain the complete source: $sourcePath"
+    }
+    if ($sourcePath.Contains("/references/") -and -not $source.Contains("Retrieval Map")) {
+        throw "Large reference is missing a retrieval map: $sourcePath"
+    }
+}
+
+$skillPath = Join-Path $repoRoot "skills/cityu-macau-campus-assistant/SKILL.md"
+$skill = Get-Content -Raw -Encoding utf8 $skillPath
+if (-not $skill.StartsWith("---`nname: cityu-macau-campus-assistant`ndescription: Use when")) {
+    throw "SKILL.md must use valid frontmatter with a trigger-focused description"
+}
+foreach ($requiredText in @(
+    "references/freshman.md",
+    "references/fds.md",
+    "City University of Macau",
+    "admissions",
+    "D endorsement",
+    "accommodation",
+    "publications",
+    "graduation requirements"
+)) {
+    if (-not $skill.Contains($requiredText)) {
+        throw "SKILL.md is missing reusable skill guidance: $requiredText"
+    }
+}
+if ($skill.Contains("knowledge-base/")) {
+    throw "SKILL.md must use the standard references directory"
+}
+
+$openAiYamlPath = Join-Path $repoRoot "skills/cityu-macau-campus-assistant/agents/openai.yaml"
+$openAiYaml = Get-Content -Raw -Encoding utf8 $openAiYamlPath
+foreach ($requiredText in @(
+    "display_name:",
+    'short_description:',
+    'default_prompt: "Use $cityu-macau-campus-assistant'
+)) {
+    if (-not $openAiYaml.Contains($requiredText)) {
+        throw "agents/openai.yaml is missing required metadata: $requiredText"
     }
 }
 

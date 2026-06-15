@@ -17,9 +17,9 @@ trap 'rm -f "$temporary_path"' EXIT HUP INT TERM
   printf '%s\n' '> Time-sensitive admissions, fees, accommodation, and immigration information must be checked against current official notices.'
 
   for source_path in \
-    'SKILL.md' \
-    'knowledge-base/freshman.md' \
-    'knowledge-base/fds.md'
+    'skills/cityu-macau-campus-assistant/SKILL.md' \
+    'skills/cityu-macau-campus-assistant/references/freshman.md' \
+    'skills/cityu-macau-campus-assistant/references/fds.md'
   do
     if [ ! -f "$repo_root/$source_path" ]; then
       printf '%s\n' "Missing source file: $source_path" >&2
