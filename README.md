@@ -95,11 +95,109 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant/tree/main/skills/cityu
 | Continue | `continue` | `.continue/skills/` | `~/.continue/skills/` |
 | Cursor | `cursor` | `.agents/skills/` | `~/.cursor/skills/` |
 
-### 不作为中国大陆默认方案
+## GPT / Codex
 
-- **Claude / Claude Code**：Anthropic 的[支持地区列表](https://support.anthropic.com/en/articles/8461763-where-can-i-access-claude-ai)不包含中国大陆。本项目不要求 Claude，也不提供绕过地区限制的方法。
-- **ChatGPT / Codex**：OpenAI 的[支持国家和地区列表](https://help.openai.com/en/articles/7947663-chatgpt-supported-countries)不包含中国大陆；从不支持地区访问可能导致账号受限。因此 README 不把 Codex 作为大陆用户的默认安装方式。
-- **Gemini CLI**：其依赖的 Google AI Studio / Gemini API [可用地区列表](https://ai.google.dev/gemini-api/docs/available-regions)不包含中国大陆，不建议作为大陆默认方案。
+### Codex 安装
+
+在 Codex 中直接发送：
+
+```text
+请使用 $skill-installer 安装这个 Skill：
+https://github.com/anmdd1031/cityu-macau-campus-assistant/tree/main/skills/cityu-macau-campus-assistant
+```
+
+也可以使用通用 CLI：
+
+```bash
+npx skills add https://github.com/anmdd1031/cityu-macau-campus-assistant/tree/main/skills/cityu-macau-campus-assistant -g -a codex
+```
+
+手动安装时，将完整 Skill 文件夹放到：
+
+- 当前项目：`.agents/skills/cityu-macau-campus-assistant/`
+- 用户级：`~/.agents/skills/cityu-macau-campus-assistant/`
+
+Codex CLI、IDE 扩展和 Codex 应用均可识别 Skills。安装后未出现时，重新启动 Codex。详见 [OpenAI Codex Agent Skills 文档](https://developers.openai.com/codex/skills)。
+
+### ChatGPT 自定义 GPT
+
+ChatGPT 自定义 GPT 不直接读取本地 Agent Skills 目录，但可以用“Instructions + Knowledge”方式适配：
+
+1. 在 ChatGPT 的 GPTs 页面选择 **Create**。
+2. 将 `SKILL.md` 正文放入 GPT 的 **Instructions**。
+3. 将 `references/freshman.md` 和 `references/fds.md` 上传到 **Knowledge**。
+4. 在 Preview 中测试示例问题后保存。
+
+创建或编辑自定义 GPT 需要付费订阅；仅聊天的用户也可以在 ChatGPT Project 中上传两份 reference，并把 `SKILL.md` 作为项目指令。详见 [OpenAI 创建 GPT 文档](https://help.openai.com/en/articles/8554397-creating-and-editing-gpts)。
+
+> **中国大陆地区限制：** OpenAI 的[支持国家和地区列表](https://help.openai.com/en/articles/7947663-chatgpt-supported-countries)不包含中国大陆。官方说明指出，从未列出的地区访问或提供访问可能导致账号被阻止或暂停。本项目不提供绕过地区限制的方法。
+
+## Gemini
+
+### Gemini CLI 安装
+
+Gemini CLI 已原生支持 Agent Skills。用户级安装：
+
+```bash
+gemini skills install https://github.com/anmdd1031/cityu-macau-campus-assistant.git --path skills/cityu-macau-campus-assistant --scope user
+```
+
+只安装到当前工作区：
+
+```bash
+gemini skills install https://github.com/anmdd1031/cityu-macau-campus-assistant.git --path skills/cityu-macau-campus-assistant --scope workspace
+```
+
+手动安装目录：
+
+- 当前项目：`.gemini/skills/cityu-macau-campus-assistant/` 或 `.agents/skills/cityu-macau-campus-assistant/`
+- 用户级：`~/.gemini/skills/cityu-macau-campus-assistant/` 或 `~/.agents/skills/cityu-macau-campus-assistant/`
+
+进入 Gemini CLI 后运行 `/skills list` 检查；未显示时运行 `/skills reload`。详见 [Gemini CLI Agent Skills 文档](https://geminicli.com/docs/cli/skills/)。
+
+### Gemini 网页版 Gem
+
+网页版 Gemini 不读取本地 Skill 目录，但可以创建 Gem：
+
+1. 打开 Gemini 的 **Gems > New Gem**。
+2. 将 `SKILL.md` 正文放入 Instructions。
+3. 在 Knowledge 中上传 `freshman.md` 和 `fds.md`。
+4. 预览并保存。
+
+这种方式是对知识和指令的适配，不具备 Gemini CLI 的 Skill 自动发现和按需激活机制。详见 [Google Gems 文档](https://support.google.com/gemini/answer/15146780)。
+
+> **中国大陆地区限制：** Google AI Studio 和 Gemini API 的[可用地区列表](https://ai.google.dev/gemini-api/docs/available-regions)不包含中国大陆。Gemini CLI 通常依赖 Google 账号及 Gemini 服务，因此不作为中国大陆默认方案。
+
+## Claude
+
+### Claude 网页版或桌面版
+
+Claude 已支持直接上传自定义 Skill：
+
+1. 下载本仓库 ZIP 并解压。
+2. 找到 `skills/cityu-macau-campus-assistant/`。
+3. 将这个 Skill 文件夹单独压缩为 ZIP，不要直接上传整个仓库 ZIP。
+4. 在 Claude 打开 **Customize > Skills**。
+5. 点击 **+ > Create skill > Upload a skill**，上传刚才的 ZIP 并启用。
+
+详见 [Claude 自定义 Skills 文档](https://support.claude.com/en/articles/12512180-use-skills-in-claude)。
+
+### Claude Code
+
+使用通用 CLI：
+
+```bash
+npx skills add https://github.com/anmdd1031/cityu-macau-campus-assistant/tree/main/skills/cityu-macau-campus-assistant -g -a claude-code
+```
+
+或手动复制到：
+
+- 当前项目：`.claude/skills/cityu-macau-campus-assistant/`
+- 用户级：`~/.claude/skills/cityu-macau-campus-assistant/`
+
+Claude Code 可自动按描述调用，也可输入 `/cityu-macau-campus-assistant` 显式调用。详见 [Claude Code Skills 文档](https://code.claude.com/docs/en/skills)。
+
+> **中国大陆地区限制：** Anthropic 的[Claude 支持地区列表](https://support.claude.com/en/articles/8461763-where-can-i-access-claude)不包含中国大陆。Claude 和 Claude Code 均不作为中国大陆默认方案，本项目不提供绕过地区限制的方法。
 
 ## 方式二：通用命令安装
 
@@ -194,6 +292,7 @@ skills/cityu-macau-campus-assistant/
 ```
 
 Skill 会根据问题选择相关 reference，不会在每次对话中无差别加载全部资料。
+两份 reference 由本项目原 `knowledge-base/freshman.md` 和 `knowledge-base/fds.md` 完整迁入，保留原知识库内容，不使用此前的精简摘要替代。
 
 > 校园与课程资料核验日期：2026-05-22。招生日期、费用、宿舍、签注、注册和学业规则以最新官方通知为准。
 

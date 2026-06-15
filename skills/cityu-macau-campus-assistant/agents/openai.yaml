@@ -1,4 +1,4 @@
 interface:
   display_name: "澳门城市大学校园助手"
   short_description: "查询澳城大招生、注册、签注、宿舍及FDS课程与毕业要求"
-  default_prompt: "Use $cityu-macau-campus-assistant to answer my question about City University of Macau using the bundled references."
+  default_prompt: "使用 $cityu-macau-campus-assistant，根据内置知识库回答我的澳门城市大学相关问题。"
