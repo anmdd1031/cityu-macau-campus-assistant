@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "cityu-campus-assistant": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\YOUR_NAME\\Downloads\\cityu-macau-campus-assistant"
+      ]
+    }
+  }
+}
