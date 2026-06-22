@@ -3,8 +3,8 @@
 这是一个给 AI Agent 使用的澳门城市大学问答 Skill。安装后，你可以直接问它：
 
 - 新生注册、学费、宿舍、D 签注、逗留许可怎么处理
-- 数据科学学院 FDS 的课程、学分、论文成果和毕业要求
-- 台风、暴雨等恶劣天气下学校怎么安排
+- 数据科学学院、商学院、金融学院、大健康学院的课程、学分、论文和毕业要求
+- 台风、暴雨等恶劣天气下学校怎么安排，或氹仔校区校内餐饮怎么选
 
 它只整理公开资料，不替学校做录取、签注、转专业、论文认定或毕业审批。
 
@@ -44,7 +44,8 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 可以：
 
 - 整理公开的申请、注册、宿舍、签注和校园办事流程
-- 解释 FDS 公开课程、学分、论文成果和毕业要求
+- 解释 FDS、FOB、FOF、FH 公开课程、学分、论文成果和毕业要求
+- 查询氹仔校区校内餐饮、菜单、价格和供应时段
 - 提醒哪些信息需要看最新官方通知
 
 不可以：
@@ -60,9 +61,12 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 - [Skill 主文件](skills/cityu-macau-campus-assistant/SKILL.md)
 - [新生与校园知识库](skills/cityu-macau-campus-assistant/references/freshman.md)
 - [数据科学学院知识库](skills/cityu-macau-campus-assistant/references/fds.md)
+- [商学院知识库](skills/cityu-macau-campus-assistant/references/fob.md)
 - [金融学院知识库](skills/cityu-macau-campus-assistant/references/fof.md)
+- [大健康学院知识库](skills/cityu-macau-campus-assistant/references/fh.md)
+- [氹仔校区餐饮指南](skills/cityu-macau-campus-assistant/references/澳门城市大学氹仔校区_校内餐饮指南.md)
 
-> 知识库资料核验日期：新生与 FDS 资料为 2026-05-22；金融学院资料为 2026-06-22。招生日期、费用、宿舍、签注、注册和学业规则以最新官方通知为准。
+> 知识库资料核验日期：新生与 FDS 资料为 2026-05-22；商学院、大健康学院资料为 2026-06-21；金融学院资料为 2026-06-22。招生日期、费用、宿舍、签注、注册和学业规则以最新官方通知为准。
 
 ## License
 
