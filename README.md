@@ -60,8 +60,9 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 - [Skill 主文件](skills/cityu-macau-campus-assistant/SKILL.md)
 - [新生与校园知识库](skills/cityu-macau-campus-assistant/references/freshman.md)
 - [数据科学学院知识库](skills/cityu-macau-campus-assistant/references/fds.md)
+- [金融学院知识库](skills/cityu-macau-campus-assistant/references/fof.md)
 
-> 知识库资料核验日期：2026-05-22。招生日期、费用、宿舍、签注、注册和学业规则以最新官方通知为准。
+> 知识库资料核验日期：新生与 FDS 资料为 2026-05-22；金融学院资料为 2026-06-22。招生日期、费用、宿舍、签注、注册和学业规则以最新官方通知为准。
 
 ## License
 
