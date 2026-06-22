@@ -1,58 +1,119 @@
 # 澳门城市大学校园助手 Skill 详细说明
 
-这是根目录 [README](../README.md) 的详细版，保留完整安装方式、Agent 目录、中国大陆地区限制、使用示例和项目结构说明。
+这是根目录 [README](../README.md) 的详细版。根目录 README 只保留傻瓜式安装；本文件用于说明 Skill 的能力边界、知识库覆盖情况、各类 Agent 适配方式和维护规则。
 
-面向澳门城市大学学生、申请人和家长的可复用 Agent Skill。它会按问题读取对应资料，帮助回答：
+## 这个 Skill 是什么
 
-- 招生、报名、学费、奖学金、注册、体检、D 签注、逗留许可、宿舍和校园服务
-- 数据科学学院（FDS）本硕博课程、学分、转专业、导师、论文成果和毕业要求
-- 台风、暴雨等恶劣天气下的学校安排
+`cityu-macau-campus-assistant` 是一个面向澳门城市大学公开信息的 Agent Skill。它不是学校官方系统，也不是一个独立应用；核心文件是：
 
-它不会把澳门城市大学（City University of Macau）与香港城市大学混淆。
+```text
+skills/cityu-macau-campus-assistant/
+├── SKILL.md
+├── agents/
+│   └── openai.yaml
+└── references/
+```
 
-## 效果示例
+Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assistant/SKILL.md)，再按问题读取 `references/` 中对应的知识库。
 
-**问：拿到学号是不是就完成注册了？**
+## 可以回答什么
 
-> 不是。取得学号通常只是流程的一部分，还需按通知完成缴费、网上报到、体检、证件办理、现场或系统注册等步骤。具体日期必须以你所属学年的最新注册通知为准。
+可以回答：
 
-**问：数据科学硕士一定要发表论文吗？**
+- 新生申请、注册、缴费、体检、D 签注、逗留许可、宿舍、图书馆、校园服务和恶劣天气安排。
+- 数据科学学院、商学院、金融学院、大健康学院的课程、学分、导师、论文、发表、毕业要求和常见办事入口。
+- 氹仔校区校内餐厅、菜单、价格、供应时段和用餐建议。
+- 哪些问题需要看最新官方通知，哪些只能由学校或学院审批。
 
-> 现有公开资料要求 MDS 至少取得 1 项学校认可的学术成果，但认可范围可能包括论文、专利或软件著作权，并不等于只能发表期刊论文。投稿前应让导师或学院书面确认成果类型、署名和单位是否符合你入学年份的规定。
+不可以回答或不能承诺：
 
-**问：GPA 3.7 能保证转入 BCS 吗？**
+- 录取概率、奖学金概率、转专业成功率、宿位保证或毕业保证。
+- 代替学校确认论文、学分、毕业资格、转专业、签注或逗留许可个案。
+- 查询个人成绩、课表、考场、申请状态或登录 TronClass 等私人系统。
+- 提供法律、移民、财务、医疗或投资建议。
 
-> 不能保证。3.7 是往年公告中的推荐参考，是否开放申请、笔试面试、名额和最终录取均以当年公告及学院审核为准。
+## 知识库总览
 
-**问：根据我的成绩预测录取概率。**
+| 知识库 | 文件 | 状态 | 用途 |
+|---|---|---|---|
+| 新生与校园通用知识库 | [freshman.md](../skills/cityu-macau-campus-assistant/references/freshman.md) | 已完成 | 招生、注册、学费、奖学金、体检、D 签注、逗留许可、宿舍、图书馆、校园服务、恶劣天气 |
+| 数据科学学院 FDS | [fds.md](../skills/cityu-macau-campus-assistant/references/fds.md) | 已完成 | BITS、BCS、MDS、MCS、PhD DS、PhD CS、学分、资格考试、论文成果、导师、毕业 |
+| 商学院 FOB | [fob.md](../skills/cityu-macau-campus-assistant/references/fob.md) | 已完成 | BBA、MBA、DBA、IBC、4+1 项目、导师、论文与毕业要求 |
+| 金融学院 FOF | [fof.md](../skills/cityu-macau-campus-assistant/references/fof.md) | 已完成 | BAE、金融精英班、金融学硕士、金融科技硕士、金融学博士、导师、发表与毕业要求 |
+| 大健康学院 FH | [fh.md](../skills/cityu-macau-campus-assistant/references/fh.md) | 已完成 | BSW、MSW、MAP、DAP、智慧养老与健康管理、导师、实习与毕业要求 |
+| 氹仔校区餐饮指南 | [澳门城市大学氹仔校区_校内餐饮指南.md](../skills/cityu-macau-campus-assistant/references/澳门城市大学氹仔校区_校内餐饮指南.md) | 已完成 | 校内餐厅、菜单、价格、供应时段、用餐建议 |
 
-> 本 Skill 不提供个性化录取概率或“稳录”判断，但可以整理官方申请条件、材料、时间和咨询入口。
+## 待补知识库
 
-## 能力与边界
+下列学院或机构在澳门城市大学公开学院体系中出现，但当前还没有单独知识库。现在先保留为空位，后续新增资料后再写完整。
 
-| 可以做 | 不可以做 |
+| 学院/机构 | 建议文件名 | 当前状态 |
+|---|---|---|
+| 人文社会科学学院 | `fhss.md` | 待补 |
+| 创新设计学院 | `fid.md` | 待补 |
+| 国际旅游与管理学院 | `fitm.md` | 待补 |
+| 教育学院 | `soe.md` | 待补 |
+| 法学院 | `sol.md` | 待补 |
+| 葡语国家研究院 | `irops.md` | 待补 |
+| 城市与可持续发展研究院 | `iusd.md` | 待补 |
+
+待补规则：
+
+- 不要在 `SKILL.md` 中声称这些学院已有完整知识库。
+- 用户问到待补学院时，可以先读 `freshman.md` 中的通用招生和费用信息。
+- 如果现有资料无法确认课程、学分、导师或毕业要求，必须明确说“现有知识库未覆盖”，并引导用户查看学院官网、招生事务处、研究生院或教务处。
+- 新增学院知识库后，再同步更新 `SKILL.md`、`agents/openai.yaml`、`README.md` 和本文件。
+
+## 路由规则
+
+| 用户问题 | 应读取 |
 |---|---|
-| 整理公开的申请、注册和校园办事流程 | 保证录取、奖学金、宿位、签注、转专业或毕业结果 |
-| 解释 FDS 公开课程和学业要求 | 代替学校认定论文、学分、毕业资格或个案审批 |
-| 根据身份和学年提示应查的规则 | 根据不完整成绩、简历或论文预测审批结果 |
-| 提供学校及澳门政府官方入口 | 代替移民、法律、财务或医疗专业意见 |
-| 提醒高时效信息需要再次核验 | 查询个人成绩、课表、考场或登录私人学生系统 |
+| 招生、费用、注册、D 签注、逗留许可、宿舍、校园服务、台风、暴雨 | `freshman.md` |
+| 氹仔校区食堂、餐厅、菜单、价格、咖啡、打包、午餐 | `澳门城市大学氹仔校区_校内餐饮指南.md` |
+| FDS、BITS、BCS、MDS、MCS、PhD DS、PhD CS | `fds.md` |
+| 商学院、FOB、BBA、MBA、DBA、IBC、4+1 | `fob.md` |
+| 金融学院、FOF、BAE、金融精英班、MSF、金融科技、PhD Finance | `fof.md` |
+| 大健康学院、FH、BSW、MSW、MAP、DAP、社会工作、应用心理学 | `fh.md` |
+| 同时涉及学校通用流程和学院学业规则 | `freshman.md` + 对应学院知识库 |
+| 问到待补学院 | 先查 `freshman.md`，再说明单独学院知识库暂未覆盖 |
 
-资料未覆盖的问题会明确说明无法确认，并指向对应官方部门，不会编造答案。
+## 使用示例
 
-## 安装前要求
+```text
+澳门城市大学内地本科新生拿到学号后还要完成哪些注册步骤？
+```
 
-本 Skill 由 Markdown 和 YAML 文件组成，**不要求安装 Python、Java 或其他编程语言**。
+```text
+使用 $cityu-macau-campus-assistant 查询金融科技硕士的学分、论文和学术活动要求。
+```
 
-| 安装方式 | 要求 |
-|---|---|
-| 让 Agent 安装 | 一个支持 Agent Skills 的应用，以及可访问 GitHub 的网络 |
-| 下载 ZIP 后手动放置 | 不需要 Git、Node.js 或命令行 |
-| 使用 `npx skills` 安装 | [Node.js 18 或更高版本](https://nodejs.org/)；安装 Node.js 时会附带 `npm` 和 `npx` |
+```text
+商学院 MBA 需要写论文吗？有没有发表要求？
+```
 
-## 方式一：直接告诉 Agent 安装
+```text
+氹仔校区中午想快速吃饭，有哪些校内选择和价格？
+```
 
-这是最简单的方式。把下面整段话发送给支持 Agent Skills 的应用：
+```text
+大健康学院应用心理学博士的课程和毕业要求是什么？
+```
+
+## 回答边界
+
+Agent 回答时必须遵守：
+
+- 先给结论，再列步骤或规则。
+- 日期写完整年月日；费用注明币种和计费周期。
+- 区分“公开规定”“往年参考”“尚待官方确认”和“个案审批”。
+- 高时效问题优先提醒查看最新官方通知。
+- 当前官方资料与知识库冲突时，以最新官方资料为准。
+- 不索取身份证号、港澳通行证号、签注页、缴费凭证、验证码、密码等敏感信息。
+- 用户发送个人材料时，先要求打码。
+
+## 最简单安装
+
+把下面这段话复制给正在使用的 AI Agent：
 
 ```text
 请帮我安装这个 Skill：
@@ -61,243 +122,149 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 安装完成后，请告诉我安装位置，并确认 SKILL.md 可以被识别。
 ```
 
-如果应用询问安装范围：
+如果 Agent 询问安装范围，普通用户选择“当前项目”即可。安装后重新打开应用或开始新会话。
 
-- 选择“当前项目”，只在当前工作目录使用。
-- 选择“全局”或“用户级”，在该应用的所有项目中使用。
+## 安装前要求
 
-安装后重新打开应用或开始一个新会话，然后直接提问即可。
+| 安装方式 | 要求 |
+|---|---|
+| 让 Agent 自动安装 | 一个支持 Agent Skills 的应用，以及可访问 GitHub 的网络 |
+| 下载 ZIP 后手动放置 | 不需要 Git、Node.js 或命令行 |
+| 使用 `npx skills` 安装 | Node.js 18 或更高版本 |
 
-## 中国大陆常见 Agent
+本 Skill 只包含 Markdown 和 YAML 文件，不要求 Python、Java 或数据库。
 
-下表列出截至 **2026-06-15** 已被通用 [`skills` CLI](https://github.com/vercel-labs/skills) 支持、且在中国大陆通常有本地版本或可配合大陆可用模型使用的常见 Agent。产品、账号、地区和模型政策会变化，这不是“所有 Agent”的永久完整名单。
+## Agent 适配说明
 
-### 通常优先考虑
+### 中国大陆通常优先考虑
 
-| Agent | CLI 名称 | 当前项目中的 Skill 目录 | 用户级目录 | 说明 |
-|---|---|---|---|---|
-| Qwen Code | `qwen-code` | `.qwen/skills/` | `~/.qwen/skills/` | 通义千问代码 Agent |
-| Kimi Code CLI | `kimi-code-cli` | `.agents/skills/` | `~/.agents/skills/` | 可使用 Kimi 服务 |
-| Qoder 中国版 | `qoder-cn` | `.qoder/skills/` | `~/.qoder-cn/skills/` | 应选择中国版 |
-| Trae 中国版 | `trae-cn` | `.trae/skills/` | `~/.trae-cn/skills/` | 应选择中国版 |
-| CodeBuddy | `codebuddy` | `.codebuddy/skills/` | `~/.codebuddy/skills/` | 账号与功能以产品当前说明为准 |
-| WorkBuddy | 暂无独立 `workbuddy` CLI 目标 | 按应用内 Skills/技能市场或手动导入 | 以应用当前版本为准 | 腾讯云 CodeBuddy 团队产品；不要写成 `-a workbuddy` |
-| 通义灵码 Lingma | `lingma` | `.lingma/skills/` | `~/.lingma/skills/` | 阿里云代码助手 |
-| iFlow CLI | `iflow-cli` | `.iflow/skills/` | `~/.iflow/skills/` | 模型可用范围以当前版本为准 |
-| CodeArts Agent | `codearts-agent` | `.codeartsdoer/skills/` | `~/.codeartsdoer/skills/` | 华为云开发工具链产品 |
+这些 Agent 或客户端通常更适合中国大陆用户，具体可用性以产品当前版本、账号地区和模型服务为准：
 
-### 取决于你配置的模型
+| Agent | 常见 Skill 目录 | 说明 |
+|---|---|---|
+| Qwen Code | `.qwen/skills/` 或用户级 `~/.qwen/skills/` | 通义千问代码 Agent |
+| Kimi Code CLI | `.agents/skills/` 或 `~/.agents/skills/` | 可使用 Kimi 服务 |
+| CodeBuddy | `.codebuddy/skills/` 或 `~/.codebuddy/skills/` | 腾讯云相关代码 Agent |
+| WorkBuddy | 以应用内 Skills/技能市场或导入能力为准 | 不要写成 `-a workbuddy` CLI 目标 |
+| 通义灵码 Lingma | `.lingma/skills/` 或 `~/.lingma/skills/` | 阿里云代码助手 |
+| Trae 中国版 | `.trae/skills/` 或 `~/.trae-cn/skills/` | 选择中国版 |
+| Qoder 中国版 | `.qoder/skills/` 或 `~/.qoder-cn/skills/` | 选择中国版 |
+| CodeArts Agent | `.codeartsdoer/skills/` 或 `~/.codeartsdoer/skills/` | 华为云开发工具链 |
+| iFlow CLI | `.iflow/skills/` 或 `~/.iflow/skills/` | 以当前模型配置为准 |
 
-这些客户端本身支持 Skills，但能否在中国大陆正常工作，主要取决于所配置的模型、API 服务和账号地区：
+### 取决于模型配置
 
-| Agent | CLI 名称 | 当前项目中的 Skill 目录 | 用户级目录 |
-|---|---|---|---|
-| Cline | `cline` | `.agents/skills/` | `~/.agents/skills/` |
-| Roo Code | `roo` | `.roo/skills/` | `~/.roo/skills/` |
-| OpenCode | `opencode` | `.agents/skills/` | `~/.config/opencode/skills/` |
-| Continue | `continue` | `.continue/skills/` | `~/.continue/skills/` |
-| Cursor | `cursor` | `.agents/skills/` | `~/.cursor/skills/` |
+| Agent | 常见 Skill 目录 | 说明 |
+|---|---|---|
+| Cline | `.agents/skills/` 或 `~/.agents/skills/` | 可接入不同模型，是否可用取决于模型服务 |
+| Roo Code | `.roo/skills/` 或 `~/.roo/skills/` | 可接入不同模型 |
+| OpenCode | `.agents/skills/` 或 `~/.config/opencode/skills/` | 以当前配置为准 |
+| Continue | `.continue/skills/` 或 `~/.continue/skills/` | 以当前配置为准 |
+| Cursor | `.agents/skills/` 或 `~/.cursor/skills/` | 以账号和模型服务为准 |
 
-## GPT / Codex
+### 有中国大陆地区限制的服务
 
-### Codex 安装
+| 服务 | 说明 |
+|---|---|
+| OpenAI / ChatGPT / Codex | OpenAI 官方支持地区列表不包含中国大陆；本项目不提供绕过地区限制的方法 |
+| Claude / Claude Code | Anthropic 官方支持地区列表不包含中国大陆；不作为大陆默认方案 |
+| Gemini / Gemini CLI | Google AI Studio 和 Gemini API 的可用地区列表不包含中国大陆；不作为大陆默认方案 |
 
-在 Codex 中直接发送：
+如果用户已经在合规地区或合规网络环境中使用上述服务，可以按其官方 Skills 或知识上传方式配置；否则不建议作为中国大陆默认安装路径。
 
-```text
-请使用 $skill-installer 安装这个 Skill：
-https://github.com/anmdd1031/cityu-macau-campus-assistant
-```
+## 命令行安装
 
-也可以使用通用 CLI：
-
-```bash
-npx skills add https://github.com/anmdd1031/cityu-macau-campus-assistant -g -a codex
-```
-
-手动安装时，将完整 Skill 文件夹放到：
-
-- 当前项目：`.agents/skills/cityu-macau-campus-assistant/`
-- 用户级：`~/.agents/skills/cityu-macau-campus-assistant/`
-
-Codex CLI、IDE 扩展和 Codex 应用均可识别 Skills。安装后未出现时，重新启动 Codex。详见 [OpenAI Codex Agent Skills 文档](https://developers.openai.com/codex/skills)。
-
-### ChatGPT 自定义 GPT
-
-ChatGPT 自定义 GPT 不直接读取本地 Agent Skills 目录，但可以用“Instructions + Knowledge”方式适配：
-
-1. 在 ChatGPT 的 GPTs 页面选择 **Create**。
-2. 将 `SKILL.md` 正文放入 GPT 的 **Instructions**。
-3. 将 `references/freshman.md` 和 `references/fds.md` 上传到 **Knowledge**。
-4. 在 Preview 中测试示例问题后保存。
-
-创建或编辑自定义 GPT 需要付费订阅；仅聊天的用户也可以在 ChatGPT Project 中上传两份 reference，并把 `SKILL.md` 作为项目指令。详见 [OpenAI 创建 GPT 文档](https://help.openai.com/en/articles/8554397-creating-and-editing-gpts)。
-
-> **中国大陆地区限制：** OpenAI 的[支持国家和地区列表](https://help.openai.com/en/articles/7947663-chatgpt-supported-countries)不包含中国大陆。官方说明指出，从未列出的地区访问或提供访问可能导致账号被阻止或暂停。本项目不提供绕过地区限制的方法。
-
-## Gemini
-
-### Gemini CLI 安装
-
-Gemini CLI 已原生支持 Agent Skills。用户级安装：
-
-```bash
-gemini skills install https://github.com/anmdd1031/cityu-macau-campus-assistant --path skills/cityu-macau-campus-assistant --scope user
-```
-
-只安装到当前工作区：
-
-```bash
-gemini skills install https://github.com/anmdd1031/cityu-macau-campus-assistant --path skills/cityu-macau-campus-assistant --scope workspace
-```
-
-手动安装目录：
-
-- 当前项目：`.gemini/skills/cityu-macau-campus-assistant/` 或 `.agents/skills/cityu-macau-campus-assistant/`
-- 用户级：`~/.gemini/skills/cityu-macau-campus-assistant/` 或 `~/.agents/skills/cityu-macau-campus-assistant/`
-
-进入 Gemini CLI 后运行 `/skills list` 检查；未显示时运行 `/skills reload`。详见 [Gemini CLI Agent Skills 文档](https://geminicli.com/docs/cli/skills/)。
-
-### Gemini 网页版 Gem
-
-网页版 Gemini 不读取本地 Skill 目录，但可以创建 Gem：
-
-1. 打开 Gemini 的 **Gems > New Gem**。
-2. 将 `SKILL.md` 正文放入 Instructions。
-3. 在 Knowledge 中上传 `freshman.md` 和 `fds.md`。
-4. 预览并保存。
-
-这种方式是对知识和指令的适配，不具备 Gemini CLI 的 Skill 自动发现和按需激活机制。详见 [Google Gems 文档](https://support.google.com/gemini/answer/15146780)。
-
-> **中国大陆地区限制：** Google AI Studio 和 Gemini API 的[可用地区列表](https://ai.google.dev/gemini-api/docs/available-regions)不包含中国大陆。Gemini CLI 通常依赖 Google 账号及 Gemini 服务，因此不作为中国大陆默认方案。
-
-## Claude
-
-### Claude 网页版或桌面版
-
-Claude 已支持直接上传自定义 Skill：
-
-1. 下载本仓库 ZIP 并解压。
-2. 找到 `skills/cityu-macau-campus-assistant/`。
-3. 将这个 Skill 文件夹单独压缩为 ZIP，不要直接上传整个仓库 ZIP。
-4. 在 Claude 打开 **Customize > Skills**。
-5. 点击 **+ > Create skill > Upload a skill**，上传刚才的 ZIP 并启用。
-
-详见 [Claude 自定义 Skills 文档](https://support.claude.com/en/articles/12512180-use-skills-in-claude)。
-
-### Claude Code
-
-使用通用 CLI：
-
-```bash
-npx skills add https://github.com/anmdd1031/cityu-macau-campus-assistant -g -a claude-code
-```
-
-或手动复制到：
-
-- 当前项目：`.claude/skills/cityu-macau-campus-assistant/`
-- 用户级：`~/.claude/skills/cityu-macau-campus-assistant/`
-
-Claude Code 可自动按描述调用，也可输入 `/cityu-macau-campus-assistant` 显式调用。详见 [Claude Code Skills 文档](https://code.claude.com/docs/en/skills)。
-
-> **中国大陆地区限制：** Anthropic 的[Claude 支持地区列表](https://support.claude.com/en/articles/8461763-where-can-i-access-claude)不包含中国大陆。Claude 和 Claude Code 均不作为中国大陆默认方案，本项目不提供绕过地区限制的方法。
-
-## 方式二：通用命令安装
-
-已安装 Node.js 18+ 的用户，可在终端执行：
+已安装 Node.js 18+ 的用户可以执行：
 
 ```bash
 npx skills add https://github.com/anmdd1031/cityu-macau-campus-assistant
 ```
 
-默认安装到当前项目。安装为用户级 Skill：
+安装为用户级 Skill：
 
 ```bash
 npx skills add https://github.com/anmdd1031/cityu-macau-campus-assistant -g
 ```
 
-也可以明确指定 Agent，例如：
+指定常见 Agent：
 
 ```bash
 npx skills add https://github.com/anmdd1031/cityu-macau-campus-assistant -g -a qwen-code
 npx skills add https://github.com/anmdd1031/cityu-macau-campus-assistant -g -a kimi-code-cli
+npx skills add https://github.com/anmdd1031/cityu-macau-campus-assistant -g -a codex
 ```
 
-命令显示多个目标时，选择你实际使用的 Agent。CLI 的参数和受支持 Agent 以 [`vercel-labs/skills`](https://github.com/vercel-labs/skills) 当前文档为准。
+CLI 支持的 Agent 名称以 [`vercel-labs/skills`](https://github.com/vercel-labs/skills) 当前文档为准。
 
-## 方式三：下载 ZIP 后手动放置
+## 手动放置
 
-1. 打开本仓库，点击 **Code > Download ZIP**。
-2. 解压后找到：
-
-   ```text
-   cityu-macau-campus-assistant-main/
-   └── skills/
-       └── cityu-macau-campus-assistant/
-   ```
-
-3. 将完整的 `cityu-macau-campus-assistant` 文件夹复制到 Agent 的项目级或用户级 Skill 目录。目录位置见上方 Agent 表。
-4. 检查最终结构。`SKILL.md` 必须直接位于 Skill 文件夹内：
-
-   ```text
-   你的项目/
-   └── .agents/
-       └── skills/
-           └── cityu-macau-campus-assistant/
-               ├── SKILL.md
-               ├── agents/
-               │   └── openai.yaml
-               └── references/
-                   ├── freshman.md
-                   └── fds.md
-   ```
-
-上例适用于使用 `.agents/skills/` 的 Agent。Qwen Code 应放到 `.qwen/skills/`，Qoder 中国版应放到 `.qoder/skills/`，其他应用按表格替换目录即可。不要只复制 `SKILL.md`，否则校园和学院参考资料不会随 Skill 一起加载。
-
-## 不支持 Agent Skills 的应用
-
-可以把 `SKILL.md` 作为系统提示词或项目规则，并在提问时同时提供 `references/freshman.md` 和 `references/fds.md`。这种方式通常不会自动路由资料，也不一定能跨会话保存，效果取决于具体应用。
-
-## 使用方法
-
-安装后可直接提问：
-
-```text
-澳门城市大学内地本科新生拿到学号后还要完成哪些注册步骤？
-```
-
-也可以显式指定 Skill：
-
-```text
-使用 $cityu-macau-campus-assistant 查询 MDS 的学分和成果要求。
-```
-
-高时效问题请明确身份和学年，例如：
-
-```text
-我是 2026/2027 学年内地硕士新生，请核对最新的 D 签注、入境和注册流程。
-```
-
-## 更新
-
-命令行安装可执行 `npx skills update cityu-macau-campus-assistant`；手动安装则重新下载 ZIP 并替换原 Skill 文件夹。
-
-## 项目结构
+下载 ZIP 后，只复制这个完整文件夹：
 
 ```text
 skills/cityu-macau-campus-assistant/
+```
+
+不要只复制 `SKILL.md`。完整结构应保留：
+
+```text
+cityu-macau-campus-assistant/
 ├── SKILL.md
 ├── agents/
 │   └── openai.yaml
 └── references/
     ├── freshman.md
-    └── fds.md
+    ├── fds.md
+    ├── fob.md
+    ├── fof.md
+    ├── fh.md
+    └── 澳门城市大学氹仔校区_校内餐饮指南.md
 ```
 
-Skill 会根据问题选择相关 reference，不会在每次对话中无差别加载全部资料。
-两份 reference 由本项目原 `knowledge-base/freshman.md` 和 `knowledge-base/fds.md` 完整迁入，保留原知识库内容，不使用此前的精简摘要替代。
+如果只复制 `SKILL.md`，Agent 无法读取学院知识库和餐饮指南。
 
-> 校园与课程资料核验日期：2026-05-22。招生日期、费用、宿舍、签注、注册和学业规则以最新官方通知为准。
+## 不支持 Agent Skills 的应用
+
+可以退而求其次：
+
+1. 把 `SKILL.md` 正文作为系统提示词或项目规则。
+2. 按需要上传对应知识库文件。
+3. 提问时说明要依据这些文件回答。
+
+这种方式不会自动按需路由，效果取决于应用是否支持长期保存知识文件。
+
+## 更新规则
+
+更新 Skill 时至少同步检查：
+
+- `skills/cityu-macau-campus-assistant/SKILL.md`
+- `skills/cityu-macau-campus-assistant/agents/openai.yaml`
+- `skills/cityu-macau-campus-assistant/references/`
+- 根目录 [README.md](../README.md)
+- 本文件
+
+新增学院知识库时：
+
+1. 在 `references/` 新增对应文件。
+2. 在 `SKILL.md` 增加触发描述和路由。
+3. 在 `README.md` 和本文件补链接。
+4. 如果安装器展示文案受影响，更新 `agents/openai.yaml`。
+5. 运行链接检查和 Skill 识别检查。
+
+## 验证
+
+常用检查：
+
+```bash
+npx skills add . --list
+```
+
+期望结果：能发现 `cityu-macau-campus-assistant` 这 1 个 Skill。
+
+还应检查：
+
+- Markdown 相对链接可访问。
+- `README.md` 保持傻瓜式安装，不加入复杂 Agent 选择和手动安装细节。
+- 不提交 `docs/superpowers` 或 `.superpowers` 等内部过程文件。
 
 ## License
 
