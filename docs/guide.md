@@ -234,6 +234,8 @@ cityu-macau-campus-assistant/
 
 ## 更新规则
 
+主要变更请同步记录到 [更新日志](changelog.md)。
+
 更新 Skill 时至少同步检查：
 
 - `skills/cityu-macau-campus-assistant/SKILL.md`
@@ -241,6 +243,7 @@ cityu-macau-campus-assistant/
 - `skills/cityu-macau-campus-assistant/references/`
 - 根目录 [README.md](../README.md)
 - 本文件
+- [更新日志](changelog.md)
 
 新增学院知识库时：
 

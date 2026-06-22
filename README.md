@@ -64,6 +64,7 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 ## 更多说明
 
 - [完整说明文档](docs/guide.md)
+- [更新日志](docs/changelog.md)
 - [Skill 主文件](skills/cityu-macau-campus-assistant/SKILL.md)
 - [新生与校园知识库](skills/cityu-macau-campus-assistant/references/freshman.md)
 - [数据科学学院知识库](skills/cityu-macau-campus-assistant/references/fds.md)
