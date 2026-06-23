@@ -1,4 +1,4 @@
 interface:
   display_name: "澳门城市大学校园助手"
-  short_description: "查询澳城大招生注册、校园服务、餐饮及多学院课程毕业要求"
+  short_description: "查询澳城大招生注册、校园服务、餐饮、学院课程与荣誉班信息"
   default_prompt: "使用 $cityu-macau-campus-assistant，根据内置知识库回答我的澳门城市大学相关问题。"

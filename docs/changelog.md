@@ -4,6 +4,20 @@
 
 ## 2026-06-23
 
+### 新增知识库
+
+- 同步新增教育学院知识库：
+  - `references/fe.md`
+- 同步新增法学院知识库：
+  - `references/fl.md`
+- 同步新增荣誉班知识库：
+  - `references/honours_class.md`
+- 覆盖内容包括：
+  - 教育学院教育学硕士、教学研究硕士、教育学博士、导师、论文和毕业要求
+  - 法学院法学硕士、专业方向、导师、论文和毕业要求
+  - 荣誉班选拔、课程体系、导师指导、科研训练、实习、竞赛和毕业条件
+- 同步更新 `SKILL.md` 路由表与 [docs/guide.md](guide.md) 知识库清单。
+
 ### 高变动数据回答规则
 
 - 优化 `SKILL.md` 的边界说明，明确“学费、校历、开学时间、注册日程等高变动信息不等于不能回答”。
@@ -125,6 +139,9 @@
 | 商学院 FOB | `references/fob.md` | 已覆盖 |
 | 金融学院 FOF | `references/fof.md` | 已覆盖 |
 | 大健康学院 FH | `references/fh.md` | 已覆盖 |
+| 教育学院 FE/SOE | `references/fe.md` | 已覆盖 |
+| 法学院 FL/SOL | `references/fl.md` | 已覆盖 |
+| 荣誉班 Honours Class | `references/honours_class.md` | 已覆盖 |
 | 氹仔校区餐饮指南 | `references/澳门城市大学氹仔校区_校内餐饮指南.md` | 已覆盖 |
 
 ## 维护规则

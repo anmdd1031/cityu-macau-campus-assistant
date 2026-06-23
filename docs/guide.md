@@ -21,7 +21,7 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 可以回答：
 
 - 新生申请、注册、缴费、体检、D 签注、逗留许可、宿舍、图书馆、校园服务和恶劣天气安排。
-- 数据科学学院、商学院、金融学院、大健康学院的课程、学分、导师、论文、发表、毕业要求和常见办事入口。
+- 数据科学学院、商学院、金融学院、大健康学院、教育学院、法学院、荣誉班的课程、学分、导师、论文、发表、毕业要求和常见办事入口。
 - 氹仔校区校内餐厅、菜单、价格、供应时段和用餐建议。
 - 哪些问题需要看最新官方通知，哪些只能由学校或学院审批。
 
@@ -41,6 +41,9 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 | 商学院 FOB | [fob.md](../skills/cityu-macau-campus-assistant/references/fob.md) | 已完成 | BBA、MBA、DBA、IBC、4+1 项目、导师、论文与毕业要求 |
 | 金融学院 FOF | [fof.md](../skills/cityu-macau-campus-assistant/references/fof.md) | 已完成 | BAE、金融精英班、金融学硕士、金融科技硕士、金融学博士、导师、发表与毕业要求 |
 | 大健康学院 FH | [fh.md](../skills/cityu-macau-campus-assistant/references/fh.md) | 已完成 | BSW、MSW、MAP、DAP、智慧养老与健康管理、导师、实习与毕业要求 |
+| 教育学院 FE/SOE | [fe.md](../skills/cityu-macau-campus-assistant/references/fe.md) | 已完成 | 教育学硕士、教学研究硕士、教育学博士、学分、导师、论文与毕业要求 |
+| 法学院 FL/SOL | [fl.md](../skills/cityu-macau-campus-assistant/references/fl.md) | 已完成 | 法学硕士、专业方向、学分、导师、论文与毕业要求 |
+| 荣誉班 Honours Class | [honours_class.md](../skills/cityu-macau-campus-assistant/references/honours_class.md) | 已完成 | 选拔、课程体系、导师指导、科研训练、实习、竞赛与毕业条件 |
 | 氹仔校区餐饮指南 | [澳门城市大学氹仔校区_校内餐饮指南.md](../skills/cityu-macau-campus-assistant/references/澳门城市大学氹仔校区_校内餐饮指南.md) | 已完成 | 校内餐厅、菜单、价格、供应时段、用餐建议 |
 
 ## 待补知识库
@@ -52,8 +55,6 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 | 人文社会科学学院 | `fhss.md` | 待补 |
 | 创新设计学院 | `fid.md` | 待补 |
 | 国际旅游与管理学院 | `fitm.md` | 待补 |
-| 教育学院 | `soe.md` | 待补 |
-| 法学院 | `sol.md` | 待补 |
 | 葡语国家研究院 | `irops.md` | 待补 |
 | 城市与可持续发展研究院 | `iusd.md` | 待补 |
 
@@ -74,6 +75,9 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 | 商学院、FOB、BBA、MBA、DBA、IBC、4+1 | `fob.md` |
 | 金融学院、FOF、BAE、金融精英班、MSF、金融科技、PhD Finance | `fof.md` |
 | 大健康学院、FH、BSW、MSW、MAP、DAP、社会工作、应用心理学 | `fh.md` |
+| 教育学院、FE、SOE、MEd、MTLR、教育学博士 | `fe.md` |
+| 法学院、FL、SOL、LL.M、公法、刑事法、民事法、国际商法 | `fl.md` |
+| 荣誉班、Honours Class、荣誉课程、选拔、科研训练、一对一导师、X-Challenge | `honours_class.md` |
 | 同时涉及学校通用流程和学院学业规则 | `freshman.md` + 对应学院知识库 |
 | 问到待补学院 | 先查 `freshman.md`，再说明单独学院知识库暂未覆盖 |
 
@@ -97,6 +101,14 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 
 ```text
 大健康学院应用心理学博士的课程和毕业要求是什么？
+```
+
+```text
+教育学院教育学博士需要多少学分？毕业论文有什么要求？
+```
+
+```text
+荣誉班怎么选拔？有哪些科研训练和导师指导？
 ```
 
 ## 回答边界
@@ -217,6 +229,9 @@ cityu-macau-campus-assistant/
     ├── fob.md
     ├── fof.md
     ├── fh.md
+    ├── fe.md
+    ├── fl.md
+    ├── honours_class.md
     └── 澳门城市大学氹仔校区_校内餐饮指南.md
 ```
 
