@@ -50,7 +50,7 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 可以：
 
 - 整理公开的申请、注册、宿舍、签注和校园办事流程
-- 解释 FDS、FOB、FOF、FH 公开课程、学分、论文成果和毕业要求
+- 解释 FDS、FOB、FOF、FH、FE、FL 和荣誉班公开课程、学分、论文成果和毕业要求
 - 查询氹仔校区校内餐饮、菜单、价格和供应时段
 - 提醒哪些信息需要看最新官方通知
 
@@ -71,9 +71,12 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 - [商学院知识库](skills/cityu-macau-campus-assistant/references/fob.md)
 - [金融学院知识库](skills/cityu-macau-campus-assistant/references/fof.md)
 - [大健康学院知识库](skills/cityu-macau-campus-assistant/references/fh.md)
+- [教育学院知识库](skills/cityu-macau-campus-assistant/references/fe.md)
+- [法学院知识库](skills/cityu-macau-campus-assistant/references/fl.md)
+- [荣誉班知识库](skills/cityu-macau-campus-assistant/references/honours_class.md)
 - [氹仔校区餐饮指南](skills/cityu-macau-campus-assistant/references/澳门城市大学氹仔校区_校内餐饮指南.md)
 
-> 知识库资料核验日期：新生与 FDS 资料为 2026-05-22；商学院、大健康学院资料为 2026-06-21；金融学院资料为 2026-06-22。招生日期、费用、宿舍、签注、注册和学业规则以最新官方通知为准。
+> 知识库资料核验日期：新生与 FDS 资料为 2026-05-22；商学院、大健康学院资料为 2026-06-21；金融学院、教育学院、法学院、荣誉班资料为 2026-06-22。招生日期、费用、宿舍、签注、注册和学业规则以最新官方通知为准。
 
 ## License
 
