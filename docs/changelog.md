@@ -2,6 +2,21 @@
 
 本文件记录 `cityu-macau-campus-assistant` Skill 的主要更新。只记录影响 Skill 使用、知识库范围、安装方式、路由规则或文档入口的变化；普通文字润色不必逐条记录。
 
+## 2026-07-02
+
+### 新增知识库
+
+- 同步新增国际旅游与管理学院知识库：
+  - `references/fitm.md`
+- 覆盖内容包括：
+  - 国际旅游与酒店管理学士
+  - 国际款待与旅游业管理硕士
+  - 国际酒店管理硕士
+  - 国际旅游管理博士
+  - 酒店管理博士
+  - 导师、项目报告、论文、学分和毕业要求
+- 同步更新 `SKILL.md` 路由表、根目录 [README](../README.md) 与 [docs/guide.md](guide.md) 知识库清单。
+
 ## 2026-06-23
 
 ### 新增知识库
@@ -141,6 +156,7 @@
 | 大健康学院 FH | `references/fh.md` | 已覆盖 |
 | 教育学院 FE/SOE | `references/fe.md` | 已覆盖 |
 | 法学院 FL/SOL | `references/fl.md` | 已覆盖 |
+| 国际旅游与管理学院 FITM | `references/fitm.md` | 已覆盖 |
 | 荣誉班 Honours Class | `references/honours_class.md` | 已覆盖 |
 | 氹仔校区餐饮指南 | `references/澳门城市大学氹仔校区_校内餐饮指南.md` | 已覆盖 |
 
