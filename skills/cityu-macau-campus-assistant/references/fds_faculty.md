@@ -1,0 +1,94 @@
+# 澳门城市大学数据科学学院师资与导师方向索引
+
+> 数据来源：澳门城市大学数据科学学院官网 Academic Staff 及教师个人页。
+> 核验日期：2026-07-11。
+> 当前收录：58 名本校 Academic Staff；不含 Academic Advisors、External Instructors 和行政人员。
+
+## 使用边界
+
+- 本索引用于按公开研究方向筛选候选教师，不构成录取、招生名额或接收意愿判断。
+- 只有官网明确标注博士生导师或硕士生导师时，才能使用相应称谓；否则只能称为方向相关教师。
+- 研究方向可以有多个。`根据官网简介、授课或成果推断` 不等同于教师本人声明。
+- 用户询问联系方式时，引导其打开官方主页查看，不在知识库中复制邮箱、电话或办公室信息。
+
+## 推荐与展示规则
+
+1. 先按本科科研、硕士或博士阶段筛选导师资格，再匹配研究方向。
+2. 按官网明确方向、多关键词匹配、简介或成果补充、间接关联的顺序判断相关度，不输出虚假百分比。
+3. 匹配不超过 5 人时列出全部；超过 5 人时默认列出相关度最高的 5 人，信息较少时可列 3 人。
+4. 省略候选时写明总人数、展示人数、未展开人数，并提示用户可以要求“显示全部相关教师”。
+5. 同等相关度按下表官网顺序展示，不按职称、论文数量或知名度排序。
+6. 用户明确要求全部名单时，列出所有符合条件者。
+
+## 师资索引
+
+| 序号 | 教师 | 职称/职务 | 导师资格 | 标准化研究方向 | 官网方向摘要 | 依据 | 官方主页 | 个人主页 |
+|---:|---|---|---|---|---|---|---|---|
+| 1 | 周萬雷（Wanlei Zhou） | Prof Wanlei Zhou Vice President | 官网未明确标注导师资格 | 隐私计算与联邦学习；网络空间安全与 AI 安全；云计算、分布式系统与边缘计算 | Professor Wanlei Zhou has been appointed Vice President of City University of Macau with effect from 12 October 2020, in charge of Academic Affairs. Professor Zhou obtained his Bachelor of Engineering and Master of Science degrees in Compu… | 根据官网简介、授课或成果推断 | [官方页](https://fds.cityu.edu.mo/en/members/177) | 官网未提供 |
+| 2 | 朱天清（Tianqing Zhu） | Professor Tianqing Zhu Faculty Head | 博士生导师、硕士生导师 | 人工智能与机器学习；隐私计算与联邦学习；网络空间安全与 AI 安全 | Artificial intelligence security, privacy protection, cyberspace security | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/179) | 官网未提供 |
+| 3 | 劉文堅（Wenjian Liu） | Associate Professor Wenjian Liu Vice Dean | 博士生导师、硕士生导师 | 医疗健康与生物信息 | Smart medical care, GenAI | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/143) | 官网未提供 |
+| 4 | 朱家偉（Chia-Wei Chu） | Associate Professor Chia-Wei Chu Programme Coordinator | 官网未明确标注导师资格 | 数据科学与数据挖掘 | Cluster analysis Predictive analytics | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/147) | 官网未提供 |
+| 5 | 應作斌（Zuobin Ying） | Associate Professor Zuobin Ying Programme Coordinator | 官网未明确标注导师资格 | 隐私计算与联邦学习；密码学、区块链与可信计算 | Blockchain Theory and Application Privacy Computing Cross-border Data Protection | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/188) | 官网未提供 |
+| 6 | 郭永德（Weng Tak Kuok） | Associate Professor Weng Tak Kuok Programme Coordinator | 博士生导师 | 人工智能与机器学习；计算机视觉与多媒体；智慧城市与空间计算 | Image Processing, Computer Vision, Pattern Recognition, Deep Learning, Environmentally sustainable computing and remote sensing data spatial analysis and applications | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/175) | 官网未提供 |
+| 7 | 江愷瑤（Hoi Io Kong） | Associate Professor Hoi Io Kong Programme Coordinator | 官网未明确标注导师资格 | 数据科学与数据挖掘；计算机视觉与多媒体；数据库、知识图谱与信息检索；信号处理与时序分析 | Meteorology, Climate Change Numerical simulation Image processing Big data analysis, visualization and application Teaching course s Time series analysis, Scientific computing, Database systems and other subjects | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/144) | 官网未提供 |
+| 8 | 辜嘉（Jia Gu） | Professor Jia Gu | 硕士生导师 | 人工智能与机器学习；计算机视觉与多媒体；机器人与智能交通；医疗健康与生物信息 | Computer vision Medical Artificial Intelligence Medical imaging Image guided robot | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/279) | 官网未提供 |
+| 9 | 孫鑫（Xin Sun） | Professor Xin Sun | 硕士生导师 | 人工智能与机器学习；计算机视觉与多媒体；机器人与智能交通 | Machine learning, Computer vision, Embodied Intelligence, Robotics, Environmental remote sensing, Smart tourism | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/281) | 官网未提供 |
+| 10 | 段俊偉（Junwei Duan） | Associate Professor Junwei Duan | 博士生导师、硕士生导师 | 人工智能与机器学习；医疗健康与生物信息；人机交互与教育技术 | Brain-Inspired Intelligence Embodied Intelligence Smart Healthcare Smart Ocean Currently recruiting PhD students, Master students, Undergraduate students and Postdoctoral fellows (Macau Young Scholars Program) with scientific research enth… | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/283) | 官网未提供 |
+| 11 | 丁聖勇（Shengyong Ding） | Associate Professor Shengyong Ding | 博士生导师、硕士生导师 | 人工智能与机器学习；大语言模型与生成式 AI；数据科学与数据挖掘；自然语言处理；计算机视觉与多媒体；机器人与智能交通；医疗健康与生物信息；人机交互与教育技术；智慧城市与空间计算 | Fundamental Research: Integrating large model technology with traditional computer vision (CV) techniques to solve key challenges in machine vision, such as pose estimation, 3D reconstruction and generation, and spatial navigation, with a… | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/238) | 官网未提供 |
+| 12 | 葉大庸（Dayong Ye） | Associate Professor (research) Dayong Ye | 博士生导师、硕士生导师 | 人工智能与机器学习；隐私计算与联邦学习；网络空间安全与 AI 安全 | Privacy in Artificial Intelligence, Multi-Agent System Security | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/489) | 官网未提供 |
+| 13 | 李悦翔（Yuexiang Li） | Associate Professor Yuexiang Li | 硕士生导师 | 大语言模型与生成式 AI；自然语言处理；计算机视觉与多媒体；医疗健康与生物信息 | Foundational AI Models: This research direction aims to transcend the limitations of single-modal large models (e.g., pure language or vision), focusing on advancing the core technologies of multimodal large models (e.g., Large Vision-Lang… | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/498) | 官网未提供 |
+| 14 | 吳庚申（Gengshen Wu） | Assistant Professor Gengshen Wu | 官网未明确标注导师资格 | 人工智能与机器学习；计算机视觉与多媒体 | Multimedia retrieval, Machine learning applications, Computer vision | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/227) | 官网未提供 |
+| 15 | 葛東嬌（Dongjiao Ge） | Assistant Professor Dongjiao Ge | 官网未明确标注导师资格 | 人工智能与机器学习；数据科学与数据挖掘 | Intelligent computing, Machine learning, Fuzzy systems, Functional data analysis | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/244) | [访问](https://dongjiaoge.wixsite.com/my-site-2) |
+| 16 | 王淳（Chun Wang） | Assistant Professor Chun Wang | 官网未明确标注导师资格 | 人工智能与机器学习；数据科学与数据挖掘 | Graph neural network, Anomaly detection based on graph structure, Adversarial network, Cluster analysis, etc. | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/228) | 官网未提供 |
+| 17 | 黃志峰（Chi Fong Wong） | Assistant Professor Chi Fong Wong | 硕士生导师 | 人工智能与机器学习；科学智能与计算物理 | High Energy Physics Cosmology Physics for AI AI for Science | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/259) | [访问](https://chifongwong.github.io/) |
+| 18 | 魏中倫（Chung-Lun Wei） | Assistant Professor Chung-Lun Wei | 硕士生导师 | 人机交互与教育技术；信息系统与数字化应用 | Information system outsourcing Information technology applications Technology and user behavior | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/284) | 官网未提供 |
+| 19 | 高萬鑫（Wanxin Gao） | Assistant Professor Wanxin Gao | 硕士生导师 | 人工智能与机器学习 | Mobile computing Computer network Machine learning | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/285) | 官网未提供 |
+| 20 | 鍾婍（Qi Zhong） | Assistant Professor Qi Zhong | 硕士生导师 | 人工智能与机器学习；隐私计算与联邦学习；物联网与无线通信 | Copyright protection of machine learning models, Machine learning backdoors, Adversarial machine learning, Data privacy protection in cloud and Internet of Things | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/286) | 官网未提供 |
+| 21 | 吳曉鋒（Xiaofeng Wu） | Assistant Professor Xiaofeng Wu | 硕士生导师 | 人工智能与机器学习；大语言模型与生成式 AI；云计算、分布式系统与边缘计算 | Deep learning system (MLSys), large model training and inference | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/287) | [访问](https://shizukanaskytree.github.io/) |
+| 22 | 崔三帥（Sanshuai Cui） | Assistant Professor Sanshuai Cui | 硕士生导师 | 人工智能与机器学习；计算机视觉与多媒体；网络空间安全与 AI 安全 | Multimedia information security; machine learning applications, etc. | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/288) | 官网未提供 |
+| 23 | 張琪（Qi Zhang） | Assistant Professor Qi Zhang | 博士生导师、硕士生导师 | 人工智能与机器学习；计算机视觉与多媒体；医疗健康与生物信息 | Machine learning, Smart medical care, Pattern recognition, Image processing, Artificial intelligence applications, etc. | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/294) | [访问](https://zq123-edu.github.io/academicpages.github.io/) |
+| 24 | 羅英喆（Yingzhe Luo） | Assistant Professor Yingzhe Luo | 硕士生导师 | 人工智能与机器学习；信号处理与时序分析 | Signal processing, Time series analysis, Machine learning | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/290) | 官网未提供 |
+| 25 | 敬馮時（Fengshi Jing） | Assistant Professor Fengshi Jing | 硕士生导师 | 人机交互与教育技术；金融与商业数据 | (1) AI in Biomedicine, including Public Health, Infectious Diseases, Cardiovascular Diseases, Mental & Neurological Disorders, and Drug Discovery. (2) Complex Networks & Systems Medicine. (3) Social Computing, including Finance, Education… | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/291) | 官网未提供 |
+| 26 | 張樂峰（Lefeng Zhang） | Assistant Professor Lefeng Zhang | 硕士生导师 | 隐私计算与联邦学习；优化、运筹与计算数学 | Differential privacy, Game theory | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/289) | 官网未提供 |
+| 27 | 劉馳（Chi Liu） | Assistant Professor Chi Liu | 博士生导师、硕士生导师 | 人工智能与机器学习；大语言模型与生成式 AI；医疗健康与生物信息 | - Reliable and safe artificial intelligence: AIGC safety, AI attack and defense - Digital and intelligent healthcare: multimodal and generative AI, eye-brain integration, AI in the real world | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/292) | 官网未提供 |
+| 28 | 朱聰聰（Congcong Zhu） | Assistant Professor Congcong Zhu | 硕士生导师 | 人工智能与机器学习；机器人与智能交通 | Multi-agent learning, Reinforcement learning, Intelligent transportation | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/293) | 官网未提供 |
+| 29 | 戚敏鋒（Minfeng Qi） | Assistant Professor Minfeng Qi | 硕士生导师 | 数据科学与数据挖掘；隐私计算与联邦学习；密码学、区块链与可信计算 | Blockchain Privacy Smart Contract Security Data Mining and Visualization | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/295) | 官网未提供 |
+| 30 | 周帥（Shuai Zhou） | Assistant Professor Shuai Zhou | 硕士生导师 | 隐私计算与联邦学习 | AI privacy protection, Digital copyright, Model security | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/296) | 官网未提供 |
+| 31 | 王銘浩（Minghao Wang） | Assistant Professor Minghao Wang | 硕士生导师 | 大语言模型与生成式 AI；自然语言处理；隐私计算与联邦学习；密码学、区块链与可信计算 | Blockchain, Large Language Model, Federated Learning, Machine Unlearning | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/297) | 官网未提供 |
+| 32 | 李興風（Xingfeng Li） | Assistant Professor Xingfeng Li | 硕士生导师 | 医疗健康与生物信息；人机交互与教育技术 | Intelligent voice interaction Affective computing Psychoacoustics Digital health | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/298) | 官网未提供 |
+| 33 | 孫慧（Hui Sun） | Assistant Professor Hui Sun | 硕士生导师 | 人工智能与机器学习；隐私计算与联邦学习；网络空间安全与 AI 安全 | Artificial Intelligence Security Generate model Data privacy | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/300) | 官网未提供 |
+| 34 | 孫晶（Jing Sun） | Assistant Professor Jing Sun | 硕士生导师 | 人工智能与机器学习；机器人与智能交通；优化、运筹与计算数学 | Deep reinforcement learning, Multi-agent reinforcement learning, LLM as agent, Combinational optimization (Vehicle routing problems), Intelligent transportation. | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/299) | 官网未提供 |
+| 35 | 余蔚（Wei Yu） | Assistant Professor Wei Yu | 硕士生导师 | 智慧城市与空间计算 | Cooperative Formation Control and UAV Applications Swarm Intelligence: Decision, Planning and Control Low-altitude Situational Awareness Geospatial Information Intelligence | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/303) | [访问](https://godvey.github.io/) |
+| 36 | 眭相傑（Xiangjie Sui） | Assistant Professor Xiangjie Sui | 硕士生导师 | 大语言模型与生成式 AI；自然语言处理；计算机视觉与多媒体；优化、运筹与计算数学 | Image Quality Assessment : Exploring automated methods for objectively assessing the visual quality of real/generated images. Visual Saliency Detection : Simulating human attention mechanisms to predict the most attractive regions in image… | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/304) | [访问](https://xiangjiesui.github.io/) |
+| 37 | 秦鵬（Peng Qin） | Assistant Professor Peng Qin | 硕士生导师 | 信息系统与数字化应用 | E -commerce technology Semantic integration Information system | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/301) | 官网未提供 |
+| 38 | 鐘宇宸（Yuchen Zhong） | Assistant Professor Yuchen Zhong | 硕士生导师 | 优化、运筹与计算数学 | Functional analysis Differential equation | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/302) | 官网未提供 |
+| 39 | 諶華傑（Huajie Chen） | Assistant Professor (Research) Huajie Chen | 硕士生导师 | 人工智能与机器学习；隐私计算与联邦学习；网络空间安全与 AI 安全；医疗健康与生物信息 | Cybersecurity and Privacy in Deep Learning Trustworthy Artificial Intelligence Trustworthy Artificial Intelligence Bioinformatics | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/305) | 官网未提供 |
+| 40 | 蔡劍平（Jianping Cai） | Assistant Professor Jianping Cai | 硕士生导师 | 隐私计算与联邦学习；优化、运筹与计算数学 | Differential privacy, Optimization principle | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/307) | [访问](https://www.maththinker.cn/caijp/) |
+| 41 | 陳昊（Hao Chen） | Assistant Professor (Research) Hao Chen | 硕士生导师 | 大语言模型与生成式 AI；自然语言处理 | Embodied AI, Large Language Models, Graph & Recommendation | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/413) | 官网未提供 |
+| 42 | 朱泓光（Hongguang Zhu） | Assistant Professor Hongguang Zhu | 硕士生导师 | 大语言模型与生成式 AI | Multimodal alignment, multimodal generation, continuous learning, concept erasing | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/428) | 官网未提供 |
+| 43 | 徐衡（Heng Xu） | Assistant Professor Heng Xu | 硕士生导师 | 隐私计算与联邦学习；网络空间安全与 AI 安全 | AI Security, Machine Unlearning | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/451) | 官网未提供 |
+| 44 | 吳世卿（Shiqing Wu） | Assistant Professor Shiqing Wu | 硕士生导师 | 人工智能与机器学习；数据库、知识图谱与信息检索 | Artificial Intelligence, Social Influence Analysis, Multi-agent Systems, Recommender Systems, Reinforcement Learning, and Graph Neural Networks. | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/409) | 官网未提供 |
+| 45 | 劉銀龍（Yinlong Liu） | Assistant Professor Yinlong Liu | 硕士生导师 | 人工智能与机器学习；机器人与智能交通；优化、运筹与计算数学 | Global optimization algorithm Robotics and artificial intelligence Geometric vision | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/411) | 官网未提供 |
+| 46 | 陳昶璐（Changlu Chen） | Assistant Professor Changlu Chen | 硕士生导师 | 人工智能与机器学习；数据科学与数据挖掘；信号处理与时序分析；智慧城市与空间计算 | Spatial-Temporal Forecasting; Traffic Forecasting; Time Series Analysis; Data Mining; Deep Learning, etc. | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/412) | 官网未提供 |
+| 47 | 賴姝穎（Shuying Lai） | Assistant Professor Shuying Lai | 硕士生导师 | 金融与商业数据 | Data-driven energy market analysis, demand response, and low/zero-carbon energy management, and risk hedging strategies, behavioral finance | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/456) | 官网未提供 |
+| 48 | 左旭含（Xuhan Zuo） | Assistant Professor Xuhan Zuo | 硕士生导师 | 大语言模型与生成式 AI；自然语言处理；隐私计算与联邦学习；机器人与智能交通；金融与商业数据 | Large Language Model, Machine Unlearning, Robotics, FinTech | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/458) | 官网未提供 |
+| 49 | 劉恆竹​（Hengzhu Liu） | Assistant Professor Hengzhu Liu | 硕士生导师 | 人工智能与机器学习；隐私计算与联邦学习；网络空间安全与 AI 安全 | Machine Unlearning Artificial Intelligence Security Privacy Protection | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/453) | 官网未提供 |
+| 50 | 周大為​（Dawei Zhou） | Assistant Professor Dawei Zhou | 硕士生导师 | 人工智能与机器学习；隐私计算与联邦学习；医疗健康与生物信息 | Trustworthy Machine Learning: Adversarial Robustness, Privacy Protection, Forgery detection AI for Healthcare：Medical imaging enhancement、Reliable automatic diagnosis Visual Content Generation：Heterogeneous Image Synthesis, Multi-modal gen… | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/455) | 官网未提供 |
+| 51 | 萬偉（Wei Wan） | Assistant Professor Wei Wan | 硕士生导师 | 隐私计算与联邦学习；网络空间安全与 AI 安全 | AI Security Embodied AI Federated Learning | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/454) | 官网未提供 |
+| 52 | 張帥（Shuai Zhang） | Assistant Professor Shuai Zhang | 硕士生导师 | 人工智能与机器学习；隐私计算与联邦学习；机器人与智能交通；优化、运筹与计算数学 | - Artificial Intelligence, Embodied artificial intelligence, Swarm intelligence, Multi-agent reinforcement Learning - Swarm robots/drones, Robotics and autonomous systems, Multi-robot/agent systems - Game theory, Evolutionary dynamics, Smo… | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/460) | 官网未提供 |
+| 53 | 牛朝西（Chaoxi Niu） | Assistant Professor Chaoxi Niu | 硕士生导师 | 人工智能与机器学习 | Graph Neural Networks, Anomaly detection and Continual Learning | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/457) | 官网未提供 |
+| 54 | 管發乾​（Faqian Guan） | Assistant Professor Faqian Guan | 硕士生导师 | 人工智能与机器学习；大语言模型与生成式 AI；自然语言处理；隐私计算与联邦学习 | Artificial Intelligence Privacy and Security Graph Neural Networks Large Language Models | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/452) | 官网未提供 |
+| 55 | 陳輝強（Huiqiang Chen） | Assistant Professor Huiqiang Chen | 硕士生导师 | 人工智能与机器学习；网络空间安全与 AI 安全 | AI security, Trustworthy Artificial Intelligence | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/459) | 官网未提供 |
+| 56 | 岑明燦​（Mingcan Cen） | Assistant Professor Mingcan Cen | 硕士生导师 | 人工智能与机器学习；网络空间安全与 AI 安全 | Information security, machine learning application | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/462) | 官网未提供 |
+| 57 | 张博南（Bonan Zhang） | Assistant Professor Bonan Zhang | 硕士生导师 | 网络空间安全与 AI 安全 | AI, Cyber security, Biometric | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/497) | 官网未提供 |
+| 58 | 江小鳳（Sio Fong Kong） | Lecturer Sio Fong Kong | 官网未明确标注导师资格 | 统计学习与概率建模 | Bayesian Statistics | 官网明确 | [官方页](https://fds.cityu.edu.mo/en/members/204) | 官网未提供 |
+
+## 人工复核记录
+
+- 177 Prof Wanlei Zhou Vice President: direction inferred from profile/outputs
+
+## 官方入口
+
+- [FDS Academic Staff](https://fds.cityu.edu.mo/en/members)
+- [FDS 师资队伍](https://fds.cityu.edu.mo/members)
+- 教师名单、职称、导师资格、研究方向和主页可能变化，使用时应优先核验上述入口。

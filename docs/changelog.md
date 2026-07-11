@@ -2,6 +2,16 @@
 
 本文件记录 `cityu-macau-campus-assistant` Skill 的主要更新。只记录影响 Skill 使用、知识库范围、安装方式、路由规则或文档入口的变化；普通文字润色不必逐条记录。
 
+## 2026-07-11
+
+### FDS 导师推荐功能
+
+- 新增 `references/fds_faculty.md`，基于数据科学学院官网 6 页 Academic Staff 列表及教师个人页，收录 58 名本校学术人员。
+- 为教师记录中英文姓名、职称与职务、官网明确导师资格、多个标准化研究方向、方向依据、官方主页及官网公开的个人主页。
+- 明确排除 Academic Advisors、External Instructors 和行政人员，不在知识库复制邮箱、电话或办公室信息。
+- 新增零第三方依赖的 `scripts/update_fds_faculty.py`，支持重新抓取和 `--check` 漂移检查，并将无法可靠提取的项目列入人工复核记录。
+- 更新 `SKILL.md` 的导师路由、3 至 5 人展示规则、完整名单规则和招生边界；同步更新 README、详细说明与 Agent 展示文案。
+
 ## 2026-07-02
 
 ### 新增知识库

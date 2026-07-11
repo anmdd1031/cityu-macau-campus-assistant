@@ -22,6 +22,7 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 
 - 新生申请、注册、缴费、体检、D 签注、逗留许可、宿舍、图书馆、校园服务和恶劣天气安排。
 - 数据科学学院、商学院、金融学院、大健康学院、教育学院、法学院、国际旅游与管理学院、荣誉班的课程、学分、导师、论文、发表、毕业要求和常见办事入口。
+- 按公开研究方向筛选数据科学学院教师，区分硕士/博士导师资格，并提供官方主页索引。
 - 氹仔校区校内餐厅、菜单、价格、供应时段和用餐建议。
 - 哪些问题需要看最新官方通知，哪些只能由学校或学院审批。
 
@@ -38,6 +39,7 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 |---|---|---|---|
 | 新生与校园通用知识库 | [freshman.md](../skills/cityu-macau-campus-assistant/references/freshman.md) | 已完成 | 招生、注册、学费、奖学金、体检、D 签注、逗留许可、宿舍、图书馆、校园服务、恶劣天气 |
 | 数据科学学院 FDS | [fds.md](../skills/cityu-macau-campus-assistant/references/fds.md) | 已完成 | BITS、BCS、MDS、MCS、PhD DS、PhD CS、学分、资格考试、论文成果、导师、毕业 |
+| FDS 师资与导师方向 | [fds_faculty.md](../skills/cityu-macau-campus-assistant/references/fds_faculty.md) | 已完成 | 58 名 Academic Staff、导师资格、多研究方向标签、官方教师页和个人主页 |
 | 商学院 FOB | [fob.md](../skills/cityu-macau-campus-assistant/references/fob.md) | 已完成 | BBA、MBA、DBA、IBC、4+1 项目、导师、论文与毕业要求 |
 | 金融学院 FOF | [fof.md](../skills/cityu-macau-campus-assistant/references/fof.md) | 已完成 | BAE、金融精英班、金融学硕士、金融科技硕士、金融学博士、导师、发表与毕业要求 |
 | 大健康学院 FH | [fh.md](../skills/cityu-macau-campus-assistant/references/fh.md) | 已完成 | BSW、MSW、MAP、DAP、智慧养老与健康管理、导师、实习与毕业要求 |
@@ -71,6 +73,7 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 |---|---|
 | 招生、费用、注册、D 签注、逗留许可、宿舍、校园服务、台风、暴雨 | `freshman.md` |
 | 氹仔校区食堂、餐厅、菜单、价格、咖啡、打包、午餐 | `澳门城市大学氹仔校区_校内餐饮指南.md` |
+| FDS 导师推荐、教师研究方向、教师主页、硕导、博导、谁研究某个主题 | `fds_faculty.md` |
 | FDS、BITS、BCS、MDS、MCS、PhD DS、PhD CS | `fds.md` |
 | 商学院、FOB、BBA、MBA、DBA、IBC、4+1 | `fob.md` |
 | 金融学院、FOF、BAE、金融精英班、MSF、金融科技、PhD Finance | `fof.md` |
@@ -115,6 +118,22 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 ```text
 国际旅游与管理学院 MHTM 有哪些方向？毕业需要项目报告还是论文？
 ```
+
+```text
+我是数据科学硕士，想研究联邦学习。请列出相关度较高的导师；如果还有其他匹配教师，请告诉我未展开人数。
+```
+
+```text
+显示数据科学学院所有研究计算机视觉的教师，并给出官方主页。
+```
+
+## FDS 导师推荐说明
+
+- 匹配不超过 5 人时展示全部；超过 5 人时默认展示相关度最高的 5 人，并写明总人数和未展开人数。
+- 用户要求“全部老师”或“显示全部相关教师”时，完整列出所有符合条件者。
+- 相关度来自官网明确研究方向、多关键词匹配及官网简介或成果，不使用虚假的研究占比百分数。
+- 博士申请只把官网明确标注博士生导师者称为博士导师候选；未标注资格者只能称为方向相关教师。
+- 推荐结果不代表招生名额、接收意愿、录取概率或教师水平排名，最终应打开官方主页并联系学院或教师确认。
 
 ## 回答边界
 
@@ -228,17 +247,20 @@ cityu-macau-campus-assistant/
 ├── SKILL.md
 ├── agents/
 │   └── openai.yaml
-└── references/
-    ├── freshman.md
-    ├── fds.md
-    ├── fob.md
-    ├── fof.md
-    ├── fh.md
-    ├── fe.md
-    ├── fl.md
-    ├── fitm.md
-    ├── honours_class.md
-    └── 澳门城市大学氹仔校区_校内餐饮指南.md
+├── references/
+│   ├── freshman.md
+│   ├── fds.md
+│   ├── fds_faculty.md
+│   ├── fob.md
+│   ├── fof.md
+│   ├── fh.md
+│   ├── fe.md
+│   ├── fl.md
+│   ├── fitm.md
+│   ├── honours_class.md
+│   └── 澳门城市大学氹仔校区_校内餐饮指南.md
+└── scripts/
+    └── update_fds_faculty.py
 ```
 
 如果只复制 `SKILL.md`，Agent 无法读取学院知识库和餐饮指南。
@@ -273,6 +295,24 @@ cityu-macau-campus-assistant/
 3. 在 `README.md` 和本文件补链接。
 4. 如果安装器展示文案受影响，更新 `agents/openai.yaml`。
 5. 运行链接检查和 Skill 识别检查。
+
+### 更新 FDS 师资索引
+
+普通使用者不需要安装 Python。只有维护者重新抓取 FDS 官网师资时，才需要 Python 3；脚本不依赖第三方包。
+
+重新生成索引：
+
+```bash
+python skills/cityu-macau-campus-assistant/scripts/update_fds_faculty.py
+```
+
+只检查官网内容是否与现有索引一致：
+
+```bash
+python skills/cityu-macau-campus-assistant/scripts/update_fds_faculty.py --check
+```
+
+脚本会核对中英文 6 页 Academic Staff 列表、58 个教师页面、导师资格、研究方向和主页。自动提取失败或只能推断的信息会进入 `fds_faculty.md` 的“人工复核记录”，不能直接当作教师本人声明。
 
 ## 验证
 
