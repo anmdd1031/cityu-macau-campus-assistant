@@ -22,7 +22,7 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 
 - 新生申请、注册、缴费、体检、D 签注、逗留许可、宿舍、图书馆、校园服务和恶劣天气安排。
 - 数据科学学院、商学院、金融学院、大健康学院、教育学院、法学院、国际旅游与管理学院、荣誉班的课程、学分、导师、论文、发表、毕业要求和常见办事入口。
-- 按公开研究方向筛选数据科学学院教师，区分硕士/博士导师资格，并提供官方主页索引。
+- 按官网研究方向和近期论文筛选数据科学学院教师，区分硕士/博士导师资格，并提供可核验的校内工作邮箱与主页索引。
 - 氹仔校区校内餐厅、菜单、价格、供应时段和用餐建议。
 - 哪些问题需要看最新官方通知，哪些只能由学校或学院审批。
 
@@ -39,7 +39,8 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 |---|---|---|---|
 | 新生与校园通用知识库 | [freshman.md](../skills/cityu-macau-campus-assistant/references/freshman.md) | 已完成 | 招生、注册、学费、奖学金、体检、D 签注、逗留许可、宿舍、图书馆、校园服务、恶劣天气 |
 | 数据科学学院 FDS | [fds.md](../skills/cityu-macau-campus-assistant/references/fds.md) | 已完成 | BITS、BCS、MDS、MCS、PhD DS、PhD CS、学分、资格考试、论文成果、导师、毕业 |
-| FDS 师资与导师方向 | [fds_faculty.md](../skills/cityu-macau-campus-assistant/references/fds_faculty.md) | 已完成 | 58 名 Academic Staff、导师资格、多研究方向标签、官方教师页和个人主页 |
+| FDS 师资与导师方向 | [fds_faculty.md](../skills/cityu-macau-campus-assistant/references/fds_faculty.md) | 已完成 | 58 名 Academic Staff、导师资格、57 个可核验校内工作邮箱、多研究方向、官方教师页和个人主页 |
+| FDS 近期论文证据 | [fds_faculty_publications.md](../skills/cityu-macau-campus-assistant/references/fds_faculty_publications.md) | 已完成 | 47 名教师、185 篇 2023 年以来高置信论文、DOI、标题/摘要主题标签 |
 | 商学院 FOB | [fob.md](../skills/cityu-macau-campus-assistant/references/fob.md) | 已完成 | BBA、MBA、DBA、IBC、4+1 项目、导师、论文与毕业要求 |
 | 金融学院 FOF | [fof.md](../skills/cityu-macau-campus-assistant/references/fof.md) | 已完成 | BAE、金融精英班、金融学硕士、金融科技硕士、金融学博士、导师、发表与毕业要求 |
 | 大健康学院 FH | [fh.md](../skills/cityu-macau-campus-assistant/references/fh.md) | 已完成 | BSW、MSW、MAP、DAP、智慧养老与健康管理、导师、实习与毕业要求 |
@@ -73,7 +74,8 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 |---|---|
 | 招生、费用、注册、D 签注、逗留许可、宿舍、校园服务、台风、暴雨 | `freshman.md` |
 | 氹仔校区食堂、餐厅、菜单、价格、咖啡、打包、午餐 | `澳门城市大学氹仔校区_校内餐饮指南.md` |
-| FDS 导师推荐、教师研究方向、教师主页、硕导、博导、谁研究某个主题 | `fds_faculty.md` |
+| FDS 教师名单、导师资格、官方邮箱、联系方式或教师主页 | `fds_faculty.md` |
+| FDS 导师推荐、教师研究方向、近期论文、代表论文或谁研究某个主题 | `fds_faculty.md` + `fds_faculty_publications.md` |
 | FDS、BITS、BCS、MDS、MCS、PhD DS、PhD CS | `fds.md` |
 | 商学院、FOB、BBA、MBA、DBA、IBC、4+1 | `fob.md` |
 | 金融学院、FOF、BAE、金融精英班、MSF、金融科技、PhD Finance | `fof.md` |
@@ -127,12 +129,18 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 显示数据科学学院所有研究计算机视觉的教师，并给出官方主页。
 ```
 
+```text
+我想研究 RAG 和机器遗忘，请结合教师官网方向和近年论文推荐导师，并给出官方邮箱与论文 DOI。
+```
+
 ## FDS 导师推荐说明
 
 - 匹配不超过 5 人时展示全部；超过 5 人时默认展示相关度最高的 5 人，并写明总人数和未展开人数。
 - 用户要求“全部老师”或“显示全部相关教师”时，完整列出所有符合条件者。
-- 相关度来自官网明确研究方向、多关键词匹配及官网简介或成果，不使用虚假的研究占比百分数。
+- 相关度首先看官网明确研究方向，再用近期论文中重复出现的主题补充；不把论文数量、单篇标题或引用量写成研究占比。
 - 博士申请只把官网明确标注博士生导师者称为博士导师候选；未标注资格者只能称为方向相关教师。
+- 回答表格应给出公开可核验的校内工作邮箱和官方主页；论文证据应给 DOI，并注明依据标题还是标题和摘要。
+- Crossref 未匹配到论文只代表外部数据未覆盖，不能据此说教师没有近期论文。
 - 推荐结果不代表招生名额、接收意愿、录取概率或教师水平排名，最终应打开官方主页并联系学院或教师确认。
 
 ## 回答边界
@@ -251,6 +259,7 @@ cityu-macau-campus-assistant/
 │   ├── freshman.md
 │   ├── fds.md
 │   ├── fds_faculty.md
+│   ├── fds_faculty_publications.md
 │   ├── fob.md
 │   ├── fof.md
 │   ├── fh.md
@@ -260,7 +269,8 @@ cityu-macau-campus-assistant/
 │   ├── honours_class.md
 │   └── 澳门城市大学氹仔校区_校内餐饮指南.md
 └── scripts/
-    └── update_fds_faculty.py
+    ├── update_fds_faculty.py
+    └── update_fds_publications.py
 ```
 
 如果只复制 `SKILL.md`，Agent 无法读取学院知识库和餐饮指南。
@@ -312,7 +322,27 @@ python skills/cityu-macau-campus-assistant/scripts/update_fds_faculty.py
 python skills/cityu-macau-campus-assistant/scripts/update_fds_faculty.py --check
 ```
 
-脚本会核对中英文 6 页 Academic Staff 列表、58 个教师页面、导师资格、研究方向和主页。自动提取失败或只能推断的信息会进入 `fds_faculty.md` 的“人工复核记录”，不能直接当作教师本人声明。
+脚本会核对中英文 6 页 Academic Staff 列表、58 个教师页面、导师资格、官网工作邮箱、研究方向和主页。自动提取失败或只能推断的信息会进入 `fds_faculty.md` 的“人工复核记录”，不能直接当作教师本人声明。
+
+更新近期论文证据：
+
+```bash
+python skills/cityu-macau-campus-assistant/scripts/update_fds_publications.py
+```
+
+使用本地缓存检查生成结果是否一致：
+
+```bash
+python skills/cityu-macau-campus-assistant/scripts/update_fds_publications.py --check
+```
+
+忽略缓存并重新联网检查外部数据变化：
+
+```bash
+python skills/cityu-macau-campus-assistant/scripts/update_fds_publications.py --check --refresh
+```
+
+论文脚本查询 Crossref，因此新核验日期的首次生成和 `--refresh` 需要联网，但不依赖第三方 Python 包。它只接受姓名准确匹配且作者隶属明确包含 City University of Macau 的记录，并使用按核验日期分组、被 Git 忽略的 `.cache/` 支持同一天中断后继续运行；次日运行会自动重新抓取。普通 Skill 使用者不需要运行任何更新脚本。
 
 ## 验证
 

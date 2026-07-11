@@ -4,7 +4,8 @@
 This script intentionally uses only the Python standard library. It crawls the
 Chinese and English Academic Staff listings, aligns profiles by official list order, and
 extracts public role, supervisor qualification, research directions, and
-homepage links. It never stores email addresses, phone numbers, or offices.
+homepage links. It stores only publicly verifiable CityU work emails and never
+stores phone numbers or office locations.
 """
 
 from __future__ import annotations
@@ -102,6 +103,11 @@ TAG_OVERRIDES: dict[str, tuple[str, ...]] = {
     "177": ("网络空间安全与 AI 安全", "隐私计算与联邦学习", "云计算、分布式系统与边缘计算"),
 }
 
+# Do not silently repair malformed addresses shown by a source.
+EMAIL_WARNINGS: dict[str, str] = {
+    "428": "官网当前显示 hgzhu@cityu.edu，域名格式疑似不完整，请通过官方主页确认",
+}
+
 
 @dataclass
 class Link:
@@ -177,6 +183,8 @@ class Faculty:
     english_name: str
     role: str
     qualification: str
+    email: str | None
+    email_note: str | None
     tags: list[str]
     research_summary: str
     evidence: str
@@ -308,6 +316,17 @@ def find_personal_homepage(source: str) -> str | None:
     return absolute if parsed.scheme in {"http", "https"} else None
 
 
+def find_official_email(source: str) -> str | None:
+    # Several profiles split the local part, @ sign, and domain across spans.
+    # Strip markup before matching so those official addresses remain readable.
+    visible_text = html.unescape(re.sub(r"(?is)<[^>]+>", "", source))
+    emails = re.findall(
+        r"(?i)\b[A-Z0-9._%+-]+@(?:[A-Z0-9-]+\.)*(?:cityu\.edu\.mo|cityu\.mo)\b",
+        visible_text,
+    )
+    return emails[0].lower() if emails else None
+
+
 def short_summary(text: str, limit: int = 240) -> str:
     text = clean_text(text).replace("|", "\\|")
     if len(text) <= limit:
@@ -360,6 +379,11 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
         if len(research_text) < 8:
             review.append(f"{member_id} {listing_title}: research summary is too short")
 
+        email = find_official_email(source)
+        email_note = EMAIL_WARNINGS.get(member_id)
+        if email_note:
+            review.append(f"{member_id} {listing_title}: {email_note}")
+
         faculty.append(
             Faculty(
                 member_id=member_id,
@@ -367,6 +391,8 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
                 english_name=clean_english_name(listing_title),
                 role=listing_title,
                 qualification=supervisor_qualification(" ".join(document.lines)),
+                email=email,
+                email_note=email_note,
                 tags=tags,
                 research_summary=short_summary(research_text),
                 evidence="官网明确" if explicit else "根据官网简介、授课或成果推断",
@@ -384,33 +410,40 @@ def markdown(faculty: list[Faculty], review: list[str], verified: str) -> str:
         "> 数据来源：澳门城市大学数据科学学院官网 Academic Staff 及教师个人页。",
         f"> 核验日期：{verified}。",
         f"> 当前收录：{len(faculty)} 名本校 Academic Staff；不含 Academic Advisors、External Instructors 和行政人员。",
+        "> 近期论文证据：[fds_faculty_publications.md](fds_faculty_publications.md)。",
         "",
         "## 使用边界",
         "",
         "- 本索引用于按公开研究方向筛选候选教师，不构成录取、招生名额或接收意愿判断。",
         "- 只有官网明确标注博士生导师或硕士生导师时，才能使用相应称谓；否则只能称为方向相关教师。",
         "- 研究方向可以有多个。`根据官网简介、授课或成果推断` 不等同于教师本人声明。",
-        "- 用户询问联系方式时，引导其打开官方主页查看，不在知识库中复制邮箱、电话或办公室信息。",
+        "- 联系方式只使用官网公开的 `cityu.edu.mo` / `cityu.mo` 工作邮箱，并同时提供官方主页；不收录私人邮箱、电话或办公室信息。",
         "",
         "## 推荐与展示规则",
         "",
         "1. 先按本科科研、硕士或博士阶段筛选导师资格，再匹配研究方向。",
         "2. 按官网明确方向、多关键词匹配、简介或成果补充、间接关联的顺序判断相关度，不输出虚假百分比。",
-        "3. 匹配不超过 5 人时列出全部；超过 5 人时默认列出相关度最高的 5 人，信息较少时可列 3 人。",
-        "4. 省略候选时写明总人数、展示人数、未展开人数，并提示用户可以要求“显示全部相关教师”。",
-        "5. 同等相关度按下表官网顺序展示，不按职称、论文数量或知名度排序。",
-        "6. 用户明确要求全部名单时，列出所有符合条件者。",
+        "3. 需要导师推荐或最新研究主题时，再读取论文证据库；官网明确方向优先，论文主题只作补充，不按论文数量排名。",
+        "4. 匹配不超过 5 人时列出全部；超过 5 人时默认列出相关度最高的 5 人，信息较少时可列 3 人。",
+        "5. 省略候选时写明总人数、展示人数、未展开人数，并提示用户可以要求“显示全部相关教师”。",
+        "6. 同等相关度按下表官网顺序展示，不按职称、论文数量或知名度排序。",
+        "7. 用户明确要求全部名单时，列出所有符合条件者。",
         "",
         "## 师资索引",
         "",
-        "| 序号 | 教师 | 职称/职务 | 导师资格 | 标准化研究方向 | 官网方向摘要 | 依据 | 官方主页 | 个人主页 |",
-        "|---:|---|---|---|---|---|---|---|---|",
+        "| 序号 | 教师 | 职称/职务 | 导师资格 | 校内工作邮箱 | 标准化研究方向 | 官网方向摘要 | 依据 | 官方主页 | 个人主页 |",
+        "|---:|---|---|---|---|---|---|---|---|---|",
     ]
     for index, item in enumerate(faculty, 1):
         personal = f"[访问]({item.personal_url})" if item.personal_url else "官网未提供"
+        email_link = (
+            f"[{item.email}](mailto:{item.email})"
+            if item.email
+            else item.email_note or "官网未提供可验证邮箱"
+        )
         lines.append(
             f"| {index} | {item.chinese_name}（{item.english_name}） | {item.role} | "
-            f"{item.qualification} | {'；'.join(item.tags)} | {item.research_summary} | "
+            f"{item.qualification} | {email_link} | {'；'.join(item.tags)} | {item.research_summary} | "
             f"{item.evidence} | [官方页]({item.official_url}) | {personal} |"
         )
 
