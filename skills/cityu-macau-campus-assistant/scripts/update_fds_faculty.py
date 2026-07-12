@@ -412,6 +412,7 @@ def markdown(faculty: list[Faculty], review: list[str], verified: str) -> str:
         "> 本表来源等级：1（学院官方教师主页）；个人主页仅作为官方页公开的补充入口。",
         f"> 当前收录：{len(faculty)} 名本校 Academic Staff；不含 Academic Advisors、External Instructors 和行政人员。",
         "> 近期论文证据：[fds_faculty_publications.md](fds_faculty_publications.md)。",
+        "> 导师匹配规则：[fds_mentor_recommendation.md](fds_mentor_recommendation.md)。",
         "",
         "## 使用边界",
         "",

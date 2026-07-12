@@ -14,6 +14,7 @@
 - 新增 `scripts/update_fds_publications.py`，支持接口重试、逐教师本地缓存、原子写入、`--check` 一致性检查和 `--refresh` 联网更新。
 - 更新导师推荐路由：官网方向和导师资格为主，近期论文只作补充证据，不按论文数量、引用量或职称排名。
 - 增加导师资料来源优先级、禁止依据和时效字段规则；师资与论文表同步展示来源等级和核验日期。
+- 新增 `references/fds_mentor_recommendation.md`，将论文主题、作者位置、贡献证据和指导能力分开；当前 185 条 Crossref 记录统一标为 E 级，未公开贡献声明时不推断具体技术模块。
 
 ## 2026-07-11
 
@@ -176,6 +177,7 @@
 | 数据科学学院 FDS | `references/fds.md` | 已覆盖 |
 | FDS 师资、导师方向与官方邮箱 | `references/fds_faculty.md` | 已覆盖 |
 | FDS 教师近期论文证据 | `references/fds_faculty_publications.md` | 已覆盖 47/58 名教师 |
+| FDS 导师匹配与贡献证据规则 | `references/fds_mentor_recommendation.md` | 已覆盖 |
 | 商学院 FOB | `references/fob.md` | 已覆盖 |
 | 金融学院 FOF | `references/fof.md` | 已覆盖 |
 | 大健康学院 FH | `references/fh.md` | 已覆盖 |

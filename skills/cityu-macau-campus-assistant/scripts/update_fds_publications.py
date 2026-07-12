@@ -4,7 +4,9 @@
 Only records whose author name exactly matches and whose author affiliation
 contains City University of Macau are accepted. This deliberately conservative
 rule avoids mixing publications from homonymous researchers. Paper topics are
-derived from titles and Crossref abstracts when available.
+derived from titles and Crossref abstracts when available. Crossref does not
+provide reliable author-contribution statements, so author position is stored
+as weak evidence and never converted into a specific technical role.
 """
 
 from __future__ import annotations
@@ -140,6 +142,9 @@ class Paper:
     url: str
     tags: list[str]
     evidence: str
+    author_position: str
+    contribution_evidence: str
+    contribution_note: str
 
 
 def normalize_name(value: str) -> str:
@@ -222,9 +227,10 @@ def publication_date(item: dict) -> tuple[int, int, int]:
     return 0, 0, 0
 
 
-def exact_cityu_author(item: dict, teacher: Teacher) -> bool:
+def matched_cityu_author(item: dict, teacher: Teacher) -> tuple[int, int] | None:
     expected = normalize_name(teacher.english_name)
-    for author in item.get("author", []):
+    authors = item.get("author", [])
+    for position, author in enumerate(authors, 1):
         full_name = f"{author.get('given', '')} {author.get('family', '')}".strip()
         affiliations = " ".join(
             affiliation.get("name", "") for affiliation in author.get("affiliation", [])
@@ -232,8 +238,8 @@ def exact_cityu_author(item: dict, teacher: Teacher) -> bool:
         if normalize_name(full_name) == expected and any(
             marker in affiliations for marker in CITYU_AFFILIATIONS
         ):
-            return True
-    return False
+            return position, len(authors)
+    return None
 
 
 def topic_tags(text: str) -> list[str]:
@@ -276,21 +282,22 @@ def query_teacher(
             json.dump(payload, handle, ensure_ascii=False)
             temporary = Path(handle.name)
         temporary.replace(cache_path)
-    matched: list[dict] = []
+    matched: list[tuple[dict, int, int]] = []
     seen_dois: set[str] = set()
     for item in payload.get("message", {}).get("items", []):
         doi = (item.get("DOI") or "").lower().strip()
-        if not doi or doi in seen_dois or not exact_cityu_author(item, teacher):
+        author_match = matched_cityu_author(item, teacher)
+        if not doi or doi in seen_dois or author_match is None:
             continue
         year, _, _ = publication_date(item)
         if year < since_year:
             continue
         seen_dois.add(doi)
-        matched.append(item)
+        matched.append((item, author_match[0], author_match[1]))
 
-    matched.sort(key=publication_date, reverse=True)
+    matched.sort(key=lambda entry: publication_date(entry[0]), reverse=True)
     papers: list[Paper] = []
-    for item in matched[:max_papers]:
+    for item, author_index, author_total in matched[:max_papers]:
         title = strip_markup((item.get("title") or [""])[0])
         abstract = strip_markup(item.get("abstract") or "")
         year, month, day = publication_date(item)
@@ -306,6 +313,9 @@ def query_teacher(
                 url=f"https://doi.org/{urllib.parse.quote(doi, safe='/:()[];._-')}",
                 tags=topic_tags(f"{title} {abstract}"),
                 evidence="标题和摘要" if abstract else "标题",
+                author_position=f"第 {author_index}/{author_total} 作者",
+                contribution_evidence="E（未公开作者贡献声明）",
+                contribution_note="仅能确认参与该论文主题，不能确认具体负责模块",
             )
         )
     return papers, len(matched)
@@ -337,6 +347,8 @@ def render(
         "> 论文元数据来源：Crossref REST API；仅保留作者姓名准确匹配且作者隶属明确包含 City University of Macau 的记录。",
         f"> 核验日期：{verified}；检索范围：{since_year} 年至今；每位教师最多展示 {max_papers} 篇。",
         "> 本表论文来源等级：4（DOI/出版社元数据索引）；论文主题只作为官网研究方向的补充证据。",
+        "> 贡献证据：当前 Crossref 记录未提供可靠的 Author Contributions/CRediT 声明；作者位置仅作弱证据，不能反推算法、代码、实验或数据分析角色。",
+        "> 导师匹配规则：[fds_mentor_recommendation.md](fds_mentor_recommendation.md)。",
         f"> 当前覆盖：{matched_teachers}/58 名教师，展示 {shown_papers} 篇高置信论文。",
         "",
         "## 使用规则",
@@ -346,6 +358,7 @@ def render(
         "- Crossref 可能缺少尚未登记 DOI、作者隶属未填写或中文出版物。未匹配不等于教师没有近期成果。",
         "- 同名作者、作者隶属不清或无法证明属于澳城大该教师的论文一律不收录。",
         "- 回答导师推荐时，先看 `fds_faculty.md` 的官网身份、导师资格和邮箱，再用本文件的论文主题作为补充证据。",
+        "- 当前论文记录均标为 E 级贡献证据：只能确认参与论文主题；没有明确贡献声明时，不得写成导师亲自负责某个技术模块。",
         "",
     ]
 
@@ -384,13 +397,14 @@ def render(
                 f"- Crossref 高置信匹配：共 {total} 篇符合条件，当前展示最近 {len(papers)} 篇。",
                 f"- 论文佐证方向：{'；'.join(themes) if themes else '论文主题待人工归类'}。",
                 "",
-                "| 年份 | 代表论文 | 论文内容主题 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |",
-                "|---:|---|---|---|---|---|---|---|",
+                "| 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |",
+                "|---:|---|---|---|---|---|---|---|---|---|",
             ]
         )
         for paper in papers:
             lines.append(
                 f"| {paper.year} | {table_text(paper.title)} | {'；'.join(paper.tags)} | "
+                f"{paper.author_position} | {paper.contribution_evidence}：{paper.contribution_note} | "
                 f"{paper.evidence} | {table_text(paper.venue)} | 4（DOI/出版社元数据） | {verified} | [DOI]({paper.url}) |"
             )
         lines.append("")

@@ -56,7 +56,7 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 
 - 整理公开的申请、注册、宿舍、签注和校园办事流程
 - 解释 FDS、FOB、FOF、FH、FE、FL、FITM 和荣誉班公开课程、学分、论文成果和毕业要求
-- 按来源等级和核验日期查询 FDS 教师近期方向，并给出候选导师、可核验的校内工作邮箱和主页
+- 按来源等级、论文主题和贡献证据查询 FDS 教师近期方向，并给出可解释的候选导师、校内工作邮箱和主页
 - 查询氹仔校区校内餐饮、菜单、价格和供应时段
 - 提醒哪些信息需要看最新官方通知
 
@@ -76,6 +76,7 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 - [数据科学学院知识库](skills/cityu-macau-campus-assistant/references/fds.md)
 - [数据科学学院师资与导师方向索引](skills/cityu-macau-campus-assistant/references/fds_faculty.md)
 - [数据科学学院教师近期论文证据库](skills/cityu-macau-campus-assistant/references/fds_faculty_publications.md)
+- [FDS 导师匹配与贡献证据规则](skills/cityu-macau-campus-assistant/references/fds_mentor_recommendation.md)
 - [商学院知识库](skills/cityu-macau-campus-assistant/references/fob.md)
 - [金融学院知识库](skills/cityu-macau-campus-assistant/references/fof.md)
 - [大健康学院知识库](skills/cityu-macau-campus-assistant/references/fh.md)
