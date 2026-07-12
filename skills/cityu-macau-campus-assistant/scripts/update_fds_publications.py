@@ -336,6 +336,7 @@ def render(
         "> 教师身份来源：澳门城市大学数据科学学院 Academic Staff 与官方个人页。",
         "> 论文元数据来源：Crossref REST API；仅保留作者姓名准确匹配且作者隶属明确包含 City University of Macau 的记录。",
         f"> 核验日期：{verified}；检索范围：{since_year} 年至今；每位教师最多展示 {max_papers} 篇。",
+        "> 本表论文来源等级：4（DOI/出版社元数据索引）；论文主题只作为官网研究方向的补充证据。",
         f"> 当前覆盖：{matched_teachers}/58 名教师，展示 {shown_papers} 篇高置信论文。",
         "",
         "## 使用规则",
@@ -383,14 +384,14 @@ def render(
                 f"- Crossref 高置信匹配：共 {total} 篇符合条件，当前展示最近 {len(papers)} 篇。",
                 f"- 论文佐证方向：{'；'.join(themes) if themes else '论文主题待人工归类'}。",
                 "",
-                "| 年份 | 代表论文 | 论文内容主题 | 判断依据 | 刊物/会议 | 来源 |",
-                "|---:|---|---|---|---|---|",
+                "| 年份 | 代表论文 | 论文内容主题 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |",
+                "|---:|---|---|---|---|---|---|---|",
             ]
         )
         for paper in papers:
             lines.append(
                 f"| {paper.year} | {table_text(paper.title)} | {'；'.join(paper.tags)} | "
-                f"{paper.evidence} | {table_text(paper.venue)} | [DOI]({paper.url}) |"
+                f"{paper.evidence} | {table_text(paper.venue)} | 4（DOI/出版社元数据） | {verified} | [DOI]({paper.url}) |"
             )
         lines.append("")
 

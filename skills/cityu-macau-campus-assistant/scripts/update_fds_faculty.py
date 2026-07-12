@@ -409,6 +409,7 @@ def markdown(faculty: list[Faculty], review: list[str], verified: str) -> str:
         "",
         "> 数据来源：澳门城市大学数据科学学院官网 Academic Staff 及教师个人页。",
         f"> 核验日期：{verified}。",
+        "> 本表来源等级：1（学院官方教师主页）；个人主页仅作为官方页公开的补充入口。",
         f"> 当前收录：{len(faculty)} 名本校 Academic Staff；不含 Academic Advisors、External Instructors 和行政人员。",
         "> 近期论文证据：[fds_faculty_publications.md](fds_faculty_publications.md)。",
         "",
@@ -418,6 +419,7 @@ def markdown(faculty: list[Faculty], review: list[str], verified: str) -> str:
         "- 只有官网明确标注博士生导师或硕士生导师时，才能使用相应称谓；否则只能称为方向相关教师。",
         "- 研究方向可以有多个。`根据官网简介、授课或成果推断` 不等同于教师本人声明。",
         "- 联系方式只使用官网公开的 `cityu.edu.mo` / `cityu.mo` 工作邮箱，并同时提供官方主页；不收录私人邮箱、电话或办公室信息。",
+        "- 导师职务、导师资格、研究方向和邮箱均按本次核验日期记录；没有日期的招生信息不能推断当前有名额或接收意愿。",
         "",
         "## 推荐与展示规则",
         "",
@@ -431,8 +433,8 @@ def markdown(faculty: list[Faculty], review: list[str], verified: str) -> str:
         "",
         "## 师资索引",
         "",
-        "| 序号 | 教师 | 职称/职务 | 导师资格 | 校内工作邮箱 | 标准化研究方向 | 官网方向摘要 | 依据 | 官方主页 | 个人主页 |",
-        "|---:|---|---|---|---|---|---|---|---|---|",
+        "| 序号 | 教师 | 职称/职务 | 导师资格 | 校内工作邮箱 | 标准化研究方向 | 官网方向摘要 | 依据 | 来源等级 | 核验日期 | 资料时段 | 官方主页 | 个人主页 |",
+        "|---:|---|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for index, item in enumerate(faculty, 1):
         personal = f"[访问]({item.personal_url})" if item.personal_url else "官网未提供"
@@ -444,7 +446,8 @@ def markdown(faculty: list[Faculty], review: list[str], verified: str) -> str:
         lines.append(
             f"| {index} | {item.chinese_name}（{item.english_name}） | {item.role} | "
             f"{item.qualification} | {email_link} | {'；'.join(item.tags)} | {item.research_summary} | "
-            f"{item.evidence} | [官方页]({item.official_url}) | {personal} |"
+            f"{item.evidence} | 1（学院教师主页） | {verified} | 截至 {verified} | "
+            f"[官方页]({item.official_url}) | {personal} |"
         )
 
     lines.extend([
