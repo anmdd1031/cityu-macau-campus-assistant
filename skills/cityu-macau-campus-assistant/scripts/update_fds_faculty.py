@@ -473,7 +473,7 @@ def markdown(faculty: list[Faculty], review: list[str], verified: str) -> str:
 
 
 def parse_args() -> argparse.Namespace:
-    default_output = Path(__file__).resolve().parents[1] / "references" / "fds_faculty.md"
+    default_output = Path(__file__).resolve().parents[1] / "references" / "mentors" / "fds_faculty.md"
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=default_output)
     parser.add_argument("--check", action="store_true", help="Do not write; fail if generated content differs")

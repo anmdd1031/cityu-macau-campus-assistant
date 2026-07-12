@@ -431,8 +431,8 @@ def render(
 def parse_args() -> argparse.Namespace:
     skill_dir = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--faculty", type=Path, default=skill_dir / "references" / "fds_faculty.md")
-    parser.add_argument("--output", type=Path, default=skill_dir / "references" / "fds_faculty_publications.md")
+    parser.add_argument("--faculty", type=Path, default=skill_dir / "references" / "mentors" / "fds_faculty.md")
+    parser.add_argument("--output", type=Path, default=skill_dir / "references" / "mentors" / "fds_faculty_publications.md")
     parser.add_argument("--check", action="store_true", help="Do not write; fail if generated content differs")
     parser.add_argument("--date", help="Verification date in YYYY-MM-DD; defaults to today when writing")
     parser.add_argument("--since-year", type=int, default=2023)

@@ -6,21 +6,21 @@
 
 ### FDS 邮箱与近期论文证据
 
-- 在 `references/fds_faculty.md` 增加官网公开的校内工作邮箱，当前覆盖 57/58 名教师；另 1 名官网邮箱域名异常，保留待确认提示而不猜测补全。
-- 新增 `references/fds_faculty_publications.md`，使用 Crossref 外部论文元数据补充官网资料：
+- 在 `references/mentors/fds_faculty.md` 增加官网公开的校内工作邮箱，当前覆盖 57/58 名教师；另 1 名官网邮箱域名异常，保留待确认提示而不猜测补全。
+- 新增 `references/mentors/fds_faculty_publications.md`，使用 Crossref 外部论文元数据补充官网资料：
   - 收录 47/58 名教师的 185 篇 2023 年以来高置信论文，每人最多展示最近 5 篇。
   - 只接受作者姓名准确匹配且作者隶属明确包含 City University of Macau 的记录，避免混入同名作者。
   - 论文方向根据标题及 Crossref 可用摘要归类；没有摘要时明确标记只依据标题。
 - 新增 `scripts/update_fds_publications.py`，支持接口重试、逐教师本地缓存、原子写入、`--check` 一致性检查和 `--refresh` 联网更新。
 - 更新导师推荐路由：官网方向和导师资格为主，近期论文只作补充证据，不按论文数量、引用量或职称排名。
 - 增加导师资料来源优先级、禁止依据和时效字段规则；师资与论文表同步展示来源等级和核验日期。
-- 新增 `references/fds_mentor_recommendation.md`，将论文主题、作者位置、贡献证据和指导能力分开；当前 185 条 Crossref 记录统一标为 E 级，未公开贡献声明时不推断具体技术模块。
+- 新增 `references/mentors/fds_mentor_recommendation.md`，将论文主题、作者位置、贡献证据和指导能力分开；当前 185 条 Crossref 记录统一标为 E 级，未公开贡献声明时不推断具体技术模块。
 
 ## 2026-07-11
 
 ### FDS 导师推荐功能
 
-- 新增 `references/fds_faculty.md`，基于数据科学学院官网 6 页 Academic Staff 列表及教师个人页，收录 58 名本校学术人员。
+- 新增 `references/mentors/fds_faculty.md`，基于数据科学学院官网 6 页 Academic Staff 列表及教师个人页，收录 58 名本校学术人员。
 - 为教师记录中英文姓名、职称与职务、官网明确导师资格、多个标准化研究方向、方向依据、官方主页及官网公开的个人主页。
 - 明确排除 Academic Advisors、External Instructors 和行政人员，不在知识库复制邮箱、电话或办公室信息。
 - 新增零第三方依赖的 `scripts/update_fds_faculty.py`，支持重新抓取和 `--check` 漂移检查，并将无法可靠提取的项目列入人工复核记录。
@@ -175,9 +175,9 @@
 |---|---|---|
 | 新生与校园通用知识库 | `references/freshman.md` | 已覆盖 |
 | 数据科学学院 FDS | `references/fds.md` | 已覆盖 |
-| FDS 师资、导师方向与官方邮箱 | `references/fds_faculty.md` | 已覆盖 |
-| FDS 教师近期论文证据 | `references/fds_faculty_publications.md` | 已覆盖 47/58 名教师 |
-| FDS 导师匹配与贡献证据规则 | `references/fds_mentor_recommendation.md` | 已覆盖 |
+| FDS 师资、导师方向与官方邮箱 | `references/mentors/fds_faculty.md` | 已覆盖 |
+| FDS 教师近期论文证据 | `references/mentors/fds_faculty_publications.md` | 已覆盖 47/58 名教师 |
+| FDS 导师匹配与贡献证据规则 | `references/mentors/fds_mentor_recommendation.md` | 已覆盖 |
 | 商学院 FOB | `references/fob.md` | 已覆盖 |
 | 金融学院 FOF | `references/fof.md` | 已覆盖 |
 | 大健康学院 FH | `references/fh.md` | 已覆盖 |
