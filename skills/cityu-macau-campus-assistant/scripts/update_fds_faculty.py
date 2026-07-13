@@ -495,8 +495,8 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
         if len(research_text) < 4:
             review.append(f"{member_id} {listing_title}: research summary is too short")
 
-        email = find_official_email(source)
-        email_note = EMAIL_WARNINGS.get(member_id)
+        email = find_official_email(chinese_source) or find_official_email(source)
+        email_note = EMAIL_WARNINGS.get(member_id) if not email else None
         if email_note:
             review.append(f"{member_id} {listing_title}: {email_note}")
 
