@@ -44,6 +44,11 @@ RESEARCH_LABELS = {
     "research focuses",
     "research expertise",
     "research and expertise",
+    "研究方向",
+    "研究興趣",
+    "研究兴趣",
+    "研究領域",
+    "研究领域",
 }
 
 EDUCATION_LABELS = {
@@ -70,6 +75,11 @@ PROFILE_SECTION_LABELS = (
         "personal profile", "profile", "academic appointment /service",
         "academic appointment/service", "honors and awards", "awards", "patent",
         "patents", "recruitment", "contact information",
+        "研究及出版", "研究與出版", "研究与出版", "科研項目", "科研项目",
+        "學術獎項", "学术奖项", "專業屬會", "专业属会",
+        "近三年部分研究成果", "近年研究及出版", "部分研究及出版",
+        "研究成果", "論文成果", "论文成果", "任教科目", "教授科目",
+        "學術組識", "学术组织",
     }
 )
 
@@ -94,6 +104,25 @@ SECTION_ENDINGS = {
     "projects",
     "paper results",
     "patents",
+    "研究及出版",
+    "研究與出版",
+    "研究与出版",
+    "科研項目",
+    "科研项目",
+    "學術獎項",
+    "学术奖项",
+    "專業屬會",
+    "专业属会",
+    "近三年部分研究成果",
+    "近年研究及出版",
+    "部分研究及出版",
+    "研究成果",
+    "論文成果",
+    "论文成果",
+    "任教科目",
+    "教授科目",
+    "學術組識",
+    "学术组织",
     "prev",
     "back",
     "next",
@@ -101,28 +130,28 @@ SECTION_ENDINGS = {
 
 # Ordered broad-to-specific tags. Multiple matches are retained.
 TAG_RULES: list[tuple[str, tuple[str, ...]]] = [
-    ("人工智能与机器学习", ("ai", "artificial intelligence", "machine learning", "deep learning", "neural network", "reinforcement learning", "multi-agent learning", "brain-inspired intelligence", "ai for science", "swarm intelligence")),
-    ("大语言模型与生成式 AI", ("large language model", "large model", "llm", "genai", "generative ai", "generative model", "generate model", "multimodal generation", "multi-modal generation", "visual content generation", "aigc")),
-    ("数据科学与数据挖掘", ("data science", "data mining", "data analytics", "big data", "data analysis", "business intelligence", "cluster analysis", "predictive analytics")),
-    ("自然语言处理", ("natural language processing", "text mining", "sentiment analysis", "language model")),
-    ("计算机视觉与多媒体", ("computer vision", "image processing", "video", "3d reconstruction", "point cloud", "multimedia", "visual recognition", "medical image")),
-    ("隐私计算与联邦学习", ("privacy", "federated learning", "federated", "machine unlearning", "differential privacy", "privacy computing")),
-    ("网络空间安全与 AI 安全", ("cybersecurity", "cyber security", "cyberspace security", "network security", "information security", "ai security", "artificial intelligence security", "system security", "model security", "model backdoor", "model attack", "adversarial machine learning", "adversarial attack", "malware")),
-    ("密码学、区块链与可信计算", ("cryptography", "encryption", "blockchain", "trusted computing", "access control", "authentication")),
+    ("人工智能与机器学习", ("ai", "人工智能", "人工智慧", "機器學習", "机器学习", "深度學習", "深度学习", "強化學習", "强化学习", "圖神經網絡", "图神经网络", "連續學習", "连续学习", "類腦智能", "类脑智能", "具身智能", "artificial intelligence", "machine learning", "deep learning", "neural network", "reinforcement learning", "multi-agent learning", "brain-inspired intelligence", "ai for science", "swarm intelligence")),
+    ("大语言模型与生成式 AI", ("大語言模型", "大语言模型", "生成式人工智能", "生成式人工智慧", "檢索增強生成", "检索增强生成", "模型上下文協議", "模型上下文协议", "多模態生成", "多模态生成", "large language model", "large model", "llm", "genai", "generative ai", "generative model", "generate model", "multimodal generation", "multi-modal generation", "visual content generation", "aigc")),
+    ("数据科学与数据挖掘", ("數據科學", "数据科学", "數據挖掘", "数据挖掘", "大數據", "大数据", "聚類分析", "聚类分析", "預測分析", "预测分析", "data science", "data mining", "data analytics", "big data", "data analysis", "business intelligence", "cluster analysis", "predictive analytics")),
+    ("自然语言处理", ("自然語言處理", "自然语言处理", "natural language processing", "text mining", "sentiment analysis", "language model")),
+    ("计算机视觉与多媒体", ("計算機視覺", "计算机视觉", "圖像處理", "图像处理", "圖像質量", "图像质量", "視覺顯著", "视觉显著", "深度僞造", "深度伪造", "多模態", "多模态", "多媒體", "多媒体", "computer vision", "image processing", "video", "3d reconstruction", "point cloud", "multimedia", "visual recognition", "medical image")),
+    ("隐私计算与联邦学习", ("隱私計算", "隐私计算", "隱私保護", "隐私保护", "聯邦學習", "联邦学习", "差分隱私", "差分隐私", "privacy", "federated learning", "federated", "machine unlearning", "differential privacy", "privacy computing")),
+    ("网络空间安全与 AI 安全", ("網絡安全", "网络安全", "網絡空間安全", "网络空间安全", "信息安全", "對抗網絡", "对抗网络", "cybersecurity", "cyber security", "cyberspace security", "network security", "information security", "ai security", "artificial intelligence security", "system security", "model security", "model backdoor", "model attack", "adversarial machine learning", "adversarial attack", "malware")),
+    ("密码学、区块链与可信计算", ("密碼學", "密码学", "區塊鏈", "区块链", "cryptography", "encryption", "blockchain", "trusted computing", "access control", "authentication")),
     ("云计算、分布式系统与边缘计算", ("cloud computing", "distributed system", "edge computing", "mobile computing", "parallel computing", "gpu computing", "mlsys", "resource scheduling")),
     ("物联网与无线通信", ("internet of things", "iot", "wireless", "communication network", "sensor network", "vehicular network")),
-    ("机器人与智能交通", ("robot", "embodied ai", "embodied intelligence", "uav", "drone", "swarm intelligence", "autonomous driving", "intelligent transportation", "smart transportation", "navigation", "vehicle")),
-    ("医疗健康与生物信息", ("healthcare", "medical", "biomedicine", "biomedical", "bioinformatics", "health data", "digital health")),
-    ("优化、运筹与计算数学", ("optimization", "operations research", "operational research", "algorithm", "game theory", "mathematical", "probability", "functional analysis", "differential equation")),
-    ("统计学习与概率建模", ("bayesian statistics", "statistical learning", "probabilistic model", "statistical inference")),
-    ("数据库、知识图谱与信息检索", ("database", "knowledge graph", "information retrieval", "recommendation", "recommender system", "semantic integration", "semantic web")),
+    ("机器人与智能交通", ("機器人", "机器人", "具身智能", "智能交通", "無人機", "无人机", "低空態勢", "低空态势", "集群決策", "集群决策", "robot", "embodied ai", "embodied intelligence", "uav", "drone", "swarm intelligence", "autonomous driving", "intelligent transportation", "smart transportation", "navigation", "vehicle")),
+    ("医疗健康与生物信息", ("智慧醫療", "智慧医疗", "智能醫療", "智能医疗", "醫療", "医疗", "生物信息", "數字健康", "数字健康", "healthcare", "medical", "biomedicine", "biomedical", "bioinformatics", "health data", "digital health")),
+    ("优化、运筹与计算数学", ("優化", "优化", "汎函分析", "泛函分析", "微分方程", "optimization", "operations research", "operational research", "algorithm", "game theory", "mathematical", "probability", "functional analysis", "differential equation")),
+    ("统计学习与概率建模", ("貝葉斯統計", "贝叶斯统计", "bayesian statistics", "statistical learning", "probabilistic model", "statistical inference")),
+    ("数据库、知识图谱与信息检索", ("智能推薦", "智能推荐", "推薦系統", "推荐系统", "知識圖譜", "知识图谱", "語義集成", "语义集成", "database", "knowledge graph", "information retrieval", "recommendation", "recommender system", "semantic integration", "semantic web")),
     ("软件工程与程序分析", ("software engineering", "program analysis", "software testing", "programming language", "code generation")),
-    ("人机交互与教育技术", ("human-computer interaction", "human computer interaction", "education", "learning analytics", "smart education", "voice interaction", "affective computing", "user behavior")),
+    ("人机交互与教育技术", ("智能語音交互", "智能语音交互", "情感計算", "情感计算", "使用者行為", "用户行为", "human-computer interaction", "human computer interaction", "education", "learning analytics", "smart education", "voice interaction", "affective computing", "user behavior")),
     ("信号处理与时序分析", ("signal processing", "time series analysis")),
     ("科学智能与计算物理", ("high energy physics", "cosmology", "physics for ai", "ai for science")),
-    ("信息系统与数字化应用", ("information system", "information technology applications", "technology and user behavior")),
-    ("智慧城市与空间计算", ("smart city", "smart cities", "urban", "geospatial", "spatial", "geographic information")),
-    ("金融与商业数据", ("financial", "finance", "fintech", "marketing", "e-commerce", "e -commerce", "economics")),
+    ("信息系统与数字化应用", ("資訊系統", "信息系统", "資訊科技應用", "信息科技应用", "電子商務技術", "电子商务技术", "information system", "information technology applications", "technology and user behavior")),
+    ("智慧城市与空间计算", ("空間信息", "空间信息", "smart city", "smart cities", "urban", "geospatial", "spatial", "geographic information")),
+    ("金融与商业数据", ("金融", "電力市場", "电力市场", "風險規避", "风险规避", "電子商務", "电子商务", "financial", "finance", "fintech", "marketing", "e-commerce", "e -commerce", "economics")),
 ]
 
 # Do not silently repair malformed addresses shown by a source.
@@ -224,7 +253,7 @@ def clean_text(value: str) -> str:
 
 def normalized_label(value: str) -> str:
     value = clean_text(value).lower().rstrip(":：")
-    return re.sub(r"[^a-z0-9& /-]", "", value).strip()
+    return re.sub(r"[^a-z0-9\u3400-\u9fff& /-]", "", value).strip()
 
 
 def fetch(url: str, timeout: float, retries: int, delay: float) -> str:
@@ -297,6 +326,7 @@ def find_research_section(lines: list[str]) -> tuple[str, bool]:
                 or label in other_sections
                 or any(label.startswith(item + " ") for item in other_sections)
                 or re.match(r"(?i)^currently\s+recruiting\b", line)
+                or re.match(r"^目前招聘", line)
             ):
                 break
             if line not in collected:
@@ -358,8 +388,8 @@ def find_recruitment(lines: list[str]) -> str | None:
 
 def supervisor_qualification(text: str) -> str:
     lowered = text.lower()
-    doctoral = bool(re.search(r"(?:ph\.?d\.?|doctoral|doctor)\s*(?:student\s*)?supervisor", lowered))
-    master = bool(re.search(r"master(?:'s)?\s*(?:student\s*)?supervisor", lowered))
+    doctoral = bool(re.search(r"(?:ph\.?d\.?|doctoral|doctor)\s*(?:student\s*)?supervisor|博士生?[導导]師", lowered))
+    master = bool(re.search(r"master(?:'s)?\s*(?:student\s*)?supervisor|[碩硕]士生?[導导]師", lowered))
     if doctoral and master:
         return "博士生导师、硕士生导师"
     if doctoral:
@@ -435,15 +465,25 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
     review: list[str] = []
     faculty: list[Faculty] = []
     profile_urls = [f"{BASE_URL}/en/members/{member_id}" for member_id, _ in english]
+    chinese_profile_urls = [f"{BASE_URL}/members/{member_id}" for member_id, _ in chinese]
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
         sources = list(executor.map(lambda url: fetch(url, timeout, retries, delay), profile_urls))
+        chinese_sources = list(executor.map(lambda url: fetch(url, timeout, retries, delay), chinese_profile_urls))
 
     for position, (member_id, listing_title) in enumerate(english):
         _chinese_id, chinese_title = chinese[position]
         official_url = profile_urls[position]
         source = sources[position]
         document = parse_document(source)
-        research_text, explicit = find_research_section(document.lines)
+        chinese_source = chinese_sources[position]
+        chinese_document = parse_document(chinese_source)
+        chinese_research, chinese_explicit = find_research_section(chinese_document.lines)
+        english_research, english_explicit = find_research_section(document.lines)
+        if chinese_explicit and chinese_research:
+            research_text, explicit, direction_source = chinese_research, True, "中文官网明确"
+            official_url = chinese_profile_urls[position]
+        else:
+            research_text, explicit, direction_source = english_research, english_explicit, "英文官网明确" if english_explicit else "官网未明确列出研究方向"
         project = find_section(document.lines, PROJECT_LABELS, 220)
         publication = find_section(document.lines, PUBLICATION_LABELS, 220)
         tags = match_tags(research_text)
@@ -452,7 +492,7 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
             review.append(f"{member_id} {listing_title}: no normalized research tag")
         if not explicit:
             review.append(f"{member_id} {listing_title}: direction inferred from profile/outputs")
-        if len(research_text) < 8:
+        if len(research_text) < 4:
             review.append(f"{member_id} {listing_title}: research summary is too short")
 
         email = find_official_email(source)
@@ -466,14 +506,14 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
                 chinese_name=clean_chinese_name(chinese_title),
                 english_name=clean_english_name(listing_title),
                 role=listing_title,
-                qualification=supervisor_qualification(" ".join(document.lines)),
+                qualification=supervisor_qualification(" ".join(chinese_document.lines + document.lines)),
                 email=email,
                 email_note=email_note,
                 tags=tags,
                 research_summary=short_summary(research_text) if research_text else "官网未明确列出研究方向",
                 official_evidence_summary=project or publication or "官网未提供",
                 recruitment_summary=find_recruitment(document.lines) or "官网未公开招募说明",
-                evidence="官网明确" if explicit else "官网未明确列出研究方向",
+                evidence=direction_source,
                 official_url=official_url,
                 personal_url=find_personal_homepage(source),
             )
@@ -510,6 +550,8 @@ def publication_summaries(path: Path) -> dict[int, str]:
 def markdown(
     faculty: list[Faculty], review: list[str], verified: str, paper_summaries: dict[int, str]
 ) -> str:
+    chinese_directions = sum(item.evidence == "中文官网明确" for item in faculty)
+    english_fallbacks = sum(item.evidence == "英文官网明确" for item in faculty)
     lines = [
         "# 澳门城市大学数据科学学院导师基础画像",
         "",
@@ -517,6 +559,7 @@ def markdown(
         f"> 核验日期：{verified}。",
         "> 本表来源等级：1（学院官方教师主页）；个人主页仅作为官方页公开的补充入口。",
         f"> 当前收录：{len(faculty)} 名本校 Academic Staff；不含 Academic Advisors、External Instructors 和行政人员。",
+        f"> 方向来源：中文官网优先（{chinese_directions} 人）；中文页未明确时回退英文官网（{english_fallbacks} 人）。",
         "> 论文检索索引：[fds_papers.md](fds_papers.md)；导师匹配规则：[fds_rules.md](fds_rules.md)。",
         "",
         "## 使用边界",

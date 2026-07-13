@@ -337,7 +337,7 @@ python skills/cityu-macau-campus-assistant/scripts/update_fds_faculty.py
 python skills/cityu-macau-campus-assistant/scripts/update_fds_faculty.py --check
 ```
 
-脚本会核对中英文 6 页 Academic Staff 列表及 58 个教师页面，提取导师资格、官网工作邮箱、官网明确展示的研究方向、官网项目/成果、招募说明和主页。标准化检索标签不从教育背景、授课或论文成果推断；官网没有公开的字段会明确写为“官网未提供”，自动提取失败的信息会进入 `references/mentors/fds_mentors.md` 的“人工复核记录”。
+脚本会核对中英文各 6 页 Academic Staff 列表及对应的中英文教师页面。研究方向优先采用中文官网个人页，中文页未明确时才回退英文页；导师资格和工作邮箱由双语页面交叉提取。标准化检索标签不从教育背景、授课或论文成果推断；官网没有公开的字段会明确写为“官网未提供”，自动提取失败的信息会进入 `references/mentors/fds_mentors.md` 的“人工复核记录”。
 
 更新近期论文证据：
 
