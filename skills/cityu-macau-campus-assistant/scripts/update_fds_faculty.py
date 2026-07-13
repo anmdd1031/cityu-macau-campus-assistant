@@ -62,15 +62,22 @@ COURSE_LABELS = {
 PROJECT_LABELS = {
     "research project", "research projects", "scientific research project",
     "scientific research projects", "select scientific research projects",
+    "科研項目", "科研项目", "科研專案", "科研专案", "研究項目", "研究项目",
 }
 PUBLICATION_LABELS = {
     "publication", "publications", "selected publications",
     "select publication in recent three years", "research and publishing",
     "research and publications in recent years", "research and publication",
+    "研究及出版", "研究與出版", "研究与出版", "近年研究及出版",
+    "部分研究及出版", "研究成果", "論文成果", "论文成果", "近三年部分研究成果",
+}
+EXPERIENCE_LABELS = {
+    "research experience", "scientific research experience",
+    "科研經歷", "科研经历", "研究經歷", "研究经历",
 }
 PROFILE_SECTION_LABELS = (
     RESEARCH_LABELS | EDUCATION_LABELS | COURSE_LABELS | PROJECT_LABELS |
-    PUBLICATION_LABELS | {
+    PUBLICATION_LABELS | EXPERIENCE_LABELS | {
         "position", "incumbent", "current", "work experience", "scientific research experience",
         "personal profile", "profile", "academic appointment /service",
         "academic appointment/service", "honors and awards", "awards", "patent",
@@ -79,7 +86,8 @@ PROFILE_SECTION_LABELS = (
         "學術獎項", "学术奖项", "專業屬會", "专业属会",
         "近三年部分研究成果", "近年研究及出版", "部分研究及出版",
         "研究成果", "論文成果", "论文成果", "任教科目", "教授科目",
-        "學術組識", "学术组织",
+        "學術組識", "学术组织", "科研專案", "科研专案",
+        "現任", "现任", "曾任教科目",
     }
 )
 
@@ -109,10 +117,16 @@ SECTION_ENDINGS = {
     "研究与出版",
     "科研項目",
     "科研项目",
+    "科研專案",
+    "科研专案",
     "學術獎項",
     "学术奖项",
     "專業屬會",
     "专业属会",
+    "科研經歷",
+    "科研经历",
+    "研究經歷",
+    "研究经历",
     "近三年部分研究成果",
     "近年研究及出版",
     "部分研究及出版",
@@ -123,6 +137,14 @@ SECTION_ENDINGS = {
     "教授科目",
     "學術組識",
     "学术组织",
+    "現任",
+    "现任",
+    "曾任教科目",
+    "上一個",
+    "上一个",
+    "返回",
+    "下一個",
+    "下一个",
     "prev",
     "back",
     "next",
@@ -318,6 +340,12 @@ def find_research_section(lines: list[str]) -> tuple[str, bool]:
     if start is not None:
         collected: list[str] = []
         for line in lines[start:]:
+            inline_boundary = re.search(r"(?:主持\s*)?科研\s*(?:項目|项目|專案|专案)", line)
+            if inline_boundary:
+                prefix = clean_text(line[: inline_boundary.start()])
+                if prefix and prefix not in collected:
+                    collected.append(prefix)
+                break
             label = normalized_label(line)
             other_sections = PROFILE_SECTION_LABELS - RESEARCH_LABELS
             if (
@@ -348,6 +376,12 @@ def find_section(lines: list[str], labels: set[str], limit: int) -> str | None:
     start: int | None = None
     inline = ""
     for index, line in enumerate(lines):
+        if labels is PROJECT_LABELS:
+            project_heading = re.search(r"(?:主持\s*)?科研\s*(?:項目|项目|專案|专案)", line)
+            if project_heading:
+                inline = clean_text(line[project_heading.end():].lstrip(":： "))
+                start = index + 1
+                break
         label = normalized_label(line)
         if label in labels:
             start = index + 1
@@ -355,6 +389,10 @@ def find_section(lines: list[str], labels: set[str], limit: int) -> str | None:
         for candidate in labels:
             if label.startswith(candidate + " "):
                 inline = clean_text(line[len(candidate):].lstrip(":： "))
+                start = index + 1
+                break
+            if re.search(r"[\u3400-\u9fff]", candidate) and candidate in line:
+                inline = clean_text(line.split(candidate, 1)[1].lstrip(":： "))
                 start = index + 1
                 break
         if start is not None:
@@ -365,8 +403,11 @@ def find_section(lines: list[str], labels: set[str], limit: int) -> str | None:
     collected = [inline] if inline else []
     for line in lines[start:]:
         label = normalized_label(line)
-        if label in PROFILE_SECTION_LABELS or any(
-            label.startswith(heading + " ") for heading in PROFILE_SECTION_LABELS
+        if (
+            label in PROFILE_SECTION_LABELS
+            or any(label.startswith(heading + " ") for heading in PROFILE_SECTION_LABELS)
+            or label in SECTION_ENDINGS
+            or any(label.startswith(heading + " ") for heading in SECTION_ENDINGS)
         ):
             break
         if line not in collected:
@@ -384,6 +425,17 @@ def find_recruitment(lines: list[str]) -> str | None:
         if re.search(r"(?i)\bcurrently\s+recruiting|scholarships?\s+are\s+offered", line):
             return short_summary(line, 220)
     return None
+
+
+def official_evidence_summary(experience: str | None, project: str | None, publication: str | None) -> str:
+    parts = []
+    if experience:
+        parts.append(f"科研经历：{experience}")
+    if project:
+        parts.append(f"研究项目：{project}")
+    if publication:
+        parts.append(f"论文成果：{publication}")
+    return "；".join(parts) if parts else "官网未提供"
 
 
 def supervisor_qualification(text: str) -> str:
@@ -484,8 +536,18 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
             official_url = chinese_profile_urls[position]
         else:
             research_text, explicit, direction_source = english_research, english_explicit, "英文官网明确" if english_explicit else "官网未明确列出研究方向"
-        project = find_section(document.lines, PROJECT_LABELS, 220)
-        publication = find_section(document.lines, PUBLICATION_LABELS, 220)
+        experience = (
+            find_section(chinese_document.lines, EXPERIENCE_LABELS, 160)
+            or find_section(document.lines, EXPERIENCE_LABELS, 160)
+        )
+        project = (
+            find_section(chinese_document.lines, PROJECT_LABELS, 180)
+            or find_section(document.lines, PROJECT_LABELS, 180)
+        )
+        publication = (
+            find_section(chinese_document.lines, PUBLICATION_LABELS, 200)
+            or find_section(document.lines, PUBLICATION_LABELS, 200)
+        )
         tags = match_tags(research_text)
         if not tags:
             tags = ["官网未明确列出研究方向"]
@@ -511,7 +573,7 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
                 email_note=email_note,
                 tags=tags,
                 research_summary=short_summary(research_text) if research_text else "官网未明确列出研究方向",
-                official_evidence_summary=project or publication or "官网未提供",
+                official_evidence_summary=official_evidence_summary(experience, project, publication),
                 recruitment_summary=find_recruitment(document.lines) or "官网未公开招募说明",
                 evidence=direction_source,
                 official_url=official_url,
@@ -567,14 +629,15 @@ def markdown(
         "- 本索引用于按公开研究方向筛选候选教师，不构成录取、招生名额或接收意愿判断。",
         "- 只有官网明确标注博士生导师或硕士生导师时，才能使用相应称谓；否则只能称为方向相关教师。",
         "- `标准化检索标签` 只根据官网个人页明确展示的研究方向或明确的专业方向表述映射，不使用教育背景、授课或论文成果补充标签。",
-        "- 项目/成果和招募说明均为官网个人页摘要；`官网未提供` 只表示页面未写明。",
+        "- 科研经历、研究项目、论文成果和招募说明均为官网个人页摘要；`官网未提供` 只表示页面未写明。",
+        "- 官网列出的科研经历、研究项目和论文成果可能没有及时更新，也不一定完整，只能作为方向匹配的参考，不能据此判断当前研究活跃度或招生状态。",
         "- 招募说明按核验日记录，不等于实时名额或接收承诺，申请前必须向教师或学院确认。",
         "- 联系方式只使用官网公开的 `cityu.edu.mo` / `cityu.mo` 工作邮箱，并同时提供官方主页；不收录私人邮箱、电话或办公室信息。",
         "- 导师职务、导师资格、研究方向和邮箱均按本次核验日期记录；没有日期的招生信息不能推断当前有名额或接收意愿。",
         "",
         "## 师资索引",
         "",
-        "| 序号 | 教师 | 职称/职务 | 导师资格 | 校内工作邮箱 | 官网研究方向 | 标准化检索标签 | 官网项目/成果摘要 | 官网招募说明 | 近期外部证据摘要 | 方向依据 | 核验日期 | 官方主页 | 个人主页 |",
+        "| 序号 | 教师 | 职称/职务 | 导师资格 | 校内工作邮箱 | 官网研究方向 | 标准化检索标签 | 官网科研经历/项目/论文成果摘要（仅供参考） | 官网招募说明 | 近期外部证据摘要 | 方向依据 | 核验日期 | 官方主页 | 个人主页 |",
         "|---:|---|---|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for index, item in enumerate(faculty, 1):
