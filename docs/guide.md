@@ -1,10 +1,10 @@
-# 澳门城市大学校园助手 Skill 详细说明
+# 澳城大校园资讯智能体详细说明
 
-这是根目录 [README](../README.md) 的详细版。根目录 README 只保留傻瓜式安装；本文件用于说明 Skill 的能力边界、知识库覆盖情况、各类 Agent 适配方式和维护规则。
+这是根目录 [README](../README.md) 的详细版。根目录 README 只保留傻瓜式安装；本文件用于说明智能体的能力边界、知识库覆盖情况、各类 Agent 适配方式和维护规则。
 
-## 这个 Skill 是什么
+## 这个智能体是什么
 
-`cityu-macau-campus-assistant` 是一个面向澳门城市大学公开信息的 Agent Skill。它不是学校官方系统，也不是一个独立应用；核心文件是：
+`cityu-macau-campus-assistant` 是一个面向澳门城市大学公开信息的 Agent 知识与规则包。它不是学校官方系统，也不是一个独立应用；核心文件是：
 
 ```text
 skills/cityu-macau-campus-assistant/
@@ -22,7 +22,7 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 
 - 新生申请、注册、缴费、体检、D 签注、逗留许可、宿舍、图书馆、校园服务和恶劣天气安排。
 - 数据科学学院、商学院、金融学院、大健康学院、教育学院、法学院、国际旅游与管理学院、荣誉班的课程、学分、导师、论文、发表、毕业要求和常见办事入口。
-- 按官网研究方向、论文主题和贡献证据筛选数据科学学院教师，区分硕士/博士导师资格，并提供可解释的校内工作邮箱与主页索引。
+- 按官网研究方向、导师资格及官网公开的科研经历、项目和成果筛选数据科学学院教师，并提供可核验的校内工作邮箱与主页索引。
 - 氹仔校区校内餐厅、菜单、价格、供应时段和用餐建议。
 - 哪些问题需要看最新官方通知，哪些只能由学校或学院审批。
 
@@ -39,10 +39,10 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 |---|---|---|---|
 | 新生与校园通用知识库 | [freshman.md](../skills/cityu-macau-campus-assistant/references/freshman.md) | 已完成 | 招生、注册、学费、奖学金、体检、D 签注、逗留许可、宿舍、图书馆、校园服务、恶劣天气 |
 | 数据科学学院 FDS | [fds.md](../skills/cityu-macau-campus-assistant/references/fds.md) | 已完成 | BITS、BCS、MDS、MCS、PhD DS、PhD CS、学分、资格考试、论文成果、导师、毕业 |
-| FDS 导师基础画像 | [fds_mentors.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_mentors.md) | 已完成 | 58 名 Academic Staff、中文官网职称/职务、导师资格、58 个可核验校内工作邮箱、官网研究方向、科研证据覆盖提示、招募说明、官方主页和近期外部证据摘要 |
+| FDS 导师基础画像 | [fds_mentors.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_mentors.md) | 已完成 | 58 名 Academic Staff、中文官网职称/职务、导师资格、58 个可核验校内工作邮箱、官网研究方向、科研证据覆盖提示、招募说明和官方主页 |
 | FDS 官网完整科研证据 | [fds_official_evidence.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_official_evidence.md) | 已完成 | 58 名教师官网公开的完整科研经历、研究项目和论文成果栏目；按需读取，官网访问失败时可使用本地核验版本 |
-| FDS 论文检索索引 | [fds_papers.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_papers.md) | 已完成 | 47 名教师、185 篇 2023 年以来高置信论文、DOI、作者位置和 E 级贡献标记；仅按需读取 |
-| FDS 导师匹配规则 | [fds_rules.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_rules.md) | 已完成 | 官网准入、两阶段匹配、来源优先级、贡献证据 A-E 和回答边界 |
+| FDS 论文检索索引 | [fds_papers.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_papers.md) | 暂时停用 | 仅为维护者保留，不参与 Agent 路由、回答或导师推荐 |
+| FDS 导师匹配规则 | [fds_rules.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_rules.md) | 已完成 | 官网准入、研究方向匹配、官方证据来源和回答边界 |
 | 商学院 FOB | [fob.md](../skills/cityu-macau-campus-assistant/references/fob.md) | 已完成 | BBA、MBA、DBA、IBC、4+1 项目、导师、论文与毕业要求 |
 | 金融学院 FOF | [fof.md](../skills/cityu-macau-campus-assistant/references/fof.md) | 已完成 | BAE、金融精英班、金融学硕士、金融科技硕士、金融学博士、导师、发表与毕业要求 |
 | 大健康学院 FH | [fh.md](../skills/cityu-macau-campus-assistant/references/fh.md) | 已完成 | BSW、MSW、MAP、DAP、智慧养老与健康管理、导师、实习与毕业要求 |
@@ -79,7 +79,7 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 | FDS 教师名单、导师资格、官方邮箱、联系方式或教师主页 | `references/mentors/fds_mentors.md` |
 | FDS 导师推荐、教师研究方向或谁研究某个主题 | `references/mentors/fds_rules.md` + `references/mentors/fds_mentors.md` |
 | FDS 完整科研经历、研究项目、官网论文成果或官网访问失败时查询本地资料 | 在上述文件基础上按需读取 `references/mentors/fds_official_evidence.md` |
-| FDS 具体论文、DOI、作者位置、论文贡献或深入比较候选人 | 在上述文件基础上按需读取 `references/mentors/fds_papers.md` |
+| FDS 具体论文、论文成果或项目经历 | 只按需读取 `references/mentors/fds_official_evidence.md`；外部论文索引暂时停用，不得读取或引用 |
 | FDS、BITS、BCS、MDS、MCS、PhD DS、PhD CS | `fds.md` |
 | 商学院、FOB、BBA、MBA、DBA、IBC、4+1 | `fob.md` |
 | 金融学院、FOF、BAE、金融精英班、MSF、金融科技、PhD Finance | `fof.md` |
@@ -134,29 +134,28 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 ```
 
 ```text
-我想研究 RAG 和机器遗忘，请结合教师官网方向和近年论文推荐导师；请区分论文研究主题与导师具体贡献，并给出邮箱和 DOI。
+我想研究 RAG 和机器遗忘，请根据教师官网方向和官网公开的科研资料推荐导师，并给出校内工作邮箱和官方主页。
 ```
 
 ## FDS 导师推荐说明
 
 - 匹配不超过 5 人时展示全部；超过 5 人时默认展示相关度最高的 5 人，并写明总人数和未展开人数。
 - 用户要求“全部老师”或“显示全部相关教师”时，完整列出所有符合条件者。
-- 相关度首先看官网明确研究方向，再用近期论文中重复出现的主题补充；不把论文数量、单篇标题或引用量写成研究占比。
+- 相关度首先看官网明确研究方向，再用官网公开的科研经历、研究项目和论文成果补充；不得把项目或成果数量写成研究占比。
 - 博士申请只把官网明确标注博士生导师者称为博士导师候选；未标注资格者只能称为方向相关教师。
-- 回答表格应给出公开可核验的校内工作邮箱和官方主页；论文证据应给 DOI、作者位置和贡献证据等级，并注明主题依据标题还是标题和摘要。
-- 没有 Author Contributions、CRediT 或其他明确声明时，只能说教师参与过该论文主题，不能说其亲自负责算法、代码、实验或数据分析。
-- 作者位置、第一作者、末位作者和通讯作者只能作为弱证据；多篇论文重复主题不等于多篇论文重复承担同一贡献角色。
-- 分开描述“研究技术参与”和“指导/项目能力”；导师资格、Supervision 证据和招生状态不能由论文署名直接推断。
-- Crossref 未匹配到论文只代表外部数据未覆盖，不能据此说教师没有近期论文。
+- 回答表格应给出公开可核验的校内工作邮箱和官方主页，并注明研究方向及补充证据来自官网。
+- 官网项目或论文成果只能说明公开记录中存在相关主题；没有明确作者贡献声明时，不能说教师亲自负责算法、代码、实验或数据分析。
+- `fds_papers.md` 当前暂时停用，Agent 不得读取、引用或用其中的 Crossref 论文、DOI、作者位置和主题标签进行推荐。
+- 导师资格、指导能力和招生状态不能由论文署名或项目参与记录推断。
 - 推荐结果不代表招生名额、接收意愿、录取概率或教师水平排名，最终应打开官方主页并联系学院或教师确认。
 
 ### 导师资料来源与时效
 
-导师资料按以下顺序使用：学院或学校官方导师主页、官方课程和师资页面、官方实验室或研究中心页面、ORCID/Google Scholar/出版社论文页或 DOI 元数据、官方项目或新闻页面。第三方平台只用于发现线索，不能单独支撑推荐结论。
+当前导师推荐只使用学校或学院官方导师主页、官方课程与师资页面、官方实验室或研究中心页面，以及学校官方项目或新闻页面。ORCID、Google Scholar、出版社论文页、DOI 元数据和第三方平台当前不进入本地推荐路由。
 
 不得使用论坛匿名评价、社交平台传言、未经证实的“毕业难度”、学生私人聊天记录，以及导师年龄、照片、性别等无关信息作为推荐依据。
 
-师资表和论文表应记录来源链接、来源等级、核验日期、适用年份或时间范围、事实类型和待复核说明。导师职务、研究方向、公开邮箱和招生状态可能变化；没有带日期的官方招生信息时，不得暗示当前有招生名额或接收意愿。资料冲突时，优先采用等级更高且核验日期更近的来源。
+师资表和官网科研证据应记录来源链接、来源等级、核验日期、事实类型和待复核说明。导师职务、研究方向、公开邮箱和招生状态可能变化；没有带日期的官方招生信息时，不得暗示当前有招生名额或接收意愿。官方资料冲突时，优先采用核验日期更近且与问题直接相关的来源。
 
 ## 回答边界
 
@@ -175,10 +174,10 @@ Agent 回答时必须遵守：
 把下面这段话复制给正在使用的 AI Agent：
 
 ```text
-请帮我安装这个 Skill：
+请帮我通过以下github安装 “澳城大校园资讯”智能体：
 https://github.com/anmdd1031/cityu-macau-campus-assistant
 
-安装完成后，请告诉我安装位置，并确认 SKILL.md 可以被识别。
+安装完成后，确认安装是否成功并且 SKILL.md 可以被识别。
 ```
 
 如果 Agent 询问安装范围，普通用户选择“当前项目”即可。安装后重新打开应用或开始新会话。
@@ -276,7 +275,7 @@ cityu-macau-campus-assistant/
 │   ├── mentors/
 │   │   ├── fds_mentors.md
 │   │   ├── fds_official_evidence.md
-│   │   ├── fds_papers.md
+│   │   ├── fds_papers.md  # 暂时停用，仅供维护
 │   │   └── fds_rules.md
 │   ├── fob.md
 │   ├── fof.md
@@ -340,9 +339,9 @@ python skills/cityu-macau-campus-assistant/scripts/update_fds_faculty.py
 python skills/cityu-macau-campus-assistant/scripts/update_fds_faculty.py --check
 ```
 
-脚本会核对中英文各 6 页 Academic Staff 列表及对应的中英文教师页面，并同时生成 `fds_mentors.md` 与 `fds_official_evidence.md`。职称/职务优先采用中文官网师资列表和中文教师个人页，并以中文展示；研究方向优先采用中文官网个人页，中文页未明确时才回退英文页；导师资格由双语页面交叉提取，校内邮箱优先采用中文页的有效学校域名地址，中文页缺失时才回退英文页。科研经历、研究项目和论文成果独立提取，不得混入研究方向；完整正文保存在按需读取文件中，主表只显示覆盖状态。这些官网资料可能不是最新或完整信息，只能作为参考。标准化检索标签不从教育背景、授课或论文成果推断；自动提取失败的信息会进入 `fds_mentors.md` 的“人工复核记录”。
+脚本会核对中英文各 6 页 Academic Staff 列表及对应的中英文教师页面，并同时生成 `fds_mentors.md` 与 `fds_official_evidence.md`。职称/职务优先采用中文官网师资列表和中文教师个人页，并以中文展示；研究方向优先采用中文官网个人页，中文页未明确时才回退英文页；导师资格由双语页面交叉提取，校内邮箱优先采用中文页的有效学校域名地址，中文页缺失时才回退英文页。科研经历、研究项目和论文成果独立提取，不得混入研究方向；完整正文保存在按需读取文件中，主表只显示覆盖状态。这些官网资料可能不是最新或完整信息，只能作为参考。标准化检索标签不从教育背景、授课或论文成果推断；自动提取失败的信息会进入 `fds_mentors.md` 的“人工复核记录”。脚本默认不读取论文索引，也不输出外部论文摘要列；`--include-paper-summaries` 只为未来恢复前的维护复核保留，停用期间不得用其产物回答用户。
 
-更新近期论文证据：
+维护已停用的论文索引（不参与 Agent 回答）：
 
 ```bash
 python skills/cityu-macau-campus-assistant/scripts/update_fds_publications.py
@@ -360,7 +359,7 @@ python skills/cityu-macau-campus-assistant/scripts/update_fds_publications.py --
 python skills/cityu-macau-campus-assistant/scripts/update_fds_publications.py --check --refresh
 ```
 
-论文脚本查询 Crossref，因此新核验日期的首次生成和 `--refresh` 需要联网，但不依赖第三方 Python 包。它只接受姓名准确匹配且作者隶属明确包含 City University of Macau 的记录，并记录作者位置；由于 Crossref 不提供可靠的作者贡献声明，当前论文贡献证据统一标为 E，不推断具体负责模块。脚本使用按核验日期分组、被 Git 忽略的 `.cache/` 支持同一天中断后继续运行；次日运行会自动重新抓取。普通 Skill 使用者不需要运行任何更新脚本。
+论文脚本查询 Crossref，因此新核验日期的首次生成和 `--refresh` 需要联网，但不依赖第三方 Python 包。该文件当前只为维护者保留，不参与 Agent 路由、回答或导师推荐；恢复前不得把其中的论文、DOI、作者位置或主题标签作为用户答案依据。脚本使用按核验日期分组、被 Git 忽略的 `.cache/` 支持同一天中断后继续运行；次日运行会自动重新抓取。普通使用者不需要运行任何更新脚本。
 
 ## 验证
 

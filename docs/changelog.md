@@ -2,6 +2,14 @@
 
 ## 2026-07-13
 
+### 暂时停用 FDS 教师论文检索索引
+
+- 保留 `references/mentors/fds_papers.md` 及维护脚本，但从 Agent 触发、路由、导师推荐和用户入口中移除；文件内增加停用声明，恢复前不得读取、引用或用于推荐。
+- `fds_mentors.md` 移除“近期外部证据摘要”列；师资生成脚本默认不读取论文索引，只有维护者显式使用 `--include-paper-summaries` 才会生成该列。
+- FDS 具体论文、科研经历、项目或成果问题仅使用 `fds_official_evidence.md` 中的官网资料；官网没有明确贡献说明时，不推断教师负责的具体技术模块。
+- README 的对外名称改为“澳城大校园资讯智能体”，介绍不再使用 `Skill` 字样，并将安装提示改为直接要求 Agent 从 GitHub 安装及确认 `SKILL.md` 可识别。
+- 同步更新 `SKILL.md`、`fds.md`、导师匹配规则、详细说明和 Agent 元数据，确保停用状态及安装入口一致。
+
 ### Skill 范围与入口一致性审计
 
 - 明确人文社会科学学院、创新设计学院、葡语国家研究院和城市与可持续发展研究院属于当前主动不覆盖范围，不将其作为遗漏知识库补齐；相关问题只路由到学校通用知识库并引导至官方入口。
@@ -208,8 +216,8 @@
 | 数据科学学院 FDS | `references/fds.md` | 已覆盖 |
 | FDS 导师基础画像与官方邮箱 | `references/mentors/fds_mentors.md` | 已覆盖 |
 | FDS 官网完整科研证据 | `references/mentors/fds_official_evidence.md` | 已覆盖 58 名教师 |
-| FDS 教师论文检索索引 | `references/mentors/fds_papers.md` | 已覆盖 47/58 名教师 |
-| FDS 导师匹配与贡献证据规则 | `references/mentors/fds_rules.md` | 已覆盖 |
+| FDS 教师论文检索索引 | `references/mentors/fds_papers.md` | 暂时停用，不参与 Agent 路由 |
+| FDS 导师匹配规则 | `references/mentors/fds_rules.md` | 已覆盖 |
 | 商学院 FOB | `references/fob.md` | 已覆盖 |
 | 金融学院 FOF | `references/fof.md` | 已覆盖 |
 | 大健康学院 FH | `references/fh.md` | 已覆盖 |

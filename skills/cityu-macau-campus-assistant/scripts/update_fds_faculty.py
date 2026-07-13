@@ -732,7 +732,11 @@ def official_evidence_markdown(faculty: list[Faculty], verified: str) -> str:
 
 
 def markdown(
-    faculty: list[Faculty], review: list[str], verified: str, paper_summaries: dict[int, str]
+    faculty: list[Faculty],
+    review: list[str],
+    verified: str,
+    paper_summaries: dict[int, str],
+    include_paper_summaries: bool = False,
 ) -> str:
     chinese_directions = sum(item.evidence == "中文官网明确" for item in faculty)
     english_fallbacks = sum(item.evidence == "英文官网明确" for item in faculty)
@@ -745,7 +749,7 @@ def markdown(
         f"> 当前收录：{len(faculty)} 名本校 Academic Staff；不含 Academic Advisors、External Instructors 和行政人员。",
         f"> 方向来源：中文官网优先（{chinese_directions} 人）；中文页未明确时回退英文官网（{english_fallbacks} 人）。",
         "> 职称/职务：以中文官网师资列表和中文教师个人页为准；本表使用中文职称/职务，不沿用英文列表标题。",
-        "> 官网完整科研证据：[fds_official_evidence.md](fds_official_evidence.md)；论文检索索引：[fds_papers.md](fds_papers.md)；导师匹配规则：[fds_rules.md](fds_rules.md)。",
+        "> 官网完整科研证据：[fds_official_evidence.md](fds_official_evidence.md)；导师匹配规则：[fds_rules.md](fds_rules.md)。",
         "",
         "## 使用边界",
         "",
@@ -760,9 +764,23 @@ def markdown(
         "",
         "## 师资索引",
         "",
-        "| 序号 | 教师 | 职称/职务 | 导师资格 | 校内工作邮箱 | 官网研究方向 | 标准化检索标签 | 官网科研证据覆盖 | 官网招募说明 | 近期外部证据摘要 | 方向依据 | 核验日期 | 官方主页 | 个人主页 |",
-        "|---:|---|---|---|---|---|---|---|---|---|---|---|---|---|",
     ]
+    if include_paper_summaries:
+        lines.extend(
+            [
+                "> 维护模式：已显式启用暂时停用的论文索引摘要；该输出不得用于当前 Agent 回答。",
+                "",
+                "| 序号 | 教师 | 职称/职务 | 导师资格 | 校内工作邮箱 | 官网研究方向 | 标准化检索标签 | 官网科研证据覆盖 | 官网招募说明 | 近期外部证据摘要 | 方向依据 | 核验日期 | 官方主页 | 个人主页 |",
+                "|---:|---|---|---|---|---|---|---|---|---|---|---|---|---|",
+            ]
+        )
+    else:
+        lines.extend(
+            [
+                "| 序号 | 教师 | 职称/职务 | 导师资格 | 校内工作邮箱 | 官网研究方向 | 标准化检索标签 | 官网科研证据覆盖 | 官网招募说明 | 方向依据 | 核验日期 | 官方主页 | 个人主页 |",
+                "|---:|---|---|---|---|---|---|---|---|---|---|---|---|",
+            ]
+        )
     for index, item in enumerate(faculty, 1):
         personal = f"[访问]({item.personal_url})" if item.personal_url else "官网未提供"
         email_link = (
@@ -770,13 +788,18 @@ def markdown(
             if item.email
             else item.email_note or "官网未提供可验证邮箱"
         )
-        recent = paper_summaries.get(index, "外部论文索引未覆盖；不能据此判断没有近期成果")
-        lines.append(
+        row = (
             f"| {index} | {item.chinese_name}（{item.english_name}） | {item.role} | "
             f"{item.qualification} | {email_link} | {item.research_summary} | {'；'.join(item.tags)} | "
-            f"{item.official_evidence_summary} | {item.recruitment_summary} | {recent} | "
-            f"{item.evidence}（学院教师主页） | {verified} | "
-            f"[官方页]({item.official_url}) | {personal} |"
+            f"{item.official_evidence_summary} | {item.recruitment_summary} | "
+        )
+        if include_paper_summaries:
+            recent = paper_summaries.get(index, "外部论文索引未覆盖；不能据此判断没有近期成果")
+            row += f"{recent} | "
+        lines.append(
+            row
+            + f"{item.evidence}（学院教师主页） | {verified} | "
+            + f"[官方页]({item.official_url}) | {personal} |"
         )
 
     lines.extend([
@@ -808,6 +831,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output", type=Path, default=default_output)
     parser.add_argument("--evidence-output", type=Path, default=default_evidence_output)
     parser.add_argument("--papers", type=Path, default=skill_dir / "references" / "mentors" / "fds_papers.md")
+    parser.add_argument(
+        "--include-paper-summaries",
+        action="store_true",
+        help="Maintenance only: include summaries from the currently disabled paper index",
+    )
     parser.add_argument("--check", action="store_true", help="Do not write; fail if generated content differs")
     parser.add_argument("--date", help="Verification date in YYYY-MM-DD; defaults to today when writing")
     parser.add_argument("--timeout", type=float, default=20.0)
@@ -826,7 +854,14 @@ def main() -> int:
         verified = match.group(1) if match else None
     verified = verified or date.today().isoformat()
     faculty, review = build_faculty(args.timeout, args.retries, args.delay, args.workers)
-    rendered = markdown(faculty, review, verified, publication_summaries(args.papers))
+    paper_summaries = publication_summaries(args.papers) if args.include_paper_summaries else {}
+    rendered = markdown(
+        faculty,
+        review,
+        verified,
+        paper_summaries,
+        args.include_paper_summaries,
+    )
     evidence_rendered = official_evidence_markdown(faculty, verified)
 
     if args.check:
