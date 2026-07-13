@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import concurrent.futures
 import html
+import http.client
 import re
 import sys
 import tempfile
@@ -214,7 +215,7 @@ def fetch(url: str, timeout: float, retries: int, delay: float) -> str:
             if delay:
                 time.sleep(delay)
             return result
-        except (urllib.error.URLError, TimeoutError, OSError) as error:
+        except (urllib.error.URLError, http.client.HTTPException, TimeoutError, OSError) as error:
             last_error = error
             if attempt < retries:
                 time.sleep(min(2 ** attempt, 4))
@@ -403,16 +404,43 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
     return faculty, review
 
 
-def markdown(faculty: list[Faculty], review: list[str], verified: str) -> str:
+def publication_summaries(path: Path) -> dict[int, str]:
+    """Read compact topic summaries from the optional paper index."""
+    if not path.exists():
+        return {}
+    summaries: dict[int, str] = {}
+    current: int | None = None
+    count: int | None = None
+    themes: str | None = None
+    for line in path.read_text(encoding="utf-8").splitlines():
+        heading = re.match(r"## (\d+)\. ", line)
+        if heading:
+            if current is not None and count is not None:
+                summaries[current] = f"{themes or '主题待人工归类'}；Crossref 索引 {count} 篇；外部资料有限（E 级）"
+            current, count, themes = int(heading.group(1)), None, None
+            continue
+        matched = re.match(r"- Crossref 高置信匹配：共 (\d+) 篇", line)
+        if matched:
+            count = int(matched.group(1))
+        matched = re.match(r"- 论文佐证方向：(.+?)。$", line)
+        if matched:
+            themes = matched.group(1)
+    if current is not None and count is not None:
+        summaries[current] = f"{themes or '主题待人工归类'}；Crossref 索引 {count} 篇；外部资料有限（E 级）"
+    return summaries
+
+
+def markdown(
+    faculty: list[Faculty], review: list[str], verified: str, paper_summaries: dict[int, str]
+) -> str:
     lines = [
-        "# 澳门城市大学数据科学学院师资与导师方向索引",
+        "# 澳门城市大学数据科学学院导师基础画像",
         "",
         "> 数据来源：澳门城市大学数据科学学院官网 Academic Staff 及教师个人页。",
         f"> 核验日期：{verified}。",
         "> 本表来源等级：1（学院官方教师主页）；个人主页仅作为官方页公开的补充入口。",
         f"> 当前收录：{len(faculty)} 名本校 Academic Staff；不含 Academic Advisors、External Instructors 和行政人员。",
-        "> 近期论文证据：[fds_faculty_publications.md](fds_faculty_publications.md)。",
-        "> 导师匹配规则：[fds_mentor_recommendation.md](fds_mentor_recommendation.md)。",
+        "> 论文检索索引：[fds_papers.md](fds_papers.md)；导师匹配规则：[fds_rules.md](fds_rules.md)。",
         "",
         "## 使用边界",
         "",
@@ -422,20 +450,10 @@ def markdown(faculty: list[Faculty], review: list[str], verified: str) -> str:
         "- 联系方式只使用官网公开的 `cityu.edu.mo` / `cityu.mo` 工作邮箱，并同时提供官方主页；不收录私人邮箱、电话或办公室信息。",
         "- 导师职务、导师资格、研究方向和邮箱均按本次核验日期记录；没有日期的招生信息不能推断当前有名额或接收意愿。",
         "",
-        "## 推荐与展示规则",
-        "",
-        "1. 先按本科科研、硕士或博士阶段筛选导师资格，再匹配研究方向。",
-        "2. 按官网明确方向、多关键词匹配、简介或成果补充、间接关联的顺序判断相关度，不输出虚假百分比。",
-        "3. 需要导师推荐或最新研究主题时，再读取论文证据库；官网明确方向优先，论文主题只作补充，不按论文数量排名。",
-        "4. 匹配不超过 5 人时列出全部；超过 5 人时默认列出相关度最高的 5 人，信息较少时可列 3 人。",
-        "5. 省略候选时写明总人数、展示人数、未展开人数，并提示用户可以要求“显示全部相关教师”。",
-        "6. 同等相关度按下表官网顺序展示，不按职称、论文数量或知名度排序。",
-        "7. 用户明确要求全部名单时，列出所有符合条件者。",
-        "",
         "## 师资索引",
         "",
-        "| 序号 | 教师 | 职称/职务 | 导师资格 | 校内工作邮箱 | 标准化研究方向 | 官网方向摘要 | 依据 | 来源等级 | 核验日期 | 资料时段 | 官方主页 | 个人主页 |",
-        "|---:|---|---|---|---|---|---|---|---|---|---|---|---|",
+        "| 序号 | 教师 | 职称/职务 | 导师资格 | 校内工作邮箱 | 标准化研究方向 | 官网方向摘要 | 近期外部证据摘要 | 依据 | 核验日期 | 官方主页 | 个人主页 |",
+        "|---:|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for index, item in enumerate(faculty, 1):
         personal = f"[访问]({item.personal_url})" if item.personal_url else "官网未提供"
@@ -444,10 +462,11 @@ def markdown(faculty: list[Faculty], review: list[str], verified: str) -> str:
             if item.email
             else item.email_note or "官网未提供可验证邮箱"
         )
+        recent = paper_summaries.get(index, "外部论文索引未覆盖；不能据此判断没有近期成果")
         lines.append(
             f"| {index} | {item.chinese_name}（{item.english_name}） | {item.role} | "
             f"{item.qualification} | {email_link} | {'；'.join(item.tags)} | {item.research_summary} | "
-            f"{item.evidence} | 1（学院教师主页） | {verified} | 截至 {verified} | "
+            f"{recent} | {item.evidence}（学院教师主页） | {verified} | "
             f"[官方页]({item.official_url}) | {personal} |"
         )
 
@@ -473,9 +492,11 @@ def markdown(faculty: list[Faculty], review: list[str], verified: str) -> str:
 
 
 def parse_args() -> argparse.Namespace:
-    default_output = Path(__file__).resolve().parents[1] / "references" / "mentors" / "fds_faculty.md"
+    skill_dir = Path(__file__).resolve().parents[1]
+    default_output = skill_dir / "references" / "mentors" / "fds_mentors.md"
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=default_output)
+    parser.add_argument("--papers", type=Path, default=skill_dir / "references" / "mentors" / "fds_papers.md")
     parser.add_argument("--check", action="store_true", help="Do not write; fail if generated content differs")
     parser.add_argument("--date", help="Verification date in YYYY-MM-DD; defaults to today when writing")
     parser.add_argument("--timeout", type=float, default=20.0)
@@ -494,7 +515,7 @@ def main() -> int:
         verified = match.group(1) if match else None
     verified = verified or date.today().isoformat()
     faculty, review = build_faculty(args.timeout, args.retries, args.delay, args.workers)
-    rendered = markdown(faculty, review, verified)
+    rendered = markdown(faculty, review, verified, publication_summaries(args.papers))
 
     if args.check:
         if not args.output.exists():

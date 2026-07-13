@@ -314,7 +314,7 @@ def query_teacher(
                 tags=topic_tags(f"{title} {abstract}"),
                 evidence="标题和摘要" if abstract else "标题",
                 author_position=f"第 {author_index}/{author_total} 作者",
-                contribution_evidence="E（未公开作者贡献声明）",
+                contribution_evidence="E",
                 contribution_note="仅能确认参与该论文主题，不能确认具体负责模块",
             )
         )
@@ -341,14 +341,14 @@ def render(
     matched_teachers = sum(bool(papers) for _teacher, papers, _total in results)
     shown_papers = sum(len(papers) for _teacher, papers, _total in results)
     lines = [
-        "# 澳门城市大学数据科学学院教师近期论文与研究主题证据库",
+        "# 澳门城市大学数据科学学院教师论文检索索引",
         "",
         "> 教师身份来源：澳门城市大学数据科学学院 Academic Staff 与官方个人页。",
         "> 论文元数据来源：Crossref REST API；仅保留作者姓名准确匹配且作者隶属明确包含 City University of Macau 的记录。",
         f"> 核验日期：{verified}；检索范围：{since_year} 年至今；每位教师最多展示 {max_papers} 篇。",
         "> 本表论文来源等级：4（DOI/出版社元数据索引）；论文主题只作为官网研究方向的补充证据。",
         "> 贡献证据：当前 Crossref 记录未提供可靠的 Author Contributions/CRediT 声明；作者位置仅作弱证据，不能反推算法、代码、实验或数据分析角色。",
-        "> 导师匹配规则：[fds_mentor_recommendation.md](fds_mentor_recommendation.md)。",
+        "> 导师基础画像：[fds_mentors.md](fds_mentors.md)；匹配规则：[fds_rules.md](fds_rules.md)。",
         f"> 当前覆盖：{matched_teachers}/58 名教师，展示 {shown_papers} 篇高置信论文。",
         "",
         "## 使用规则",
@@ -357,7 +357,7 @@ def render(
         "- 主题标签根据论文标题及 Crossref 可用摘要生成；标为“标题”时没有使用摘要，不应过度推断全文内容。",
         "- Crossref 可能缺少尚未登记 DOI、作者隶属未填写或中文出版物。未匹配不等于教师没有近期成果。",
         "- 同名作者、作者隶属不清或无法证明属于澳城大该教师的论文一律不收录。",
-        "- 回答导师推荐时，先看 `fds_faculty.md` 的官网身份、导师资格和邮箱，再用本文件的论文主题作为补充证据。",
+        "- 常规导师推荐不必读取本文件；先用 `fds_mentors.md` 和 `fds_rules.md`，仅在查询具体论文、DOI、作者位置、贡献或深入比较候选人时读取本索引。",
         "- 当前论文记录均标为 E 级贡献证据：只能确认参与论文主题；没有明确贡献声明时，不得写成导师亲自负责某个技术模块。",
         "",
     ]
@@ -404,7 +404,7 @@ def render(
         for paper in papers:
             lines.append(
                 f"| {paper.year} | {table_text(paper.title)} | {'；'.join(paper.tags)} | "
-                f"{paper.author_position} | {paper.contribution_evidence}：{paper.contribution_note} | "
+                f"{paper.author_position} | {paper.contribution_evidence} | "
                 f"{paper.evidence} | {table_text(paper.venue)} | 4（DOI/出版社元数据） | {verified} | [DOI]({paper.url}) |"
             )
         lines.append("")
@@ -431,8 +431,8 @@ def render(
 def parse_args() -> argparse.Namespace:
     skill_dir = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--faculty", type=Path, default=skill_dir / "references" / "mentors" / "fds_faculty.md")
-    parser.add_argument("--output", type=Path, default=skill_dir / "references" / "mentors" / "fds_faculty_publications.md")
+    parser.add_argument("--faculty", type=Path, default=skill_dir / "references" / "mentors" / "fds_mentors.md")
+    parser.add_argument("--output", type=Path, default=skill_dir / "references" / "mentors" / "fds_papers.md")
     parser.add_argument("--check", action="store_true", help="Do not write; fail if generated content differs")
     parser.add_argument("--date", help="Verification date in YYYY-MM-DD; defaults to today when writing")
     parser.add_argument("--since-year", type=int, default=2023)

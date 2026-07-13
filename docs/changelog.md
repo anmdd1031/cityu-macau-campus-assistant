@@ -1,5 +1,15 @@
 # 更新日志
 
+## 2026-07-13
+
+### FDS 导师资料精简与分层读取
+
+- 将 FDS 导师资料收敛为 `references/mentors/fds_mentors.md`、`fds_papers.md`、`fds_rules.md` 三个文件，删除迁移后的旧文件名。
+- 导师推荐默认只读取官网基础画像和匹配规则；仅在查询具体论文、DOI、作者位置、论文贡献或深入比较候选人时读取论文索引。
+- 在导师基础画像中加入近期外部证据摘要；外部论文只补充研究主题，不覆盖官网身份、导师资格和官方方向。
+- 将论文表中逐条重复的长贡献免责声明压缩为 `E` 级标记，统一在规则文件解释其边界。
+- 同步更新 `SKILL.md`、README、详细指南和两个更新脚本的文件路径。
+
 本文件记录 `cityu-macau-campus-assistant` Skill 的主要更新。只记录影响 Skill 使用、知识库范围、安装方式、路由规则或文档入口的变化；普通文字润色不必逐条记录。
 
 ## 2026-07-12
@@ -175,9 +185,9 @@
 |---|---|---|
 | 新生与校园通用知识库 | `references/freshman.md` | 已覆盖 |
 | 数据科学学院 FDS | `references/fds.md` | 已覆盖 |
-| FDS 师资、导师方向与官方邮箱 | `references/mentors/fds_faculty.md` | 已覆盖 |
-| FDS 教师近期论文证据 | `references/mentors/fds_faculty_publications.md` | 已覆盖 47/58 名教师 |
-| FDS 导师匹配与贡献证据规则 | `references/mentors/fds_mentor_recommendation.md` | 已覆盖 |
+| FDS 导师基础画像与官方邮箱 | `references/mentors/fds_mentors.md` | 已覆盖 |
+| FDS 教师论文检索索引 | `references/mentors/fds_papers.md` | 已覆盖 47/58 名教师 |
+| FDS 导师匹配与贡献证据规则 | `references/mentors/fds_rules.md` | 已覆盖 |
 | 商学院 FOB | `references/fob.md` | 已覆盖 |
 | 金融学院 FOF | `references/fof.md` | 已覆盖 |
 | 大健康学院 FH | `references/fh.md` | 已覆盖 |

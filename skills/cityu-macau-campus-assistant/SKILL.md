@@ -35,8 +35,9 @@ description: 当用户询问澳门城市大学、澳城大或 City University of
 |---|---|
 | 招生、费用、学费、收费表、保证金、报名费、注册、校历、行事历、开学、下学期、上课时间、注册日程、体检、D 签注、逗留许可、宿舍、TronClass、图书馆、校园生活、部门联系、台风或暴雨 | `references/freshman.md` |
 | 校内餐饮、食堂、餐厅、菜单、价格、午餐、咖啡、打包、City Canteen、香舍、ÉLYSÉE、blu cafe | `references/澳门城市大学氹仔校区_校内餐饮指南.md` |
-| FDS 教师名单、职称、导师资格、官方邮箱、联系方式或教师主页 | `references/mentors/fds_faculty.md` |
-| FDS 导师推荐、找导师、研究方向、近期论文、代表论文、论文主题、作者贡献或询问导师负责论文哪一部分，或询问谁研究人工智能、大模型、数据科学、隐私计算、联邦学习、网络安全、区块链、计算机视觉、机器人等主题 | `references/mentors/fds_mentor_recommendation.md` + `references/mentors/fds_faculty.md` + `references/mentors/fds_faculty_publications.md` |
+| FDS 教师名单、职称、导师资格、官方邮箱、联系方式或教师主页 | `references/mentors/fds_mentors.md` |
+| FDS 导师推荐、找导师、研究方向，或询问谁研究人工智能、大模型、数据科学、隐私计算、联邦学习、网络安全、区块链、计算机视觉、机器人等主题 | `references/mentors/fds_rules.md` + `references/mentors/fds_mentors.md` |
+| FDS 具体论文、DOI、作者位置、论文贡献、导师负责论文哪一部分，或需要深入比较候选人的外部研究证据 | `references/mentors/fds_rules.md` + `references/mentors/fds_mentors.md` + `references/mentors/fds_papers.md` |
 | FDS、BITS、BCS、MDS、MCS、PhD DS、PhD CS、学分、转专业、资格考试、论文成果或毕业 | `references/fds.md` |
 | 商学院、FOB、工商管理、BBA、MBA、DBA、IBC、国际商务领袖实验班、4+1、商学院导师、商学院论文或毕业 | `references/fob.md` |
 | 金融学院、FOF、应用经济学、BAE、金融精英班、金融学硕士、金融科技硕士、金融学博士、金融方向、经济方向、金融学院导师、金融学院论文发表或毕业 | `references/fof.md` |
@@ -67,7 +68,7 @@ description: 当用户询问澳门城市大学、澳城大或 City University of
 6. 使用“教师、导师资格、匹配研究方向、相关依据、校内工作邮箱、官方主页”表格回答。邮箱只采用公开可核验的学校工作域名；官网未明确导师资格者只能称为“方向相关教师”。
 7. 不按职称、论文数量或知名度判断“最好”“最强”或“最容易申请”，不得保证招生名额、接收意愿或录取结果。
 8. 引用论文时给出 DOI，并说明主题来自标题还是标题和摘要。论文库没有高置信匹配时，只说明“外部数据未覆盖”，不得写成“该教师没有近期论文”。
-9. 需要解释导师在论文中负责哪一部分时，读取 `references/mentors/fds_mentor_recommendation.md` 的贡献证据规则；没有 Author Contributions、CRediT 或其他明确声明时，只能说“参与该主题，具体负责模块无法确认”。
+9. 需要解释导师在论文中负责哪一部分时，读取 `references/mentors/fds_rules.md` 和按需读取 `references/mentors/fds_papers.md`；没有 Author Contributions、CRediT 或其他明确声明时，只能说“参与该主题，具体负责模块无法确认”。
 
 ## FDS 导师资料来源与时效
 
