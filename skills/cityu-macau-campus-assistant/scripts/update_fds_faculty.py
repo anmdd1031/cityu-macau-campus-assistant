@@ -46,6 +46,33 @@ RESEARCH_LABELS = {
     "research and expertise",
 }
 
+EDUCATION_LABELS = {
+    "education", "education experience", "educational background",
+    "educational experience", "educational qualifications", "academic qualifications",
+}
+COURSE_LABELS = {
+    "course taught", "courses taught", "subjects taught", "teaching course",
+    "teaching courses", "course s taught", "teaching course s", "courses", "teaching",
+}
+PROJECT_LABELS = {
+    "research project", "research projects", "scientific research project",
+    "scientific research projects", "select scientific research projects",
+}
+PUBLICATION_LABELS = {
+    "publication", "publications", "selected publications",
+    "select publication in recent three years", "research and publishing",
+    "research and publications in recent years", "research and publication",
+}
+PROFILE_SECTION_LABELS = (
+    RESEARCH_LABELS | EDUCATION_LABELS | COURSE_LABELS | PROJECT_LABELS |
+    PUBLICATION_LABELS | {
+        "position", "incumbent", "current", "work experience", "scientific research experience",
+        "personal profile", "profile", "academic appointment /service",
+        "academic appointment/service", "honors and awards", "awards", "patent",
+        "patents", "recruitment", "contact information",
+    }
+)
+
 SECTION_ENDINGS = {
     "research and publication",
     "research and publications",
@@ -188,6 +215,10 @@ class Faculty:
     email_note: str | None
     tags: list[str]
     research_summary: str
+    education_summary: str
+    courses_summary: str
+    official_evidence_summary: str
+    recruitment_summary: str
     evidence: str
     official_url: str
     personal_url: str | None
@@ -275,11 +306,59 @@ def find_research_section(lines: list[str]) -> tuple[str, bool]:
         if text:
             return text, True
 
+    for line in lines:
+        match = re.search(r"(?i)\b(?:specializes|specialises)\s+in\s+(.+?)(?:\.|$)", line)
+        if match:
+            return clean_text(match.group(1)), True
+
     # Use only the member body after its title, not the site navigation.
     body_start = next((i for i, line in enumerate(lines) if "professor" in line.lower()), 0)
     body = " ".join(lines[body_start:])
     body = re.split(r"\b(?:Prev|Back|Next)\b", body, maxsplit=1, flags=re.IGNORECASE)[0]
     return clean_text(body), False
+
+
+def find_section(lines: list[str], labels: set[str], limit: int) -> str | None:
+    """Extract a short official-profile section without crossing into another heading."""
+    start: int | None = None
+    inline = ""
+    for index, line in enumerate(lines):
+        label = normalized_label(line)
+        if label in labels:
+            start = index + 1
+            break
+        for candidate in labels:
+            if label.startswith(candidate + " "):
+                inline = clean_text(line[len(candidate):].lstrip(":： "))
+                start = index + 1
+                break
+        if start is not None:
+            break
+    if start is None:
+        return None
+
+    collected = [inline] if inline else []
+    for line in lines[start:]:
+        label = normalized_label(line)
+        if label in PROFILE_SECTION_LABELS or any(
+            label.startswith(heading + " ") for heading in PROFILE_SECTION_LABELS
+        ):
+            break
+        if line not in collected:
+            collected.append(line)
+        if len(" ".join(collected)) >= limit:
+            break
+    value = clean_text(" ".join(collected))
+    return short_summary(value, limit) if value else None
+
+
+def find_recruitment(lines: list[str]) -> str | None:
+    for line in lines:
+        if normalized_label(line) == "recruitment":
+            continue
+        if re.search(r"(?i)\bcurrently\s+recruiting|scholarships?\s+are\s+offered", line):
+            return short_summary(line, 220)
+    return None
 
 
 def supervisor_qualification(text: str) -> str:
@@ -371,6 +450,10 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
         source = sources[position]
         document = parse_document(source)
         research_text, explicit = find_research_section(document.lines)
+        education = find_section(document.lines, EDUCATION_LABELS, 220)
+        courses = find_section(document.lines, COURSE_LABELS, 180)
+        project = find_section(document.lines, PROJECT_LABELS, 220)
+        publication = find_section(document.lines, PUBLICATION_LABELS, 220)
         tags = match_tags(member_id, research_text)
         if not tags:
             tags = ["官网方向待人工归类"]
@@ -396,6 +479,10 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
                 email_note=email_note,
                 tags=tags,
                 research_summary=short_summary(research_text),
+                education_summary=education or "官网未提供",
+                courses_summary=courses or "官网未提供",
+                official_evidence_summary=project or publication or "官网未提供",
+                recruitment_summary=find_recruitment(document.lines) or "官网未公开招募说明",
                 evidence="官网明确" if explicit else "根据官网简介、授课或成果推断",
                 official_url=official_url,
                 personal_url=find_personal_homepage(source),
@@ -447,13 +534,15 @@ def markdown(
         "- 本索引用于按公开研究方向筛选候选教师，不构成录取、招生名额或接收意愿判断。",
         "- 只有官网明确标注博士生导师或硕士生导师时，才能使用相应称谓；否则只能称为方向相关教师。",
         "- 研究方向可以有多个。`根据官网简介、授课或成果推断` 不等同于教师本人声明。",
+        "- 教育背景、授课课程、项目/成果和招募说明均为官网个人页摘要；`官网未提供` 只表示页面未写明。",
+        "- 招募说明按核验日记录，不等于实时名额或接收承诺，申请前必须向教师或学院确认。",
         "- 联系方式只使用官网公开的 `cityu.edu.mo` / `cityu.mo` 工作邮箱，并同时提供官方主页；不收录私人邮箱、电话或办公室信息。",
         "- 导师职务、导师资格、研究方向和邮箱均按本次核验日期记录；没有日期的招生信息不能推断当前有名额或接收意愿。",
         "",
         "## 师资索引",
         "",
-        "| 序号 | 教师 | 职称/职务 | 导师资格 | 校内工作邮箱 | 标准化研究方向 | 官网方向摘要 | 近期外部证据摘要 | 依据 | 核验日期 | 官方主页 | 个人主页 |",
-        "|---:|---|---|---|---|---|---|---|---|---|---|---|",
+        "| 序号 | 教师 | 职称/职务 | 导师资格 | 校内工作邮箱 | 标准化研究方向 | 官网方向摘要 | 官网教育背景摘要 | 官网授课摘要 | 官网项目/成果摘要 | 官网招募说明 | 近期外部证据摘要 | 方向依据 | 核验日期 | 官方主页 | 个人主页 |",
+        "|---:|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for index, item in enumerate(faculty, 1):
         personal = f"[访问]({item.personal_url})" if item.personal_url else "官网未提供"
@@ -466,7 +555,8 @@ def markdown(
         lines.append(
             f"| {index} | {item.chinese_name}（{item.english_name}） | {item.role} | "
             f"{item.qualification} | {email_link} | {'；'.join(item.tags)} | {item.research_summary} | "
-            f"{recent} | {item.evidence}（学院教师主页） | {verified} | "
+            f"{item.education_summary} | {item.courses_summary} | {item.official_evidence_summary} | "
+            f"{item.recruitment_summary} | {recent} | {item.evidence}（学院教师主页） | {verified} | "
             f"[官方页]({item.official_url}) | {personal} |"
         )
 
