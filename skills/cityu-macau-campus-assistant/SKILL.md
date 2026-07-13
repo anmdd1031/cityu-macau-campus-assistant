@@ -37,6 +37,7 @@ description: 当用户询问澳门城市大学、澳城大或 City University of
 | 校内餐饮、食堂、餐厅、菜单、价格、午餐、咖啡、打包、City Canteen、香舍、ÉLYSÉE、blu cafe | `references/澳门城市大学氹仔校区_校内餐饮指南.md` |
 | FDS 教师名单、职称、导师资格、官方邮箱、联系方式或教师主页 | `references/mentors/fds_mentors.md` |
 | FDS 导师推荐、找导师、研究方向，或询问谁研究人工智能、大模型、数据科学、隐私计算、联邦学习、网络安全、区块链、计算机视觉、机器人等主题 | `references/mentors/fds_rules.md` + `references/mentors/fds_mentors.md` |
+| FDS 教师完整科研经历、完整研究项目、官网论文成果，或官网访问失败时查询本地完整官网资料 | `references/mentors/fds_rules.md` + `references/mentors/fds_mentors.md` + `references/mentors/fds_official_evidence.md` |
 | FDS 具体论文、DOI、作者位置、论文贡献、导师负责论文哪一部分，或需要深入比较候选人的外部研究证据 | `references/mentors/fds_rules.md` + `references/mentors/fds_mentors.md` + `references/mentors/fds_papers.md` |
 | FDS、BITS、BCS、MDS、MCS、PhD DS、PhD CS、学分、转专业、资格考试、论文成果或毕业 | `references/fds.md` |
 | 商学院、FOB、工商管理、BBA、MBA、DBA、IBC、国际商务领袖实验班、4+1、商学院导师、商学院论文或毕业 | `references/fob.md` |

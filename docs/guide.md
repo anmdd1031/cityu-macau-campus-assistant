@@ -39,7 +39,8 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 |---|---|---|---|
 | 新生与校园通用知识库 | [freshman.md](../skills/cityu-macau-campus-assistant/references/freshman.md) | 已完成 | 招生、注册、学费、奖学金、体检、D 签注、逗留许可、宿舍、图书馆、校园服务、恶劣天气 |
 | 数据科学学院 FDS | [fds.md](../skills/cityu-macau-campus-assistant/references/fds.md) | 已完成 | BITS、BCS、MDS、MCS、PhD DS、PhD CS、学分、资格考试、论文成果、导师、毕业 |
-| FDS 导师基础画像 | [fds_mentors.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_mentors.md) | 已完成 | 58 名 Academic Staff、导师资格、58 个可核验校内工作邮箱、官网研究方向、官网科研经历/项目/论文成果摘要、招募说明、官方主页和近期外部证据摘要 |
+| FDS 导师基础画像 | [fds_mentors.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_mentors.md) | 已完成 | 58 名 Academic Staff、导师资格、58 个可核验校内工作邮箱、官网研究方向、科研证据覆盖提示、招募说明、官方主页和近期外部证据摘要 |
+| FDS 官网完整科研证据 | [fds_official_evidence.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_official_evidence.md) | 已完成 | 58 名教师官网公开的完整科研经历、研究项目和论文成果栏目；按需读取，官网访问失败时可使用本地核验版本 |
 | FDS 论文检索索引 | [fds_papers.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_papers.md) | 已完成 | 47 名教师、185 篇 2023 年以来高置信论文、DOI、作者位置和 E 级贡献标记；仅按需读取 |
 | FDS 导师匹配规则 | [fds_rules.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_rules.md) | 已完成 | 官网准入、两阶段匹配、来源优先级、贡献证据 A-E 和回答边界 |
 | 商学院 FOB | [fob.md](../skills/cityu-macau-campus-assistant/references/fob.md) | 已完成 | BBA、MBA、DBA、IBC、4+1 项目、导师、论文与毕业要求 |
@@ -77,6 +78,7 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 | 氹仔校区食堂、餐厅、菜单、价格、咖啡、打包、午餐 | `澳门城市大学氹仔校区_校内餐饮指南.md` |
 | FDS 教师名单、导师资格、官方邮箱、联系方式或教师主页 | `references/mentors/fds_mentors.md` |
 | FDS 导师推荐、教师研究方向或谁研究某个主题 | `references/mentors/fds_rules.md` + `references/mentors/fds_mentors.md` |
+| FDS 完整科研经历、研究项目、官网论文成果或官网访问失败时查询本地资料 | 在上述文件基础上按需读取 `references/mentors/fds_official_evidence.md` |
 | FDS 具体论文、DOI、作者位置、论文贡献或深入比较候选人 | 在上述文件基础上按需读取 `references/mentors/fds_papers.md` |
 | FDS、BITS、BCS、MDS、MCS、PhD DS、PhD CS | `fds.md` |
 | 商学院、FOB、BBA、MBA、DBA、IBC、4+1 | `fob.md` |
@@ -273,6 +275,7 @@ cityu-macau-campus-assistant/
 │   ├── fds.md
 │   ├── mentors/
 │   │   ├── fds_mentors.md
+│   │   ├── fds_official_evidence.md
 │   │   ├── fds_papers.md
 │   │   └── fds_rules.md
 │   ├── fob.md
@@ -325,7 +328,7 @@ cityu-macau-campus-assistant/
 
 普通使用者不需要安装 Python。只有维护者重新抓取 FDS 官网师资时，才需要 Python 3；脚本不依赖第三方包。
 
-重新生成索引：
+同时重新生成导师索引和官网完整科研证据：
 
 ```bash
 python skills/cityu-macau-campus-assistant/scripts/update_fds_faculty.py
@@ -337,7 +340,7 @@ python skills/cityu-macau-campus-assistant/scripts/update_fds_faculty.py
 python skills/cityu-macau-campus-assistant/scripts/update_fds_faculty.py --check
 ```
 
-脚本会核对中英文各 6 页 Academic Staff 列表及对应的中英文教师页面。研究方向优先采用中文官网个人页，中文页未明确时才回退英文页；导师资格由双语页面交叉提取，校内邮箱优先采用中文页的有效学校域名地址，中文页缺失时才回退英文页。科研经历、研究项目和论文成果独立提取，不得混入研究方向；这些官网摘要可能不是最新或完整信息，只能作为参考。标准化检索标签不从教育背景、授课或论文成果推断；官网没有公开的字段会明确写为“官网未提供”，自动提取失败的信息会进入 `references/mentors/fds_mentors.md` 的“人工复核记录”。
+脚本会核对中英文各 6 页 Academic Staff 列表及对应的中英文教师页面，并同时生成 `fds_mentors.md` 与 `fds_official_evidence.md`。研究方向优先采用中文官网个人页，中文页未明确时才回退英文页；导师资格由双语页面交叉提取，校内邮箱优先采用中文页的有效学校域名地址，中文页缺失时才回退英文页。科研经历、研究项目和论文成果独立提取，不得混入研究方向；完整正文保存在按需读取文件中，主表只显示覆盖状态。这些官网资料可能不是最新或完整信息，只能作为参考。标准化检索标签不从教育背景、授课或论文成果推断；自动提取失败的信息会进入 `fds_mentors.md` 的“人工复核记录”。
 
 更新近期论文证据：
 

@@ -4,7 +4,7 @@
 
 ### FDS 导师资料精简与分层读取
 
-- 将 FDS 导师资料收敛为 `references/mentors/fds_mentors.md`、`fds_papers.md`、`fds_rules.md` 三个文件，删除迁移后的旧文件名。
+- 将 FDS 导师资料按用途整理为 `fds_mentors.md`、`fds_official_evidence.md`、`fds_papers.md`、`fds_rules.md`，删除迁移后的旧文件名并保持按需读取。
 - 重新核验官网 6 页 Academic Staff 列表和 58 个教师个人页，在 `fds_mentors.md` 补充官网项目/成果和明确招募说明；官网未写明时不使用外部资料猜测补全。
 - 本次官网字段覆盖：项目或成果 51/58、明确招募说明 2/58；其余记录为“官网未提供”或“官网未公开招募说明”。
 - 保留 1 条人工复核：Hongguang Zhu 页面当前公开邮箱为 `hgzhu@cityu.edu`，域名疑似不完整，未擅自修改。
@@ -14,6 +14,8 @@
 - 校内邮箱改为中文官网优先、英文官网补缺，当前覆盖 58/58；例如朱泓光中文页提供完整的 `hgzhu@cityu.edu.mo`，不再采用英文页中不完整的地址。
 - 将中文官网的科研经历加入方向栏目终止边界，修复郭永德等页面把科研经历误并入研究方向的问题。
 - 将科研经历、研究项目和论文成果分别提取并合并到“官网科研经历/项目/论文成果摘要（仅供参考）”；明确这些官网记录可能不是最新或完整信息，不用于断言当前研究活跃度或项目状态。
+- 新增 `references/mentors/fds_official_evidence.md`，本地保存 58 名教师官网完整科研经历、研究项目和论文成果栏目，供按需读取及官网访问失败时使用。
+- 将 `fds_mentors.md` 的截断摘要改为“科研经历/研究项目/论文成果是否存在 + 来源 + 完整资料链接”，避免摘要截断造成信息遗漏或被误解为完整清单。
 - 导师推荐默认只读取官网基础画像和匹配规则；仅在查询具体论文、DOI、作者位置、论文贡献或深入比较候选人时读取论文索引。
 - 在导师基础画像中加入近期外部证据摘要；外部论文只补充研究主题，不覆盖官网身份、导师资格和官方方向。
 - 将论文表中逐条重复的长贡献免责声明压缩为 `E` 级标记，统一在规则文件解释其边界。
@@ -195,6 +197,7 @@
 | 新生与校园通用知识库 | `references/freshman.md` | 已覆盖 |
 | 数据科学学院 FDS | `references/fds.md` | 已覆盖 |
 | FDS 导师基础画像与官方邮箱 | `references/mentors/fds_mentors.md` | 已覆盖 |
+| FDS 官网完整科研证据 | `references/mentors/fds_official_evidence.md` | 已覆盖 58 名教师 |
 | FDS 教师论文检索索引 | `references/mentors/fds_papers.md` | 已覆盖 47/58 名教师 |
 | FDS 导师匹配与贡献证据规则 | `references/mentors/fds_rules.md` | 已覆盖 |
 | 商学院 FOB | `references/fob.md` | 已覆盖 |

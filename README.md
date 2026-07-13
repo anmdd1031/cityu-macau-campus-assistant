@@ -75,6 +75,7 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 - [新生与校园知识库](skills/cityu-macau-campus-assistant/references/freshman.md)
 - [数据科学学院知识库](skills/cityu-macau-campus-assistant/references/fds.md)
 - [数据科学学院导师基础画像（官网师资、资格、方向、项目及招募说明）](skills/cityu-macau-campus-assistant/references/mentors/fds_mentors.md)
+- [数据科学学院导师官网完整科研证据](skills/cityu-macau-campus-assistant/references/mentors/fds_official_evidence.md)
 - [数据科学学院教师论文检索索引](skills/cityu-macau-campus-assistant/references/mentors/fds_papers.md)
 - [FDS 导师匹配与贡献证据规则](skills/cityu-macau-campus-assistant/references/mentors/fds_rules.md)
 - [商学院知识库](skills/cityu-macau-campus-assistant/references/fob.md)

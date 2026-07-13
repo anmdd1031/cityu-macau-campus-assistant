@@ -261,9 +261,17 @@ class Faculty:
     tags: list[str]
     research_summary: str
     official_evidence_summary: str
+    official_experience: str | None
+    official_experience_source: str | None
+    official_projects: str | None
+    official_projects_source: str | None
+    official_publications: str | None
+    official_publications_source: str | None
     recruitment_summary: str
     evidence: str
     official_url: str
+    chinese_url: str
+    english_url: str
     personal_url: str | None
 
 
@@ -371,8 +379,8 @@ def find_research_section(lines: list[str]) -> tuple[str, bool]:
     return "", False
 
 
-def find_section(lines: list[str], labels: set[str], limit: int) -> str | None:
-    """Extract a short official-profile section without crossing into another heading."""
+def find_section(lines: list[str], labels: set[str], limit: int | None = None) -> str | None:
+    """Extract an official-profile section without crossing into another heading."""
     start: int | None = None
     inline = ""
     for index, line in enumerate(lines):
@@ -389,10 +397,6 @@ def find_section(lines: list[str], labels: set[str], limit: int) -> str | None:
         for candidate in labels:
             if label.startswith(candidate + " "):
                 inline = clean_text(line[len(candidate):].lstrip(":： "))
-                start = index + 1
-                break
-            if re.search(r"[\u3400-\u9fff]", candidate) and candidate in line:
-                inline = clean_text(line.split(candidate, 1)[1].lstrip(":： "))
                 start = index + 1
                 break
         if start is not None:
@@ -412,10 +416,12 @@ def find_section(lines: list[str], labels: set[str], limit: int) -> str | None:
             break
         if line not in collected:
             collected.append(line)
-        if len(" ".join(collected)) >= limit:
+        if limit is not None and len(" ".join(collected)) >= limit:
             break
     value = clean_text(" ".join(collected))
-    return short_summary(value, limit) if value else None
+    if not value:
+        return None
+    return short_summary(value, limit) if limit is not None else value.replace("|", "\\|")
 
 
 def find_recruitment(lines: list[str]) -> str | None:
@@ -427,15 +433,34 @@ def find_recruitment(lines: list[str]) -> str | None:
     return None
 
 
-def official_evidence_summary(experience: str | None, project: str | None, publication: str | None) -> str:
-    parts = []
-    if experience:
-        parts.append(f"科研经历：{experience}")
-    if project:
-        parts.append(f"研究项目：{project}")
-    if publication:
-        parts.append(f"论文成果：{publication}")
-    return "；".join(parts) if parts else "官网未提供"
+def choose_section(
+    chinese_lines: list[str], english_lines: list[str], labels: set[str]
+) -> tuple[str | None, str | None]:
+    chinese_value = find_section(chinese_lines, labels)
+    if chinese_value:
+        return chinese_value, "中文官网"
+    english_value = find_section(english_lines, labels)
+    return (english_value, "英文官网") if english_value else (None, None)
+
+
+def official_evidence_summary(
+    index: int,
+    experience: str | None,
+    experience_source: str | None,
+    project: str | None,
+    project_source: str | None,
+    publication: str | None,
+    publication_source: str | None,
+) -> str:
+    def status(label: str, value: str | None, source: str | None) -> str:
+        return f"{label}：有（{source}）" if value else f"{label}：官网未提供"
+
+    return "；".join([
+        status("科研经历", experience, experience_source),
+        status("研究项目", project, project_source),
+        status("论文成果", publication, publication_source),
+        f"[读取本地完整资料](fds_official_evidence.md#teacher-{index})",
+    ])
 
 
 def supervisor_qualification(text: str) -> str:
@@ -523,7 +548,7 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
         chinese_sources = list(executor.map(lambda url: fetch(url, timeout, retries, delay), chinese_profile_urls))
 
     for position, (member_id, listing_title) in enumerate(english):
-        _chinese_id, chinese_title = chinese[position]
+        chinese_id, chinese_title = chinese[position]
         official_url = profile_urls[position]
         source = sources[position]
         document = parse_document(source)
@@ -536,17 +561,14 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
             official_url = chinese_profile_urls[position]
         else:
             research_text, explicit, direction_source = english_research, english_explicit, "英文官网明确" if english_explicit else "官网未明确列出研究方向"
-        experience = (
-            find_section(chinese_document.lines, EXPERIENCE_LABELS, 160)
-            or find_section(document.lines, EXPERIENCE_LABELS, 160)
+        experience, experience_source = choose_section(
+            chinese_document.lines, document.lines, EXPERIENCE_LABELS
         )
-        project = (
-            find_section(chinese_document.lines, PROJECT_LABELS, 180)
-            or find_section(document.lines, PROJECT_LABELS, 180)
+        project, project_source = choose_section(
+            chinese_document.lines, document.lines, PROJECT_LABELS
         )
-        publication = (
-            find_section(chinese_document.lines, PUBLICATION_LABELS, 200)
-            or find_section(document.lines, PUBLICATION_LABELS, 200)
+        publication, publication_source = choose_section(
+            chinese_document.lines, document.lines, PUBLICATION_LABELS
         )
         tags = match_tags(research_text)
         if not tags:
@@ -573,10 +595,26 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
                 email_note=email_note,
                 tags=tags,
                 research_summary=short_summary(research_text) if research_text else "官网未明确列出研究方向",
-                official_evidence_summary=official_evidence_summary(experience, project, publication),
+                official_evidence_summary=official_evidence_summary(
+                    position + 1,
+                    experience,
+                    experience_source,
+                    project,
+                    project_source,
+                    publication,
+                    publication_source,
+                ),
+                official_experience=experience,
+                official_experience_source=experience_source,
+                official_projects=project,
+                official_projects_source=project_source,
+                official_publications=publication,
+                official_publications_source=publication_source,
                 recruitment_summary=find_recruitment(document.lines) or "官网未公开招募说明",
                 evidence=direction_source,
                 official_url=official_url,
+                chinese_url=f"{BASE_URL}/members/{chinese_id}",
+                english_url=f"{BASE_URL}/en/members/{member_id}",
                 personal_url=find_personal_homepage(source),
             )
         )
@@ -609,6 +647,59 @@ def publication_summaries(path: Path) -> dict[int, str]:
     return summaries
 
 
+def official_evidence_markdown(faculty: list[Faculty], verified: str) -> str:
+    lines = [
+        "# 澳门城市大学数据科学学院导师官网科研证据",
+        "",
+        "> 数据来源：澳门城市大学数据科学学院中英文教师个人页。",
+        f"> 核验日期：{verified}。",
+        "> 本文件保存官网公开的完整科研经历、研究项目和论文成果栏目，供官网访问失败或需要完整上下文时按教师读取。",
+        "> 官网页面可能未及时更新，也不保证列出全部成果；本地内容只能作为参考，不能证明项目仍在进行、成果列表完整或教师当前招生。",
+        "> 默认导师匹配请先读取 [fds_mentors.md](fds_mentors.md)；只有需要科研证据详情时再读取本文件中的对应教师章节。",
+        "",
+        "## 快速索引",
+        "",
+    ]
+    for start in range(0, len(faculty), 10):
+        group = faculty[start : start + 10]
+        lines.append("- " + "；".join(
+            f"[{index}. {item.chinese_name}](#teacher-{index})"
+            for index, item in enumerate(group, start + 1)
+        ))
+
+    for index, item in enumerate(faculty, 1):
+        lines.extend([
+            "",
+            f'<a id="teacher-{index}"></a>',
+            "",
+            f"## {index}. {item.chinese_name}（{item.english_name}）",
+            "",
+            f"- 中文官网：[访问]({item.chinese_url})",
+            f"- 英文官网：[访问]({item.english_url})",
+            f"- 核验日期：{verified}",
+            "",
+            "### 科研经历",
+            "",
+            f"来源：{item.official_experience_source or '官网未提供'}。",
+            "",
+            item.official_experience or "官网未提供。",
+            "",
+            "### 研究项目",
+            "",
+            f"来源：{item.official_projects_source or '官网未提供'}。",
+            "",
+            item.official_projects or "官网未提供。",
+            "",
+            "### 论文成果",
+            "",
+            f"来源：{item.official_publications_source or '官网未提供'}。",
+            "",
+            item.official_publications or "官网未提供。",
+        ])
+    lines.append("")
+    return "\n".join(lines)
+
+
 def markdown(
     faculty: list[Faculty], review: list[str], verified: str, paper_summaries: dict[int, str]
 ) -> str:
@@ -622,14 +713,14 @@ def markdown(
         "> 本表来源等级：1（学院官方教师主页）；个人主页仅作为官方页公开的补充入口。",
         f"> 当前收录：{len(faculty)} 名本校 Academic Staff；不含 Academic Advisors、External Instructors 和行政人员。",
         f"> 方向来源：中文官网优先（{chinese_directions} 人）；中文页未明确时回退英文官网（{english_fallbacks} 人）。",
-        "> 论文检索索引：[fds_papers.md](fds_papers.md)；导师匹配规则：[fds_rules.md](fds_rules.md)。",
+        "> 官网完整科研证据：[fds_official_evidence.md](fds_official_evidence.md)；论文检索索引：[fds_papers.md](fds_papers.md)；导师匹配规则：[fds_rules.md](fds_rules.md)。",
         "",
         "## 使用边界",
         "",
         "- 本索引用于按公开研究方向筛选候选教师，不构成录取、招生名额或接收意愿判断。",
         "- 只有官网明确标注博士生导师或硕士生导师时，才能使用相应称谓；否则只能称为方向相关教师。",
         "- `标准化检索标签` 只根据官网个人页明确展示的研究方向或明确的专业方向表述映射，不使用教育背景、授课或论文成果补充标签。",
-        "- 科研经历、研究项目、论文成果和招募说明均为官网个人页摘要；`官网未提供` 只表示页面未写明。",
+        "- 科研证据列只显示三类资料是否存在及来源；完整正文按需读取 `fds_official_evidence.md`，不再使用可能遗漏关键信息的截断摘要。",
         "- 官网列出的科研经历、研究项目和论文成果可能没有及时更新，也不一定完整，只能作为方向匹配的参考，不能据此判断当前研究活跃度或招生状态。",
         "- 招募说明按核验日记录，不等于实时名额或接收承诺，申请前必须向教师或学院确认。",
         "- 联系方式只使用官网公开的 `cityu.edu.mo` / `cityu.mo` 工作邮箱，并同时提供官方主页；不收录私人邮箱、电话或办公室信息。",
@@ -637,7 +728,7 @@ def markdown(
         "",
         "## 师资索引",
         "",
-        "| 序号 | 教师 | 职称/职务 | 导师资格 | 校内工作邮箱 | 官网研究方向 | 标准化检索标签 | 官网科研经历/项目/论文成果摘要（仅供参考） | 官网招募说明 | 近期外部证据摘要 | 方向依据 | 核验日期 | 官方主页 | 个人主页 |",
+        "| 序号 | 教师 | 职称/职务 | 导师资格 | 校内工作邮箱 | 官网研究方向 | 标准化检索标签 | 官网科研证据覆盖 | 官网招募说明 | 近期外部证据摘要 | 方向依据 | 核验日期 | 官方主页 | 个人主页 |",
         "|---:|---|---|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for index, item in enumerate(faculty, 1):
@@ -680,8 +771,10 @@ def markdown(
 def parse_args() -> argparse.Namespace:
     skill_dir = Path(__file__).resolve().parents[1]
     default_output = skill_dir / "references" / "mentors" / "fds_mentors.md"
+    default_evidence_output = skill_dir / "references" / "mentors" / "fds_official_evidence.md"
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=default_output)
+    parser.add_argument("--evidence-output", type=Path, default=default_evidence_output)
     parser.add_argument("--papers", type=Path, default=skill_dir / "references" / "mentors" / "fds_papers.md")
     parser.add_argument("--check", action="store_true", help="Do not write; fail if generated content differs")
     parser.add_argument("--date", help="Verification date in YYYY-MM-DD; defaults to today when writing")
@@ -702,24 +795,31 @@ def main() -> int:
     verified = verified or date.today().isoformat()
     faculty, review = build_faculty(args.timeout, args.retries, args.delay, args.workers)
     rendered = markdown(faculty, review, verified, publication_summaries(args.papers))
+    evidence_rendered = official_evidence_markdown(faculty, verified)
 
     if args.check:
-        if not args.output.exists():
-            print(f"Missing generated reference: {args.output}", file=sys.stderr)
-            return 1
-        current = args.output.read_text(encoding="utf-8").replace("\r\n", "\n")
-        if current != rendered:
-            print(f"FDS faculty reference is stale: {args.output}", file=sys.stderr)
-            return 1
-        print(f"FDS faculty reference is current: {len(faculty)} profiles; {len(review)} review notes")
+        expected = ((args.output, rendered), (args.evidence_output, evidence_rendered))
+        for path, content in expected:
+            if not path.exists():
+                print(f"Missing generated reference: {path}", file=sys.stderr)
+                return 1
+            current = path.read_text(encoding="utf-8").replace("\r\n", "\n")
+            if current != content:
+                print(f"FDS faculty reference is stale: {path}", file=sys.stderr)
+                return 1
+        print(f"FDS faculty references are current: {len(faculty)} profiles; {len(review)} review notes")
         return 0
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile("w", encoding="utf-8", newline="\n", delete=False, dir=args.output.parent) as handle:
         handle.write(rendered)
         temporary = Path(handle.name)
+    with tempfile.NamedTemporaryFile("w", encoding="utf-8", newline="\n", delete=False, dir=args.evidence_output.parent) as handle:
+        handle.write(evidence_rendered)
+        evidence_temporary = Path(handle.name)
     temporary.replace(args.output)
-    print(f"Wrote {args.output}: {len(faculty)} profiles; {len(review)} review notes")
+    evidence_temporary.replace(args.evidence_output)
+    print(f"Wrote {args.output} and {args.evidence_output}: {len(faculty)} profiles; {len(review)} review notes")
     return 0
 
 
