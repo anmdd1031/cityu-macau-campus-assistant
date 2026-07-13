@@ -20,6 +20,7 @@ description: 当用户询问澳门城市大学、澳城大或 City University of
 - 荣誉班（Honours Class）选拔、课程体系、导师指导、科研训练、实习、竞赛和毕业条件。
 - 氹仔校区校内餐厅、菜单、价格、供应时段和用餐建议。
 - 学校及澳门政府公开的办事流程、部门入口和恶劣天气安排。
+- 人文社会科学学院（FHSS）、创新设计学院（FIAD）、葡语国家研究院（IROPC）和城市与可持续发展研究院（IUSD）当前主动不设单独知识库；只回答 `freshman.md` 已覆盖的学校通用信息，不推断其课程、导师或毕业规则。
 
 ## 不适用范围
 
@@ -47,7 +48,8 @@ description: 当用户询问澳门城市大学、澳城大或 City University of
 | 法学院、FL、SOL、法学硕士、LL.M、公法、刑事法、民事法、国际商法、法学院导师、法学院论文或毕业 | `references/fl.md` |
 | 国际旅游与管理学院、FITM、国旅学院、国际旅游与酒店管理、BBA in IHTM、国际款待与旅游业管理、MHTM、国际酒店管理、MHM、国际旅游管理博士、PhD in ITM、酒店管理博士、DHM、旅游学院导师、项目报告或毕业 | `references/fitm.md` |
 | 荣誉班、Honours Class、荣誉课程、选拔、科研训练、一对一导师、X-Challenge、竞赛、实习、深圳零一学院 | `references/honours_class.md` |
-| 同时涉及学校通用流程和学院学业规则，或用户问“各学院/所有学院/全部专业”的费用、课程、毕业要求 | `references/freshman.md` + 对应学院 reference |
+| 人文社会科学学院（FHSS）、创新设计学院（FIAD）、葡语国家研究院（IROPC）或城市与可持续发展研究院（IUSD） | `references/freshman.md`（仅学校通用信息）；明确说明当前没有单独学院知识库，学院课程、导师和毕业要求应查对应官方页面 |
+| 同时涉及学校通用流程和学院学业规则，或用户问“各学院/所有学院/全部专业”的费用、课程、毕业要求 | `references/freshman.md` + 已覆盖学院的对应 reference；主动未覆盖学院按上一行处理 |
 
 这些 reference 直接使用本项目现有知识库。按用户身份、入学年份、课程和主题检索相关章节，不要无差别复述整份文件。知识库中的 Skill、RAG、Intent 和回答模板章节属于内部封装建议，不应当作学校政策引用。
 

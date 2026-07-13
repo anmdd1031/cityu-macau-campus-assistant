@@ -52,23 +52,23 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 | 荣誉班 Honours Class | [honours_class.md](../skills/cityu-macau-campus-assistant/references/honours_class.md) | 已完成 | 选拔、课程体系、导师指导、科研训练、实习、竞赛与毕业条件 |
 | 氹仔校区餐饮指南 | [澳门城市大学氹仔校区_校内餐饮指南.md](../skills/cityu-macau-campus-assistant/references/澳门城市大学氹仔校区_校内餐饮指南.md) | 已完成 | 校内餐厅、菜单、价格、供应时段、用餐建议 |
 
-## 待补知识库
+## 暂不覆盖的知识库
 
-下列学院或机构在澳门城市大学公开学院体系中出现，但当前还没有单独知识库。现在先保留为空位，后续新增资料后再写完整。
+下列学院或机构由项目当前范围主动保留，暂不建立单独知识库。这不是待补资料清单；只有项目负责人决定扩展范围后，才新增对应知识库。
 
-| 学院/机构 | 建议文件名 | 当前状态 |
+| 学院/机构 | 预留文件名 | 当前状态 |
 |---|---|---|
-| 人文社会科学学院 | `fhss.md` | 待补 |
-| 创新设计学院 | `fid.md` | 待补 |
-| 葡语国家研究院 | `irops.md` | 待补 |
-| 城市与可持续发展研究院 | `iusd.md` | 待补 |
+| 人文社会科学学院（FHSS） | `fhss.md` | 主动保留，暂不覆盖 |
+| 创新设计学院（FIAD） | `fiad.md` | 主动保留，暂不覆盖 |
+| 葡语国家研究院（IROPC） | `iropc.md` | 主动保留，暂不覆盖 |
+| 城市与可持续发展研究院（IUSD） | `iusd.md` | 主动保留，暂不覆盖 |
 
-待补规则：
+范围规则：
 
 - 不要在 `SKILL.md` 中声称这些学院已有完整知识库。
-- 用户问到待补学院时，可以先读 `freshman.md` 中的通用招生和费用信息。
+- 用户问到暂不覆盖的学院或研究院时，可以先读 `freshman.md` 中的通用招生和费用信息。
 - 如果现有资料无法确认课程、学分、导师或毕业要求，必须明确说“现有知识库未覆盖”，并引导用户查看学院官网、招生事务处、研究生院或教务处。
-- 新增学院知识库后，再同步更新 `SKILL.md`、`agents/openai.yaml`、`README.md` 和本文件。
+- 项目负责人决定新增学院知识库后，再同步更新 `SKILL.md`、`agents/openai.yaml`、`README.md` 和本文件。
 
 ## 路由规则
 
@@ -88,8 +88,8 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 | 法学院、FL、SOL、LL.M、公法、刑事法、民事法、国际商法 | `fl.md` |
 | 国际旅游与管理学院、FITM、国旅学院、BBA in IHTM、MHTM、MHM、PhD in ITM、DHM | `fitm.md` |
 | 荣誉班、Honours Class、荣誉课程、选拔、科研训练、一对一导师、X-Challenge | `honours_class.md` |
-| 同时涉及学校通用流程和学院学业规则 | `freshman.md` + 对应学院知识库 |
-| 问到待补学院 | 先查 `freshman.md`，再说明单独学院知识库暂未覆盖 |
+| 同时涉及学校通用流程和学院学业规则 | `freshman.md` + 已覆盖学院的对应知识库 |
+| 问到暂不覆盖的学院或研究院 | 只查 `freshman.md` 中的学校通用信息，再说明单独学院知识库当前未覆盖并给出官方入口 |
 
 ## 使用示例
 

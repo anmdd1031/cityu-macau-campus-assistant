@@ -169,7 +169,10 @@ def read_teachers(path: Path) -> list[Teacher]:
         order = int(cells[1].strip())
         teacher = cells[2].strip()
         name_match = re.match(r"(.+?)（([^）]+)）$", teacher)
-        official_match = re.search(r"\[官方页\]\((https://fds\.cityu\.edu\.mo/en/members/\d+)\)", line)
+        official_match = re.search(
+            r"\[官方页\]\((https://fds\.cityu\.edu\.mo/(?:en/)?members/\d+)\)",
+            line,
+        )
         if not name_match or not official_match:
             raise RuntimeError(f"Unable to parse faculty row {order}")
         teachers.append(

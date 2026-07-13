@@ -34,44 +34,44 @@
 
 - [澳城大官方主页](https://fds.cityu.edu.mo/en/members/177)
 - Crossref 高置信匹配：共 48 篇符合条件，当前展示最近 5 篇。
-- 论文佐证方向：大语言模型与生成式 AI；隐私计算与联邦学习；人工智能与机器学习；网络空间安全与 AI 安全；密码学、区块链与可信计算。
+- 论文佐证方向：人工智能与机器学习；大语言模型与生成式 AI；隐私计算与联邦学习；网络空间安全与 AI 安全；密码学、区块链与可信计算。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
 | 2026 | Zero-Shot Class Unlearning via Layer-Wise Relevance Analysis and Neuronal Path Perturbation | 人工智能与机器学习；隐私计算与联邦学习 | 第 6/6 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3684581) |
 | 2026 | Safe and Reliable Diffusion Models via Subspace Projection | 大语言模型与生成式 AI | 第 6/6 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3692493) |
-| 2026 | Machine Unlearning on Pre-Trained Models by Residual Feature Alignment Using LoRA | 隐私计算与联邦学习 | 第 4/4 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3658545) |
+| 2026 | Machine Unlearning on Pre-Trained Models by Residual Feature Alignment Using LoRA | 人工智能与机器学习；隐私计算与联邦学习 | 第 4/4 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3658545) |
 | 2026 | Cracks in Collaboration: Threat Models and Attacks on Multi-LLM Collaborative Systems | 大语言模型与生成式 AI；网络空间安全与 AI 安全 | 第 5/5 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3670889) |
-| 2026 | Federated TrustChain: Blockchain-Enhanced LLM Training and Unlearning | 大语言模型与生成式 AI；隐私计算与联邦学习；密码学、区块链与可信计算 | 第 7/7 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3665277) |
+| 2026 | Federated TrustChain: Blockchain-Enhanced LLM Training and Unlearning | 人工智能与机器学习；大语言模型与生成式 AI；隐私计算与联邦学习；密码学、区块链与可信计算 | 第 7/7 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3665277) |
 
 <a id="teacher-2"></a>
 
 ## 2. 朱天清（Tianqing Zhu）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/179)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/336)
 - Crossref 高置信匹配：共 47 篇符合条件，当前展示最近 5 篇。
-- 论文佐证方向：隐私计算与联邦学习；大语言模型与生成式 AI；人工智能与机器学习；网络空间安全与 AI 安全；密码学、区块链与可信计算。
+- 论文佐证方向：人工智能与机器学习；隐私计算与联邦学习；大语言模型与生成式 AI；网络空间安全与 AI 安全；密码学、区块链与可信计算。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
 | 2026 | Zero-Shot Class Unlearning via Layer-Wise Relevance Analysis and Neuronal Path Perturbation | 人工智能与机器学习；隐私计算与联邦学习 | 第 2/6 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3684581) |
-| 2026 | Machine Unlearning on Pre-Trained Models by Residual Feature Alignment Using LoRA | 隐私计算与联邦学习 | 第 2/4 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3658545) |
+| 2026 | Machine Unlearning on Pre-Trained Models by Residual Feature Alignment Using LoRA | 人工智能与机器学习；隐私计算与联邦学习 | 第 2/4 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3658545) |
 | 2026 | Cracks in Collaboration: Threat Models and Attacks on Multi-LLM Collaborative Systems | 大语言模型与生成式 AI；网络空间安全与 AI 安全 | 第 2/5 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3670889) |
-| 2026 | Federated TrustChain: Blockchain-Enhanced LLM Training and Unlearning | 大语言模型与生成式 AI；隐私计算与联邦学习；密码学、区块链与可信计算 | 第 3/7 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3665277) |
+| 2026 | Federated TrustChain: Blockchain-Enhanced LLM Training and Unlearning | 人工智能与机器学习；大语言模型与生成式 AI；隐私计算与联邦学习；密码学、区块链与可信计算 | 第 3/7 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3665277) |
 | 2026 | LLM-Based Data Augmentation Method in Reinforcement Learning With Machine-Unlearning and Fine-Tuning | 人工智能与机器学习；大语言模型与生成式 AI；隐私计算与联邦学习 | 第 3/5 作者 | E | 标题 | IEEE Transactions on Big Data | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tbdata.2025.3630807) |
 
 <a id="teacher-3"></a>
 
 ## 3. 劉文堅（Wenjian Liu）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/143)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/143)
 - Crossref 高置信匹配：共 38 篇符合条件，当前展示最近 5 篇。
 - 论文佐证方向：人工智能与机器学习；医疗健康与生物信息；大语言模型与生成式 AI；计算机视觉与多媒体；物联网与无线通信；隐私计算与联邦学习；网络空间安全与 AI 安全；优化、运筹与计算数学；软件工程与程序分析。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
 | 2026 | Design of a Lightweight Collaborative Risk Prediction Framework for ICUs: Optimizing Clinical Workflows via Core ABG Dynamic Analysis | 人工智能与机器学习；医疗健康与生物信息 | 第 5/5 作者 | E | 标题 | 2026 29th International Conference on Computer Supported Cooperative Work in Design (CSCWD) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/cscwd68734.2026.11581539) |
-| 2026 | Individualized Brain Asymmetry Modeling with Multimodal Pathological Consistency for Alzheimer’s Disease Diagnosis | 医疗健康与生物信息；优化、运筹与计算数学 | 第 3/3 作者 | E | 标题 | ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/icassp55912.2026.11461533) |
+| 2026 | Individualized Brain Asymmetry Modeling with Multimodal Pathological Consistency for Alzheimer’s Disease Diagnosis | 人工智能与机器学习；医疗健康与生物信息；优化、运筹与计算数学 | 第 3/3 作者 | E | 标题 | ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/icassp55912.2026.11461533) |
 | 2026 | DCAU-KAN: Dual Cross Attention Network for Segmenting Medical Images | 人工智能与机器学习；大语言模型与生成式 AI；计算机视觉与多媒体；物联网与无线通信；医疗健康与生物信息；软件工程与程序分析 | 第 3/7 作者 | E | 标题和摘要 | International Journal of Image and Graphics | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1142/s0219467828500076) |
 | 2026 | MOAT: Federated Learning-Based Method for Improved Detection of IoT Botnets | 人工智能与机器学习；隐私计算与联邦学习；网络空间安全与 AI 安全；物联网与无线通信 | 第 2/3 作者 | E | 标题 | IEEE Internet of Things Journal | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/jiot.2025.3631450) |
 | 2025 | ArbitraryFlow: Towards One Step Generative Biomedical Image Segmentation | 人工智能与机器学习；大语言模型与生成式 AI；计算机视觉与多媒体；医疗健康与生物信息 | 第 6/6 作者 | E | 标题 | 2025 IEEE International Conference on Bioinformatics and Biomedicine (BIBM) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/bibm66473.2025.11356980) |
@@ -80,7 +80,7 @@
 
 ## 4. 朱家偉（Chia-Wei Chu）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/147)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/147)
 - Crossref 高置信匹配：共 29 篇符合条件，当前展示最近 5 篇。
 - 论文佐证方向：人工智能与机器学习；数据科学与数据挖掘；金融与商业数据；自然语言处理；网络空间安全与 AI 安全；物联网与无线通信；优化、运筹与计算数学；统计学习与概率建模；人机交互与教育技术；信号处理与时序分析；智慧城市与空间计算。
 
@@ -96,7 +96,7 @@
 
 ## 5. 應作斌（Zuobin Ying）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/188)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/188)
 - Crossref 高置信匹配：共 44 篇符合条件，当前展示最近 5 篇。
 - 论文佐证方向：人工智能与机器学习；数据科学与数据挖掘；计算机视觉与多媒体；隐私计算与联邦学习；网络空间安全与 AI 安全；物联网与无线通信；人机交互与教育技术；大语言模型与生成式 AI；自然语言处理；密码学、区块链与可信计算；医疗健康与生物信息；优化、运筹与计算数学；信号处理与时序分析。
 
@@ -112,14 +112,14 @@
 
 ## 6. 郭永德（Weng Tak Kuok）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/175)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/175)
 - Crossref 高置信匹配：未找到。为避免同名误收，不展示外部论文；请继续参考官方主页或个人主页。
 
 <a id="teacher-7"></a>
 
 ## 7. 江愷瑤（Hoi Io Kong）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/144)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/144)
 - Crossref 高置信匹配：共 11 篇符合条件，当前展示最近 5 篇。
 - 论文佐证方向：人工智能与机器学习；数据科学与数据挖掘；物联网与无线通信；智慧城市与空间计算；大语言模型与生成式 AI；计算机视觉与多媒体；医疗健康与生物信息；优化、运筹与计算数学；统计学习与概率建模；信号处理与时序分析。
 
@@ -135,7 +135,7 @@
 
 ## 8. 辜嘉（Jia Gu）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/279)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/338)
 - Crossref 高置信匹配：共 16 篇符合条件，当前展示最近 5 篇。
 - 论文佐证方向：人工智能与机器学习；物联网与无线通信；医疗健康与生物信息；大语言模型与生成式 AI；计算机视觉与多媒体；自然语言处理；软件工程与程序分析；智慧城市与空间计算。
 
@@ -151,7 +151,7 @@
 
 ## 9. 孫鑫（Xin Sun）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/281)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/337)
 - Crossref 高置信匹配：共 7 篇符合条件，当前展示最近 5 篇。
 - 论文佐证方向：人工智能与机器学习；计算机视觉与多媒体；云计算、分布式系统与边缘计算；物联网与无线通信；优化、运筹与计算数学；智慧城市与空间计算。
 
@@ -167,7 +167,7 @@
 
 ## 10. 段俊偉（Junwei Duan）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/283)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/340)
 - Crossref 高置信匹配：共 11 篇符合条件，当前展示最近 5 篇。
 - 论文佐证方向：人工智能与机器学习；医疗健康与生物信息；计算机视觉与多媒体；物联网与无线通信；统计学习与概率建模；数据库、知识图谱与信息检索；人机交互与教育技术。
 
@@ -183,30 +183,30 @@
 
 ## 11. 丁聖勇（Shengyong Ding）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/238)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/238)
 - Crossref 高置信匹配：未找到。为避免同名误收，不展示外部论文；请继续参考官方主页或个人主页。
 
 <a id="teacher-12"></a>
 
 ## 12. 葉大庸（Dayong Ye）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/489)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/531)
 - Crossref 高置信匹配：共 6 篇符合条件，当前展示最近 5 篇。
-- 论文佐证方向：隐私计算与联邦学习；大语言模型与生成式 AI；自然语言处理；网络空间安全与 AI 安全；人工智能与机器学习；计算机视觉与多媒体；密码学、区块链与可信计算；数据库、知识图谱与信息检索。
+- 论文佐证方向：隐私计算与联邦学习；大语言模型与生成式 AI；人工智能与机器学习；自然语言处理；网络空间安全与 AI 安全；计算机视觉与多媒体；密码学、区块链与可信计算；数据库、知识图谱与信息检索。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
-| 2026 | Federated TrustChain: Blockchain-Enhanced LLM Training and Unlearning | 大语言模型与生成式 AI；隐私计算与联邦学习；密码学、区块链与可信计算 | 第 5/7 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3665277) |
+| 2026 | Federated TrustChain: Blockchain-Enhanced LLM Training and Unlearning | 人工智能与机器学习；大语言模型与生成式 AI；隐私计算与联邦学习；密码学、区块链与可信计算 | 第 5/7 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3665277) |
 | 2026 | LLM-Based Data Augmentation Method in Reinforcement Learning With Machine-Unlearning and Fine-Tuning | 人工智能与机器学习；大语言模型与生成式 AI；隐私计算与联邦学习 | 第 2/5 作者 | E | 标题 | IEEE Transactions on Big Data | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tbdata.2025.3630807) |
 | 2026 | When Machine Unlearning Meets Retrieval-Augmented Generation (RAG): Keep Secret or Forget Knowledge? | 大语言模型与生成式 AI；自然语言处理；隐私计算与联邦学习；数据库、知识图谱与信息检索 | 第 3/4 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2025.3620832) |
 | 2026 | Hidden Threats in Federated Unlearning: Camouflaged Poisoning Attacks and Their Unlearning Consequences | 隐私计算与联邦学习；网络空间安全与 AI 安全 | 第 3/5 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2025.3630811) |
-| 2025 | The Emerged Security and Privacy of LLM Agent: A Survey with Case Studies | 大语言模型与生成式 AI；自然语言处理；计算机视觉与多媒体；隐私计算与联邦学习；网络空间安全与 AI 安全 | 第 3/6 作者 | E | 标题和摘要 | ACM Computing Surveys | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1145/3773080) |
+| 2025 | The Emerged Security and Privacy of LLM Agent: A Survey with Case Studies | 人工智能与机器学习；大语言模型与生成式 AI；自然语言处理；计算机视觉与多媒体；隐私计算与联邦学习；网络空间安全与 AI 安全 | 第 3/6 作者 | E | 标题和摘要 | ACM Computing Surveys | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1145/3773080) |
 
 <a id="teacher-13"></a>
 
 ## 13. 李悦翔（Yuexiang Li）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/498)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/540)
 - Crossref 高置信匹配：共 1 篇符合条件，当前展示最近 1 篇。
 - 论文佐证方向：计算机视觉与多媒体。
 
@@ -218,7 +218,7 @@
 
 ## 14. 吳庚申（Gengshen Wu）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/227)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/227)
 - Crossref 高置信匹配：共 19 篇符合条件，当前展示最近 5 篇。
 - 论文佐证方向：人工智能与机器学习；自然语言处理；计算机视觉与多媒体；物联网与无线通信；医疗健康与生物信息；优化、运筹与计算数学；大语言模型与生成式 AI；云计算、分布式系统与边缘计算；数据库、知识图谱与信息检索；信号处理与时序分析。
 
@@ -234,14 +234,14 @@
 
 ## 15. 葛東嬌（Dongjiao Ge）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/244)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/244)
 - Crossref 高置信匹配：未找到。为避免同名误收，不展示外部论文；请继续参考官方主页或个人主页。
 
 <a id="teacher-16"></a>
 
 ## 16. 王淳（Chun Wang）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/228)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/228)
 - Crossref 高置信匹配：共 11 篇符合条件，当前展示最近 5 篇。
 - 论文佐证方向：人工智能与机器学习；隐私计算与联邦学习；物联网与无线通信；数据科学与数据挖掘；计算机视觉与多媒体；密码学、区块链与可信计算；机器人与智能交通。
 
@@ -257,7 +257,7 @@
 
 ## 17. 黃志峰（Chi Fong Wong）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/259)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/259)
 - Crossref 高置信匹配：共 2 篇符合条件，当前展示最近 2 篇。
 - 论文佐证方向：数据科学与数据挖掘；云计算、分布式系统与边缘计算；信号处理与时序分析；科学智能与计算物理；金融与商业数据。
 
@@ -270,7 +270,7 @@
 
 ## 18. 魏中倫（Chung-Lun Wei）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/284)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/281)
 - Crossref 高置信匹配：共 14 篇符合条件，当前展示最近 5 篇。
 - 论文佐证方向：人工智能与机器学习；自然语言处理；医疗健康与生物信息。
 
@@ -286,37 +286,37 @@
 
 ## 19. 高萬鑫（Wanxin Gao）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/285)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/282)
 - Crossref 高置信匹配：共 3 篇符合条件，当前展示最近 3 篇。
-- 论文佐证方向：物联网与无线通信；优化、运筹与计算数学；人工智能与机器学习；隐私计算与联邦学习；网络空间安全与 AI 安全；密码学、区块链与可信计算；医疗健康与生物信息；人机交互与教育技术；智慧城市与空间计算。
+- 论文佐证方向：物联网与无线通信；人工智能与机器学习；优化、运筹与计算数学；隐私计算与联邦学习；网络空间安全与 AI 安全；密码学、区块链与可信计算；医疗健康与生物信息；人机交互与教育技术；智慧城市与空间计算。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
 | 2025 | Learning the Node Distribution of Biased Waypoint Mobility using Mixture Density Networks | 物联网与无线通信 | 第 2/2 作者 | E | 标题 | 2025 IEEE 5th International Conference on Computer Communication and Artificial Intelligence (CCAI) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/ccai65422.2025.11189455) |
-| 2025 | MedAccessX: A Blockchain-Enabled Dynamic Access Control Framework for IoMT Networks | 隐私计算与联邦学习；网络空间安全与 AI 安全；密码学、区块链与可信计算；物联网与无线通信；医疗健康与生物信息；优化、运筹与计算数学；人机交互与教育技术 | 第 5/7 作者 | E | 标题和摘要 | Sensors | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/s25061857) |
+| 2025 | MedAccessX: A Blockchain-Enabled Dynamic Access Control Framework for IoMT Networks | 人工智能与机器学习；隐私计算与联邦学习；网络空间安全与 AI 安全；密码学、区块链与可信计算；物联网与无线通信；医疗健康与生物信息；优化、运筹与计算数学；人机交互与教育技术 | 第 5/7 作者 | E | 标题和摘要 | Sensors | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/s25061857) |
 | 2025 | Learning Spatial Density Functions of Random Waypoint Mobility over Irregular Triangles and Convex Quadrilaterals | 人工智能与机器学习；物联网与无线通信；优化、运筹与计算数学；智慧城市与空间计算 | 第 2/6 作者 | E | 标题和摘要 | Mathematics | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/math13060927) |
 
 <a id="teacher-20"></a>
 
 ## 20. 鍾婍（Qi Zhong）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/286)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/286)
 - Crossref 高置信匹配：共 5 篇符合条件，当前展示最近 5 篇。
-- 论文佐证方向：物联网与无线通信；网络空间安全与 AI 安全；人工智能与机器学习；医疗健康与生物信息；优化、运筹与计算数学；大语言模型与生成式 AI；数据科学与数据挖掘；自然语言处理；计算机视觉与多媒体；隐私计算与联邦学习；密码学、区块链与可信计算；软件工程与程序分析；人机交互与教育技术；信号处理与时序分析；智慧城市与空间计算。
+- 论文佐证方向：人工智能与机器学习；物联网与无线通信；网络空间安全与 AI 安全；医疗健康与生物信息；优化、运筹与计算数学；大语言模型与生成式 AI；数据科学与数据挖掘；自然语言处理；计算机视觉与多媒体；隐私计算与联邦学习；密码学、区块链与可信计算；软件工程与程序分析；人机交互与教育技术；信号处理与时序分析；智慧城市与空间计算。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
 | 2025 | Hierarchical Feature Fusion and Enhanced Attention Mechanism for Robust GAN-Generated Image Detection | 人工智能与机器学习；大语言模型与生成式 AI；数据科学与数据挖掘；计算机视觉与多媒体；网络空间安全与 AI 安全；物联网与无线通信；医疗健康与生物信息；软件工程与程序分析 | 第 6/6 作者 | E | 标题和摘要 | Mathematics | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/math13091372) |
-| 2025 | Enhancing Network Security: An SDN-Enabled Defense Mechanism Against LDoS Attacks | 网络空间安全与 AI 安全；物联网与无线通信 | 第 2/3 作者 | E | 标题 | 2025 3rd International Conference On Mobile Internet, Cloud Computing and Information Security (MICCIS) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/miccis66057.2025.00033) |
+| 2025 | Enhancing Network Security: An SDN-Enabled Defense Mechanism Against LDoS Attacks | 人工智能与机器学习；网络空间安全与 AI 安全；物联网与无线通信 | 第 2/3 作者 | E | 标题 | 2025 3rd International Conference On Mobile Internet, Cloud Computing and Information Security (MICCIS) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/miccis66057.2025.00033) |
 | 2025 | Towards Robust Speech Models: Mitigating Backdoor Attacks via Audio Signal Enhancement and Fine-Pruning Techniques | 人工智能与机器学习；大语言模型与生成式 AI；自然语言处理；网络空间安全与 AI 安全；物联网与无线通信；医疗健康与生物信息；优化、运筹与计算数学；信号处理与时序分析 | 第 2/6 作者 | E | 标题和摘要 | Mathematics | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/math13060984) |
-| 2025 | MedAccessX: A Blockchain-Enabled Dynamic Access Control Framework for IoMT Networks | 隐私计算与联邦学习；网络空间安全与 AI 安全；密码学、区块链与可信计算；物联网与无线通信；医疗健康与生物信息；优化、运筹与计算数学；人机交互与教育技术 | 第 3/7 作者 | E | 标题和摘要 | Sensors | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/s25061857) |
+| 2025 | MedAccessX: A Blockchain-Enabled Dynamic Access Control Framework for IoMT Networks | 人工智能与机器学习；隐私计算与联邦学习；网络空间安全与 AI 安全；密码学、区块链与可信计算；物联网与无线通信；医疗健康与生物信息；优化、运筹与计算数学；人机交互与教育技术 | 第 3/7 作者 | E | 标题和摘要 | Sensors | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/s25061857) |
 | 2025 | Learning Spatial Density Functions of Random Waypoint Mobility over Irregular Triangles and Convex Quadrilaterals | 人工智能与机器学习；物联网与无线通信；优化、运筹与计算数学；智慧城市与空间计算 | 第 5/6 作者 | E | 标题和摘要 | Mathematics | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/math13060927) |
 
 <a id="teacher-21"></a>
 
 ## 21. 吳曉鋒（Xiaofeng Wu）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/287)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/283)
 - Crossref 高置信匹配：共 2 篇符合条件，当前展示最近 2 篇。
 - 论文佐证方向：云计算、分布式系统与边缘计算；大语言模型与生成式 AI；自然语言处理；医疗健康与生物信息；软件工程与程序分析。
 
@@ -329,15 +329,15 @@
 
 ## 22. 崔三帥（Sanshuai Cui）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/288)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/284)
 - Crossref 高置信匹配：共 16 篇符合条件，当前展示最近 5 篇。
-- 论文佐证方向：人工智能与机器学习；数据科学与数据挖掘；计算机视觉与多媒体；网络空间安全与 AI 安全；大语言模型与生成式 AI；自然语言处理；物联网与无线通信；医疗健康与生物信息；优化、运筹与计算数学；软件工程与程序分析；信号处理与时序分析。
+- 论文佐证方向：人工智能与机器学习；数据科学与数据挖掘；计算机视觉与多媒体；网络空间安全与 AI 安全；大语言模型与生成式 AI；自然语言处理；物联网与无线通信；机器人与智能交通；医疗健康与生物信息；优化、运筹与计算数学；软件工程与程序分析；信号处理与时序分析。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
 | 2026 | MFD: Deep Fake Image Detection Based on Multi-Scale Frequency Domain Feature Fusion | 人工智能与机器学习；数据科学与数据挖掘；计算机视觉与多媒体 | 第 2/4 作者 | E | 标题 | 2026 5th Asia Conference on Algorithms, Computing and Machine Learning (CACML) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/cacml68972.2026.11507120) |
-| 2025 | Air-YOLO: Enhancing Small Object Detection in UAV Imagery with Multi-Scale Feature Fusion | 人工智能与机器学习；数据科学与数据挖掘；计算机视觉与多媒体 | 第 2/4 作者 | E | 标题 | 2025 International Conference on Computer, Internet of Things and Smart City (CIoTSC) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/ciotsc67482.2025.11413208) |
-| 2025 | Energy-Aware Dual-Path Adversarial Attack Algorithm for AI Speech Detectors | 自然语言处理；网络空间安全与 AI 安全；优化、运筹与计算数学；信号处理与时序分析 | 第 2/4 作者 | E | 标题 | 2025 International Conference on Computer, Internet of Things and Smart City (CIoTSC) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/ciotsc67482.2025.11413229) |
+| 2025 | Air-YOLO: Enhancing Small Object Detection in UAV Imagery with Multi-Scale Feature Fusion | 人工智能与机器学习；数据科学与数据挖掘；计算机视觉与多媒体；机器人与智能交通 | 第 2/4 作者 | E | 标题 | 2025 International Conference on Computer, Internet of Things and Smart City (CIoTSC) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/ciotsc67482.2025.11413208) |
+| 2025 | Energy-Aware Dual-Path Adversarial Attack Algorithm for AI Speech Detectors | 人工智能与机器学习；自然语言处理；网络空间安全与 AI 安全；优化、运筹与计算数学；信号处理与时序分析 | 第 2/4 作者 | E | 标题 | 2025 International Conference on Computer, Internet of Things and Smart City (CIoTSC) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/ciotsc67482.2025.11413229) |
 | 2025 | Boosting Adversarial Transferability by Constructing Adversarial Trajectories | 网络空间安全与 AI 安全 | 第 2/5 作者 | E | 标题 | 2025 IEEE International Conference on Multimedia and Expo (ICME) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/icme59968.2025.11209029) |
 | 2025 | Hierarchical Feature Fusion and Enhanced Attention Mechanism for Robust GAN-Generated Image Detection | 人工智能与机器学习；大语言模型与生成式 AI；数据科学与数据挖掘；计算机视觉与多媒体；网络空间安全与 AI 安全；物联网与无线通信；医疗健康与生物信息；软件工程与程序分析 | 第 2/6 作者 | E | 标题和摘要 | Mathematics | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/math13091372) |
 
@@ -345,7 +345,7 @@
 
 ## 23. 張琪（Qi Zhang）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/294)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/279)
 - Crossref 高置信匹配：共 19 篇符合条件，当前展示最近 5 篇。
 - 论文佐证方向：人工智能与机器学习；大语言模型与生成式 AI；计算机视觉与多媒体；物联网与无线通信；数据科学与数据挖掘；医疗健康与生物信息；统计学习与概率建模；软件工程与程序分析；人机交互与教育技术；信号处理与时序分析。
 
@@ -361,13 +361,13 @@
 
 ## 24. 羅英喆（Yingzhe Luo）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/290)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/285)
 - Crossref 高置信匹配：共 4 篇符合条件，当前展示最近 4 篇。
-- 论文佐证方向：计算机视觉与多媒体；云计算、分布式系统与边缘计算；人工智能与机器学习；优化、运筹与计算数学。
+- 论文佐证方向：人工智能与机器学习；计算机视觉与多媒体；云计算、分布式系统与边缘计算；优化、运筹与计算数学。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
-| 2025 | A Fine-Grained Parallel Implementation of a Distributed Multi-Objective Optimization Algorithm on GPU | 云计算、分布式系统与边缘计算；优化、运筹与计算数学 | 第 2/2 作者 | E | 标题 | 2025 8th International Conference on Algorithms, Computing and Artificial Intelligence (ACAI) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/acai68217.2025.11406257) |
+| 2025 | A Fine-Grained Parallel Implementation of a Distributed Multi-Objective Optimization Algorithm on GPU | 人工智能与机器学习；云计算、分布式系统与边缘计算；优化、运筹与计算数学 | 第 2/2 作者 | E | 标题 | 2025 8th International Conference on Algorithms, Computing and Artificial Intelligence (ACAI) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/acai68217.2025.11406257) |
 | 2025 | A Background Noise Removal Method for 3D Gaussian Point Clouds | 计算机视觉与多媒体；云计算、分布式系统与边缘计算 | 第 2/3 作者 | E | 标题 | 2025 6th International Conference on Electronic Communication and Artificial Intelligence (ICECAI) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/icecai66283.2025.11170596) |
 | 2025 | Stock index prediction based on Hammerstein system | 人工智能与机器学习 | 第 1/1 作者 | E | 标题 | Proceedings of the 2025 8th International Conference on Software Engineering and Information Management | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1145/3725899.3725929) |
 | 2024 | A Quantitative 3D Reconstruction Evaluation Method Based on Blender | 计算机视觉与多媒体 | 第 2/3 作者 | E | 标题 | 2024 10th International Conference on Computer and Communications (ICCC) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/iccc62609.2024.10942306) |
@@ -376,13 +376,13 @@
 
 ## 25. 敬馮時（Fengshi Jing）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/291)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/292)
 - Crossref 高置信匹配：共 17 篇符合条件，当前展示最近 5 篇。
-- 论文佐证方向：医疗健康与生物信息；人工智能与机器学习；物联网与无线通信；大语言模型与生成式 AI；数据科学与数据挖掘；自然语言处理；计算机视觉与多媒体；优化、运筹与计算数学；人机交互与教育技术；智慧城市与空间计算。
+- 论文佐证方向：人工智能与机器学习；医疗健康与生物信息；物联网与无线通信；大语言模型与生成式 AI；数据科学与数据挖掘；自然语言处理；计算机视觉与多媒体；优化、运筹与计算数学；人机交互与教育技术；智慧城市与空间计算。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
-| 2026 | Social network analysis of geosocial networking among men who have sex with men in Zhuhai, China | 大语言模型与生成式 AI；物联网与无线通信；医疗健康与生物信息；人机交互与教育技术 | 第 2/11 作者 | E | 标题和摘要 | Sexual Health | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1071/sh25264) |
+| 2026 | Social network analysis of geosocial networking among men who have sex with men in Zhuhai, China | 人工智能与机器学习；大语言模型与生成式 AI；物联网与无线通信；医疗健康与生物信息；人机交互与教育技术 | 第 2/11 作者 | E | 标题和摘要 | Sexual Health | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1071/sh25264) |
 | 2026 | Genetic and phenotypic associations of social isolation and loneliness with sarcopenia | 医疗健康与生物信息 | 第 3/7 作者 | E | 标题 | Biodemography and Social Biology | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1080/19485565.2026.2680709) |
 | 2026 | Artificial Intelligence Applications in X-ray Coronary Angiography: A Comprehensive Review of Image Analysis Techniques | 人工智能与机器学习；计算机视觉与多媒体 | 第 2/8 作者 | E | 标题 | Proceedings of the 2026 International Conference on Human-Computer Interaction, Neural Networks and Deep Learning | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1145/3795892.3795917) |
 | 2026 | Artificial Intelligence for Echocardiographic Assessment of Pulmonary Hypertension and Right Heart Function: Advances in Intelligent Diagnosis and Risk Stratification | 人工智能与机器学习；医疗健康与生物信息 | 第 2/8 作者 | E | 标题 | Proceedings of the 2026 International Conference on Human-Computer Interaction, Neural Networks and Deep Learning | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1145/3795892.3795918) |
@@ -392,15 +392,15 @@
 
 ## 26. 張樂峰（Lefeng Zhang）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/289)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/293)
 - Crossref 高置信匹配：共 16 篇符合条件，当前展示最近 5 篇。
-- 论文佐证方向：隐私计算与联邦学习；大语言模型与生成式 AI；密码学、区块链与可信计算；自然语言处理；网络空间安全与 AI 安全；软件工程与程序分析。
+- 论文佐证方向：隐私计算与联邦学习；大语言模型与生成式 AI；人工智能与机器学习；密码学、区块链与可信计算；自然语言处理；网络空间安全与 AI 安全；软件工程与程序分析。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
-| 2026 | Federated TrustChain: Blockchain-Enhanced LLM Training and Unlearning | 大语言模型与生成式 AI；隐私计算与联邦学习；密码学、区块链与可信计算 | 第 4/7 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3665277) |
+| 2026 | Federated TrustChain: Blockchain-Enhanced LLM Training and Unlearning | 人工智能与机器学习；大语言模型与生成式 AI；隐私计算与联邦学习；密码学、区块链与可信计算 | 第 4/7 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3665277) |
 | 2026 | Multi-Writer/Reader Forward and Backward Private DSSE With Bilateral Selection | 隐私计算与联邦学习；密码学、区块链与可信计算 | 第 5/6 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2025.3627926) |
-| 2026 | Really Unlearned? Verifying Machine Unlearning via Influential Sample Pairs | 隐私计算与联邦学习 | 第 3/4 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2025.3620308) |
+| 2026 | Really Unlearned? Verifying Machine Unlearning via Influential Sample Pairs | 人工智能与机器学习；隐私计算与联邦学习 | 第 3/4 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2025.3620308) |
 | 2026 | The Trust Paradox in LLM-Based Multi-Agent Systems: When Collaboration Becomes a Security Vulnerability | 大语言模型与生成式 AI；网络空间安全与 AI 安全；软件工程与程序分析 | 第 4/7 作者 | E | 标题 | IEEE Transactions on Computational Social Systems | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tcss.2026.3695070) |
 | 2026 | Parameter-Agnostic Privacy-Preserving Machine Unlearning for Large Language Models | 大语言模型与生成式 AI；自然语言处理；隐私计算与联邦学习 | 第 1/6 作者 | E | 标题 | IEEE Transactions on Information Forensics and Security | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tifs.2026.3698588) |
 
@@ -408,14 +408,14 @@
 
 ## 27. 劉馳（Chi Liu）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/292)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/339)
 - Crossref 高置信匹配：共 4 篇符合条件，当前展示最近 4 篇。
-- 论文佐证方向：计算机视觉与多媒体；人工智能与机器学习；大语言模型与生成式 AI；隐私计算与联邦学习；医疗健康与生物信息。
+- 论文佐证方向：人工智能与机器学习；计算机视觉与多媒体；大语言模型与生成式 AI；隐私计算与联邦学习；医疗健康与生物信息。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
-| 2026 | Domain-Generalizable Diabetic Retinopathy Diagnosis via Architecture-Aware Adaptive Frequency Enhancement | 计算机视觉与多媒体；医疗健康与生物信息 | 第 2/2 作者 | E | 标题 | 2026 Joint International Conference on Automation-Intelligence-Safety (ICAIS) & International Symposium on Autonomous Systems (ISAS) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/icaisisas68969.2026.11567915) |
-| 2026 | Causal Fingerprints of AI Generative Models | 大语言模型与生成式 AI | 第 2/6 作者 | E | 标题 | ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/icassp55912.2026.11463097) |
+| 2026 | Domain-Generalizable Diabetic Retinopathy Diagnosis via Architecture-Aware Adaptive Frequency Enhancement | 人工智能与机器学习；计算机视觉与多媒体；医疗健康与生物信息 | 第 2/2 作者 | E | 标题 | 2026 Joint International Conference on Automation-Intelligence-Safety (ICAIS) & International Symposium on Autonomous Systems (ISAS) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/icaisisas68969.2026.11567915) |
+| 2026 | Causal Fingerprints of AI Generative Models | 人工智能与机器学习；大语言模型与生成式 AI | 第 2/6 作者 | E | 标题 | ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/icassp55912.2026.11463097) |
 | 2026 | Frequency Bias Matters: Diving Into Robust and Generalized Deep Image Forgery Detection | 人工智能与机器学习；计算机视觉与多媒体 | 第 1/4 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2025.3639022) |
 | 2025 | RetinaGuard: Obfuscating Retinal Age in Fundus Images for Biometric Privacy Preserving | 计算机视觉与多媒体；隐私计算与联邦学习 | 第 2/6 作者 | E | 标题 | 2025 IEEE International Conference on Bioinformatics and Biomedicine (BIBM) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/bibm66473.2025.11356446) |
 
@@ -423,14 +423,14 @@
 
 ## 28. 朱聰聰（Congcong Zhu）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/293)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/341)
 - Crossref 高置信匹配：共 4 篇符合条件，当前展示最近 4 篇。
-- 论文佐证方向：隐私计算与联邦学习；人工智能与机器学习；大语言模型与生成式 AI；网络空间安全与 AI 安全；优化、运筹与计算数学；人机交互与教育技术；信号处理与时序分析。
+- 论文佐证方向：人工智能与机器学习；隐私计算与联邦学习；大语言模型与生成式 AI；网络空间安全与 AI 安全；优化、运筹与计算数学；人机交互与教育技术；信号处理与时序分析。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
-| 2026 | Causal Fingerprints of AI Generative Models | 大语言模型与生成式 AI | 第 3/6 作者 | E | 标题 | ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/icassp55912.2026.11463097) |
-| 2025 | Cooperating or Kicking Out: Defending Against Poisoning Attacks in Federated Learning via the Evolution of Cooperation | 隐私计算与联邦学习；网络空间安全与 AI 安全 | 第 4/5 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2025.3532351) |
+| 2026 | Causal Fingerprints of AI Generative Models | 人工智能与机器学习；大语言模型与生成式 AI | 第 3/6 作者 | E | 标题 | ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/icassp55912.2026.11463097) |
+| 2025 | Cooperating or Kicking Out: Defending Against Poisoning Attacks in Federated Learning via the Evolution of Cooperation | 人工智能与机器学习；隐私计算与联邦学习；网络空间安全与 AI 安全 | 第 4/5 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2025.3532351) |
 | 2024 | Location-Based Real-Time Updated Advising Method for Traffic Signal Control | 优化、运筹与计算数学；信号处理与时序分析 | 第 1/4 作者 | E | 标题 | IEEE Internet of Things Journal | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/jiot.2023.3342480) |
 | 2023 | Multi-Agent Reinforcement Learning for Online Food Delivery with Location Privacy Preservation | 人工智能与机器学习；隐私计算与联邦学习；人机交互与教育技术 | 第 3/6 作者 | E | 标题和摘要 | Information | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/info14110597) |
 
@@ -438,23 +438,23 @@
 
 ## 29. 戚敏鋒（Minfeng Qi）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/295)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/358)
 - Crossref 高置信匹配：共 9 篇符合条件，当前展示最近 5 篇。
-- 论文佐证方向：大语言模型与生成式 AI；网络空间安全与 AI 安全；密码学、区块链与可信计算；软件工程与程序分析；物联网与无线通信；人机交互与教育技术。
+- 论文佐证方向：人工智能与机器学习；大语言模型与生成式 AI；网络空间安全与 AI 安全；密码学、区块链与可信计算；软件工程与程序分析；物联网与无线通信；人机交互与教育技术。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
 | 2026 | The Trust Paradox in LLM-Based Multi-Agent Systems: When Collaboration Becomes a Security Vulnerability | 大语言模型与生成式 AI；网络空间安全与 AI 安全；软件工程与程序分析 | 第 2/7 作者 | E | 标题 | IEEE Transactions on Computational Social Systems | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tcss.2026.3695070) |
-| 2026 | Toward Transparent and Incentive-Compatible Collaboration in Decentralized LLM Multi-Agent Systems: A Blockchain-Driven Approach | 大语言模型与生成式 AI；密码学、区块链与可信计算 | 第 1/6 作者 | E | 标题 | IEEE Transactions on Network Science and Engineering | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tnse.2026.3659486) |
-| 2025 | BlkMaC: A Blockchain-based Multi-Agents System with LLM Communication Framework | 大语言模型与生成式 AI；密码学、区块链与可信计算；物联网与无线通信 | 第 4/4 作者 | E | 标题 | Proceedings of the 2025 9th International Conference on Computer Science and Artificial Intelligence | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1145/3788149.3788229) |
-| 2025 | SoK: Bitcoin Layer Two (L2) | 网络空间安全与 AI 安全；软件工程与程序分析；人机交互与教育技术 | 第 1/8 作者 | E | 标题和摘要 | ACM Computing Surveys | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1145/3763232) |
+| 2026 | Toward Transparent and Incentive-Compatible Collaboration in Decentralized LLM Multi-Agent Systems: A Blockchain-Driven Approach | 人工智能与机器学习；大语言模型与生成式 AI；密码学、区块链与可信计算 | 第 1/6 作者 | E | 标题 | IEEE Transactions on Network Science and Engineering | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tnse.2026.3659486) |
+| 2025 | BlkMaC: A Blockchain-based Multi-Agents System with LLM Communication Framework | 人工智能与机器学习；大语言模型与生成式 AI；密码学、区块链与可信计算；物联网与无线通信 | 第 4/4 作者 | E | 标题 | Proceedings of the 2025 9th International Conference on Computer Science and Artificial Intelligence | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1145/3788149.3788229) |
+| 2025 | SoK: Bitcoin Layer Two (L2) | 人工智能与机器学习；网络空间安全与 AI 安全；软件工程与程序分析；人机交互与教育技术 | 第 1/8 作者 | E | 标题和摘要 | ACM Computing Surveys | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1145/3763232) |
 | 2025 | BRC20 Snipping Attack | 网络空间安全与 AI 安全 | 第 1/5 作者 | E | 标题 | Proceedings of the 20th ACM Asia Conference on Computer and Communications Security | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1145/3708821.3736200) |
 
 <a id="teacher-30"></a>
 
 ## 30. 周帥（Shuai Zhou）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/296)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/367)
 - Crossref 高置信匹配：共 4 篇符合条件，当前展示最近 4 篇。
 - 论文佐证方向：网络空间安全与 AI 安全；人工智能与机器学习；大语言模型与生成式 AI；计算机视觉与多媒体；物联网与无线通信；优化、运筹与计算数学；人机交互与教育技术。
 
@@ -462,30 +462,30 @@
 |---:|---|---|---|---|---|---|---|---|---|
 | 2026 | Disentangling Malicious Memorization: Inference‐Time Backdoor Samples Detection via Self‐Influence Functions | 人工智能与机器学习；大语言模型与生成式 AI；计算机视觉与多媒体；网络空间安全与 AI 安全；优化、运筹与计算数学；人机交互与教育技术 | 第 2/5 作者 | E | 标题和摘要 | Concurrency and Computation: Practice and Experience | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1002/cpe.70747) |
 | 2025 | Defending Against Neural Network Model Inversion Attacks via Data Poisoning | 人工智能与机器学习；网络空间安全与 AI 安全；物联网与无线通信 | 第 1/4 作者 | E | 标题 | IEEE Transactions on Neural Networks and Learning Systems | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tnnls.2025.3554656) |
-| 2025 | Model Inversion Attack Against Transfer Learning: Inverting a Model Without Querying It | 网络空间安全与 AI 安全 | 第 3/6 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2025.3548119) |
+| 2025 | Model Inversion Attack Against Transfer Learning: Inverting a Model Without Querying It | 人工智能与机器学习；网络空间安全与 AI 安全 | 第 3/6 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2025.3548119) |
 | 2024 | Inversion-Guided Defense: Detecting Model Stealing Attacks by Output Inverting | 网络空间安全与 AI 安全 | 第 1/5 作者 | E | 标题 | IEEE Transactions on Information Forensics and Security | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tifs.2024.3376190) |
 
 <a id="teacher-31"></a>
 
 ## 31. 王銘浩（Minghao Wang）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/297)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/383)
 - Crossref 高置信匹配：共 6 篇符合条件，当前展示最近 5 篇。
-- 论文佐证方向：隐私计算与联邦学习；密码学、区块链与可信计算；大语言模型与生成式 AI；网络空间安全与 AI 安全。
+- 论文佐证方向：人工智能与机器学习；隐私计算与联邦学习；密码学、区块链与可信计算；大语言模型与生成式 AI；网络空间安全与 AI 安全。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
-| 2026 | Causal Fingerprints of AI Generative Models | 大语言模型与生成式 AI | 第 4/6 作者 | E | 标题 | ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/icassp55912.2026.11463097) |
-| 2026 | Federated TrustChain: Blockchain-Enhanced LLM Training and Unlearning | 大语言模型与生成式 AI；隐私计算与联邦学习；密码学、区块链与可信计算 | 第 2/7 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3665277) |
-| 2025 | Federated Learning With Blockchain-Enhanced Machine Unlearning: A Trustworthy Approach | 隐私计算与联邦学习；密码学、区块链与可信计算 | 第 2/6 作者 | E | 标题 | IEEE Transactions on Services Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tsc.2025.3553709) |
-| 2024 | Public and Private Blockchain Infusion: A Novel Approach to Federated Learning | 隐私计算与联邦学习；密码学、区块链与可信计算 | 第 1/6 作者 | E | 标题 | IEEE Internet of Things Journal | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/jiot.2024.3360129) |
-| 2024 | Blockchain-Based Gradient Inversion and Poisoning Defense for Federated Learning | 隐私计算与联邦学习；网络空间安全与 AI 安全；密码学、区块链与可信计算 | 第 1/6 作者 | E | 标题 | IEEE Internet of Things Journal | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/jiot.2023.3347899) |
+| 2026 | Causal Fingerprints of AI Generative Models | 人工智能与机器学习；大语言模型与生成式 AI | 第 4/6 作者 | E | 标题 | ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/icassp55912.2026.11463097) |
+| 2026 | Federated TrustChain: Blockchain-Enhanced LLM Training and Unlearning | 人工智能与机器学习；大语言模型与生成式 AI；隐私计算与联邦学习；密码学、区块链与可信计算 | 第 2/7 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3665277) |
+| 2025 | Federated Learning With Blockchain-Enhanced Machine Unlearning: A Trustworthy Approach | 人工智能与机器学习；隐私计算与联邦学习；密码学、区块链与可信计算 | 第 2/6 作者 | E | 标题 | IEEE Transactions on Services Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tsc.2025.3553709) |
+| 2024 | Public and Private Blockchain Infusion: A Novel Approach to Federated Learning | 人工智能与机器学习；隐私计算与联邦学习；密码学、区块链与可信计算 | 第 1/6 作者 | E | 标题 | IEEE Internet of Things Journal | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/jiot.2024.3360129) |
+| 2024 | Blockchain-Based Gradient Inversion and Poisoning Defense for Federated Learning | 人工智能与机器学习；隐私计算与联邦学习；网络空间安全与 AI 安全；密码学、区块链与可信计算 | 第 1/6 作者 | E | 标题 | IEEE Internet of Things Journal | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/jiot.2023.3347899) |
 
 <a id="teacher-32"></a>
 
 ## 32. 李興風（Xingfeng Li）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/298)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/379)
 - Crossref 高置信匹配：共 10 篇符合条件，当前展示最近 5 篇。
 - 论文佐证方向：人工智能与机器学习；信号处理与时序分析；自然语言处理；优化、运筹与计算数学。
 
@@ -501,7 +501,7 @@
 
 ## 33. 孫慧（Hui Sun）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/300)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/382)
 - Crossref 高置信匹配：共 3 篇符合条件，当前展示最近 3 篇。
 - 论文佐证方向：网络空间安全与 AI 安全；大语言模型与生成式 AI；自然语言处理；人工智能与机器学习；计算机视觉与多媒体；物联网与无线通信；软件工程与程序分析。
 
@@ -515,7 +515,7 @@
 
 ## 34. 孫晶（Jing Sun）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/299)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/381)
 - Crossref 高置信匹配：共 1 篇符合条件，当前展示最近 1 篇。
 - 论文佐证方向：计算机视觉与多媒体。
 
@@ -527,14 +527,14 @@
 
 ## 35. 余蔚（Wei Yu）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/303)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/391)
 - Crossref 高置信匹配：未找到。为避免同名误收，不展示外部论文；请继续参考官方主页或个人主页。
 
 <a id="teacher-36"></a>
 
 ## 36. 眭相傑（Xiangjie Sui）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/304)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/390)
 - Crossref 高置信匹配：共 5 篇符合条件，当前展示最近 5 篇。
 - 论文佐证方向：计算机视觉与多媒体；优化、运筹与计算数学；大语言模型与生成式 AI。
 
@@ -550,7 +550,7 @@
 
 ## 37. 秦鵬（Peng Qin）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/301)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/380)
 - Crossref 高置信匹配：共 3 篇符合条件，当前展示最近 3 篇。
 - 论文佐证方向：人工智能与机器学习；数据科学与数据挖掘；自然语言处理；网络空间安全与 AI 安全；金融与商业数据。
 
@@ -564,43 +564,43 @@
 
 ## 38. 鐘宇宸（Yuchen Zhong）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/302)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/387)
 - Crossref 高置信匹配：未找到。为避免同名误收，不展示外部论文；请继续参考官方主页或个人主页。
 
 <a id="teacher-39"></a>
 
 ## 39. 諶華傑（Huajie Chen）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/305)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/384)
 - Crossref 高置信匹配：共 2 篇符合条件，当前展示最近 2 篇。
-- 论文佐证方向：隐私计算与联邦学习；网络空间安全与 AI 安全。
+- 论文佐证方向：人工智能与机器学习；隐私计算与联邦学习；网络空间安全与 AI 安全。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
 | 2026 | A Backdoor-Assisted Inversion Framework for Model Abuse Verification | 网络空间安全与 AI 安全 | 第 5/7 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3709316) |
-| 2025 | QUEEN: Query Unlearning Against Model Extraction | 隐私计算与联邦学习 | 第 1/7 作者 | E | 标题 | IEEE Transactions on Information Forensics and Security | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tifs.2025.3538266) |
+| 2025 | QUEEN: Query Unlearning Against Model Extraction | 人工智能与机器学习；隐私计算与联邦学习 | 第 1/7 作者 | E | 标题 | IEEE Transactions on Information Forensics and Security | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tifs.2025.3538266) |
 
 <a id="teacher-40"></a>
 
 ## 40. 蔡劍平（Jianping Cai）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/307)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/386)
 - Crossref 高置信匹配：共 9 篇符合条件，当前展示最近 5 篇。
-- 论文佐证方向：大语言模型与生成式 AI；隐私计算与联邦学习；优化、运筹与计算数学；网络空间安全与 AI 安全；医疗健康与生物信息；信号处理与时序分析；数据科学与数据挖掘；自然语言处理；密码学、区块链与可信计算；物联网与无线通信；数据库、知识图谱与信息检索；人机交互与教育技术。
+- 论文佐证方向：人工智能与机器学习；大语言模型与生成式 AI；隐私计算与联邦学习；优化、运筹与计算数学；网络空间安全与 AI 安全；医疗健康与生物信息；信号处理与时序分析；数据科学与数据挖掘；自然语言处理；密码学、区块链与可信计算；物联网与无线通信；数据库、知识图谱与信息检索；人机交互与教育技术。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
 | 2026 | FedGA-RVI: Efficient Federated Unlearning via Adaptive Recovery Optimization and Smart Stopping | 隐私计算与联邦学习；优化、运筹与计算数学 | 第 2/5 作者 | E | 标题 | 2026 7th International Seminar on Artificial Intelligence, Networking and Information Technology (AINIT) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/ainit70033.2026.11557826) |
-| 2026 | Toward Federated Learning Against Noisy Clients via CLIP-Guided Prototypes | 隐私计算与联邦学习 | 第 3/6 作者 | E | 标题 | IEEE Transactions on Big Data | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tbdata.2025.3630997) |
-| 2026 | PP-EDUVec: Privacy-Preserving Intelligent Management Algorithms for Educational-Corpus Vector Databases Under Retrieval-Augmented Learning | 大语言模型与生成式 AI；数据科学与数据挖掘；自然语言处理；隐私计算与联邦学习；网络空间安全与 AI 安全；医疗健康与生物信息；优化、运筹与计算数学；数据库、知识图谱与信息检索；人机交互与教育技术；信号处理与时序分析 | 第 4/5 作者 | E | 标题和摘要 | Electronics | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/electronics15050943) |
-| 2025 | Hybrid Algorithm via Reciprocal-Argument Transformation for Efficient Gauss Hypergeometric Evaluation in Wireless Networks | 大语言模型与生成式 AI；物联网与无线通信；优化、运筹与计算数学；信号处理与时序分析 | 第 1/2 作者 | E | 标题和摘要 | Mathematics | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/math13152354) |
-| 2025 | ScaL2Chain: Towards a Scalable Protocol for Multi-Chain Decentralized Applications | 大语言模型与生成式 AI；网络空间安全与 AI 安全；密码学、区块链与可信计算；医疗健康与生物信息 | 第 3/4 作者 | E | 标题和摘要 | Electronics | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/electronics14142895) |
+| 2026 | Toward Federated Learning Against Noisy Clients via CLIP-Guided Prototypes | 人工智能与机器学习；隐私计算与联邦学习 | 第 3/6 作者 | E | 标题 | IEEE Transactions on Big Data | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tbdata.2025.3630997) |
+| 2026 | PP-EDUVec: Privacy-Preserving Intelligent Management Algorithms for Educational-Corpus Vector Databases Under Retrieval-Augmented Learning | 人工智能与机器学习；大语言模型与生成式 AI；数据科学与数据挖掘；自然语言处理；隐私计算与联邦学习；网络空间安全与 AI 安全；医疗健康与生物信息；优化、运筹与计算数学；数据库、知识图谱与信息检索；人机交互与教育技术；信号处理与时序分析 | 第 4/5 作者 | E | 标题和摘要 | Electronics | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/electronics15050943) |
+| 2025 | Hybrid Algorithm via Reciprocal-Argument Transformation for Efficient Gauss Hypergeometric Evaluation in Wireless Networks | 人工智能与机器学习；大语言模型与生成式 AI；物联网与无线通信；优化、运筹与计算数学；信号处理与时序分析 | 第 1/2 作者 | E | 标题和摘要 | Mathematics | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/math13152354) |
+| 2025 | ScaL2Chain: Towards a Scalable Protocol for Multi-Chain Decentralized Applications | 人工智能与机器学习；大语言模型与生成式 AI；网络空间安全与 AI 安全；密码学、区块链与可信计算；医疗健康与生物信息 | 第 3/4 作者 | E | 标题和摘要 | Electronics | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/electronics14142895) |
 
 <a id="teacher-41"></a>
 
 ## 41. 陳昊（Hao Chen）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/413)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/445)
 - Crossref 高置信匹配：共 1 篇符合条件，当前展示最近 1 篇。
 - 论文佐证方向：隐私计算与联邦学习；密码学、区块链与可信计算。
 
@@ -612,7 +612,7 @@
 
 ## 42. 朱泓光（Hongguang Zhu）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/428)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/462)
 - Crossref 高置信匹配：共 1 篇符合条件，当前展示最近 1 篇。
 - 论文佐证方向：人工智能与机器学习；大语言模型与生成式 AI。
 
@@ -624,37 +624,37 @@
 
 ## 43. 徐衡（Heng Xu）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/451)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/491)
 - Crossref 高置信匹配：共 3 篇符合条件，当前展示最近 3 篇。
-- 论文佐证方向：大语言模型与生成式 AI；隐私计算与联邦学习；网络空间安全与 AI 安全；人工智能与机器学习；自然语言处理；物联网与无线通信；数据库、知识图谱与信息检索；人机交互与教育技术。
+- 论文佐证方向：人工智能与机器学习；大语言模型与生成式 AI；隐私计算与联邦学习；网络空间安全与 AI 安全；自然语言处理；物联网与无线通信；数据库、知识图谱与信息检索；人机交互与教育技术。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
 | 2026 | Cracks in Collaboration: Threat Models and Attacks on Multi-LLM Collaborative Systems | 大语言模型与生成式 AI；网络空间安全与 AI 安全 | 第 4/5 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3670889) |
 | 2026 | Robust and Adaptive Dual-Defense Framework Against Data Poisoning Attacks in Recommendation Systems | 人工智能与机器学习；大语言模型与生成式 AI；自然语言处理；隐私计算与联邦学习；网络空间安全与 AI 安全；物联网与无线通信；数据库、知识图谱与信息检索；人机交互与教育技术 | 第 3/5 作者 | E | 标题和摘要 | Electronics | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/electronics15081726) |
-| 2026 | Really Unlearned? Verifying Machine Unlearning via Influential Sample Pairs | 隐私计算与联邦学习 | 第 1/4 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2025.3620308) |
+| 2026 | Really Unlearned? Verifying Machine Unlearning via Influential Sample Pairs | 人工智能与机器学习；隐私计算与联邦学习 | 第 1/4 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2025.3620308) |
 
 <a id="teacher-44"></a>
 
 ## 44. 吳世卿（Shiqing Wu）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/409)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/442)
 - Crossref 高置信匹配：共 8 篇符合条件，当前展示最近 5 篇。
-- 论文佐证方向：自然语言处理；数据库、知识图谱与信息检索；人工智能与机器学习；大语言模型与生成式 AI；网络空间安全与 AI 安全；软件工程与程序分析。
+- 论文佐证方向：人工智能与机器学习；自然语言处理；数据库、知识图谱与信息检索；大语言模型与生成式 AI；网络空间安全与 AI 安全；软件工程与程序分析。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
 | 2026 | Diagnosing and Mitigating Mid-Sequence Degradation in Recommender Systems | 数据库、知识图谱与信息检索 | 第 3/6 作者 | E | 标题 | Proceedings of the 49th International ACM SIGIR Conference on Research and Development in Information Retrieval | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1145/3805712.3809738) |
-| 2026 | TriCon-Fair: Triplet Contrastive Learning for Mitigating Social Bias in Pre-Trained Language Models | 自然语言处理 | 第 3/4 作者 | E | 标题 | ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/icassp55912.2026.11462909) |
+| 2026 | TriCon-Fair: Triplet Contrastive Learning for Mitigating Social Bias in Pre-Trained Language Models | 人工智能与机器学习；自然语言处理 | 第 3/4 作者 | E | 标题 | ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/icassp55912.2026.11462909) |
 | 2026 | The Trust Paradox in LLM-Based Multi-Agent Systems: When Collaboration Becomes a Security Vulnerability | 大语言模型与生成式 AI；网络空间安全与 AI 安全；软件工程与程序分析 | 第 3/7 作者 | E | 标题 | IEEE Transactions on Computational Social Systems | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tcss.2026.3695070) |
 | 2026 | Beyond Observations: Improving Multi-Hop Question Generation via Bridging Dependency-Enhanced Counterfactual Supporting | 人工智能与机器学习；自然语言处理 | 第 6/7 作者 | E | 标题 | IEEE Transactions on Computational Social Systems | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tcss.2026.3693685) |
-| 2025 | DF-CDR: A Unified Framework for Dual Fairness in Cross-Domain Recommendation Systems | 数据库、知识图谱与信息检索 | 第 3/6 作者 | E | 标题 | 2025 IEEE International Conference on Agentic AI (ICA) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/ica67499.2025.00045) |
+| 2025 | DF-CDR: A Unified Framework for Dual Fairness in Cross-Domain Recommendation Systems | 人工智能与机器学习；数据库、知识图谱与信息检索 | 第 3/6 作者 | E | 标题 | 2025 IEEE International Conference on Agentic AI (ICA) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/ica67499.2025.00045) |
 
 <a id="teacher-45"></a>
 
 ## 45. 劉銀龍（Yinlong Liu）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/411)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/444)
 - Crossref 高置信匹配：共 2 篇符合条件，当前展示最近 2 篇。
 - 论文佐证方向：计算机视觉与多媒体；云计算、分布式系统与边缘计算；优化、运筹与计算数学。
 
@@ -667,7 +667,7 @@
 
 ## 46. 陳昶璐（Changlu Chen）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/412)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/443)
 - Crossref 高置信匹配：共 5 篇符合条件，当前展示最近 5 篇。
 - 论文佐证方向：人工智能与机器学习；云计算、分布式系统与边缘计算；软件工程与程序分析；数据科学与数据挖掘；优化、运筹与计算数学；智慧城市与空间计算。
 
@@ -683,7 +683,7 @@
 
 ## 47. 賴姝穎（Shuying Lai）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/456)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/498)
 - Crossref 高置信匹配：共 14 篇符合条件，当前展示最近 5 篇。
 - 论文佐证方向：机器人与智能交通；物联网与无线通信；优化、运筹与计算数学；人工智能与机器学习；医疗健康与生物信息；金融与商业数据。
 
@@ -699,54 +699,54 @@
 
 ## 48. 左旭含（Xuhan Zuo）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/458)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/496)
 - Crossref 高置信匹配：共 2 篇符合条件，当前展示最近 2 篇。
-- 论文佐证方向：隐私计算与联邦学习；密码学、区块链与可信计算；大语言模型与生成式 AI。
+- 论文佐证方向：人工智能与机器学习；隐私计算与联邦学习；密码学、区块链与可信计算；大语言模型与生成式 AI。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
-| 2026 | Federated TrustChain: Blockchain-Enhanced LLM Training and Unlearning | 大语言模型与生成式 AI；隐私计算与联邦学习；密码学、区块链与可信计算 | 第 1/7 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3665277) |
-| 2025 | Federated Learning With Blockchain-Enhanced Machine Unlearning: A Trustworthy Approach | 隐私计算与联邦学习；密码学、区块链与可信计算 | 第 1/6 作者 | E | 标题 | IEEE Transactions on Services Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tsc.2025.3553709) |
+| 2026 | Federated TrustChain: Blockchain-Enhanced LLM Training and Unlearning | 人工智能与机器学习；大语言模型与生成式 AI；隐私计算与联邦学习；密码学、区块链与可信计算 | 第 1/7 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3665277) |
+| 2025 | Federated Learning With Blockchain-Enhanced Machine Unlearning: A Trustworthy Approach | 人工智能与机器学习；隐私计算与联邦学习；密码学、区块链与可信计算 | 第 1/6 作者 | E | 标题 | IEEE Transactions on Services Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tsc.2025.3553709) |
 
 <a id="teacher-49"></a>
 
 ## 49. 劉恆竹​（Hengzhu Liu）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/453)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/495)
 - Crossref 高置信匹配：未找到。为避免同名误收，不展示外部论文；请继续参考官方主页或个人主页。
 
 <a id="teacher-50"></a>
 
 ## 50. 周大為​（Dawei Zhou）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/455)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/497)
 - Crossref 高置信匹配：未找到。为避免同名误收，不展示外部论文；请继续参考官方主页或个人主页。
 
 <a id="teacher-51"></a>
 
 ## 51. 萬偉（Wei Wan）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/454)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/493)
 - Crossref 高置信匹配：未找到。为避免同名误收，不展示外部论文；请继续参考官方主页或个人主页。
 
 <a id="teacher-52"></a>
 
 ## 52. 張帥（Shuai Zhang）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/460)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/503)
 - Crossref 高置信匹配：未找到。为避免同名误收，不展示外部论文；请继续参考官方主页或个人主页。
 
 <a id="teacher-53"></a>
 
 ## 53. 牛朝西（Chaoxi Niu）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/457)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/500)
 - Crossref 高置信匹配：共 3 篇符合条件，当前展示最近 3 篇。
 - 论文佐证方向：人工智能与机器学习；数据科学与数据挖掘；医疗健康与生物信息；优化、运筹与计算数学。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
-| 2026 | Long-Term Trends and Determinants of Tuberculosis Burden in China, 1990–2023: Insights from the Global Burden of Disease Study 2023 | 医疗健康与生物信息；优化、运筹与计算数学 | 第 4/10 作者 | E | 标题和摘要 | Pathogens | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/pathogens15030295) |
+| 2026 | Long-Term Trends and Determinants of Tuberculosis Burden in China, 1990–2023: Insights from the Global Burden of Disease Study 2023 | 人工智能与机器学习；医疗健康与生物信息；优化、运筹与计算数学 | 第 4/10 作者 | E | 标题和摘要 | Pathogens | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.3390/pathogens15030295) |
 | 2026 | Zero-shot Generalist Graph Anomaly Detection with Unsupervised Normal Prototype Learning | 人工智能与机器学习 | 第 2/2 作者 | E | 标题 | 2026 9th International Symposium on Big Data and Applied Statistics (ISBDAS) | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/isbdas69350.2026.11484864) |
 | 2026 | Recurrent Prompt Learning for Spatio-Temporal Forecasting | 人工智能与机器学习；数据科学与数据挖掘 | 第 3/6 作者 | E | 标题 | IEEE Transactions on Consumer Electronics | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tce.2026.3675217) |
 
@@ -754,7 +754,7 @@
 
 ## 54. 管發乾​（Faqian Guan）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/452)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/494)
 - Crossref 高置信匹配：共 4 篇符合条件，当前展示最近 4 篇。
 - 论文佐证方向：人工智能与机器学习；网络空间安全与 AI 安全；物联网与无线通信；大语言模型与生成式 AI；自然语言处理；计算机视觉与多媒体；隐私计算与联邦学习。
 
@@ -769,42 +769,42 @@
 
 ## 55. 陳輝強（Huiqiang Chen）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/459)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/502)
 - Crossref 高置信匹配：共 5 篇符合条件，当前展示最近 5 篇。
-- 论文佐证方向：大语言模型与生成式 AI；隐私计算与联邦学习；网络空间安全与 AI 安全；优化、运筹与计算数学；人工智能与机器学习。
+- 论文佐证方向：人工智能与机器学习；大语言模型与生成式 AI；隐私计算与联邦学习；网络空间安全与 AI 安全；优化、运筹与计算数学。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
 | 2026 | Safe and Reliable Diffusion Models via Subspace Projection | 大语言模型与生成式 AI | 第 1/6 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2026.3692493) |
 | 2025 | Zero-Shot Machine Unlearning with Proxy Adversarial Data Generation | 人工智能与机器学习；大语言模型与生成式 AI；隐私计算与联邦学习；网络空间安全与 AI 安全；优化、运筹与计算数学 | 第 1/4 作者 | E | 标题和摘要 | Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.24963/ijcai.2025/39) |
-| 2025 | AFed: Algorithmic Fair Federated Learning | 隐私计算与联邦学习；优化、运筹与计算数学 | 第 1/4 作者 | E | 标题 | IEEE Transactions on Neural Networks and Learning Systems | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tnnls.2025.3528012) |
-| 2025 | Model Inversion Attack Against Transfer Learning: Inverting a Model Without Querying It | 网络空间安全与 AI 安全 | 第 2/6 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2025.3548119) |
+| 2025 | AFed: Algorithmic Fair Federated Learning | 人工智能与机器学习；隐私计算与联邦学习；优化、运筹与计算数学 | 第 1/4 作者 | E | 标题 | IEEE Transactions on Neural Networks and Learning Systems | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tnnls.2025.3528012) |
+| 2025 | Model Inversion Attack Against Transfer Learning: Inverting a Model Without Querying It | 人工智能与机器学习；网络空间安全与 AI 安全 | 第 2/6 作者 | E | 标题 | IEEE Transactions on Dependable and Secure Computing | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tdsc.2025.3548119) |
 | 2024 | Zero-Shot Machine Unlearning with Proxy Adversarial Data Generation | 人工智能与机器学习；大语言模型与生成式 AI；隐私计算与联邦学习；网络空间安全与 AI 安全；优化、运筹与计算数学 | 第 1/4 作者 | E | 标题和摘要 | Proceedings of the Thirty-ThirdInternational Joint Conference on Artificial Intelligence | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.24963/ijcai.2024/39) |
 
 <a id="teacher-56"></a>
 
 ## 56. 岑明燦​（Mingcan Cen）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/462)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/504)
 - Crossref 高置信匹配：未找到。为避免同名误收，不展示外部论文；请继续参考官方主页或个人主页。
 
 <a id="teacher-57"></a>
 
 ## 57. 张博南（Bonan Zhang）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/497)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/539)
 - Crossref 高置信匹配：共 1 篇符合条件，当前展示最近 1 篇。
-- 论文佐证方向：网络空间安全与 AI 安全；密码学、区块链与可信计算；信号处理与时序分析。
+- 论文佐证方向：人工智能与机器学习；网络空间安全与 AI 安全；密码学、区块链与可信计算；信号处理与时序分析。
 
 | 年份 | 代表论文 | 论文内容主题 | 作者位置 | 贡献证据 | 判断依据 | 刊物/会议 | 来源等级 | 核验日期 | 来源 |
 |---:|---|---|---|---|---|---|---|---|---|
-| 2026 | Cross Signal Attacks Against Cardiovascular Authentication Systems | 网络空间安全与 AI 安全；密码学、区块链与可信计算；信号处理与时序分析 | 第 1/7 作者 | E | 标题 | IEEE Transactions on Biometrics, Behavior, and Identity Science | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tbiom.2026.3702142) |
+| 2026 | Cross Signal Attacks Against Cardiovascular Authentication Systems | 人工智能与机器学习；网络空间安全与 AI 安全；密码学、区块链与可信计算；信号处理与时序分析 | 第 1/7 作者 | E | 标题 | IEEE Transactions on Biometrics, Behavior, and Identity Science | 4（DOI/出版社元数据） | 2026-07-12 | [DOI](https://doi.org/10.1109/tbiom.2026.3702142) |
 
 <a id="teacher-58"></a>
 
 ## 58. 江小鳳（Sio Fong Kong）
 
-- [澳城大官方主页](https://fds.cityu.edu.mo/en/members/204)
+- [澳城大官方主页](https://fds.cityu.edu.mo/members/204)
 - Crossref 高置信匹配：未找到。为避免同名误收，不展示外部论文；请继续参考官方主页或个人主页。
 
 ## 人工复核记录
