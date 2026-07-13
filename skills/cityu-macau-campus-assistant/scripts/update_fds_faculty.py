@@ -101,35 +101,29 @@ SECTION_ENDINGS = {
 
 # Ordered broad-to-specific tags. Multiple matches are retained.
 TAG_RULES: list[tuple[str, tuple[str, ...]]] = [
-    ("人工智能与机器学习", ("artificial intelligence", "machine learning", "deep learning", "neural network", "reinforcement learning", "multi-agent learning", "ai for science")),
-    ("大语言模型与生成式 AI", ("large language model", "large model", "generative ai", "generative model", "multimodal generation", "aigc")),
+    ("人工智能与机器学习", ("ai", "artificial intelligence", "machine learning", "deep learning", "neural network", "reinforcement learning", "multi-agent learning", "brain-inspired intelligence", "ai for science", "swarm intelligence")),
+    ("大语言模型与生成式 AI", ("large language model", "large model", "llm", "genai", "generative ai", "generative model", "generate model", "multimodal generation", "multi-modal generation", "visual content generation", "aigc")),
     ("数据科学与数据挖掘", ("data science", "data mining", "data analytics", "big data", "data analysis", "business intelligence", "cluster analysis", "predictive analytics")),
     ("自然语言处理", ("natural language processing", "text mining", "sentiment analysis", "language model")),
     ("计算机视觉与多媒体", ("computer vision", "image processing", "video", "3d reconstruction", "point cloud", "multimedia", "visual recognition", "medical image")),
     ("隐私计算与联邦学习", ("privacy", "federated learning", "federated", "machine unlearning", "differential privacy", "privacy computing")),
-    ("网络空间安全与 AI 安全", ("cybersecurity", "cyber security", "cyberspace security", "network security", "information security", "ai security", "artificial intelligence security", "system security", "model attack", "adversarial attack", "malware")),
+    ("网络空间安全与 AI 安全", ("cybersecurity", "cyber security", "cyberspace security", "network security", "information security", "ai security", "artificial intelligence security", "system security", "model security", "model backdoor", "model attack", "adversarial machine learning", "adversarial attack", "malware")),
     ("密码学、区块链与可信计算", ("cryptography", "encryption", "blockchain", "trusted computing", "access control", "authentication")),
-    ("云计算、分布式系统与边缘计算", ("cloud computing", "distributed system", "edge computing", "parallel computing", "gpu computing", "mlsys", "resource scheduling")),
+    ("云计算、分布式系统与边缘计算", ("cloud computing", "distributed system", "edge computing", "mobile computing", "parallel computing", "gpu computing", "mlsys", "resource scheduling")),
     ("物联网与无线通信", ("internet of things", "iot", "wireless", "communication network", "sensor network", "vehicular network")),
-    ("机器人与智能交通", ("robot", "autonomous driving", "intelligent transportation", "smart transportation", "navigation", "vehicle")),
-    ("医疗健康与生物信息", ("healthcare", "medical", "biomedical", "bioinformatics", "health data", "digital health")),
+    ("机器人与智能交通", ("robot", "embodied ai", "embodied intelligence", "uav", "drone", "swarm intelligence", "autonomous driving", "intelligent transportation", "smart transportation", "navigation", "vehicle")),
+    ("医疗健康与生物信息", ("healthcare", "medical", "biomedicine", "biomedical", "bioinformatics", "health data", "digital health")),
     ("优化、运筹与计算数学", ("optimization", "operations research", "operational research", "algorithm", "game theory", "mathematical", "probability", "functional analysis", "differential equation")),
     ("统计学习与概率建模", ("bayesian statistics", "statistical learning", "probabilistic model", "statistical inference")),
-    ("数据库、知识图谱与信息检索", ("database", "knowledge graph", "information retrieval", "recommendation system", "recommender system", "semantic web")),
+    ("数据库、知识图谱与信息检索", ("database", "knowledge graph", "information retrieval", "recommendation", "recommender system", "semantic integration", "semantic web")),
     ("软件工程与程序分析", ("software engineering", "program analysis", "software testing", "programming language", "code generation")),
     ("人机交互与教育技术", ("human-computer interaction", "human computer interaction", "education", "learning analytics", "smart education", "voice interaction", "affective computing", "user behavior")),
     ("信号处理与时序分析", ("signal processing", "time series analysis")),
     ("科学智能与计算物理", ("high energy physics", "cosmology", "physics for ai", "ai for science")),
     ("信息系统与数字化应用", ("information system", "information technology applications", "technology and user behavior")),
     ("智慧城市与空间计算", ("smart city", "smart cities", "urban", "geospatial", "spatial", "geographic information")),
-    ("金融与商业数据", ("financial", "finance", "fintech", "marketing", "e-commerce", "economics")),
+    ("金融与商业数据", ("financial", "finance", "fintech", "marketing", "e-commerce", "e -commerce", "economics")),
 ]
-
-# Keep explicit, reviewable exceptions close to the extractor. Values are only
-# used when the official page does not expose a recognizable research section.
-TAG_OVERRIDES: dict[str, tuple[str, ...]] = {
-    "177": ("网络空间安全与 AI 安全", "隐私计算与联邦学习", "云计算、分布式系统与边缘计算"),
-}
 
 # Do not silently repair malformed addresses shown by a source.
 EMAIL_WARNINGS: dict[str, str] = {
@@ -215,8 +209,6 @@ class Faculty:
     email_note: str | None
     tags: list[str]
     research_summary: str
-    education_summary: str
-    courses_summary: str
     official_evidence_summary: str
     recruitment_summary: str
     evidence: str
@@ -298,7 +290,14 @@ def find_research_section(lines: list[str]) -> tuple[str, bool]:
         collected: list[str] = []
         for line in lines[start:]:
             label = normalized_label(line)
-            if label in SECTION_ENDINGS or any(label.startswith(item) for item in SECTION_ENDINGS):
+            other_sections = PROFILE_SECTION_LABELS - RESEARCH_LABELS
+            if (
+                label in SECTION_ENDINGS
+                or any(label.startswith(item) for item in SECTION_ENDINGS)
+                or label in other_sections
+                or any(label.startswith(item + " ") for item in other_sections)
+                or re.match(r"(?i)^currently\s+recruiting\b", line)
+            ):
                 break
             if line not in collected:
                 collected.append(line)
@@ -311,11 +310,7 @@ def find_research_section(lines: list[str]) -> tuple[str, bool]:
         if match:
             return clean_text(match.group(1)), True
 
-    # Use only the member body after its title, not the site navigation.
-    body_start = next((i for i, line in enumerate(lines) if "professor" in line.lower()), 0)
-    body = " ".join(lines[body_start:])
-    body = re.split(r"\b(?:Prev|Back|Next)\b", body, maxsplit=1, flags=re.IGNORECASE)[0]
-    return clean_text(body), False
+    return "", False
 
 
 def find_section(lines: list[str], labels: set[str], limit: int) -> str | None:
@@ -374,13 +369,12 @@ def supervisor_qualification(text: str) -> str:
     return "官网未明确标注导师资格"
 
 
-def match_tags(member_id: str, research_text: str) -> list[str]:
+def match_tags(research_text: str) -> list[str]:
     lowered = research_text.lower()
-    tags = [tag for tag, terms in TAG_RULES if any(term in lowered for term in terms)]
-    for tag in TAG_OVERRIDES.get(member_id, ()):
-        if tag not in tags:
-            tags.append(tag)
-    return tags
+    def matches(term: str) -> bool:
+        return bool(re.search(r"\bai\b", lowered)) if term == "ai" else term in lowered
+
+    return [tag for tag, terms in TAG_RULES if any(matches(term) for term in terms)]
 
 
 def find_personal_homepage(source: str) -> str | None:
@@ -450,13 +444,11 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
         source = sources[position]
         document = parse_document(source)
         research_text, explicit = find_research_section(document.lines)
-        education = find_section(document.lines, EDUCATION_LABELS, 220)
-        courses = find_section(document.lines, COURSE_LABELS, 180)
         project = find_section(document.lines, PROJECT_LABELS, 220)
         publication = find_section(document.lines, PUBLICATION_LABELS, 220)
-        tags = match_tags(member_id, research_text)
+        tags = match_tags(research_text)
         if not tags:
-            tags = ["官网方向待人工归类"]
+            tags = ["官网未明确列出研究方向"]
             review.append(f"{member_id} {listing_title}: no normalized research tag")
         if not explicit:
             review.append(f"{member_id} {listing_title}: direction inferred from profile/outputs")
@@ -478,12 +470,10 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
                 email=email,
                 email_note=email_note,
                 tags=tags,
-                research_summary=short_summary(research_text),
-                education_summary=education or "官网未提供",
-                courses_summary=courses or "官网未提供",
+                research_summary=short_summary(research_text) if research_text else "官网未明确列出研究方向",
                 official_evidence_summary=project or publication or "官网未提供",
                 recruitment_summary=find_recruitment(document.lines) or "官网未公开招募说明",
-                evidence="官网明确" if explicit else "根据官网简介、授课或成果推断",
+                evidence="官网明确" if explicit else "官网未明确列出研究方向",
                 official_url=official_url,
                 personal_url=find_personal_homepage(source),
             )
@@ -533,16 +523,16 @@ def markdown(
         "",
         "- 本索引用于按公开研究方向筛选候选教师，不构成录取、招生名额或接收意愿判断。",
         "- 只有官网明确标注博士生导师或硕士生导师时，才能使用相应称谓；否则只能称为方向相关教师。",
-        "- 研究方向可以有多个。`根据官网简介、授课或成果推断` 不等同于教师本人声明。",
-        "- 教育背景、授课课程、项目/成果和招募说明均为官网个人页摘要；`官网未提供` 只表示页面未写明。",
+        "- `标准化检索标签` 只根据官网个人页明确展示的研究方向或明确的专业方向表述映射，不使用教育背景、授课或论文成果补充标签。",
+        "- 项目/成果和招募说明均为官网个人页摘要；`官网未提供` 只表示页面未写明。",
         "- 招募说明按核验日记录，不等于实时名额或接收承诺，申请前必须向教师或学院确认。",
         "- 联系方式只使用官网公开的 `cityu.edu.mo` / `cityu.mo` 工作邮箱，并同时提供官方主页；不收录私人邮箱、电话或办公室信息。",
         "- 导师职务、导师资格、研究方向和邮箱均按本次核验日期记录；没有日期的招生信息不能推断当前有名额或接收意愿。",
         "",
         "## 师资索引",
         "",
-        "| 序号 | 教师 | 职称/职务 | 导师资格 | 校内工作邮箱 | 标准化研究方向 | 官网方向摘要 | 官网教育背景摘要 | 官网授课摘要 | 官网项目/成果摘要 | 官网招募说明 | 近期外部证据摘要 | 方向依据 | 核验日期 | 官方主页 | 个人主页 |",
-        "|---:|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|",
+        "| 序号 | 教师 | 职称/职务 | 导师资格 | 校内工作邮箱 | 官网研究方向 | 标准化检索标签 | 官网项目/成果摘要 | 官网招募说明 | 近期外部证据摘要 | 方向依据 | 核验日期 | 官方主页 | 个人主页 |",
+        "|---:|---|---|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for index, item in enumerate(faculty, 1):
         personal = f"[访问]({item.personal_url})" if item.personal_url else "官网未提供"
@@ -554,9 +544,9 @@ def markdown(
         recent = paper_summaries.get(index, "外部论文索引未覆盖；不能据此判断没有近期成果")
         lines.append(
             f"| {index} | {item.chinese_name}（{item.english_name}） | {item.role} | "
-            f"{item.qualification} | {email_link} | {'；'.join(item.tags)} | {item.research_summary} | "
-            f"{item.education_summary} | {item.courses_summary} | {item.official_evidence_summary} | "
-            f"{item.recruitment_summary} | {recent} | {item.evidence}（学院教师主页） | {verified} | "
+            f"{item.qualification} | {email_link} | {item.research_summary} | {'；'.join(item.tags)} | "
+            f"{item.official_evidence_summary} | {item.recruitment_summary} | {recent} | "
+            f"{item.evidence}（学院教师主页） | {verified} | "
             f"[官方页]({item.official_url}) | {personal} |"
         )
 

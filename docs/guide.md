@@ -39,7 +39,7 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 |---|---|---|---|
 | 新生与校园通用知识库 | [freshman.md](../skills/cityu-macau-campus-assistant/references/freshman.md) | 已完成 | 招生、注册、学费、奖学金、体检、D 签注、逗留许可、宿舍、图书馆、校园服务、恶劣天气 |
 | 数据科学学院 FDS | [fds.md](../skills/cityu-macau-campus-assistant/references/fds.md) | 已完成 | BITS、BCS、MDS、MCS、PhD DS、PhD CS、学分、资格考试、论文成果、导师、毕业 |
-| FDS 导师基础画像 | [fds_mentors.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_mentors.md) | 已完成 | 58 名 Academic Staff、导师资格、57 个可核验校内工作邮箱、研究方向、教育背景、授课、官网项目/成果、招募说明、官方主页和近期外部证据摘要 |
+| FDS 导师基础画像 | [fds_mentors.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_mentors.md) | 已完成 | 58 名 Academic Staff、导师资格、57 个可核验校内工作邮箱、官网研究方向、官网项目/成果、招募说明、官方主页和近期外部证据摘要 |
 | FDS 论文检索索引 | [fds_papers.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_papers.md) | 已完成 | 47 名教师、185 篇 2023 年以来高置信论文、DOI、作者位置和 E 级贡献标记；仅按需读取 |
 | FDS 导师匹配规则 | [fds_rules.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_rules.md) | 已完成 | 官网准入、两阶段匹配、来源优先级、贡献证据 A-E 和回答边界 |
 | 商学院 FOB | [fob.md](../skills/cityu-macau-campus-assistant/references/fob.md) | 已完成 | BBA、MBA、DBA、IBC、4+1 项目、导师、论文与毕业要求 |
@@ -337,7 +337,7 @@ python skills/cityu-macau-campus-assistant/scripts/update_fds_faculty.py
 python skills/cityu-macau-campus-assistant/scripts/update_fds_faculty.py --check
 ```
 
-脚本会核对中英文 6 页 Academic Staff 列表及 58 个教师页面，提取导师资格、官网工作邮箱、研究方向、教育背景、授课课程、官网项目/成果、招募说明和主页。官网没有公开的字段会明确写为“官网未提供”，自动提取失败或只能推断的信息会进入 `references/mentors/fds_mentors.md` 的“人工复核记录”，不能直接当作教师本人声明。
+脚本会核对中英文 6 页 Academic Staff 列表及 58 个教师页面，提取导师资格、官网工作邮箱、官网明确展示的研究方向、官网项目/成果、招募说明和主页。标准化检索标签不从教育背景、授课或论文成果推断；官网没有公开的字段会明确写为“官网未提供”，自动提取失败的信息会进入 `references/mentors/fds_mentors.md` 的“人工复核记录”。
 
 更新近期论文证据：
 
