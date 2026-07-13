@@ -19,6 +19,7 @@
 
 ## 1. 周萬雷（Wanlei Zhou）
 
+- 中文官网职称/职务：副校长
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/177)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/177)
 - 核验日期：2026-07-13
@@ -45,6 +46,7 @@
 
 ## 2. 朱天清（Tianqing Zhu）
 
+- 中文官网职称/职务：教授；学院负责人
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/336)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/179)
 - 核验日期：2026-07-13
@@ -71,6 +73,7 @@
 
 ## 3. 劉文堅（Wenjian Liu）
 
+- 中文官网职称/职务：副教授；副院长
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/143)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/143)
 - 核验日期：2026-07-13
@@ -97,6 +100,7 @@ L. Xing and W. Liu, (2021). "A Data Fusion Powered Bi-Directional Long Short Ter
 
 ## 4. 朱家偉（Chia-Wei Chu）
 
+- 中文官网职称/职务：副教授；课程主任
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/147)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/147)
 - 核验日期：2026-07-13
@@ -123,6 +127,7 @@ Zou, S., Chu, C., Dai, W., Shen, N., Ren, J. & Ding, W. (2024). Predicting Typho
 
 ## 5. 應作斌（Zuobin Ying）
 
+- 中文官网职称/职务：副教授；课程主任
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/188)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/188)
 - 核验日期：2026-07-13
@@ -149,6 +154,7 @@ National Natural Science Foundation of China (NSFC) - Science and Technology Dev
 
 ## 6. 郭永德（Weng Tak Kuok）
 
+- 中文官网职称/职务：副教授；课程主任
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/175)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/175)
 - 核验日期：2026-07-13
@@ -175,6 +181,7 @@ National Natural Science Foundation of China (NSFC) - Science and Technology Dev
 
 ## 7. 江愷瑤（Hoi Io Kong）
 
+- 中文官网职称/职务：副教授；课程主任
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/144)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/144)
 - 核验日期：2026-07-13
@@ -201,6 +208,7 @@ Li, Zijun, Hoiio Kong *, and Chan-Seng Wong. “Neural Network-Based Identificat
 
 ## 8. 辜嘉（Jia Gu）
 
+- 中文官网职称/职务：教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/338)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/279)
 - 核验日期：2026-07-13
@@ -227,6 +235,7 @@ Refereed Journal Articles 1. Z. Zhang, J. He, J. Gu. Saliency-guided Stairs Dete
 
 ## 9. 孫鑫（Xin Sun）
 
+- 中文官网职称/职务：教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/337)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/281)
 - 核验日期：2026-07-13
@@ -253,6 +262,7 @@ Wei Ye, Wengang Guo, Shuhao Tang, Hao Tian, Xin Sun , Xiaofeng Cao, Heng Tao She
 
 ## 10. 段俊偉（Junwei Duan）
 
+- 中文官网职称/职务：副教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/340)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/283)
 - 核验日期：2026-07-13
@@ -279,6 +289,7 @@ Duan, J. , & Zou, Y. (2025). Discriminative projective dictionary pair based bro
 
 ## 11. 丁聖勇（Shengyong Ding）
 
+- 中文官网职称/职务：副教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/238)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/238)
 - 核验日期：2026-07-13
@@ -305,6 +316,7 @@ Refereed Journal Articles Liu, Y., Liu, X., Ding, S., & Yang, Z. (2025). Robustl
 
 ## 12. 葉大庸（Dayong Ye）
 
+- 中文官网职称/职务：副教授(研究)
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/531)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/489)
 - 核验日期：2026-07-13
@@ -331,6 +343,7 @@ Dayong Ye , T Zhu, F He, B Liu, M Xue and W Zhou, “Cross-Modal Prompt Inversio
 
 ## 13. 李悦翔（Yuexiang Li）
 
+- 中文官网职称/职务：副教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/540)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/498)
 - 核验日期：2026-07-13
@@ -357,6 +370,7 @@ Dayong Ye , T Zhu, F He, B Liu, M Xue and W Zhou, “Cross-Modal Prompt Inversio
 
 ## 14. 吳庚申（Gengshen Wu）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/227)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/227)
 - 核验日期：2026-07-13
@@ -383,6 +397,7 @@ Dayong Ye , T Zhu, F He, B Liu, M Xue and W Zhou, “Cross-Modal Prompt Inversio
 
 ## 15. 葛東嬌（Dongjiao Ge）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/244)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/244)
 - 核验日期：2026-07-13
@@ -409,6 +424,7 @@ Journal Papers Ge, D., & Zeng, X. J. (2022). Functional fuzzy system: Anonlinear
 
 ## 16. 王淳（Chun Wang）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/228)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/228)
 - 核验日期：2026-07-13
@@ -435,6 +451,7 @@ Duan, Z., Wang, C. , & Zhong, W. (2024). SSGCL: Simple Social Recommendation wit
 
 ## 17. 黃志峰（Chi Fong Wong）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/259)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/259)
 - 核验日期：2026-07-13
@@ -461,6 +478,7 @@ Refereed Journal Articles Wong, C.-F. , & Chen, Y. (2022). Tree level Majorana n
 
 ## 18. 魏中倫（Chung-Lun Wei）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/281)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/284)
 - 核验日期：2026-07-13
@@ -487,6 +505,7 @@ Journal Papers Wang, Y.-M., Wei, C.-L. , Chen, W.-J., & Wang, Y.-S.* (2023). Rev
 
 ## 19. 高萬鑫（Wanxin Gao）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/282)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/285)
 - 核验日期：2026-07-13
@@ -513,6 +532,7 @@ Shen, C., Gao, W. , Xu, Q., Zou, T., Zhu, J., & Zhang, R. (2023, May). Fast DDoS
 
 ## 20. 鍾婍（Qi Zhong）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/286)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/286)
 - 核验日期：2026-07-13
@@ -539,6 +559,7 @@ Zhang X., Zhang Z., Zhong Q., Zheng X., Zhang Y., Hu S., & Zhang L. Y. (2023). M
 
 ## 21. 吳曉鋒（Xiaofeng Wu）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/283)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/287)
 - 核验日期：2026-07-13
@@ -565,6 +586,7 @@ Zhang X., Zhang Z., Zhong Q., Zheng X., Zhang Y., Hu S., & Zhang L. Y. (2023). M
 
 ## 22. 崔三帥（Sanshuai Cui）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/284)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/288)
 - 核验日期：2026-07-13
@@ -591,6 +613,7 @@ Zhang X., Zhang Z., Zhong Q., Zheng X., Zhang Y., Hu S., & Zhang L. Y. (2023). M
 
 ## 23. 張琪（Qi Zhang）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/279)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/294)
 - 核验日期：2026-07-13
@@ -617,6 +640,7 @@ Zhou, J., Zhang, Q. , & Gu, J. (2026). Sparse subspace learning machine for patt
 
 ## 24. 羅英喆（Yingzhe Luo）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/285)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/290)
 - 核验日期：2026-07-13
@@ -643,6 +667,7 @@ Zhou, J., Zhang, Q. , & Gu, J. (2026). Sparse subspace learning machine for patt
 
 ## 25. 敬馮時（Fengshi Jing）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/292)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/291)
 - 核验日期：2026-07-13
@@ -669,6 +694,7 @@ Zhou, J., Zhang, Q. , & Gu, J. (2026). Sparse subspace learning machine for patt
 
 ## 26. 張樂峰（Lefeng Zhang）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/293)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/289)
 - 核验日期：2026-07-13
@@ -695,6 +721,7 @@ Zhou, J., Zhang, Q. , & Gu, J. (2026). Sparse subspace learning machine for patt
 
 ## 27. 劉馳（Chi Liu）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/339)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/292)
 - 核验日期：2026-07-13
@@ -721,6 +748,7 @@ Google scholar: https://scholar.google.com/citations?hl=en&user=OVA8Q54AAAAJ
 
 ## 28. 朱聰聰（Congcong Zhu）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/341)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/293)
 - 核验日期：2026-07-13
@@ -747,6 +775,7 @@ Zhu, C. , Ye, D., Zhu, T., & Zhou, W. (2022). Time-optimal and privacy preservin
 
 ## 29. 戚敏鋒（Minfeng Qi）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/358)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/295)
 - 核验日期：2026-07-13
@@ -773,6 +802,7 @@ Qi, M., Wang, Z., Chen, S., & Xiang, Y. (2024, Aug). Privacy protection for bloc
 
 ## 30. 周帥（Shuai Zhou）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/367)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/296)
 - 核验日期：2026-07-13
@@ -799,6 +829,7 @@ Refereed Articles Zhou, S. , Liu, C., Ye, D., Zhu, T., Zhou, W., & Yu, P. S. (20
 
 ## 31. 王銘浩（Minghao Wang）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/383)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/297)
 - 核验日期：2026-07-13
@@ -825,6 +856,7 @@ Book Chapters • Minghao Wang, Xuhan Zuo, Tianqing Zhu, "Blockchain in 5G and 6
 
 ## 32. 李興風（Xingfeng Li）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/379)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/298)
 - 核验日期：2026-07-13
@@ -851,6 +883,7 @@ Book Chapters • Minghao Wang, Xuhan Zuo, Tianqing Zhu, "Blockchain in 5G and 6
 
 ## 33. 孫慧（Hui Sun）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/382)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/300)
 - 核验日期：2026-07-13
@@ -877,6 +910,7 @@ Refereed Journal Articles Sun, H., Zhu, T., Zhang, Z., Jin, D., Xiong, P., & Zho
 
 ## 34. 孫晶（Jing Sun）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/381)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/299)
 - 核验日期：2026-07-13
@@ -903,6 +937,7 @@ Refereed Journal Articles Sun, J., Chen, S., Zhang, C., Ma, Y., & Zhang, J. (202
 
 ## 35. 余蔚（Wei Yu）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/391)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/303)
 - 核验日期：2026-07-13
@@ -929,6 +964,7 @@ Refereed Journal Articles Sun, J., Chen, S., Zhang, C., Ma, Y., & Zhang, J. (202
 
 ## 36. 眭相傑（Xiangjie Sui）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/390)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/304)
 - 核验日期：2026-07-13
@@ -955,6 +991,7 @@ Refereed Conference Articles X. Sui , S. Wang, and Y. Fang, “A Survey on Objec
 
 ## 37. 秦鵬（Peng Qin）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/380)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/301)
 - 核验日期：2026-07-13
@@ -981,6 +1018,7 @@ Refereed Journal Articles Qin, P ., Hu, Q., & Cui, M. (2024). Towards machine-re
 
 ## 38. 鐘宇宸（Yuchen Zhong）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/387)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/302)
 - 核验日期：2026-07-13
@@ -1007,6 +1045,7 @@ Refereed Journal Articles (1). Bu, S., & Zhong, Y. (2021). Well-posedness of sec
 
 ## 39. 諶華傑（Huajie Chen）
 
+- 中文官网职称/职务：助理教授(研究)
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/384)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/305)
 - 核验日期：2026-07-13
@@ -1033,6 +1072,7 @@ Refereed Articles Chen H , Zhu T, Ji S, et al. Stand-in Model Protection: Synthe
 
 ## 40. 蔡劍平（Jianping Cai）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/386)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/307)
 - 核验日期：2026-07-13
@@ -1059,6 +1099,7 @@ Cai Jianping , Ye Qingqing, Hu Haibo, Liu Ximeng, Fu Yanggeng. Boosting Accuracy
 
 ## 41. 陳昊（Hao Chen）
 
+- 中文官网职称/职务：助理教授(研究)
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/445)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/413)
 - 核验日期：2026-07-13
@@ -1085,6 +1126,7 @@ Embodied AI 2025: [1] (CCF A) Zhong, F., Wu, K., Wang, C., Chen, H ., Ci, H., Li
 
 ## 42. 朱泓光（Hongguang Zhu）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/462)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/428)
 - 核验日期：2026-07-13
@@ -1111,6 +1153,7 @@ Jiao, S.*, Zhu, H. *, Huang, J., Zhao, Y., Wei, Y., & Shi, H. (2024). Collaborat
 
 ## 43. 徐衡（Heng Xu）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/491)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/451)
 - 核验日期：2026-07-13
@@ -1137,6 +1180,7 @@ Jiao, S.*, Zhu, H. *, Huang, J., Zhao, Y., Wei, Y., & Shi, H. (2024). Collaborat
 
 ## 44. 吳世卿（Shiqing Wu）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/442)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/409)
 - 核验日期：2026-07-13
@@ -1163,6 +1207,7 @@ Refereed Conference Papers [C14] Shanshan Sui, Qilong Han, Dan Lu, Shiqing Wu , 
 
 ## 45. 劉銀龍（Yinlong Liu）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/444)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/411)
 - 核验日期：2026-07-13
@@ -1189,6 +1234,7 @@ Liang, W., Liu, Y. , Wang, J., & Yang, Z. X. (2024). Trajectory Progress-Based P
 
 ## 46. 陳昶璐（Changlu Chen）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/443)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/412)
 - 核验日期：2026-07-13
@@ -1215,6 +1261,7 @@ Niu, C.*, Qiao, H*., Chen, C. , Chen, L., & Pang, G. (2024). Zero-shot Generalis
 
 ## 47. 賴姝穎（Shuying Lai）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/498)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/456)
 - 核验日期：2026-07-13
@@ -1241,6 +1288,7 @@ S. Lai , Z. Y. Dong, H. Yang, Y. Tao, C. Yip, J. Qiu, and J. Zhao. (2025). Renew
 
 ## 48. 左旭含（Xuhan Zuo）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/496)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/458)
 - 核验日期：2026-07-13
@@ -1267,6 +1315,7 @@ Book Chapters • Minghao Wang, Xuhan Zuo , Tianqing Zhu, "Blockchain in 5G and 
 
 ## 49. 劉恆竹​（Hengzhu Liu）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/495)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/453)
 - 核验日期：2026-07-13
@@ -1293,6 +1342,7 @@ Book Chapters • Minghao Wang, Xuhan Zuo , Tianqing Zhu, "Blockchain in 5G and 
 
 ## 50. 周大為​（Dawei Zhou）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/497)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/455)
 - 核验日期：2026-07-13
@@ -1319,6 +1369,7 @@ Refereed Journal Articles Zhou, D ., Wang, N., Liu, T., & Gao, X. (2025). Improv
 
 ## 51. 萬偉（Wei Wan）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/493)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/454)
 - 核验日期：2026-07-13
@@ -1345,6 +1396,7 @@ Refereed Journal Articles Zhou, D ., Wang, N., Liu, T., & Gao, X. (2025). Improv
 
 ## 52. 張帥（Shuai Zhang）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/503)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/460)
 - 核验日期：2026-07-13
@@ -1371,6 +1423,7 @@ Refereed Journal Articles Zhou, D ., Wang, N., Liu, T., & Gao, X. (2025). Improv
 
 ## 53. 牛朝西（Chaoxi Niu）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/500)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/457)
 - 核验日期：2026-07-13
@@ -1397,6 +1450,7 @@ Refereed Journal Articles Zhou, D ., Wang, N., Liu, T., & Gao, X. (2025). Improv
 
 ## 54. 管發乾​（Faqian Guan）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/494)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/452)
 - 核验日期：2026-07-13
@@ -1423,6 +1477,7 @@ Faqian Guan , Tianqing Zhu, Wanlei Zhou, Kim-Kwang Raymond Choo. Graph neural ne
 
 ## 55. 陳輝強（Huiqiang Chen）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/502)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/459)
 - 核验日期：2026-07-13
@@ -1449,6 +1504,7 @@ Refereed Articles 1. Huiqiang Chen , Tianqing Zhu, Tao Zhang, Wanlei Zhou, Phili
 
 ## 56. 岑明燦​（Mingcan Cen）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/504)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/462)
 - 核验日期：2026-07-13
@@ -1475,6 +1531,7 @@ Refereed Articles Cen, M., Jiang, F., & Doss, R. (2025). RansoGuard: A RNN-based
 
 ## 57. 张博南（Bonan Zhang）
 
+- 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/539)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/497)
 - 核验日期：2026-07-13
@@ -1501,6 +1558,7 @@ Zhang, B ., Li, L., Chen, C., Lee, I., Lee, K., Zhu, T., & Ong, K. L. (2025). An
 
 ## 58. 江小鳳（Sio Fong Kong）
 
+- 中文官网职称/职务：讲师
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/204)
 - 英文官网：[访问](https://fds.cityu.edu.mo/en/members/204)
 - 核验日期：2026-07-13

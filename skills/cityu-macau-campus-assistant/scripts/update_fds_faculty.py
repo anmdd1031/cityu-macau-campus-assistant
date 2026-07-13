@@ -181,6 +181,17 @@ EMAIL_WARNINGS: dict[str, str] = {
     "428": "官网当前显示 hgzhu@cityu.edu，域名格式疑似不完整，请通过官方主页确认",
 }
 
+CHINESE_ROLE_TRANSLATIONS = (
+    ("學院負責人", "学院负责人"),
+    ("副校長", "副校长"),
+    ("副院長", "副院长"),
+    ("課程主任", "课程主任"),
+    ("講師", "讲师"),
+)
+CHINESE_ROLE_MARKERS = (
+    "學院負責人", "副校長", "副院長", "課程主任", "教授", "副教授", "助理教授", "講師",
+)
+
 
 @dataclass
 class Link:
@@ -520,6 +531,21 @@ def clean_chinese_name(value: str) -> str:
     return value or "官网未提供"
 
 
+def clean_chinese_role(value: str) -> str:
+    """Extract the Chinese official rank/office from the Chinese listing title."""
+    value = clean_text(value).replace("\u200b", "")
+    name = clean_chinese_name(value)
+    if name != "官网未提供" and value.startswith(name):
+        role = value[len(name):].strip(" -–—")
+    else:
+        positions = [value.find(marker) for marker in CHINESE_ROLE_MARKERS if value.find(marker) >= 0]
+        role = value[min(positions):].strip(" -–—") if positions else ""
+    role = re.sub(r"\s+", "；", role)
+    for traditional, simplified in CHINESE_ROLE_TRANSLATIONS:
+        role = role.replace(traditional, simplified)
+    return role or "官网未提供"
+
+
 def clean_english_name(value: str) -> str:
     value = re.sub(
         r"^(?:Professor|Associate Professor(?: \(research\))?|Assistant Professor(?: \(Research\))?|Lecturer|Prof)\s+",
@@ -549,6 +575,8 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
 
     for position, (member_id, listing_title) in enumerate(english):
         chinese_id, chinese_title = chinese[position]
+        chinese_name = clean_chinese_name(chinese_title)
+        chinese_role = clean_chinese_role(chinese_title)
         official_url = profile_urls[position]
         source = sources[position]
         document = parse_document(source)
@@ -578,6 +606,8 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
             review.append(f"{member_id} {listing_title}: direction inferred from profile/outputs")
         if len(research_text) < 4:
             review.append(f"{member_id} {listing_title}: research summary is too short")
+        if chinese_role == "官网未提供":
+            review.append(f"{member_id} {chinese_title}: Chinese official rank/office was not extracted")
 
         email = find_official_email(chinese_source) or find_official_email(source)
         email_note = EMAIL_WARNINGS.get(member_id) if not email else None
@@ -587,9 +617,9 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
         faculty.append(
             Faculty(
                 member_id=member_id,
-                chinese_name=clean_chinese_name(chinese_title),
+                chinese_name=chinese_name,
                 english_name=clean_english_name(listing_title),
-                role=listing_title,
+                role=chinese_role,
                 qualification=supervisor_qualification(" ".join(chinese_document.lines + document.lines)),
                 email=email,
                 email_note=email_note,
@@ -674,6 +704,7 @@ def official_evidence_markdown(faculty: list[Faculty], verified: str) -> str:
             "",
             f"## {index}. {item.chinese_name}（{item.english_name}）",
             "",
+            f"- 中文官网职称/职务：{item.role}",
             f"- 中文官网：[访问]({item.chinese_url})",
             f"- 英文官网：[访问]({item.english_url})",
             f"- 核验日期：{verified}",
@@ -713,6 +744,7 @@ def markdown(
         "> 本表来源等级：1（学院官方教师主页）；个人主页仅作为官方页公开的补充入口。",
         f"> 当前收录：{len(faculty)} 名本校 Academic Staff；不含 Academic Advisors、External Instructors 和行政人员。",
         f"> 方向来源：中文官网优先（{chinese_directions} 人）；中文页未明确时回退英文官网（{english_fallbacks} 人）。",
+        "> 职称/职务：以中文官网师资列表和中文教师个人页为准；本表使用中文职称/职务，不沿用英文列表标题。",
         "> 官网完整科研证据：[fds_official_evidence.md](fds_official_evidence.md)；论文检索索引：[fds_papers.md](fds_papers.md)；导师匹配规则：[fds_rules.md](fds_rules.md)。",
         "",
         "## 使用边界",
@@ -724,7 +756,7 @@ def markdown(
         "- 官网列出的科研经历、研究项目和论文成果可能没有及时更新，也不一定完整，只能作为方向匹配的参考，不能据此判断当前研究活跃度或招生状态。",
         "- 招募说明按核验日记录，不等于实时名额或接收承诺，申请前必须向教师或学院确认。",
         "- 联系方式只使用官网公开的 `cityu.edu.mo` / `cityu.mo` 工作邮箱，并同时提供官方主页；不收录私人邮箱、电话或办公室信息。",
-        "- 导师职务、导师资格、研究方向和邮箱均按本次核验日期记录；没有日期的招生信息不能推断当前有名额或接收意愿。",
+        "- 职称/职务、导师资格、研究方向和邮箱均按中文官网及本次核验日期记录；没有日期的招生信息不能推断当前有名额或接收意愿。",
         "",
         "## 师资索引",
         "",
