@@ -50,7 +50,7 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 使用 $cityu-macau-campus-assistant 查询 MDS 的学分和成果要求。
 ```
 
-## 这个 Skill 能做什么
+## 这个 Agent 能做什么
 
 可以：
 
