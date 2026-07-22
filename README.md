@@ -55,7 +55,7 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 可以：
 
 - 整理公开的申请、注册、宿舍、签注和校园办事流程
-- 解释 FDS、FOB、FOF、FH、FE、FL、FITM 和荣誉班公开课程、学分、论文成果和毕业要求
+- 解释 FDS、FOB、FOF、FH、FE、FL、FITM、FHSS、FIAD 和荣誉班公开课程、学分、论文成果和毕业要求
 - 按官网研究方向和导师资格查询 FDS 教师，并给出可解释的候选导师、校内工作邮箱和主页
 - 查询氹仔校区校内餐饮、菜单、价格和供应时段
 - 提醒哪些信息需要看最新官方通知
@@ -66,6 +66,7 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 - 代替学校做个案审批
 - 查询个人成绩、课表、考场或私人账号
 - 代替法律、移民、财务或医疗意见
+- 对个人、学院或群体作政治立场推断、政治可靠性评价，或按国籍、民族、宗教等无关敏感属性筛选和排序
 
 本智能校园助手仅整合校园公开信息供参考，不替代澳门城市大学官方通知，不具备招生、签注、学分、毕业等审批效力。所有办事、升学、毕业相关事宜，请以学校、学院及澳门相关部门最新正式公告为准，使用者依据助手内容做出的相关决策，责任由本人自行承担。
 ## 更多说明
@@ -75,6 +76,8 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 - [智能体规则文件](skills/cityu-macau-campus-assistant/SKILL.md)
 - [新生与校园知识库](skills/cityu-macau-campus-assistant/references/freshman.md)
 - [数据科学学院知识库](skills/cityu-macau-campus-assistant/references/fds.md)
+- [人文社会科学学院知识库](skills/cityu-macau-campus-assistant/references/fhss.md)
+- [创新设计学院知识库](skills/cityu-macau-campus-assistant/references/fiad.md)
 - [数据科学学院导师基础画像（中文官网师资、职称职务、资格、方向、项目及招募说明）](skills/cityu-macau-campus-assistant/references/mentors/fds_mentors.md)
 - [数据科学学院导师官网完整科研证据](skills/cityu-macau-campus-assistant/references/mentors/fds_official_evidence.md)
 - [FDS 导师匹配规则](skills/cityu-macau-campus-assistant/references/mentors/fds_rules.md)

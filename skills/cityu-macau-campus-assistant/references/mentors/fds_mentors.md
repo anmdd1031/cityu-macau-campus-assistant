@@ -11,6 +11,7 @@
 ## 使用边界
 
 - 本索引用于按公开研究方向筛选候选教师，不构成录取、招生名额或接收意愿判断。
+- 完整免责声明和敏感属性边界见 `fds_rules.md`；本表不得用于推断政治立场或按政治、国籍、民族、宗教等与学术匹配无关的属性筛选教师。
 - 只有官网明确标注博士生导师或硕士生导师时，才能使用相应称谓；否则只能称为方向相关教师。
 - `标准化检索标签` 只根据官网个人页明确展示的研究方向或明确的专业方向表述映射，不使用教育背景、授课或论文成果补充标签。
 - 科研证据列只显示三类资料是否存在及来源；完整正文按需读取 `fds_official_evidence.md`，不再使用可能遗漏关键信息的截断摘要。
@@ -79,7 +80,7 @@
 | 54 | 管發乾​（Faqian Guan） | 助理教授 | 硕士生导师 | [fqguan@cityu.edu.mo](mailto:fqguan@cityu.edu.mo) | 人工智能隱私和安全 圖神經網絡 大語言模型 | 人工智能与机器学习；大语言模型与生成式 AI | 科研经历：官网未提供；研究项目：官网未提供；论文成果：有（中文官网）；[读取本地完整资料](fds_official_evidence.md#teacher-54) | 官网未公开招募说明 | 中文官网明确（学院教师主页） | 2026-07-13 | [官方页](https://fds.cityu.edu.mo/members/494) | 官网未提供 |
 | 55 | 陳輝強（Huiqiang Chen） | 助理教授 | 硕士生导师 | [hqchen@cityu.edu.mo](mailto:hqchen@cityu.edu.mo) | AI security, Trustworthy Artificial Intelligence | 人工智能与机器学习；网络空间安全与 AI 安全 | 科研经历：官网未提供；研究项目：官网未提供；论文成果：有（中文官网）；[读取本地完整资料](fds_official_evidence.md#teacher-55) | 官网未公开招募说明 | 中文官网明确（学院教师主页） | 2026-07-13 | [官方页](https://fds.cityu.edu.mo/members/502) | 官网未提供 |
 | 56 | 岑明燦​（Mingcan Cen） | 助理教授 | 硕士生导师 | [mccen@cityu.edu.mo](mailto:mccen@cityu.edu.mo) | 信息安全 機器學習應用 | 人工智能与机器学习；网络空间安全与 AI 安全 | 科研经历：官网未提供；研究项目：官网未提供；论文成果：有（中文官网）；[读取本地完整资料](fds_official_evidence.md#teacher-56) | 官网未公开招募说明 | 中文官网明确（学院教师主页） | 2026-07-13 | [官方页](https://fds.cityu.edu.mo/members/504) | 官网未提供 |
-| 57 | 张博南（Bonan Zhang） | 助理教授 | 硕士生导师 | [bnzhang@cityu.edu.mo](mailto:bnzhang@cityu.edu.mo) | 人工智能 網絡安全 生物認證 | 人工智能与机器学习；网络空间安全与 AI 安全 | 科研经历：官网未提供；研究项目：官网未提供；论文成果：有（中文官网）；[读取本地完整资料](fds_official_evidence.md#teacher-57) | 官网未公开招募说明 | 中文官网明确（学院教师主页） | 2026-07-13 | [官方页](https://fds.cityu.edu.mo/members/539) | 官网未提供 |
+| 57 | 張博南（Bonan Zhang） | 助理教授 | 硕士生导师 | [bnzhang@cityu.edu.mo](mailto:bnzhang@cityu.edu.mo) | 人工智能 網絡安全 生物認證 | 人工智能与机器学习；网络空间安全与 AI 安全 | 科研经历：官网未提供；研究项目：官网未提供；论文成果：有（中文官网）；[读取本地完整资料](fds_official_evidence.md#teacher-57) | 官网未公开招募说明 | 中文官网明确（学院教师主页） | 2026-07-13 | [官方页](https://fds.cityu.edu.mo/members/539) | 官网未提供 |
 | 58 | 江小鳳（Sio Fong Kong） | 讲师 | 官网未明确标注导师资格 | [sfkong@cityu.edu.mo](mailto:sfkong@cityu.edu.mo) | 貝葉斯統計 | 统计学习与概率建模 | 科研经历：官网未提供；研究项目：官网未提供；论文成果：有（中文官网）；[读取本地完整资料](fds_official_evidence.md#teacher-58) | 官网未公开招募说明 | 中文官网明确（学院教师主页） | 2026-07-13 | [官方页](https://fds.cityu.edu.mo/members/204) | 官网未提供 |
 
 ## 人工复核记录
