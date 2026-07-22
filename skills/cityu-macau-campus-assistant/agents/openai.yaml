@@ -1,4 +1,4 @@
 interface:
-  display_name: "澳门城市大学校园助手"
-  short_description: "查询澳城大校园事务、已覆盖学院规则及 FDS 导师公开资料"
-  default_prompt: "使用 $cityu-macau-campus-assistant 回答我关于澳门城市大学公开信息的问题；先按问题读取对应知识库，给出可确认结论、适用范围、核验日期和官方入口，资料未覆盖时明确说明，不要编造。"
+  display_name: "澳城大校园资讯"
+  short_description: "查询澳城大校园事务、多学院规则及 FDS 导师资料"
+  default_prompt: "使用 $cityu-macau-campus-assistant 查询澳门城市大学公开信息；请按问题读取对应知识库，导师推荐只使用官网资料，未覆盖内容明确说明。"

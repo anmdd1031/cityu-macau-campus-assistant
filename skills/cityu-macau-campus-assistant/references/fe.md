@@ -116,7 +116,7 @@
 |---|---|
 | 本地生 | 学士学位/应届学士毕业或相等程度 |
 | 内地生 | 教育部认证的本科学历（学信网可查询）；国(境)外毕业须教育部留学服务中心网可查 |
-| 港台及国际生 | 学士学位或同等学历 |
+| 香港、台湾地区及国际学生 | 学士学位或同等学历 |
 
 #### 往届生附加要求
 
@@ -161,7 +161,7 @@
 | 招生报名系统 | https://admission.cityu.edu.mo/recruit/#!/McuIndex |
 | 本地生招生简章 | https://ado.cityu.edu.mo/list-6 |
 | 内地生招生简章 | https://ado.cityu.edu.mo/list-26 |
-| 港台及国际生招生简章 | https://ado.cityu.edu.mo/list-23 |
+| 香港、台湾地区及国际学生招生简章 | https://ado.cityu.edu.mo/list-23 |
 
 ### 3.4 申请材料（Agent 回答建议）
 

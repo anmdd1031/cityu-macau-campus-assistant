@@ -135,7 +135,7 @@
 | 招生处专页 | https://ado.cityu.edu.mo/ |
 | 本地生招生简章 | https://ado.cityu.edu.mo/list-6 |
 | 内地生招生简章 | https://ado.cityu.edu.mo/list-26 |
-| 港台及国际生招生简章 | https://ado.cityu.edu.mo/list-23 |
+| 香港、台湾地区及国际学生招生简章 | https://ado.cityu.edu.mo/list-23 |
 
 ### 3.2 申请材料（Agent 回答建议）
 

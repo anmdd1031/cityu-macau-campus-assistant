@@ -13,7 +13,7 @@
 - [21. 吳曉鋒](#teacher-21)；[22. 崔三帥](#teacher-22)；[23. 張琪](#teacher-23)；[24. 羅英喆](#teacher-24)；[25. 敬馮時](#teacher-25)；[26. 張樂峰](#teacher-26)；[27. 劉馳](#teacher-27)；[28. 朱聰聰](#teacher-28)；[29. 戚敏鋒](#teacher-29)；[30. 周帥](#teacher-30)
 - [31. 王銘浩](#teacher-31)；[32. 李興風](#teacher-32)；[33. 孫慧](#teacher-33)；[34. 孫晶](#teacher-34)；[35. 余蔚](#teacher-35)；[36. 眭相傑](#teacher-36)；[37. 秦鵬](#teacher-37)；[38. 鐘宇宸](#teacher-38)；[39. 諶華傑](#teacher-39)；[40. 蔡劍平](#teacher-40)
 - [41. 陳昊](#teacher-41)；[42. 朱泓光](#teacher-42)；[43. 徐衡](#teacher-43)；[44. 吳世卿](#teacher-44)；[45. 劉銀龍](#teacher-45)；[46. 陳昶璐](#teacher-46)；[47. 賴姝穎](#teacher-47)；[48. 左旭含](#teacher-48)；[49. 劉恆竹​](#teacher-49)；[50. 周大為​](#teacher-50)
-- [51. 萬偉](#teacher-51)；[52. 張帥](#teacher-52)；[53. 牛朝西](#teacher-53)；[54. 管發乾​](#teacher-54)；[55. 陳輝強](#teacher-55)；[56. 岑明燦​](#teacher-56)；[57. 张博南](#teacher-57)；[58. 江小鳳](#teacher-58)
+- [51. 萬偉](#teacher-51)；[52. 張帥](#teacher-52)；[53. 牛朝西](#teacher-53)；[54. 管發乾​](#teacher-54)；[55. 陳輝強](#teacher-55)；[56. 岑明燦​](#teacher-56)；[57. 張博南](#teacher-57)；[58. 江小鳳](#teacher-58)
 
 <a id="teacher-1"></a>
 
@@ -1529,7 +1529,7 @@ Refereed Articles Cen, M., Jiang, F., & Doss, R. (2025). RansoGuard: A RNN-based
 
 <a id="teacher-57"></a>
 
-## 57. 张博南（Bonan Zhang）
+## 57. 張博南（Bonan Zhang）
 
 - 中文官网职称/职务：助理教授
 - 中文官网：[访问](https://fds.cityu.edu.mo/members/539)
