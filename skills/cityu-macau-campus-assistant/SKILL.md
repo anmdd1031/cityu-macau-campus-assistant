@@ -11,7 +11,7 @@ description: 当用户询问澳门城市大学、澳城大或 City University of
 
 - 招生、报名、学费、奖学金、注册、体检、D 签注、逗留许可、宿舍和校园服务。
 - 数据科学学院（FDS）本硕博课程、学分、转专业、师资、导师方向匹配、校内工作邮箱、教师主页、资格考试、学术成果和毕业要求。
-- 商学院（FOB）工商管理、MBA、DBA、国际商务领袖实验班、4+1 项目、导师和毕业要求。
+- 商学院（FOB）工商管理、MBA、管理分析学硕士（MMA）、DBA、国际商务领袖实验班、4+1 项目、导师和毕业要求。
 - 金融学院（FOF）应用经济学、金融学、金融科技、金融学博士课程、学分、导师、论文发表和毕业要求。
 - 大健康学院（FH）社会工作、应用心理学、智慧养老与健康管理、导师和毕业要求。
 - 教育学院（FE/SOE）教育学硕士、教学研究硕士、教育学博士、课程、学分、导师、论文和毕业要求。
@@ -43,14 +43,16 @@ description: 当用户询问澳门城市大学、澳城大或 City University of
 | FDS 教师完整科研经历、完整研究项目、官网论文成果，或官网访问失败时查询本地完整官网资料 | `references/mentors/fds_rules.md` + `references/mentors/fds_mentors.md` + `references/mentors/fds_official_evidence.md` |
 | FDS 具体论文、DOI、作者位置、论文贡献或导师负责论文哪一部分 | `references/mentors/fds_rules.md` + `references/mentors/fds_mentors.md` + `references/mentors/fds_official_evidence.md`；外部论文检索索引当前停用，不得读取或引用 |
 | FDS、BITS、BCS、MDS、MCS、PhD DS、PhD CS、学分、转专业、资格考试、论文成果或毕业 | `references/fds.md` |
-| 商学院、FOB、工商管理、BBA、MBA、DBA、IBC、国际商务领袖实验班、4+1、商学院导师、商学院论文或毕业 | `references/fob.md` |
+| 商学院、FOB、工商管理、BBA、MBA、MMA、管理分析学硕士、DBA、IBC、国际商务领袖实验班、4+1、商学院导师、商学院论文或毕业 | `references/fob.md` |
 | 金融学院、FOF、应用经济学、BAE、金融精英班、金融学硕士、金融科技硕士、金融学博士、金融方向、经济方向、金融学院导师、金融学院论文发表或毕业 | `references/fof.md` |
 | 大健康学院、FH、社会工作、BSW、MSW、应用心理学、MAP、DAP、智慧养老与健康管理、大健康学院导师、实习或毕业 | `references/fh.md` |
 | 教育学院、FE、SOE、教育学硕士、MEd、教学研究硕士、MTLR、教育学博士、PhD in Education、教育学院导师、教育学院论文或毕业 | `references/fe.md` |
 | 法学院、FL、SOL、法学硕士、LL.M、公法、刑事法、民事法、国际商法、法学院导师、法学院论文或毕业 | `references/fl.md` |
 | 国际旅游与管理学院、FITM、国旅学院、国际旅游与酒店管理、BBA in IHTM、国际款待与旅游业管理、MHTM、国际酒店管理、MHM、国际旅游管理博士、PhD in ITM、酒店管理博士、DHM、旅游学院导师、项目报告或毕业 | `references/fitm.md` |
 | 人文社会科学学院、FHSS、应用语言学、英语学士、葡萄牙语学士、中国文化研究硕士、文化产业管理硕士、文化产业研究博士、学分、论文或毕业 | `references/fhss.md` |
+| FHSS 教师名单、职称、所属范畴、特聘或兼任身份、研究方向、管理团队或课程督导 | `references/faculty/fhss_faculty.md`；涉及课程规则时同时读取 `references/fhss.md` |
 | 创新设计学院、FIAD、设计艺术学士、设计学硕士、艺术学硕士、设计学博士、艺术学博士、作品展览、设计竞赛、发表、论文导师或毕业 | `references/fiad.md` |
+| FIAD 全职教学人员、特聘教授、课程负责人、课程督导或人员联系方式 | `references/faculty/fiad_faculty.md`；询问具体年级论文导师时同时读取 `references/fiad.md` |
 | 城市规划与设计硕士、城市规划与设计博士或IUSD课程 | `references/freshman.md`（仅学校通用信息）；说明课程现归属IUSD且当前没有IUSD单独知识库，不能沿用FIAD历史规则 |
 | 荣誉班、Honours Class、荣誉课程、选拔、科研训练、一对一导师、X-Challenge、竞赛、实习、深圳零一学院 | `references/honours_class.md` |
 | 葡语国家研究院（IROPC）或城市与可持续发展研究院（IUSD） | `references/freshman.md`（仅学校通用信息）；明确说明当前没有单独学院知识库，学院课程、导师和毕业要求应查对应官方页面 |
@@ -119,6 +121,8 @@ description: 当用户询问澳门城市大学、澳城大或 City University of
 4. 第三方资料只能作为检索线索，不得作为唯一依据。
 
 当前官方资料与 reference 冲突时，以当前官方资料为准，并写明公告或生效日期。不同学年规则冲突时，以用户入学年份适用的培养方案、学生手册或书面通知为准。
+
+课程设置、学分、实习、论文、导师资格和毕业要求，应优先采用所属学院中文官网当前课程页、课程手册、指引、表格或正式通知；大学通用页面、招生简章和招生事务处页面主要用于确认申请资格、招生状态、费用与办理入口，不能覆盖学院公布的学术规则。学院页面与 PDF 不一致时，先判断适用入学年、文件版本和生效范围，不能只因发布日期较新就把面向其他年级的规则套用到用户。
 
 ## 全局政治与敏感内容边界
 
