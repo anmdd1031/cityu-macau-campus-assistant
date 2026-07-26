@@ -43,16 +43,18 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 | FDS 官网完整科研证据 | [fds_official_evidence.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_official_evidence.md) | 已完成 | 58 名教师官网公开的完整科研经历、研究项目和论文成果栏目；按需读取，官网访问失败时可使用本地核验版本 |
 | FDS 论文检索索引 | [fds_papers.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_papers.md) | 暂时停用 | 仅为维护者保留，不参与 Agent 路由、回答或导师推荐 |
 | FDS 导师匹配规则 | [fds_rules.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_rules.md) | 已完成 | 官网准入、研究方向匹配、官方证据来源和回答边界 |
-| 商学院 FOB | [fob.md](../skills/cityu-macau-campus-assistant/references/fob.md) | 已完成 | BBA、MBA、DBA、IBC、4+1 项目、导师、论文与毕业要求 |
+| 商学院 FOB | [fob.md](../skills/cityu-macau-campus-assistant/references/fob.md) | 已完成 | BBA、MBA、管理分析学硕士（MMA）、DBA、IBC、4+1 项目、导师、论文与毕业要求 |
 | 金融学院 FOF | [fof.md](../skills/cityu-macau-campus-assistant/references/fof.md) | 已完成 | BAE、金融精英班、金融学硕士、金融科技硕士、金融学博士、导师、发表与毕业要求 |
 | 大健康学院 FH | [fh.md](../skills/cityu-macau-campus-assistant/references/fh.md) | 已完成 | BSW、MSW、MAP、DAP、智慧养老与健康管理、导师、实习与毕业要求 |
 | 教育学院 FE/SOE | [fe.md](../skills/cityu-macau-campus-assistant/references/fe.md) | 已完成 | 教育学硕士、教学研究硕士、教育学博士、学分、导师、论文与毕业要求 |
 | 法学院 FL/SOL | [fl.md](../skills/cityu-macau-campus-assistant/references/fl.md) | 已完成 | 法学硕士、专业方向、学分、导师、论文与毕业要求 |
 | 国际旅游与管理学院 FITM | [fitm.md](../skills/cityu-macau-campus-assistant/references/fitm.md) | 已完成 | 国际旅游与酒店管理、国际款待与旅游业管理、国际酒店管理、国际旅游管理、酒店管理、导师、项目报告、论文与毕业要求 |
 | 人文社会科学学院 FHSS | [fhss.md](../skills/cityu-macau-campus-assistant/references/fhss.md) | 已完成 | 应用语言学、英语、葡萄牙语、中国文化研究、文化产业管理与文化产业研究课程、学分、论文与毕业要求 |
+| FHSS 师资索引 | [fhss_faculty.md](../skills/cityu-macau-campus-assistant/references/faculty/fhss_faculty.md) | 已完成 | 中文官网当前58名全职、9名特聘、5名兼任学术人员，管理团队、课程督导和公开研究方向 |
 | 创新设计学院 FIAD | [fiad.md](../skills/cityu-macau-campus-assistant/references/fiad.md) | 已完成 | 设计艺术、设计学、艺术学本硕博课程、学分、学术活动、成果发表、导师与毕业要求 |
+| FIAD 师资索引 | [fiad_faculty.md](../skills/cityu-macau-campus-assistant/references/faculty/fiad_faculty.md) | 已完成 | 中文官网当前25名全职教学人员、6名特聘教授、课程负责人和课程督导 |
 | 荣誉班 Honours Class | [honours_class.md](../skills/cityu-macau-campus-assistant/references/honours_class.md) | 已完成 | 选拔、课程体系、导师指导、科研训练、实习、竞赛与毕业条件 |
-| 氹仔校区餐饮指南 | [澳门城市大学氹仔校区_校内餐饮指南.md](../skills/cityu-macau-campus-assistant/references/澳门城市大学氹仔校区_校内餐饮指南.md) | 已完成 | 校内餐厅、菜单、价格、供应时段、用餐建议 |
+| 氹仔校区餐饮指南 | [澳门城市大学氹仔校区_校内餐饮指南.md](../skills/cityu-macau-campus-assistant/references/澳门城市大学氹仔校区_校内餐饮指南.md) | 已完成 | 2026 年 6 月菜单和价格快照、用餐建议；实时状态须以现场或平台为准 |
 
 ## 暂不覆盖的知识库
 
@@ -81,14 +83,16 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 | FDS 完整科研经历、研究项目、官网论文成果或官网访问失败时查询本地资料 | 在上述文件基础上按需读取 `references/mentors/fds_official_evidence.md` |
 | FDS 具体论文、论文成果或项目经历 | 只按需读取 `references/mentors/fds_official_evidence.md`；外部论文索引暂时停用，不得读取或引用 |
 | FDS、BITS、BCS、MDS、MCS、PhD DS、PhD CS | `fds.md` |
-| 商学院、FOB、BBA、MBA、DBA、IBC、4+1 | `fob.md` |
+| 商学院、FOB、BBA、MBA、MMA、管理分析学硕士、DBA、IBC、4+1 | `fob.md` |
 | 金融学院、FOF、BAE、金融精英班、MSF、金融科技、PhD Finance | `fof.md` |
 | 大健康学院、FH、BSW、MSW、MAP、DAP、社会工作、应用心理学 | `fh.md` |
 | 教育学院、FE、SOE、MEd、MTLR、教育学博士 | `fe.md` |
 | 法学院、FL、SOL、LL.M、公法、刑事法、民事法、国际商法 | `fl.md` |
 | 国际旅游与管理学院、FITM、国旅学院、BBA in IHTM、MHTM、MHM、PhD in ITM、DHM | `fitm.md` |
 | 人文社会科学学院、FHSS、应用语言学、葡萄牙语、中国文化研究、文化产业 | `fhss.md` |
+| FHSS 教师、特聘学术人员、兼任人员、研究方向、课程督导 | `faculty/fhss_faculty.md`；涉及课程规则时同时读取 `fhss.md` |
 | 创新设计学院、FIAD、设计艺术、设计学、艺术学、作品展览、设计竞赛 | `fiad.md` |
+| FIAD 全职教学人员、特聘教授、课程负责人、课程督导 | `faculty/fiad_faculty.md`；具体年级论文导师同时读取 `fiad.md` |
 | 城市规划与设计硕士、博士或IUSD课程 | 只查 `freshman.md` 中学校通用信息，说明课程现归属IUSD且当前没有IUSD单独知识库；不得沿用FIAD历史规则 |
 | 荣誉班、Honours Class、荣誉课程、选拔、科研训练、一对一导师、X-Challenge | `honours_class.md` |
 | 同时涉及学校通用流程和学院学业规则 | `freshman.md` + 已覆盖学院的对应知识库 |

@@ -558,20 +558,20 @@ def clean_english_name(value: str) -> str:
 
 
 def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> tuple[list[Faculty], list[str]]:
-    english = collect_listing("en", timeout, retries, delay)
     chinese = collect_listing("zh", timeout, retries, delay)
-    if len(english) != 58:
-        raise RuntimeError(f"Expected 58 English Academic Staff profiles, found {len(english)}")
     if len(chinese) != 58:
         raise RuntimeError(f"Expected 58 Chinese Academic Staff profiles, found {len(chinese)}")
+    english = collect_listing("en", timeout, retries, delay)
+    if len(english) != 58:
+        raise RuntimeError(f"Expected 58 English Academic Staff profiles, found {len(english)}")
 
     review: list[str] = []
     faculty: list[Faculty] = []
     profile_urls = [f"{BASE_URL}/en/members/{member_id}" for member_id, _ in english]
     chinese_profile_urls = [f"{BASE_URL}/members/{member_id}" for member_id, _ in chinese]
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
-        sources = list(executor.map(lambda url: fetch(url, timeout, retries, delay), profile_urls))
         chinese_sources = list(executor.map(lambda url: fetch(url, timeout, retries, delay), chinese_profile_urls))
+        sources = list(executor.map(lambda url: fetch(url, timeout, retries, delay), profile_urls))
 
     for position, (member_id, listing_title) in enumerate(english):
         chinese_id, chinese_title = chinese[position]
@@ -842,7 +842,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--timeout", type=float, default=20.0)
     parser.add_argument("--retries", type=int, default=2)
     parser.add_argument("--delay", type=float, default=0.15, help="Delay after each successful request")
-    parser.add_argument("--workers", type=int, default=4, choices=range(1, 9), help="Concurrent profile requests")
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=1,
+        choices=range(1, 9),
+        help="Concurrent profile requests; defaults to 1 to reduce official-site TLS throttling",
+    )
     return parser.parse_args()
 
 

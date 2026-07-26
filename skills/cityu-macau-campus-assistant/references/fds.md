@@ -2,7 +2,7 @@
 
 > 面向：用于封装“澳门城市大学数据科学学院新生/在读生答疑 AI Agent / Skills”的公开资料知识库。  
 > 聚焦：本、硕、博学生最关心的 **入学、升学、转专业、课程结构、学分、论文/发表、毕业条件、师资导师、表格与办事入口**。  
-> 采集时间：2026-05-22。  
+> 课程入口复核时间：2026-07-27；师资资料使用独立导师文件中的核验日期。
 > 资料来源：澳门城市大学官网、数据科学学院官网、招生事务处、学生专区、官方新闻与公告等公开页面。  
 > 重要提示：招生日期、学费、奖学金、注册安排、毕业论文时间表、表格版本、课程是否开设等属于高变动信息，Agent 回答时必须提示“以当年招生事务处、教务/学院通知、学生手册及学生本人入学年培养方案为准”。
 
@@ -1724,38 +1724,36 @@ PhD CS 页面提到与医学、药学、创新工程、金融等交叉；PhD DS 
 
 # 第十三部分：公开来源清单
 
-以下为本次整理重点使用的公开页面。部分页面可能因语言、路径或年度更新而变化；若链接失效，应从 `https://fds.cityu.edu.mo/` 或 `https://ado.cityu.edu.mo/` 站内搜索对应标题。
+以下优先列出学院中文入口；个别中文页暂时无法访问时，可在同一路径加入 `/en/` 读取学院官方英文版补充。部分页面可能因语言、路径或年度更新而变化；若链接失效，应从 `https://fds.cityu.edu.mo/` 或 `https://ado.cityu.edu.mo/` 站内搜索对应中文标题。
 
 ## 33. 学院与课程页面
 
 | 主题 | URL |
 |---|---|
-| Faculty of Data Science - Message from the Faculty | https://fds.cityu.edu.mo/en/page-184 |
-| Faculty of Data Science - Scientific Research | https://fds.cityu.edu.mo/en/Academic |
-| Faculty Administration | https://fds.cityu.edu.mo/en/admins |
-| Academic Staff | https://fds.cityu.edu.mo/en/members |
-| External Instructors | https://fds.cityu.edu.mo/en/page-206 |
-| Bachelor Programmes | https://fds.cityu.edu.mo/en/BachelorsProgramme |
-| Bachelor of Intelligent Technology and Services | https://fds.cityu.edu.mo/en/page-132 |
-| Bachelor of Computer Science | https://fds.cityu.edu.mo/en/page-231 |
-| Master Programmes | https://fds.cityu.edu.mo/en/MastersProgramme |
-| Master of Data Science | https://fds.cityu.edu.mo/en/page-136 |
-| Master of Computer Science | https://fds.cityu.edu.mo/en/page-249 |
-| Doctorate Programmes | https://fds.cityu.edu.mo/en/DoctorateProgramme |
-| Doctor of Philosophy in Data Science | https://fds.cityu.edu.mo/en/page-133 |
-| Doctor of Philosophy in Computer Science | https://fds.cityu.edu.mo/en/page-252 |
+| 学院寄语 | https://fds.cityu.edu.mo/page-184 |
+| 科学研究 | https://fds.cityu.edu.mo/Academic |
+| 行政团队 | https://fds.cityu.edu.mo/admins |
+| 学术人员 | https://fds.cityu.edu.mo/members |
+| 校外导师 | https://fds.cityu.edu.mo/page-206 |
+| 智能科技与服务学士 | https://fds.cityu.edu.mo/BachelorsProgramme |
+| 计算机科学学士 | https://fds.cityu.edu.mo/page-132 |
+| 荣誉班 | https://fds.cityu.edu.mo/page-231 |
+| 数据科学硕士 | https://fds.cityu.edu.mo/MastersProgramme |
+| 计算机科学硕士 | https://fds.cityu.edu.mo/page-136 |
+| 数据科学博士 | https://fds.cityu.edu.mo/DoctorateProgramme |
+| 计算机科学博士 | https://fds.cityu.edu.mo/page-133 |
 | 人工智能硕士页面线索 | https://fds.cityu.edu.mo/page-248 |
 
 ## 34. 学生专区与公告
 
 | 主题 | URL |
 |---|---|
-| Bachelor Student Zone | https://fds.cityu.edu.mo/en/page-79 |
-| Graduate Student Zone | https://fds.cityu.edu.mo/en/page-120 |
-| 转入 BITS/BCS 过往公告 | https://fds.cityu.edu.mo/en/upcoming_events/310 |
-| 本科毕业实习与毕业设计资料公告 | https://fds.cityu.edu.mo/en/upcoming_events/235 |
-| 数据科学学院荣誉班新闻 | https://fds.cityu.edu.mo/en/2024-2025-the-faculty-of-data-science-honor-class-is-now-open/ |
-| 学院科研教学新闻 | https://www.cityu.edu.mo/en/cityu-faculty-of-data-science-excels-in-research-and-teaching-forging-a-new-force-in-innovation/ |
+| 本科生专区 | https://fds.cityu.edu.mo/page-79 |
+| 研究生专区 | https://fds.cityu.edu.mo/page-120 |
+| 转入 BITS/BCS 过往公告 | https://fds.cityu.edu.mo/upcoming_events/310 |
+| 本科毕业实习与毕业设计资料公告 | https://fds.cityu.edu.mo/upcoming_events/235 |
+| 数据科学学院荣誉班新闻 | https://www.cityu.edu.mo/zh/25jun2024_03/ |
+| 学院科研教学新闻 | https://www.cityu.edu.mo/zh/16june2025/ |
 
 ## 35. 招生事务处与学校层面
 
