@@ -24,13 +24,15 @@ import urllib.parse
 import urllib.request
 from collections import Counter
 from dataclasses import dataclass
-from datetime import date
+from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from update_fds_faculty import TAG_RULES, clean_text
 
 
 CROSSREF_API = "https://api.crossref.org/works"
+BEIJING_TIMEZONE = ZoneInfo("Asia/Shanghai")
 USER_AGENT = (
     "cityu-macau-campus-assistant/1.0 "
     "(https://github.com/anmdd1031/cityu-macau-campus-assistant)"
@@ -438,7 +440,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--faculty", type=Path, default=skill_dir / "references" / "mentors" / "fds_mentors.md")
     parser.add_argument("--output", type=Path, default=skill_dir / "references" / "mentors" / "fds_papers.md")
     parser.add_argument("--check", action="store_true", help="Do not write; fail if generated content differs")
-    parser.add_argument("--date", help="Verification date in YYYY-MM-DD; defaults to today when writing")
+    parser.add_argument(
+        "--date",
+        help="Verification date in YYYY-MM-DD; defaults to the current Beijing date when writing",
+    )
     parser.add_argument("--since-year", type=int, default=2023)
     parser.add_argument("--max-papers", type=int, default=5)
     parser.add_argument("--rows", type=int, default=50, choices=range(10, 101))
@@ -465,7 +470,7 @@ def main() -> int:
         current = args.output.read_text(encoding="utf-8")
         match = re.search(r"核验日期：(\d{4}-\d{2}-\d{2})", current)
         verified = match.group(1) if match else None
-    verified = verified or date.today().isoformat()
+    verified = verified or datetime.now(BEIJING_TIMEZONE).date().isoformat()
 
     teachers = read_teachers(args.faculty)
     results: list[tuple[Teacher, list[Paper], int]] = []
