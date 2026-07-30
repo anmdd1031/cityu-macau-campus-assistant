@@ -45,7 +45,7 @@
 
 ### 0.3 回答高变动问题时的推荐措辞
 
-- “根据金融学院官网截至 2026-06-22 的公开资料，……；但该事项可能随入学年份或当年通知调整，最终以学校/学院正式通知为准。”
+- “根据本文件页首所列最近核验日期的金融学院中文官网公开资料，……；但该事项可能随入学年份或当年通知调整，最终以学校/学院正式通知为准。”
 - “该课程页面列出的学分结构为……；如果你是不同入学年份学生，应以本人学生手册、课程计划或学院通知为准。”
 - “这属于个案审批事项，建议同时联系金融学院办公室、项目负责人或招生事务处确认。”
 - “这不是投资建议；如涉及具体金融产品、资产配置、证券交易或税务安排，请咨询持牌专业人士。”
@@ -738,19 +738,21 @@ Agent 不应承诺每年都有同等名额或资助，应提示以当年学院�
 
 ## 22. 主要信息来源
 
+下表以中文官方课程页为标准。金融科技硕士、博士发表要求和部分学生专区没有可确认的等价中文页面；官网相同数字 ID 的中文路径实际指向其他新闻，因此这些条目保留英文官方页作为补充，并不得覆盖中文官网。
+
 | 来源名称 | URL | 采集时间 | 内容类型 |
 |---|---|---|---|
 | 金融学院官网首页 | https://fof.cityu.edu.mo/ | 2026-07-27 | 中文官网优先；学院栏目、课程入口、联系方式、新闻与学生专区入口 |
-| Bachelor of Applied Economics | https://fof.cityu.edu.mo/en/BAE | 2026-06-22 | 本科课程、学分、方向、毕业要求、招生联系 |
-| Finance Elite Cohort | https://fof.cityu.edu.mo/en/page-60 | 2026-06-22 | 金融精英班特点、英文主课、导师制、实践机会 |
-| Master of Science in Finance | https://fof.cityu.edu.mo/en/masterofscienceinfinance | 2026-06-22 | 金融学硕士课程、学分、论文、入学要求 |
-| Master of Science in Financial Technology | https://fof.cityu.edu.mo/en/list-15/776 | 2026-07-27 | 金融科技硕士课程、学分、学术活动与成果要求 |
-| Doctor of Philosophy in Finance | https://fof.cityu.edu.mo/en/page-46 | 2026-06-22 | 金融学博士课程、学制、入学要求 |
-| 金融学博士发表要求公告 | https://fof.cityu.edu.mo/en/notice/942 | 2026-06-22 | 博士论文发表要求 |
+| 应用经济学学士 | https://fof.cityu.edu.mo/BAE | 2026-07-27 | 中文课程页；本科课程、学分、方向、毕业要求、招生联系 |
+| 金融精英班 | https://fof.cityu.edu.mo/page-60 | 2026-07-27 | 中文课程页；英文主课、导师制、实践机会 |
+| 金融学硕士 | https://fof.cityu.edu.mo/masterofscienceinfinance | 2026-07-27 | 中文课程页；学分、论文、入学要求 |
+| 金融科技硕士 | https://fof.cityu.edu.mo/en/list-15/776 | 2026-07-27 | 中文同 ID 路径为无关新闻；英文官方课程页仅作补充 |
+| 金融学博士 | https://fof.cityu.edu.mo/page-46 | 2026-07-27 | 中文课程页；学制、课程与论文 |
+| 金融学博士发表要求公告 | https://fof.cityu.edu.mo/en/notice/942 | 2026-06-22 | 中文同 ID 路径为无关活动新闻；英文官方公告仅作补充 |
 | Full-time Academic Staff | https://fof.cityu.edu.mo/ft | 2026-07-27 | 师资、项目负责人、导师资格；英文页作为回退 |
 | Graduate Student Zone | https://fof.cityu.edu.mo/en/page-77 | 2026-06-22 | 研究生手册、表格、论文开题与答辩资料 |
 | Bachelor Student Zone | https://fof.cityu.edu.mo/en/page-78 | 2026-06-22 | 本科生手册、表格、加退选、缓考、成绩覆核 |
-| 4+1 Articulation Program (UTS) | https://fof.cityu.edu.mo/en/page-UTS | 2026-06-22 | UTS 衔接项目 |
+| 悉尼科技大学 4+1 硕士直通车 | https://fof.cityu.edu.mo/page-UTS | 2026-07-27 | 中文官方衔接项目页 |
 | 招生事务处 | https://ado.cityu.edu.mo/ | 2026-06-22 | 招生简章、报名、材料、学费、奖学金 |
 | 研究生院 | https://gs.cityu.edu.mo/ | 2026-06-22 | 研究生规则、论文表格、学生手册 |
 | 教务处 | https://registry.cityu.edu.mo/ | 2026-06-22 | 本科手册、学籍、加退选、缓考、成绩覆核等 |

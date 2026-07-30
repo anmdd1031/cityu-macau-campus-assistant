@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """Build or check the FDS faculty reference from official public pages.
 
-This script intentionally uses only the Python standard library. It crawls the
-Chinese and English Academic Staff listings, aligns profiles by official list order, and
-extracts public role, supervisor qualification, research directions, and
-homepage links. It stores only publicly verifiable CityU work emails and never
-stores phone numbers or office locations.
+This script intentionally uses only the Python standard library. It reads the
+Chinese Academic Staff pages first and uses the English pages only to fill
+fields that the Chinese pages do not publish. All HTTP requests are strictly
+serial and rate-limited to avoid overloading or being blocked by the official
+site. It stores only publicly verifiable CityU work emails and never stores
+phone numbers or office locations.
 """
 
 from __future__ import annotations
 
 import argparse
-import concurrent.futures
 import html
 import http.client
 import re
@@ -22,14 +22,17 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from dataclasses import dataclass
-from datetime import date
+from datetime import datetime
 from html.parser import HTMLParser
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 
 BASE_URL = "https://fds.cityu.edu.mo"
 LIST_PAGES = 6
 USER_AGENT = "cityu-macau-campus-assistant/1.0 (+public knowledge maintenance)"
+BEIJING_TIMEZONE = ZoneInfo("Asia/Shanghai")
+_LAST_REQUEST_AT = 0.0
 
 RESEARCH_LABELS = {
     "research direction",
@@ -297,17 +300,38 @@ def normalized_label(value: str) -> str:
     return re.sub(r"[^a-z0-9\u3400-\u9fff& /-]", "", value).strip()
 
 
+def wait_for_request_slot(delay: float) -> None:
+    """Keep request starts globally spaced; this function is never concurrent."""
+    global _LAST_REQUEST_AT
+    wait = delay - (time.monotonic() - _LAST_REQUEST_AT)
+    if wait > 0:
+        time.sleep(wait)
+    _LAST_REQUEST_AT = time.monotonic()
+
+
 def fetch(url: str, timeout: float, retries: int, delay: float) -> str:
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     last_error: Exception | None = None
     for attempt in range(retries + 1):
+        wait_for_request_slot(delay)
         try:
             with urllib.request.urlopen(request, timeout=timeout) as response:
                 charset = response.headers.get_content_charset() or "utf-8"
                 result = response.read().decode(charset, errors="replace")
-            if delay:
-                time.sleep(delay)
             return result
+        except urllib.error.HTTPError as error:
+            last_error = error
+            if error.code in {403, 404}:
+                break
+            if error.code == 429 and attempt < retries:
+                retry_after = error.headers.get("Retry-After")
+                wait = float(retry_after) if retry_after and retry_after.isdigit() else 5.0
+                time.sleep(min(wait, 60.0))
+                continue
+            if 500 <= error.code < 600 and attempt < retries:
+                time.sleep(min(2 ** attempt, 4))
+                continue
+            break
         except (urllib.error.URLError, http.client.HTTPException, TimeoutError, OSError) as error:
             last_error = error
             if attempt < retries:
@@ -557,7 +581,7 @@ def clean_english_name(value: str) -> str:
     return value.strip() or "Not provided"
 
 
-def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> tuple[list[Faculty], list[str]]:
+def build_faculty(timeout: float, retries: int, delay: float) -> tuple[list[Faculty], list[str]]:
     chinese = collect_listing("zh", timeout, retries, delay)
     if len(chinese) != 58:
         raise RuntimeError(f"Expected 58 Chinese Academic Staff profiles, found {len(chinese)}")
@@ -569,9 +593,11 @@ def build_faculty(timeout: float, retries: int, delay: float, workers: int) -> t
     faculty: list[Faculty] = []
     profile_urls = [f"{BASE_URL}/en/members/{member_id}" for member_id, _ in english]
     chinese_profile_urls = [f"{BASE_URL}/members/{member_id}" for member_id, _ in chinese]
-    with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
-        chinese_sources = list(executor.map(lambda url: fetch(url, timeout, retries, delay), chinese_profile_urls))
-        sources = list(executor.map(lambda url: fetch(url, timeout, retries, delay), profile_urls))
+    chinese_sources: list[str] = []
+    sources: list[str] = []
+    for chinese_url, english_url in zip(chinese_profile_urls, profile_urls, strict=True):
+        chinese_sources.append(fetch(chinese_url, timeout, retries, delay))
+        sources.append(fetch(english_url, timeout, retries, delay))
 
     for position, (member_id, listing_title) in enumerate(english):
         chinese_id, chinese_title = chinese[position]
@@ -838,18 +864,22 @@ def parse_args() -> argparse.Namespace:
         help="Maintenance only: include summaries from the currently disabled paper index",
     )
     parser.add_argument("--check", action="store_true", help="Do not write; fail if generated content differs")
-    parser.add_argument("--date", help="Verification date in YYYY-MM-DD; defaults to today when writing")
-    parser.add_argument("--timeout", type=float, default=20.0)
-    parser.add_argument("--retries", type=int, default=2)
-    parser.add_argument("--delay", type=float, default=0.15, help="Delay after each successful request")
     parser.add_argument(
-        "--workers",
-        type=int,
-        default=1,
-        choices=range(1, 9),
-        help="Concurrent profile requests; defaults to 1 to reduce official-site TLS throttling",
+        "--date",
+        help="Verification date in YYYY-MM-DD; defaults to the current Beijing date when writing",
     )
-    return parser.parse_args()
+    parser.add_argument("--timeout", type=float, default=20.0)
+    parser.add_argument("--retries", type=int, default=1)
+    parser.add_argument(
+        "--delay",
+        type=float,
+        default=1.0,
+        help="Minimum seconds between serial request starts",
+    )
+    args = parser.parse_args()
+    if args.delay < 1.0:
+        parser.error("--delay must be at least 1.0 seconds")
+    return args
 
 
 def main() -> int:
@@ -859,8 +889,8 @@ def main() -> int:
         existing = args.output.read_text(encoding="utf-8")
         match = re.search(r"核验日期：(\d{4}-\d{2}-\d{2})", existing)
         verified = match.group(1) if match else None
-    verified = verified or date.today().isoformat()
-    faculty, review = build_faculty(args.timeout, args.retries, args.delay, args.workers)
+    verified = verified or datetime.now(BEIJING_TIMEZONE).date().isoformat()
+    faculty, review = build_faculty(args.timeout, args.retries, args.delay)
     paper_summaries = publication_summaries(args.papers) if args.include_paper_summaries else {}
     rendered = markdown(
         faculty,
