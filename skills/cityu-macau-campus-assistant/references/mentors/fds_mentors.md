@@ -4,6 +4,7 @@
 > 核验日期：2026-07-13。
 > 本表来源等级：1（学院官方教师主页）；个人主页仅作为官方页公开的补充入口。
 > 当前收录：58 名本校 Academic Staff；不含 Academic Advisors、External Instructors 和行政人员。
+> 数量冲突提示：学院《2025 年年度报告》正文写有 56 名全职学术人员，但其职级分项合计为 58 名；2026-07-31 实时 Academic Staff 页面也列出 58 名。因此本索引采用实时名单，不采用报告中彼此矛盾的汇总数。
 > 方向来源：中文官网优先（57 人）；中文页未明确时回退英文官网（1 人）。
 > 职称/职务：以中文官网师资列表和中文教师个人页为准；本表使用中文职称/职务，不沿用英文列表标题。
 > 官网完整科研证据：[fds_official_evidence.md](fds_official_evidence.md)；导师匹配规则：[fds_rules.md](fds_rules.md)。
@@ -89,6 +90,5 @@
 
 ## 官方入口
 
-- [FDS Academic Staff](https://fds.cityu.edu.mo/en/members)
 - [FDS 师资队伍](https://fds.cityu.edu.mo/members)
 - 教师名单、职称、导师资格、研究方向和主页可能变化，使用时应优先核验上述入口。

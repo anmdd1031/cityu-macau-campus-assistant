@@ -55,7 +55,7 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 可以：
 
 - 整理公开的申请、注册、宿舍、签注和校园办事流程
-- 解释 FDS、FOB、FOF、FH、FE、FL、FITM、FHSS、FIAD 和荣誉班公开课程、学分、论文成果和毕业要求
+- 解释 FDS、FOB、FOF、FH、FE、FL、FITM、FHSS、FIAD、IUSD、IROPC 和荣誉班公开课程、学分、论文成果和毕业要求
 - 按官网研究方向和导师资格查询 FDS 教师，并给出可解释的候选导师、校内工作邮箱和主页
 - 查询氹仔校区校内餐饮、菜单、价格和供应时段
 - 提醒哪些信息需要看最新官方通知
@@ -78,6 +78,8 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 - [数据科学学院知识库](skills/cityu-macau-campus-assistant/references/fds.md)
 - [人文社会科学学院知识库](skills/cityu-macau-campus-assistant/references/fhss.md)
 - [创新设计学院知识库](skills/cityu-macau-campus-assistant/references/fiad.md)
+- [城市与可持续发展研究院知识库](skills/cityu-macau-campus-assistant/references/iusd.md)
+- [葡语国家研究院知识库](skills/cityu-macau-campus-assistant/references/iropc.md)
 - [数据科学学院导师基础画像（中文官网师资、职称职务、资格、方向、项目及招募说明）](skills/cityu-macau-campus-assistant/references/mentors/fds_mentors.md)
 - [数据科学学院导师官网完整科研证据](skills/cityu-macau-campus-assistant/references/mentors/fds_official_evidence.md)
 - [FDS 导师匹配规则](skills/cityu-macau-campus-assistant/references/mentors/fds_rules.md)
@@ -90,7 +92,9 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 - [荣誉班知识库](skills/cityu-macau-campus-assistant/references/honours_class.md)
 - [氹仔校区餐饮指南](skills/cityu-macau-campus-assistant/references/澳门城市大学氹仔校区_校内餐饮指南.md)
 
-> 知识库资料核验日期：学院课程入口与本轮深度复核资料为 2026-07-27；FDS 师资正文核验日期为 2026-07-13，并已于 2026-07-27 通过 58 页在线漂移检查；餐饮菜单为 2026 年 6 月本地快照。招生日期、费用、宿舍、签注、注册、师资、菜单价格和学业规则以最新官方通知为准。
+> 知识库资料本轮深度复核窗口为 2026-08-01 至 2026-08-03；FDS 师资正文核验日期为 2026-07-13，并已于 2026-07-27 通过 58 页在线漂移检查；餐饮菜单为 2026 年 6 月本地快照。本轮严格串行官网审计新增 IUSD 与 IROPC 知识库，并补齐当届校历、全球交流、暑期项目、创业就业、科研资助、培训测试及专题研究平台边界，记录官网自身的年份、学分、人员职称、过期标题、旧域名和中英文复制冲突。商学院部分中文页面模板在串行审计中出现博彩、SEO 垃圾外链及关键词，相关异常内容已从知识候选中隔离，商学院高变动规则须用其他官方来源或学院联系方式交叉核对。招生日期、费用、宿舍、签注、注册、师资、项目报名、菜单价格和学业规则以最新官方通知为准。
+
+维护者使用的离线 OCR 工具默认在 CPU 上逐个资源运行；Windows 环境也可在安装 `onnxruntime-directml` 后加 `--directml` 使用 GPU 推理。两种模式都只读取本地抓取缓存，保持单进程和可恢复清单，不会增加官网请求并发。抓取器和 OCR 都在整个运行期持有操作系统级排他锁；异常退出时该锁由系统释放，保留的锁文件只作诊断记录，不应手动删除。运行中的任务会明确拒绝第二个同类进程。
 
 ## License
 

@@ -21,7 +21,7 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 可以回答：
 
 - 新生申请、注册、缴费、体检、D 签注、逗留许可、宿舍、图书馆、校园服务和恶劣天气安排。
-- 数据科学学院、商学院、金融学院、大健康学院、教育学院、法学院、国际旅游与管理学院、人文社会科学学院、创新设计学院及荣誉班的课程、学分、导师、论文、发表、毕业要求和常见办事入口。
+- 数据科学学院、商学院、金融学院、大健康学院、教育学院、法学院、国际旅游与管理学院、人文社会科学学院、创新设计学院、城市与可持续发展研究院、葡语国家研究院及荣誉班的课程、学分、导师、论文、发表、毕业要求和常见办事入口。
 - 按官网研究方向、导师资格及官网公开的科研经历、项目和成果筛选数据科学学院教师，并提供可核验的校内工作邮箱与主页索引。
 - 氹仔校区校内餐厅、菜单、价格、供应时段和用餐建议。
 - 哪些问题需要看最新官方通知，哪些只能由学校或学院审批。
@@ -37,8 +37,8 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 
 | 知识库 | 文件 | 状态 | 用途 |
 |---|---|---|---|
-| 新生与校园通用知识库 | [freshman.md](../skills/cityu-macau-campus-assistant/references/freshman.md) | 已完成 | 招生、注册、学费、奖学金、体检、D 签注、逗留许可、宿舍、图书馆、校园服务、恶劣天气 |
-| 数据科学学院 FDS | [fds.md](../skills/cityu-macau-campus-assistant/references/fds.md) | 已完成 | BITS、BCS、MDS、MCS、PhD DS、PhD CS、学分、资格考试、论文成果、导师、毕业 |
+| 新生与校园通用知识库 | [freshman.md](../skills/cityu-macau-campus-assistant/references/freshman.md) | 已完成 | 招生、注册、学费、奖学金、体检、D 签注、逗留许可、宿舍、图书馆、全球交流、暑期项目、创业就业服务、校园服务、恶劣天气 |
+| 数据科学学院 FDS | [fds.md](../skills/cityu-macau-campus-assistant/references/fds.md) | 已完成 | BITS、BCS、人工智能学士规划、MDS、MCS、人工智能硕士规划、PhD DS、PhD CS、招生状态、学分、资格考试、论文成果、导师、毕业 |
 | FDS 导师基础画像 | [fds_mentors.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_mentors.md) | 已完成 | 58 名 Academic Staff、中文官网职称/职务、导师资格、58 个可核验校内工作邮箱、官网研究方向、科研证据覆盖提示、招募说明和官方主页 |
 | FDS 官网完整科研证据 | [fds_official_evidence.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_official_evidence.md) | 已完成 | 58 名教师官网公开的完整科研经历、研究项目和论文成果栏目；按需读取，官网访问失败时可使用本地核验版本 |
 | FDS 论文检索索引 | [fds_papers.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_papers.md) | 暂时停用 | 仅为维护者保留，不参与 Agent 路由、回答或导师推荐 |
@@ -46,57 +46,43 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 | 商学院 FOB | [fob.md](../skills/cityu-macau-campus-assistant/references/fob.md) | 已完成 | BBA、MBA、管理分析学硕士（MMA）、DBA、IBC、4+1 项目、导师、论文与毕业要求 |
 | 金融学院 FOF | [fof.md](../skills/cityu-macau-campus-assistant/references/fof.md) | 已完成 | BAE、金融精英班、金融学硕士、金融科技硕士、金融学博士、导师、发表与毕业要求 |
 | 大健康学院 FH | [fh.md](../skills/cityu-macau-campus-assistant/references/fh.md) | 已完成 | BSW、MSW、MAP、DAP、智慧养老与健康管理、导师、实习与毕业要求 |
-| 教育学院 FE/SOE | [fe.md](../skills/cityu-macau-campus-assistant/references/fe.md) | 已完成 | 教育学硕士、教学研究硕士、教育学博士、学分、导师、论文与毕业要求 |
+| 教育学院 FE/SOE | [fe.md](../skills/cityu-macau-campus-assistant/references/fe.md) | 已完成 | 教育学硕士、教学研究硕士、教育学博士、教育博士（公开状态须确认）、学分、导师、论文与毕业要求 |
 | 法学院 FL/SOL | [fl.md](../skills/cityu-macau-campus-assistant/references/fl.md) | 已完成 | 法学硕士、专业方向、学分、导师、论文与毕业要求 |
 | 国际旅游与管理学院 FITM | [fitm.md](../skills/cityu-macau-campus-assistant/references/fitm.md) | 已完成 | 国际旅游与酒店管理、国际款待与旅游业管理、国际酒店管理、国际旅游管理、酒店管理、导师、项目报告、论文与毕业要求 |
 | 人文社会科学学院 FHSS | [fhss.md](../skills/cityu-macau-campus-assistant/references/fhss.md) | 已完成 | 应用语言学、英语、葡萄牙语、中国文化研究、文化产业管理与文化产业研究课程、学分、论文与毕业要求 |
 | FHSS 师资索引 | [fhss_faculty.md](../skills/cityu-macau-campus-assistant/references/faculty/fhss_faculty.md) | 已完成 | 中文官网当前58名全职、9名特聘、5名兼任学术人员，管理团队、课程督导和公开研究方向 |
 | 创新设计学院 FIAD | [fiad.md](../skills/cityu-macau-campus-assistant/references/fiad.md) | 已完成 | 设计艺术、设计学、艺术学本硕博课程、学分、学术活动、成果发表、导师与毕业要求 |
 | FIAD 师资索引 | [fiad_faculty.md](../skills/cityu-macau-campus-assistant/references/faculty/fiad_faculty.md) | 已完成 | 中文官网当前25名全职教学人员、6名特聘教授、课程负责人和课程督导 |
+| 城市与可持续发展研究院 IUSD | [iusd.md](../skills/cityu-macau-campus-assistant/references/iusd.md) | 已完成 | 城市规划与设计硕博课程、学分、资格考试、2025级学术活动与成果规则、导师、表格和毕业要求 |
+| 葡语国家研究院 IROPC | [iropc.md](../skills/cityu-macau-campus-assistant/references/iropc.md) | 已完成 | 葡语国家研究硕博、国际关系与政府治理硕士、学分、开题、论文、人员、文件和毕业流程 |
 | 荣誉班 Honours Class | [honours_class.md](../skills/cityu-macau-campus-assistant/references/honours_class.md) | 已完成 | 选拔、课程体系、导师指导、科研训练、实习、竞赛与毕业条件 |
 | 氹仔校区餐饮指南 | [澳门城市大学氹仔校区_校内餐饮指南.md](../skills/cityu-macau-campus-assistant/references/澳门城市大学氹仔校区_校内餐饮指南.md) | 已完成 | 2026 年 6 月菜单和价格快照、用餐建议；实时状态须以现场或平台为准 |
-
-## 暂不覆盖的知识库
-
-下列学院或机构由项目当前范围主动保留，暂不建立单独知识库。这不是待补资料清单；只有项目负责人决定扩展范围后，才新增对应知识库。
-
-| 学院/机构 | 预留文件名 | 当前状态 |
-|---|---|---|
-| 葡语国家研究院（IROPC） | `iropc.md` | 主动保留，暂不覆盖 |
-| 城市与可持续发展研究院（IUSD） | `iusd.md` | 主动保留，暂不覆盖 |
-
-范围规则：
-
-- 不要在 `SKILL.md` 中声称这些学院已有完整知识库。
-- 用户问到暂不覆盖的学院或研究院时，可以先读 `freshman.md` 中的通用招生和费用信息。
-- 如果现有资料无法确认课程、学分、导师或毕业要求，必须明确说“现有知识库未覆盖”，并引导用户查看学院官网、招生事务处、研究生院或教务处。
-- 项目负责人决定新增学院知识库后，再同步更新 `SKILL.md`、`agents/openai.yaml`、`README.md` 和本文件。
 
 ## 路由规则
 
 | 用户问题 | 应读取 |
 |---|---|
-| 招生、费用、注册、D 签注、逗留许可、宿舍、校园服务、台风、暴雨 | `freshman.md` |
+| 招生、费用、注册、D 签注、逗留许可、宿舍、全球交流、暑期项目、创业就业服务、校外实习机会、校园服务、台风、暴雨 | `freshman.md` |
 | 氹仔校区食堂、餐厅、菜单、价格、咖啡、打包、午餐 | `澳门城市大学氹仔校区_校内餐饮指南.md` |
 | FDS 教师名单、导师资格、官方邮箱、联系方式或教师主页 | `references/mentors/fds_mentors.md` |
 | FDS 导师推荐、教师研究方向或谁研究某个主题 | `references/mentors/fds_rules.md` + `references/mentors/fds_mentors.md` |
 | FDS 完整科研经历、研究项目、官网论文成果或官网访问失败时查询本地资料 | 在上述文件基础上按需读取 `references/mentors/fds_official_evidence.md` |
 | FDS 具体论文、论文成果或项目经历 | 只按需读取 `references/mentors/fds_official_evidence.md`；外部论文索引暂时停用，不得读取或引用 |
-| FDS、BITS、BCS、MDS、MCS、PhD DS、PhD CS | `fds.md` |
+| FDS、BITS、BCS、人工智能学士、MDS、MCS、人工智能硕士、PhD DS、PhD CS | `fds.md` |
 | 商学院、FOB、BBA、MBA、MMA、管理分析学硕士、DBA、IBC、4+1 | `fob.md` |
 | 金融学院、FOF、BAE、金融精英班、MSF、金融科技、PhD Finance | `fof.md` |
 | 大健康学院、FH、BSW、MSW、MAP、DAP、社会工作、应用心理学 | `fh.md` |
-| 教育学院、FE、SOE、MEd、MTLR、教育学博士 | `fe.md` |
+| 教育学院、FE、SOE、MEd、MTLR、教育学博士、教育博士、EdD | `fe.md` |
 | 法学院、FL、SOL、LL.M、公法、刑事法、民事法、国际商法 | `fl.md` |
 | 国际旅游与管理学院、FITM、国旅学院、BBA in IHTM、MHTM、MHM、PhD in ITM、DHM | `fitm.md` |
 | 人文社会科学学院、FHSS、应用语言学、葡萄牙语、中国文化研究、文化产业 | `fhss.md` |
 | FHSS 教师、特聘学术人员、兼任人员、研究方向、课程督导 | `faculty/fhss_faculty.md`；涉及课程规则时同时读取 `fhss.md` |
 | 创新设计学院、FIAD、设计艺术、设计学、艺术学、作品展览、设计竞赛 | `fiad.md` |
 | FIAD 全职教学人员、特聘教授、课程负责人、课程督导 | `faculty/fiad_faculty.md`；具体年级论文导师同时读取 `fiad.md` |
-| 城市规划与设计硕士、博士或IUSD课程 | 只查 `freshman.md` 中学校通用信息，说明课程现归属IUSD且当前没有IUSD单独知识库；不得沿用FIAD历史规则 |
+| 城市与可持续发展研究院、IUSD、城市规划与设计硕士或博士 | `iusd.md`；招生、费用或校园通用流程同时读取 `freshman.md`；不得沿用 FIAD 历史规则 |
+| 葡语国家研究院、IROPC、MPSC、MIRG、DPSC、开题、论文或毕业流程 | `iropc.md`；招生、费用或校园通用流程同时读取 `freshman.md` |
 | 荣誉班、Honours Class、荣誉课程、选拔、科研训练、一对一导师、X-Challenge | `honours_class.md` |
 | 同时涉及学校通用流程和学院学业规则 | `freshman.md` + 已覆盖学院的对应知识库 |
-| 问到暂不覆盖的学院或研究院 | 只查 `freshman.md` 中的学校通用信息，再说明单独学院知识库当前未覆盖并给出官方入口 |
 
 ## 使用示例
 
@@ -132,7 +118,15 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 设计学硕士和艺术学硕士的学分、学术活动及成果要求有什么不同？
 ```
 
-> FIAD 的城市规划与设计硕士、博士现归属IUSD，不应使用 `fiad.md` 中的规则回答；须转查IUSD当前官方资料。
+> FIAD 的城市规划与设计硕士、博士现归属 IUSD，不应使用 `fiad.md` 中的历史规则回答；须转查 `iusd.md` 及学生所属年级的 IUSD 正式文件。
+
+```text
+葡语国家研究博士要修多少学分？官网中英文段落为什么不一致？
+```
+
+```text
+2026/2027 学年 IROPC 硕士开题需要哪些材料和截止日期？
+```
 
 ```text
 荣誉班怎么选拔？有哪些科研训练和导师指导？
@@ -188,6 +182,7 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 - 所有官方页面逐个串行请求；同一站点请求启动时间至少间隔 1 秒，不使用线程池、异步并发或并行抓取。
 - 同一轮先去重 URL，避免重复访问；遇到 403 不自动重试，遇到 429 遵守 `Retry-After`，不得绕过网站限制。
 - 页面临时访问失败不代表资料已经删除；保留最近一次已核验结果，注明核验日期并列入人工复核。
+- 官方子域页面若夹带博彩、SEO 垃圾外链或其他明显无关内容，须标为内容完整性异常；不得跟随、引用或推荐异常链接，也不得仅凭官方域名把受污染页面作为可靠证据。应隔离异常模板区域，并用其他官方页面、正式附件或学院联系方式交叉核对正文。
 - 更新日志、核验日期、`last_updated` 及页首/页尾更新时间统一使用北京时间（`Asia/Shanghai`，UTC+8），不使用运行环境的本地日期。
 
 ## 回答边界
@@ -328,9 +323,15 @@ cityu-macau-campus-assistant/
 │   ├── fe.md
 │   ├── fl.md
 │   ├── fitm.md
+│   ├── fhss.md
+│   ├── fiad.md
+│   ├── iusd.md
+│   ├── iropc.md
 │   ├── honours_class.md
 │   └── 澳门城市大学氹仔校区_校内餐饮指南.md
 └── scripts/
+    ├── audit_official_crawl.py
+    ├── crawl_official_sites.py
     ├── update_fds_faculty.py
     └── update_fds_publications.py
 ```
@@ -367,6 +368,137 @@ cityu-macau-campus-assistant/
 3. 在 `README.md` 和本文件补链接。
 4. 如果安装器展示文案受影响，更新 `agents/openai.yaml`。
 5. 运行链接检查和 Skill 识别检查。
+
+### 完整官网抓取与离线审计
+
+普通使用者不需要运行本节命令。维护者需要全站复核时，先从仓库根目录
+运行严格串行爬虫：
+
+```bash
+python skills/cityu-macau-campus-assistant/scripts/crawl_official_sites.py
+```
+
+爬虫只访问 `cityu.edu.mo` 及其子域的公开页面，不提交表单或访问登录页。
+所有请求全局串行，请求启动时间至少相隔 1 秒；最近一次请求启动时间会写入
+状态数据库，恢复进程也不能缩短该间隔。抓取器在整个运行期持有操作系统级
+排他锁，禁止同时启动第二个爬虫；异常退出时锁由系统释放，保留的锁文件只作
+诊断记录，不应人工删除。每一跳 HTTP 重定向均重新限速，且只允许继续访问
+`cityu.edu.mo` 及其子域；站外或无效跳转会标为失败而不跟随。HTTP 403 不自动
+重试，HTTP 429 遵守 `Retry-After`，到期前不会被普通重试提前重置，也不得
+更换身份、代理或 User-Agent 绕过限制。
+长时间完整抓取结束后的唯一重试轮可加 `--refresh-seeds`：它只重访深度 0 的
+Skill 已引用来源、各主机根页和 sitemap，以捕捉爬取窗口内较晚发布的新链接，
+不会并发刷新整站，也不会重访 robots.txt 明确禁止的地址。
+
+队列先按发现深度处理；同一深度内依次抓取 PDF、Word、Excel 和
+PowerPoint 等正式附件、HTML/正文页、图片、音视频、压缩包及其他非展示性
+资源。该优先级只改变串行顺序，便于先核对承载规则的附件与页面，再完成
+辅助资源覆盖。纯样式表和字体属于页面展示依赖，会记录为跳过但不下载；
+视频、音频和压缩包可能承载介绍、操作说明或模板，因此保留在队列末段抓取。
+单个响应超过 `--max-bytes`（默认 100 MiB）时会如实标为未解决，而不会把
+截断内容伪装为完整文件。
+
+队列、抓取状态和按内容哈希保存的响应正文位于被 Git 忽略的
+`.cache/cityu-official-crawl/`，中断后用同一命令继续。首轮进程完全退出后，
+才可对瞬时网络失败做一次串行重试：
+
+```bash
+python skills/cityu-macau-campus-assistant/scripts/crawl_official_sites.py --retry-errors --refresh-seeds --max-attempts 2
+```
+
+显式重试只会重排可重试的失败 URL，不会清空 HTTP 429 或 robots 暂不可用 URL
+已经写入的延期时间。它会把上一轮因 `robots.txt` 握手失败而缓存为“暂不可用”
+的主机恢复为待检查状态，先重新请求该主机的 `robots.txt`，再决定是否抓取其
+延期 URL；若仍不可用，继续保守延期，不会绕过 robots 规则。
+
+URL 会在入队前去除跟踪/会话参数、把学院站点的单值分页参数 `p`
+规范为最后一个值，并正确保留附件文件名中的成对括号。恢复旧状态时，
+脚本会把重复分页组合、旧版括号编码别名及被 Markdown 后续文字污染的
+待处理 URL 标为“跳过/规范化”，但不会删除已经保存的成功响应正文。
+如果某个官方子域最初只从深层页面、附件或登录入口被发现，下一次恢复运行
+还会自动为数据库中所有已发现的官方主机补排根页面和 `sitemap.xml`，避免
+只抓到子路径而遗漏公开站点入口。
+
+生成不联网的证据清单和人工复核队列：
+
+```bash
+python -m pip install -r skills/cityu-macau-campus-assistant/scripts/requirements-audit.txt
+python -m pip install -r skills/cityu-macau-campus-assistant/scripts/requirements-ocr.txt
+python skills/cityu-macau-campus-assistant/scripts/ocr_official_documents.py
+python skills/cityu-macau-campus-assistant/scripts/ocr_official_documents.py --images-only
+python skills/cityu-macau-campus-assistant/scripts/audit_official_crawl.py
+```
+
+Windows 维护环境如果已用 `onnxruntime-directml` 替换普通
+`onnxruntime`，可在 OCR 命令末尾添加 `--directml`。脚本会先确认
+`DmlExecutionProvider` 实际可用，否则直接退出，不会悄悄回退到 CPU；建议在
+独立虚拟环境中配置该可选运行时，避免两个 ONNX Runtime 包覆盖同一模块。
+
+依赖包用于读取 PDF、旧版 `.xls` 和旧版 `.ppt`；`.docx`、`.xlsx`、
+`.pptx`、`.odt` 和 `.rtf` 由脚本直接离线解析。旧版 `.doc` 另需本机可用的
+`antiword`（Windows 版 Git 常见安装中已包含）；找不到解析器时报告会保留
+附件提取问题，`--verify-complete` 不会把未读附件当作完整覆盖。所有解析都
+针对本地响应体，不会发出额外网络请求。
+扫描型 PDF 会先由 `ocr_official_documents.py` 逐页渲染，再用本地
+RapidOCR 严格串行识别中英文正文；PDF 会按页检查嵌入文字，任一低文字页都会
+进入 OCR 队列，避免整份文件文字总量充足时漏掉扫描页。第一条命令处理缺少
+嵌入文字或含低文字页的 PDF，
+`--images-only` 再对已抓取的 JPEG、PNG、GIF、WebP、BMP 和 TIFF 去重后逐张
+识别，避免公告海报只有图片时漏掉正文。小于 1 KiB 的图标会明确记录为
+`excluded_small`，已检查但没有足够文字的图片记录为 `no_text`，不会混同为
+尚未处理。也可用 `--include-images` 在一次运行中建立两类队列。
+
+结果、逐页渲染、逐图置信度证据和可恢复清单统一写入
+`.cache/cityu-official-crawl/ocr/`。OCR 在运行期持有独立的操作系统级排他锁；
+异常退出时锁由系统释放，保留的锁文件只记录诊断元数据，不应手工清理。仍在运行
+的任务会明确拒绝第二个 OCR 进程。这项“串行”仅约束本地逐资源推理，CPU 与可选
+DirectML 模式都不会向官网发送请求。每条新清单记录都会写入本轮推理提供
+程序；若复用中断前的逐页证据，则明确记为 `checkpoint` 或混合来源，避免把
+旧检查点误标成当前运行时。完整抓取结束后应再运行一次图片 OCR，以覆盖爬虫在首轮 OCR 之后取得
+的资源。OCR 文字可以消除“无嵌入文本”和图片海报盲区，但报告仍保留
+`requires_visual_review`，关键日期、费用、资格和规则须逐页抽看版面后才能
+写入知识库。最终审计会按去重内容哈希统计图片的 `success`、`no_text`、
+`excluded_small`、`failed` 或 `unprocessed` 状态；后两类仍计为未解决。
+每张图片的原始响应体始终保留在内容寻址缓存中；为避免把数万张普通照片再次
+膨胀编码成 PNG，只有识别到文字的图片另存校正/缩放后的 PNG，`no_text` 图片
+保留原图、逐图 JSON 和空文字证据。
+若 JPEG/MPO 元数据声称存在多个画面、但后续画面在原始响应体中实际不可解码，
+脚本会保留已成功读取的主画面并把异常写入 `decode_warnings`，不会因一个失效的
+辅助画面丢弃全部 OCR，也不会伪造缺失画面；离线审计会把这些记录单列为解码
+警告，与真正的 `failed` / `unprocessed` 覆盖问题分开。
+扫描 PDF 的 OCR 结果低于默认 20 个可见字符时也记为 `no_text`，仍保留附件
+提取问题供目视复核，不会把 OCR 正常完成与“已经取得可用正文”混为一谈。
+OCR 清单采用原子替换并默认每 25 个资源保存一次；异常中断最多只需重新汇总
+最后一批已生成的逐页证据，不需要重新访问官网。
+读取旧版清单时，缺少 `kind` 的历史条目按 PDF 迁移；如果对应正文哈希已不在
+当前数据库的成功抓取集合中，条目会从清单移除，避免陈旧缓存被误算为本轮覆盖。
+
+完整 JSON 和 Markdown 摘要写入被 Git 忽略的
+`.cache/cityu-official-audit/`。报告会关联当前知识库引用文件，列出新发现的
+范围内页面、未解决 URL、`robots.txt` 限制、重复正文、“HTTP 200 但正文为
+错误页”的软 404，以及同时命中多个博彩/SEO 特征的内容完整性异常。每个成功
+响应的正文路径、长度和 SHA-256 都会重新核验；缺失、越界、截断或哈希不符的
+正文和 robots.txt 缓存都是硬失败。SVG、音视频、压缩包等尚未解析的资产也会
+进入未解决清单，不能被静默算作完整。
+人工候选清单会按正文哈希合并完全相同的 URL 别名，同时在 JSON 中保留
+代表项的 `duplicate_urls` 和完整页面清单，不会因去重丢失抓取证据。
+附件正文也按“响应哈希 + 媒体类型 + 后缀”复用离线提取结果；同一文件即使由
+多个 URL 引用也只解析一次，但每个 URL 的状态和来源关系仍分别保留。
+疑似受污染页面会从新资料候选队列中隔离，报告中的
+`content_integrity_issues` 保留 URL、命中特征和证据哈希供人工复核；爬虫
+不会跟随站外垃圾链接。候选页分类同时使用标题、URL、标题层级、HTML 可见正文
+和附件文字，不能因标题泛化而忽略正文中的规则。验证命令只证明已发现、可访问
+且 robots 允许范围内的传输与自动提取完整性，并不等同于每一页已经人工事实审读：
+
+```bash
+python skills/cityu-macau-campus-assistant/scripts/crawl_official_sites.py --report-only --verify-complete
+python skills/cityu-macau-campus-assistant/scripts/audit_official_crawl.py --verify-complete
+```
+
+只要任一命令返回非零，就不得把本次检查描述为该范围内的机械完整抓取；最终
+验证发现运行中的抓取锁时会拒绝生成最终结论。`robots.txt`
+明确禁止的站点必须作为覆盖限制保留，不能通过伪装爬虫身份绕过；内容
+完整性异常也必须保留在审计结论中，不能通过删除命中特征来伪造完整。
 
 ### 更新 FDS 师资索引
 
