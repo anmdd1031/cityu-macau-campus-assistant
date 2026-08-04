@@ -51,6 +51,11 @@ USER_AGENT = (
     "(https://github.com/anmdd1031/cityu-macau-campus-assistant; "
     "strictly serial public-site audit)"
 )
+MIN_RETRY_AFTER_SECONDS = 5.0
+# A negative count is an explicit terminal marker, not a retry count.  It is
+# also assigned to pre-budget robots states during migration, because their
+# historical request count cannot be reconstructed safely.
+ROBOTS_RETRY_EXHAUSTED = -1
 BEIJING = ZoneInfo("Asia/Shanghai")
 TRACKING_QUERY_KEYS = {
     "fbclid",
@@ -461,14 +466,17 @@ def soft_404_reason(result: FetchResult) -> str | None:
 def retry_after_seconds(headers: dict[str, str]) -> float:
     value = headers.get("retry-after", "").strip()
     if not value:
-        return 5.0
+        return MIN_RETRY_AFTER_SECONDS
     if value.isdigit():
-        return min(float(value), 3600.0)
+        return max(MIN_RETRY_AFTER_SECONDS, min(float(value), 3600.0))
     try:
         target = parsedate_to_datetime(value)
-        return max(5.0, min(target.timestamp() - time.time(), 3600.0))
+        return max(
+            MIN_RETRY_AFTER_SECONDS,
+            min(target.timestamp() - time.time(), 3600.0),
+        )
     except (TypeError, ValueError, OverflowError):
-        return 5.0
+        return MIN_RETRY_AFTER_SECONDS
 
 
 class CrawlDatabase:
@@ -546,6 +554,7 @@ class CrawlDatabase:
                 robots_body_bytes INTEGER,
                 robots_fetched_at TEXT,
                 robots_next_attempt_at REAL NOT NULL DEFAULT 0,
+                robots_attempts INTEGER NOT NULL DEFAULT 0,
                 robots_error TEXT
             );
 
@@ -567,16 +576,61 @@ class CrawlDatabase:
             str(row[1])
             for row in self.connection.execute("PRAGMA table_info(hosts)")
         }
+        robots_attempts_was_missing = "robots_attempts" not in host_columns
         for name, definition in (
             ("robots_sha256", "TEXT"),
             ("robots_body_bytes", "INTEGER"),
             ("robots_next_attempt_at", "REAL NOT NULL DEFAULT 0"),
+            ("robots_attempts", "INTEGER NOT NULL DEFAULT 0"),
         ):
             if name not in host_columns:
                 self.connection.execute(
                     f"ALTER TABLE hosts ADD COLUMN {name} {definition}"
                 )
+        if robots_attempts_was_missing:
+            # A pre-budget ``unavailable`` row does not prove how many robots
+            # requests it already consumed.  Preserve the cooldown evidence and
+            # require an explicit retry run after upgrade instead of silently
+            # making a fresh request to an already-problematic host.
+            self.connection.execute(
+                """
+                UPDATE hosts
+                SET robots_attempts=?
+                WHERE robots_state='unavailable'
+                """,
+                (ROBOTS_RETRY_EXHAUSTED,),
+            )
+            self._migrate_legacy_robot_deferred_urls()
         self.connection.commit()
+
+    def _migrate_legacy_robot_deferred_urls(self) -> int:
+        """Preserve old robots-gated page state without consuming page budget.
+
+        Older crawler versions incremented ``urls.attempts`` before checking
+        robots.txt.  A legacy host whose robots policy is unavailable therefore
+        can have pending, fetching, or deferred URLs with an arbitrary page
+        attempt count even though no page request was made.  They must be
+        terminal until an explicit retry, not silently excluded by the new
+        page-attempt selector or converted by crash recovery.
+        """
+
+        cursor = self.connection.execute(
+            """
+            UPDATE urls
+            SET state='robots_unavailable', next_attempt_at=0, attempts=0,
+                error='legacy robots.txt unavailable; explicit --retry-errors required: '
+                      || COALESCE(error, 'unknown robots.txt failure')
+            WHERE state IN ('pending', 'fetching', 'deferred')
+              AND host IN (
+                    SELECT host
+                    FROM hosts
+                    WHERE robots_state='unavailable'
+                      AND robots_attempts=?
+                  )
+            """,
+            (ROBOTS_RETRY_EXHAUSTED,),
+        )
+        return cursor.rowcount
 
     def close(self) -> None:
         self.connection.close()
@@ -849,11 +903,13 @@ class CrawlDatabase:
         self.connection.commit()
         return len(supported)
 
-    def next_pending(self) -> sqlite3.Row | None:
+    def next_pending(self, max_attempts: int) -> sqlite3.Row | None:
         return self.connection.execute(
             """
             SELECT * FROM urls
-            WHERE state IN ('pending', 'deferred') AND next_attempt_at <= ?
+            WHERE state IN ('pending', 'deferred')
+              AND next_attempt_at <= ?
+              AND attempts < ?
             ORDER BY
                 depth,
                 CASE
@@ -946,7 +1002,7 @@ class CrawlDatabase:
                 url
             LIMIT 1
             """,
-            (time.time(),),
+            (time.time(), max_attempts),
         ).fetchone()
 
     def mark_fetching(self, url: str) -> None:
@@ -1008,6 +1064,9 @@ class CrawlDatabase:
         body_bytes: int | None,
         error: str | None,
         next_attempt_at: float = 0,
+        *,
+        attempted: bool = False,
+        reset_attempts: bool = False,
     ) -> None:
         self.connection.execute(
             """
@@ -1020,6 +1079,11 @@ class CrawlDatabase:
                 robots_body_bytes=?,
                 robots_fetched_at=?,
                 robots_next_attempt_at=?,
+                robots_attempts=CASE
+                    WHEN ? THEN 0
+                    WHEN ? THEN robots_attempts + 1
+                    ELSE robots_attempts
+                END,
                 robots_error=?
             WHERE host=?
             """,
@@ -1032,6 +1096,8 @@ class CrawlDatabase:
                 body_bytes,
                 now_beijing(),
                 next_attempt_at,
+                reset_attempts,
+                attempted,
                 error,
                 host,
             ),
@@ -1062,26 +1128,135 @@ class CrawlDatabase:
         self.connection.commit()
         return cursor.rowcount
 
-    def reset_unavailable_robots(self) -> int:
-        """Retry a host's robots request only in an explicit later retry run.
+    def exhaust_page_attempt_budget(self, max_attempts: int) -> int:
+        """Make interrupted/legacy page retries terminal once their budget is used.
 
-        An unavailable robots.txt response is cached conservatively for the current
-        run so no page on that host is fetched without a policy decision. When the
-        operator explicitly requests ``--retry-errors`` in a later, still-serial
-        run, the host state must return to ``pending`` as well as its deferred URLs;
-        otherwise every URL would be deferred again without sending a new robots
-        request.
+        ``fetching`` rows are converted to ``pending`` during crash recovery.
+        Without this reconciliation a page interrupted on its final permitted
+        attempt would remain pending forever because ``next_pending`` correctly
+        refuses to select it.  Hosts with unavailable robots are excluded: their
+        pages are reconciled separately at host scope and never spend a page
+        attempt merely waiting for robots.txt.
         """
 
         cursor = self.connection.execute(
             """
-            UPDATE hosts
-            SET robots_state='pending', robots_next_attempt_at=0
-            WHERE robots_state='unavailable'
-            """
+            UPDATE urls
+            SET state='failed', next_attempt_at=0,
+                error=CASE
+                    WHEN error IS NULL
+                      OR error=''
+                      OR error='interrupted before completion'
+                    THEN 'page retry budget exhausted (' || attempts || '/' || ? || ')'
+                    WHEN error LIKE '%retry budget exhausted%'
+                    THEN error
+                    ELSE error || '; page retry budget exhausted ('
+                               || attempts || '/' || ? || ')'
+                END
+            WHERE state IN ('pending', 'deferred')
+              AND attempts >= ?
+              AND host NOT IN (
+                    SELECT host
+                    FROM hosts
+                    WHERE robots_state='unavailable'
+                  )
+            """,
+            (max_attempts, max_attempts, max_attempts),
         )
         self.connection.commit()
         return cursor.rowcount
+
+    def exhaust_unavailable_robots(self, host: str, error: str) -> int:
+        """Terminally mark pages gated by an exhausted robots retry budget."""
+
+        self.connection.execute(
+            """
+            UPDATE hosts
+            SET robots_attempts=?, robots_error=?
+            WHERE host=? AND robots_state='unavailable'
+            """,
+            (ROBOTS_RETRY_EXHAUSTED, error, host),
+        )
+        cursor = self.connection.execute(
+            """
+            UPDATE urls
+            SET state='robots_unavailable', next_attempt_at=0, error=?
+            WHERE host=?
+              AND state IN ('pending', 'deferred', 'fetching')
+            """,
+            (error, host),
+        )
+        self.connection.execute(
+            """
+            INSERT INTO events(event_at, event_type, url, detail)
+            VALUES (?, 'robots_retry_exhausted', ?, ?)
+            """,
+            (now_beijing(), f"https://{host}/robots.txt", error),
+        )
+        self.connection.commit()
+        return cursor.rowcount
+
+    def reset_unavailable_robots(self, max_attempts: int) -> tuple[int, int]:
+        """Explicitly reopen exhausted robots work after its cooldown expires.
+
+        Ordinary resume runs can retry a temporarily unavailable robots endpoint
+        only while it retains its bounded host-level budget.  This method is the
+        sole path that resets an exhausted or legacy-unknown budget, and it never
+        moves the retry time earlier than the stored cooldown.
+        """
+
+        hosts = [
+            str(row["host"])
+            for row in self.connection.execute(
+                """
+                SELECT host
+                FROM hosts
+                WHERE robots_state='unavailable'
+                  AND robots_next_attempt_at <= ?
+                  AND (
+                        robots_attempts < 0
+                        OR robots_attempts >= ?
+                        OR host IN (
+                            SELECT DISTINCT host
+                            FROM urls
+                            WHERE state='robots_unavailable'
+                        )
+                      )
+                ORDER BY host
+                """,
+                (time.time(), max_attempts),
+            )
+        ]
+        if not hosts:
+            return 0, 0
+
+        placeholders = ",".join("?" for _ in hosts)
+        self.connection.execute(
+            f"""
+            UPDATE hosts
+            SET robots_state='pending', robots_next_attempt_at=0,
+                robots_attempts=0, robots_error=NULL
+            WHERE host IN ({placeholders})
+            """,
+            hosts,
+        )
+        cursor = self.connection.execute(
+            f"""
+            UPDATE urls
+            SET state='pending', next_attempt_at=0, attempts=0, error=NULL
+            WHERE host IN ({placeholders})
+              AND (
+                    state='robots_unavailable'
+                    OR (
+                        state='deferred'
+                        AND error LIKE 'robots.txt unavailable:%'
+                    )
+                  )
+            """,
+            hosts,
+        )
+        self.connection.commit()
+        return len(hosts), cursor.rowcount
 
     def refresh_completed_seeds(self) -> int:
         """Revisit depth-zero sources after a long crawl to close freshness drift."""
@@ -1089,7 +1264,7 @@ class CrawlDatabase:
         cursor = self.connection.execute(
             """
             UPDATE urls
-            SET state='pending', next_attempt_at=0, error=NULL
+            SET state='pending', next_attempt_at=0, attempts=0, error=NULL
             WHERE depth=0
               AND state IN ('fetched', 'soft_404')
             """
@@ -1113,7 +1288,9 @@ class CrawlDatabase:
                 'fetching',
                 'deferred',
                 'failed',
+                'not_found',
                 'robots_denied',
+                'robots_unavailable',
                 'soft_404'
             )
             ORDER BY state, url
@@ -1129,6 +1306,7 @@ class OfficialCrawler:
         delay: float,
         timeout: float,
         max_bytes: int,
+        max_attempts: int,
     ) -> None:
         self.database = database
         self.state_dir = state_dir
@@ -1137,6 +1315,7 @@ class OfficialCrawler:
         self.rate_limiter = RateLimiter(database, delay)
         self.timeout = timeout
         self.max_bytes = max_bytes
+        self.max_attempts = max_attempts
         self.robots: dict[str, urllib.robotparser.RobotFileParser] = {}
         self.opener = urllib.request.build_opener(NoRedirectHandler())
 
@@ -1315,6 +1494,7 @@ class OfficialCrawler:
         robots_url = f"{scheme}://{host}/robots.txt"
         parser = urllib.robotparser.RobotFileParser()
         parser.set_url(robots_url)
+        robots_attempts = int(row["robots_attempts"] or 0)
 
         if row["robots_state"] == "fetched" and row["robots_body_path"]:
             try:
@@ -1348,13 +1528,18 @@ class OfficialCrawler:
             parser.parse(["User-agent: *", "Disallow:"])
             self.robots[host] = parser
             return parser
-        if (
-            row["robots_state"] == "unavailable"
-            and float(row["robots_next_attempt_at"] or 0) > time.time()
-        ):
-            parser.parse(["User-agent: *", "Disallow: /"])
-            self.robots[host] = parser
-            return parser
+        if row["robots_state"] == "unavailable":
+            retry_at = float(row["robots_next_attempt_at"] or 0)
+            if (
+                robots_attempts == ROBOTS_RETRY_EXHAUSTED
+                or robots_attempts >= self.max_attempts
+                or retry_at > time.time()
+            ):
+                parser.parse(["User-agent: *", "Disallow: /"])
+                # Do not cache an unavailable policy: after its cooldown expires,
+                # the next selected URL must be able to make one bounded robots
+                # retry instead of reusing a stale deny parser.
+                return parser
 
         result = self.request(robots_url)
         body_path: str | None = None
@@ -1378,6 +1563,8 @@ class OfficialCrawler:
                 digest,
                 len(result.body),
                 None,
+                attempted=True,
+                reset_attempts=True,
             )
             for line in text.splitlines():
                 if line.lower().startswith("sitemap:"):
@@ -1397,6 +1584,8 @@ class OfficialCrawler:
                 digest,
                 len(result.body),
                 result.error,
+                attempted=True,
+                reset_attempts=True,
             )
         else:
             parser.parse(["User-agent: *", "Disallow: /"])
@@ -1415,7 +1604,18 @@ class OfficialCrawler:
                 len(result.body),
                 result.error or "robots.txt unavailable",
                 next_attempt_at=time.time() + wait_seconds,
+                attempted=True,
             )
+            updated = self.database.host_row(host)
+            updated_attempts = int(updated["robots_attempts"] or 0)
+            if updated_attempts >= self.max_attempts:
+                detail = (
+                    "robots.txt retry budget exhausted "
+                    f"({updated_attempts}/{self.max_attempts}): "
+                    f"{updated['robots_error'] or 'robots.txt unavailable'}"
+                )
+                self.database.exhaust_unavailable_robots(host, detail)
+            return parser
         self.robots[host] = parser
         return parser
 
@@ -1518,15 +1718,42 @@ class OfficialCrawler:
         host = row["host"]
         depth = int(row["depth"])
         parsed = urllib.parse.urlsplit(url)
-        self.database.mark_fetching(url)
 
         robots = self.robots_for(host, parsed.scheme)
         robots_row = self.database.host_row(host)
         if robots_row["robots_state"] == "unavailable":
             result = FetchResult(url, url, 0, "", b"", {})
+            robots_attempts = int(robots_row["robots_attempts"] or 0)
+            if (
+                robots_attempts == ROBOTS_RETRY_EXHAUSTED
+                or robots_attempts >= self.max_attempts
+            ):
+                if robots_attempts == ROBOTS_RETRY_EXHAUSTED:
+                    detail = str(
+                        robots_row["robots_error"]
+                        or "robots.txt retry budget exhausted"
+                    )
+                else:
+                    detail = (
+                        "robots.txt retry budget exhausted "
+                        f"({robots_attempts}/{self.max_attempts}): "
+                        f"{robots_row['robots_error'] or 'robots.txt unavailable'}"
+                    )
+                self.database.exhaust_unavailable_robots(host, detail)
+                self.database.mark_result(
+                    url,
+                    "robots_unavailable",
+                    result,
+                    None,
+                    None,
+                    detail,
+                )
+                self.database.event("robots_unavailable", url, detail)
+                print(f"BLOCK robots-unavailable {url}", flush=True)
+                return
             retry_at = float(robots_row["robots_next_attempt_at"] or 0)
             if retry_at <= time.time():
-                retry_at = time.time() + 300
+                retry_at = time.time() + 300.0
             self.database.mark_result(
                 url,
                 "deferred",
@@ -1557,6 +1784,10 @@ class OfficialCrawler:
             print(f"BLOCK robots {url}", flush=True)
             return
 
+        # Count a page attempt only after robots has allowed the page itself.
+        # A robots request is tracked separately at host scope.
+        self.database.mark_fetching(url)
+        attempt_number = int(row["attempts"]) + 1
         result = self.request(url)
         for source, target in result.redirects:
             self.database.record_link(source, target, "http:redirect")
@@ -1610,6 +1841,21 @@ class OfficialCrawler:
 
         if result.status == 429:
             wait = retry_after_seconds(result.headers)
+            if attempt_number >= self.max_attempts:
+                error = (
+                    f"{result.error or 'HTTP 429'}; retry budget exhausted "
+                    f"({attempt_number}/{self.max_attempts})"
+                )
+                self.database.mark_result(
+                    url,
+                    "failed",
+                    result,
+                    digest,
+                    body_path,
+                    error,
+                )
+                print(f"FAIL 429 retry-budget {url}", flush=True)
+                return
             self.database.mark_result(
                 url,
                 "deferred",
@@ -1620,6 +1866,18 @@ class OfficialCrawler:
                 next_attempt_at=time.time() + wait,
             )
             print(f"DEFER 429 wait={wait:.0f}s {url}", flush=True)
+            return
+
+        if result.status in {404, 410}:
+            self.database.mark_result(
+                url,
+                "not_found",
+                result,
+                digest,
+                body_path,
+                result.error or f"HTTP {result.status}",
+            )
+            print(f"MISS {result.status} {url}", flush=True)
             return
 
         if result.status == 403:
@@ -1643,7 +1901,7 @@ class OfficialCrawler:
         while True:
             if max_fetches and completed >= max_fetches:
                 break
-            row = self.database.next_pending()
+            row = self.database.next_pending(self.max_attempts)
             if row is None:
                 break
             self.fetch_one(row)
@@ -1771,7 +2029,10 @@ def write_report(database: CrawlDatabase, path: Path) -> None:
                SUM(CASE WHEN u.state='failed' THEN 1 ELSE 0 END) AS failed,
                SUM(CASE WHEN u.state='deferred' THEN 1 ELSE 0 END) AS deferred,
                SUM(CASE WHEN u.state='robots_denied' THEN 1 ELSE 0 END) AS robots_denied,
+               SUM(CASE WHEN u.state='robots_unavailable' THEN 1 ELSE 0 END)
+                   AS robots_unavailable,
                SUM(CASE WHEN u.state='soft_404' THEN 1 ELSE 0 END) AS soft_404,
+               SUM(CASE WHEN u.state='not_found' THEN 1 ELSE 0 END) AS not_found,
                SUM(CASE WHEN u.state='skipped' THEN 1 ELSE 0 END) AS skipped
         FROM hosts h
         LEFT JOIN urls u ON u.host=h.host
@@ -1840,7 +2101,16 @@ def parse_args() -> argparse.Namespace:
             "sitemaps once after a long crawl"
         ),
     )
-    parser.add_argument("--max-attempts", type=int, default=2)
+    parser.add_argument(
+        "--max-attempts",
+        type=int,
+        default=2,
+        help=(
+            "Maximum attempts per page and consecutive unavailable robots.txt "
+            "attempts per host; exhausted work remains unresolved until an "
+            "explicit later retry"
+        ),
+    )
     parser.add_argument(
         "--report-only",
         action="store_true",
@@ -1851,7 +2121,7 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help=(
             "Exit nonzero unless no pending, deferred, failed, fetching, "
-            "robots-denied, or soft-404 URLs remain"
+            "not-found, robots-denied, robots-unavailable, or soft-404 URLs remain"
         ),
     )
     args = parser.parse_args()
@@ -1916,6 +2186,9 @@ def main() -> int:
             discarded = database.discard_legacy_unmatched_closing_urls()
             if discarded:
                 print(f"DISCARD legacy_unmatched_closing={discarded}", flush=True)
+            exhausted_pages = database.exhaust_page_attempt_budget(args.max_attempts)
+            if exhausted_pages:
+                print(f"EXHAUST page_retry_budget={exhausted_pages}", flush=True)
             requeued_assets = database.requeue_newly_supported_assets()
             if requeued_assets:
                 print(f"REQUEUE supported_assets={requeued_assets}", flush=True)
@@ -1929,10 +2202,14 @@ def main() -> int:
             if reclassified:
                 print(f"RECLASSIFY soft_404={reclassified}", flush=True)
             if args.retry_errors:
-                reset_robots = database.reset_unavailable_robots()
+                reset_robots, reset_robot_urls = database.reset_unavailable_robots(
+                    args.max_attempts
+                )
                 requeued = database.requeue_errors(args.max_attempts)
                 print(
-                    f"REQUEUE count={requeued} robots_unavailable={reset_robots}",
+                    "REQUEUE "
+                    f"count={requeued} robots_unavailable_hosts={reset_robots} "
+                    f"robots_unavailable_urls={reset_robot_urls}",
                     flush=True,
                 )
             if args.refresh_seeds:
@@ -1945,6 +2222,7 @@ def main() -> int:
                 delay=args.delay,
                 timeout=args.timeout,
                 max_bytes=args.max_bytes,
+                max_attempts=args.max_attempts,
             )
             completed = crawler.run(args.max_fetches)
             print(f"RUN fetched_attempts={completed}", flush=True)

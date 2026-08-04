@@ -180,7 +180,7 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 
 - 以中文官网、中文课程手册和中文正式通知为标准。中文页没有必要字段时，英文官网只能补缺，不能覆盖中文页面。
 - 所有官方页面逐个串行请求；同一站点请求启动时间至少间隔 1 秒，不使用线程池、异步并发或并行抓取。
-- 同一轮先去重 URL，避免重复访问；遇到 403 不自动重试，遇到 429 遵守 `Retry-After`，不得绕过网站限制。
+- 同一轮先去重 URL，避免重复访问；遇到 403 不自动重试，HTTP 429 遵守 `Retry-After`（缺失时至少等待 5 秒）；429 页面与暂不可用的 `robots.txt` 均受有界重试预算约束，不得绕过网站限制。
 - 页面临时访问失败不代表资料已经删除；保留最近一次已核验结果，注明核验日期并列入人工复核。
 - 官方子域页面若夹带博彩、SEO 垃圾外链或其他明显无关内容，须标为内容完整性异常；不得跟随、引用或推荐异常链接，也不得仅凭官方域名把受污染页面作为可靠证据。应隔离异常模板区域，并用其他官方页面、正式附件或学院联系方式交叉核对正文。
 - 更新日志、核验日期、`last_updated` 及页首/页尾更新时间统一使用北京时间（`Asia/Shanghai`，UTC+8），不使用运行环境的本地日期。
@@ -332,6 +332,7 @@ cityu-macau-campus-assistant/
 └── scripts/
     ├── audit_official_crawl.py
     ├── crawl_official_sites.py
+    ├── test_crawl_retry_semantics.py
     ├── update_fds_faculty.py
     └── update_fds_publications.py
 ```
@@ -384,9 +385,11 @@ python skills/cityu-macau-campus-assistant/scripts/crawl_official_sites.py
 排他锁，禁止同时启动第二个爬虫；异常退出时锁由系统释放，保留的锁文件只作
 诊断记录，不应人工删除。每一跳 HTTP 重定向均重新限速，且只允许继续访问
 `cityu.edu.mo` 及其子域；站外或无效跳转会标为失败而不跟随。HTTP 403 不自动
-重试，HTTP 429 遵守 `Retry-After`，到期前不会被普通重试提前重置，也不得
-更换身份、代理或 User-Agent 绕过限制。
-长时间完整抓取结束后的唯一重试轮可加 `--refresh-seeds`：它只重访深度 0 的
+重试，HTTP 429 遵守 `Retry-After`（缺失时至少等待 5 秒），到期前不会被普通
+重试提前重置，也不得更换身份、代理或 User-Agent 绕过限制。HTTP 429 页面和
+暂不可用的 `robots.txt` 分别受 `--max-attempts` 的有界重试预算约束。
+长时间完整抓取结束后，如需针对抓取窗口内较晚发布的链接做一次额外的串行缺口
+扫描，可单独加 `--refresh-seeds`：它只重访深度 0 的
 Skill 已引用来源、各主机根页和 sitemap，以捕捉爬取窗口内较晚发布的新链接，
 不会并发刷新整站，也不会重访 robots.txt 明确禁止的地址。
 
@@ -399,17 +402,18 @@ PowerPoint 等正式附件、HTML/正文页、图片、音视频、压缩包及�
 截断内容伪装为完整文件。
 
 队列、抓取状态和按内容哈希保存的响应正文位于被 Git 忽略的
-`.cache/cityu-official-crawl/`，中断后用同一命令继续。首轮进程完全退出后，
-才可对瞬时网络失败做一次串行重试：
+`.cache/cityu-official-crawl/`，中断后用同一命令继续。首轮进程完全退出、且
+对应冷却期已届满后，才可对瞬时网络失败做一次串行重试：
 
 ```bash
-python skills/cityu-macau-campus-assistant/scripts/crawl_official_sites.py --retry-errors --refresh-seeds --max-attempts 2
+python skills/cityu-macau-campus-assistant/scripts/crawl_official_sites.py --retry-errors --max-attempts 2
 ```
 
-显式重试只会重排可重试的失败 URL，不会清空 HTTP 429 或 robots 暂不可用 URL
-已经写入的延期时间。它会把上一轮因 `robots.txt` 握手失败而缓存为“暂不可用”
-的主机恢复为待检查状态，先重新请求该主机的 `robots.txt`，再决定是否抓取其
-延期 URL；若仍不可用，继续保守延期，不会绕过 robots 规则。
+显式重试只会重排尚未耗尽页面预算的可重试失败 URL，且不会清空仍在等待中的
+HTTP 429 延期时间。对 `robots.txt`，只有已达到预算（或由旧状态迁移而来）且
+冷却期届满的主机才会恢复为待检查状态；它会先重新请求该主机的 `robots.txt`，
+再决定是否抓取其 URL。若再次达到预算，相关 URL 会保留为 `robots_unavailable`
+并继续阻止完整性验证，不会绕过 robots 规则。
 
 URL 会在入队前去除跟踪/会话参数、把学院站点的单值分页参数 `p`
 规范为最后一个值，并正确保留附件文件名中的成对括号。恢复旧状态时，
@@ -475,7 +479,7 @@ OCR 清单采用原子替换并默认每 25 个资源保存一次；异常中断
 
 完整 JSON 和 Markdown 摘要写入被 Git 忽略的
 `.cache/cityu-official-audit/`。报告会关联当前知识库引用文件，列出新发现的
-范围内页面、未解决 URL、`robots.txt` 限制、重复正文、“HTTP 200 但正文为
+范围内页面、未解决 URL、`robots.txt` 限制或暂不可用、确认不存在的 URL、重复正文、“HTTP 200 但正文为
 错误页”的软 404，以及同时命中多个博彩/SEO 特征的内容完整性异常。每个成功
 响应的正文路径、长度和 SHA-256 都会重新核验；缺失、越界、截断或哈希不符的
 正文和 robots.txt 缓存都是硬失败。SVG、音视频、压缩包等尚未解析的资产也会
@@ -497,7 +501,7 @@ python skills/cityu-macau-campus-assistant/scripts/audit_official_crawl.py --ver
 
 只要任一命令返回非零，就不得把本次检查描述为该范围内的机械完整抓取；最终
 验证发现运行中的抓取锁时会拒绝生成最终结论。`robots.txt`
-明确禁止的站点必须作为覆盖限制保留，不能通过伪装爬虫身份绕过；内容
+明确禁止、或因重试预算耗尽而暂不可用的站点都必须作为覆盖限制保留，不能通过伪装爬虫身份绕过；内容
 完整性异常也必须保留在审计结论中，不能通过删除命中特征来伪造完整。
 
 ### 更新 FDS 师资索引

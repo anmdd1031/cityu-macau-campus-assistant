@@ -1211,8 +1211,12 @@ def build_report(
                        SUM(CASE WHEN u.state='deferred' THEN 1 ELSE 0 END) AS deferred,
                        SUM(CASE WHEN u.state='robots_denied' THEN 1 ELSE 0 END)
                            AS robots_denied,
+                       SUM(CASE WHEN u.state='robots_unavailable' THEN 1 ELSE 0 END)
+                           AS robots_unavailable,
                        SUM(CASE WHEN u.state='soft_404' THEN 1 ELSE 0 END)
                            AS soft_404,
+                       SUM(CASE WHEN u.state='not_found' THEN 1 ELSE 0 END)
+                           AS not_found,
                        SUM(CASE WHEN u.state='skipped' THEN 1 ELSE 0 END) AS skipped
                 FROM hosts h
                 LEFT JOIN urls u ON u.host=h.host
@@ -1292,7 +1296,9 @@ def build_report(
         "failed",
         "fetching",
         "pending",
+        "not_found",
         "robots_denied",
+        "robots_unavailable",
         "soft_404",
     }
     unresolved = [
@@ -1525,13 +1531,14 @@ def markdown_report(report: dict[str, object]) -> str:
         "",
         "## 主机覆盖",
         "",
-        "| 主机 | robots | 成功 | 待处理 | 失败 | 暂缓 | 禁止 | 软 404 | 跳过/规范化 |",
-        "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+        "| 主机 | robots | 成功 | 待处理 | 失败 | 暂缓 | 禁止 | robots 不可用 | 软 404 | 确认不存在 | 跳过/规范化 |",
+        "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
     ]
     for host in hosts:
         lines.append(
             "| {host} | {robots_state} | {fetched} | {pending} | {failed} | "
-            "{deferred} | {robots_denied} | {soft_404} | {skipped} |".format(
+            "{deferred} | {robots_denied} | {robots_unavailable} | {soft_404} | "
+            "{not_found} | {skipped} |".format(
                 **{key: host.get(key) or 0 for key in host}
             )
         )
