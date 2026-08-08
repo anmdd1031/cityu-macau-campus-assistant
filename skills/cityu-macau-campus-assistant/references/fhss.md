@@ -1172,10 +1172,10 @@
 | 30 | 应用语言学学士课程手册（2023-09） | https://fhss.cityu.edu.mo/uploads/userfiles/BAL%20Program%20Handbook%20%E6%87%89%E7%94%A8%E8%AA%9E%E8%A8%80%E5%AD%B8%E5%AD%B8%E5%A3%AB%E8%AA%B2%E7%A8%8B%E6%89%8B%E5%86%8A%281%29.pdf | 成功；历史版本，授课语言与实习规则须按入学年份确认 |
 | 31 | 应用语言学硕士课程手册（2023-09） | https://fhss.cityu.edu.mo/uploads/userfiles/MAL%20Program%20Handbook%20%E6%87%89%E7%94%A8%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%A2%A9%E5%A3%AB%E8%AA%B2%E7%A8%8B%E6%89%8B%E5%86%8A.pdf | 成功；历史版本，邮箱为旧域名 |
 | 32 | 国家艺术基金 2026 澳门数字演艺管理与国际交流传播人才培训项目 | https://fhss.cityu.edu.mo/news/986 | 成功；非学位招生，报名已于 2026-06-15 截止 |
-| 35 | “语蕴何物？”国际会议征稿与注册页 | https://fhss.cityu.edu.mo/page-230 | 成功；摘要已于 2026-06-30 截止，8 月 31 日仅为发表者注册截止 |
+| 33 | “语蕴何物？”国际会议征稿与注册页 | https://fhss.cityu.edu.mo/page-230 | 成功；摘要已于 2026-06-30 截止，8 月 31 日仅为发表者注册截止 |
 | 34 | 文化产业管理硕士课程手册（2022-06） | https://fhss.cityu.edu.mo/uploads/userfiles/MCM_%E6%96%87%E5%8C%96%E7%94%A2%E6%A5%AD%E7%AE%A1%E7%90%86%E7%A2%A9%E5%A3%AB%E8%AA%B2%E7%A8%8B%E6%89%8B%E5%86%8A.pdf | 成功；只作历史流程参考 |
-| 33 | 文化产业研究博士课程手册（2024-05） | https://fhss.cityu.edu.mo/uploads/userfiles/DCI%20%E6%96%87%E5%8C%96%E7%94%A2%E6%A5%AD%E7%A0%94%E7%A9%B6%E5%8D%9A%E5%A3%AB%E5%AD%B8%E4%BD%8D%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%AD%E6%96%87%E5%AD%B8%E5%88%B6%EF%BC%89%E5%AD%B8%E7%BF%92%E6%89%8B%E5%86%8C.pdf | 成功；论文门槛与当前课程页冲突，当前页优先 |
-| 34 | 葡萄牙语学士课程手册（2022-06） | https://fhss.cityu.edu.mo/uploads/userfiles/%E8%91%A1%E8%90%84%E7%89%99%E8%AA%9E%E5%AD%B8%E5%A3%AB%E5%AD%B8%E4%BD%8D%E8%AA%B2%E7%A8%8B%E6%89%8B%E5%86%8A%286%29.pdf | 成功；历史版本，课程现状以当前课程页和招生公告为准 |
+| 35 | 文化产业研究博士课程手册（2024-05） | https://fhss.cityu.edu.mo/uploads/userfiles/DCI%20%E6%96%87%E5%8C%96%E7%94%A2%E6%A5%AD%E7%A0%94%E7%A9%B6%E5%8D%9A%E5%A3%AB%E5%AD%B8%E4%BD%8D%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%AD%E6%96%87%E5%AD%B8%E5%88%B6%EF%BC%89%E5%AD%B8%E7%BF%92%E6%89%8B%E5%86%8C.pdf | 成功；论文门槛与当前课程页冲突，当前页优先 |
+| 36 | 葡萄牙语学士课程手册（2022-06） | https://fhss.cityu.edu.mo/uploads/userfiles/%E8%91%A1%E8%90%84%E7%89%99%E8%AA%9E%E5%AD%B8%E5%A3%AB%E5%AD%B8%E4%BD%8D%E8%AA%B2%E7%A8%8B%E6%89%8B%E5%86%8A%286%29.pdf | 成功；历史版本，课程现状以当前课程页和招生公告为准 |
 
 补充师资来源：
 
