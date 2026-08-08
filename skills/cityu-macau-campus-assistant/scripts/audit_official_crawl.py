@@ -798,6 +798,7 @@ def extract_document(
     url: str,
     content_type: str,
     ocr_text: str | None = None,
+    ocr_reviewed_no_text: bool = False,
 ) -> dict[str, object]:
     suffix = Path(urllib.parse.urlsplit(url).path).suffix.lower()
     media_type = content_type.partition(";")[0].strip().lower()
@@ -864,6 +865,9 @@ def extract_document(
     if result["issue"] and ocr_text and ocr_text.strip():
         result["text"] = ocr_text
         result["text_source"] = "supplemental_text_cache"
+        result["issue"] = None
+    elif result["issue"] and ocr_reviewed_no_text:
+        result["text_source"] = "supplemental_ocr_review_no_text"
         result["issue"] = None
     return result
 
@@ -1039,6 +1043,7 @@ def build_report(
 ) -> dict[str, object]:
     known_sources = skill_url_sources(skill_root)
     ocr_text_by_sha: dict[str, str] = {}
+    ocr_reviewed_no_text_by_sha: set[str] = set()
     ocr_manifest_by_sha: dict[str, dict[str, object]] = {}
     manifest_path = ocr_dir / "manifest.json"
     if manifest_path.is_file():
@@ -1060,6 +1065,13 @@ def build_report(
                     encoding="utf-8",
                     errors="replace",
                 )
+            elif (
+                digest
+                and item.get("kind") == "pdf"
+                and item.get("status") == "no_text"
+                and source.is_file()
+            ):
+                ocr_reviewed_no_text_by_sha.add(digest)
     connection = sqlite3.connect(
         f"{database_path.resolve().as_uri()}?mode=ro",
         uri=True,
@@ -1117,6 +1129,7 @@ def build_report(
                         document_url,
                         content_type,
                         ocr_text_by_sha.get(digest),
+                        digest in ocr_reviewed_no_text_by_sha,
                     )
                     if digest:
                         document_cache[document_cache_key] = document
