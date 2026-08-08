@@ -477,22 +477,29 @@ def extract_doc(body: bytes) -> dict[str, object]:
             None,
             "antiword is not installed; legacy DOC text was not extracted",
         )
+    document_path: Path | None = None
     try:
-        with tempfile.TemporaryDirectory(prefix="cityu-official-audit-doc-") as temp:
-            document_path = Path(temp) / "document.doc"
-            document_path.write_bytes(body)
-            environment = os.environ.copy()
-            antiword_home = executable.parent.parent / "share" / "antiword"
-            if antiword_home.is_dir():
-                environment["ANTIWORDHOME"] = str(antiword_home)
-            completed = subprocess.run(
-                [str(executable), "-m", "UTF-8.txt", str(document_path)],
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                check=False,
-                timeout=60,
-                env=environment,
-            )
+        # Python 3.13 can create TemporaryDirectory children with restrictive
+        # Windows ACLs that a managed process cannot reopen.  A closed named
+        # file avoids the extra directory and also gives antiword an ordinary
+        # path that is safe to open from a subprocess.
+        with tempfile.NamedTemporaryFile(
+            prefix="cityu-official-audit-doc-", suffix=".doc", delete=False
+        ) as temporary:
+            temporary.write(body)
+            document_path = Path(temporary.name)
+        environment = os.environ.copy()
+        antiword_home = executable.parent.parent / "share" / "antiword"
+        if antiword_home.is_dir():
+            environment["ANTIWORDHOME"] = str(antiword_home)
+        completed = subprocess.run(
+            [str(executable), "-m", "UTF-8.txt", str(document_path)],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+            timeout=60,
+            env=environment,
+        )
         text = completed.stdout.decode("utf-8", errors="replace")
         if completed.returncode != 0 and not text.strip():
             error = completed.stderr.decode("utf-8", errors="replace").strip()
@@ -510,6 +517,14 @@ def extract_doc(body: bytes) -> dict[str, object]:
             None,
             f"DOC extraction failed: {type(error).__name__}: {error}",
         )
+    finally:
+        if document_path is not None:
+            try:
+                document_path.unlink(missing_ok=True)
+            except OSError:
+                # Extraction evidence is more important than a transient
+                # Windows cleanup failure; the task-local temp root is ignored.
+                pass
 
 
 def zip_xml_text(
