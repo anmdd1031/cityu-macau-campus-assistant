@@ -455,20 +455,33 @@ def ocr_document(
     tile_height: int,
     tile_overlap: int,
     force: bool,
+    page_numbers: list[int] | None = None,
+    embedded_text: str = "",
 ) -> tuple[int, str, int, list[str]]:
     document = pdfium.PdfDocument(body)
-    page_texts: list[str] = []
+    page_texts: list[tuple[int, str]] = []
     resumed_pages = 0
     try:
-        for page_index in range(len(document)):
-            page_number = page_index + 1
+        if page_numbers:
+            selected_page_numbers = [
+                page_number
+                for page_number in dict.fromkeys(page_numbers)
+                if 1 <= page_number <= len(document)
+            ]
+        else:
+            selected_page_numbers = list(range(1, len(document) + 1))
+        for page_number in selected_page_numbers:
+            page_index = page_number - 1
             stem = f"page-{page_number:03d}"
             image_path = output_dir / f"{stem}.png"
             text_path = output_dir / f"{stem}.txt"
             json_path = output_dir / f"{stem}.json"
             if not force and text_path.is_file() and json_path.is_file():
                 page_texts.append(
-                    text_path.read_text(encoding="utf-8", errors="replace")
+                    (
+                        page_number,
+                        text_path.read_text(encoding="utf-8", errors="replace"),
+                    )
                 )
                 resumed_pages += 1
                 print(f"OCR RESUME page={page_number}/{len(document)}", flush=True)
@@ -511,17 +524,21 @@ def ocr_document(
                 ),
                 encoding="utf-8",
             )
-            page_texts.append(page_text)
+            page_texts.append((page_number, page_text))
             print(
                 f"OCR PAGE page={page_number}/{len(document)} lines={len(lines)}",
                 flush=True,
             )
     finally:
         document.close()
-    combined = "\n".join(
-        f"--- page {index} ---\n{text.strip()}"
-        for index, text in enumerate(page_texts, start=1)
-    ).strip()
+    combined_parts: list[str] = []
+    if embedded_text.strip():
+        combined_parts.append(f"--- embedded PDF text ---\n{embedded_text.strip()}")
+    combined_parts.extend(
+        f"--- OCR reviewed page {page_number} ---\n{text.strip()}"
+        for page_number, text in page_texts
+    )
+    combined = "\n".join(combined_parts).strip()
     return len(page_texts), combined, resumed_pages, []
 
 
@@ -799,6 +816,15 @@ def main() -> int:
                 issue = str(inspection.get("issue") or "")
                 if not issue:
                     continue
+                low_text_pages = inspection.get("low_text_pages")
+                item = dict(item)
+                item["document_pages"] = inspection.get("pages")
+                item["embedded_pdf_text"] = str(inspection.get("text") or "")
+                item["ocr_page_numbers"] = (
+                    [int(value) for value in low_text_pages]
+                    if isinstance(low_text_pages, list) and low_text_pages
+                    else None
+                )
             else:
                 issue = "raster image requires local OCR review"
             queue.append((item, issue))
@@ -862,6 +888,9 @@ def main() -> int:
                 "inference_provider": inference_provider,
                 "generated_at": now_beijing(),
             }
+            if kind == "pdf":
+                entry["document_pages"] = item.get("document_pages")
+                entry["reviewed_pages"] = item.get("ocr_page_numbers") or "all"
             if hashlib.sha256(body).hexdigest() != digest:
                 failures += 1
                 entry.update(
@@ -895,6 +924,8 @@ def main() -> int:
                         args.tile_height,
                         args.tile_overlap,
                         args.force,
+                        item.get("ocr_page_numbers"),
+                        str(item.get("embedded_pdf_text") or ""),
                     )
                 else:
                     pages, combined, resumed_units, decode_warnings = ocr_image_asset(
