@@ -38,7 +38,7 @@ except ImportError as error:  # pragma: no cover - exercised by operator setup
     ) from error
 
 try:
-    from PIL import Image, ImageOps
+    from PIL import Image, ImageFile, ImageOps
 except ImportError as error:  # pragma: no cover - exercised by operator setup
     raise SystemExit(
         "Pillow is required; install scripts/requirements-ocr.txt"
@@ -525,7 +525,7 @@ def ocr_document(
     return len(page_texts), combined, resumed_pages, []
 
 
-def ocr_image_asset(
+def _ocr_image_asset_once(
     engine: RapidOCR,
     body: bytes,
     output_dir: Path,
@@ -535,7 +535,7 @@ def ocr_image_asset(
     max_image_side: int,
     force: bool,
 ) -> tuple[int, str, int, list[str]]:
-    """Decode and OCR every frame/page of one locally stored raster asset."""
+    """Decode and OCR every frame/page of one locally stored raster asset once."""
 
     image_texts: list[str] = []
     resumed_frames = 0
@@ -561,7 +561,7 @@ def ocr_image_asset(
 
             try:
                 source.seek(frame_index)
-            except (EOFError, ValueError) as error:
+            except (EOFError, SyntaxError, ValueError) as error:
                 warning = (
                     f"frame {frame_number}/{frame_count} is not decodable: "
                     f"{type(error).__name__}: {error}"
@@ -633,6 +633,59 @@ def ocr_image_asset(
     if not image_texts:
         raise ValueError("raster asset has no decodable image frame")
     return len(image_texts), combined, resumed_frames, decode_warnings
+
+
+def ocr_image_asset(
+    engine: RapidOCR,
+    body: bytes,
+    output_dir: Path,
+    min_confidence: float,
+    tile_height: int,
+    tile_overlap: int,
+    max_image_side: int,
+    force: bool,
+) -> tuple[int, str, int, list[str]]:
+    """OCR one raster asset, retaining usable pixels from truncated source files."""
+
+    try:
+        return _ocr_image_asset_once(
+            engine,
+            body,
+            output_dir,
+            min_confidence,
+            tile_height,
+            tile_overlap,
+            max_image_side,
+            force,
+        )
+    except OSError as error:
+        if "image file is truncated" not in str(error).lower():
+            raise
+
+        previous = ImageFile.LOAD_TRUNCATED_IMAGES
+        ImageFile.LOAD_TRUNCATED_IMAGES = True
+        try:
+            pages, combined, resumed_frames, decode_warnings = (
+                _ocr_image_asset_once(
+                    engine,
+                    body,
+                    output_dir,
+                    min_confidence,
+                    tile_height,
+                    tile_overlap,
+                    max_image_side,
+                    force,
+                )
+            )
+        finally:
+            ImageFile.LOAD_TRUNCATED_IMAGES = previous
+
+        decode_warnings.insert(
+            0,
+            "strict image decode reported a truncated source; OCR used all "
+            f"available pixels ({type(error).__name__}: {error})",
+        )
+        return pages, combined, resumed_frames, decode_warnings
 
 
 def main() -> int:
