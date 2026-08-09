@@ -1924,14 +1924,26 @@ PhD CS 页面提到与医学、药学、创新工程、金融等交叉；PhD DS 
 | FDS 学位论文 Word 模板 | https://fds.cityu.edu.mo/uploads/userfiles/FDS_%E5%AD%B8%E4%BD%8D%E8%AB%96%E6%96%87%E6%A8%A1%E6%9D%BF%285%29.doc |
 | FDS 2025/2026 第一学期公开课表 | https://fds.cityu.edu.mo/page-245 |
 | FDS 2025/2026 第二学期公开课表 | https://fds.cityu.edu.mo/page-247 |
+| FDS 2026/2027 第一学期公开课表 | https://fds.cityu.edu.mo/page-257 |
+| 2026/2027 智能科技与服务学士一年级课表 | https://fds.cityu.edu.mo/uploads/userfiles/BIT%202026-2027%20Sem1%20YR1%20V1_2.pdf |
+| 2026/2027 智能科技与服务学士二年级课表 | https://fds.cityu.edu.mo/uploads/userfiles/BIT%202026-2027%20Sem1%20YR2%20V1_1.pdf |
+| 2026/2027 智能科技与服务学士三年级课表 | https://fds.cityu.edu.mo/uploads/userfiles/BIT%202026-2027%20Sem1%20YR3%20V1_2.pdf |
+| 2026/2027 智能科技与服务学士四年级课表 | https://fds.cityu.edu.mo/uploads/userfiles/BIT%202026-2027%20Sem1%20YR4.pdf |
+| 2026/2027 计算机科学学士一年级课表 | https://fds.cityu.edu.mo/uploads/userfiles/FDS-BCS-Y1-SEM1-2026%EF%BC%8F2027%E5%AD%B8%E5%B9%B4%E7%AC%AC%E4%B8%80%E5%AD%B8%E6%9C%9F%E8%AA%B2%E8%A1%A8%281%29.pdf |
+| 2026/2027 计算机科学学士二年级课表 | https://fds.cityu.edu.mo/uploads/userfiles/FDS-BCS-Y2-SEM1-2026%EF%BC%8F2027%E5%AD%B8%E5%B9%B4%E7%AC%AC%E4%B8%80%E5%AD%B8%E6%9C%9F%E8%AA%B2%E8%A1%A8%281%29.pdf |
+| 2026/2027 计算机科学学士三年级课表 | https://fds.cityu.edu.mo/uploads/userfiles/FDS-BCS-Y3-SEM1-2026%EF%BC%8F2027%E5%AD%B8%E5%B9%B4%E7%AC%AC%E4%B8%80%E5%AD%B8%E6%9C%9F%E8%AA%B2%E8%A1%A8%282%29.pdf |
+| 2026/2027 计算机科学学士四年级课表 | https://fds.cityu.edu.mo/uploads/userfiles/FDS-BCS-Y4-SEM1-2026%EF%BC%8F2027%E5%AD%B8%E5%B9%B4%E7%AC%AC%E4%B8%80%E5%AD%B8%E6%9C%9F%E8%AA%B2%E8%A1%A8.pdf |
+| 2026/2027 智能科技与服务学士跨课程选修课表 | https://fds.cityu.edu.mo/uploads/userfiles/BIT%20%E8%B7%A8%E8%AA%B2%E7%A8%8B%E9%81%B8%E4%BF%AE.pdf |
 | 数据科学学院荣誉班新闻 | https://www.cityu.edu.mo/zh/25jun2024_03/ |
 | 学院科研教学新闻 | https://www.cityu.edu.mo/zh/16june2025/ |
 
 ### 34.1 公开课表的年度边界
 
-截至 2026-08-01，学院公开课表入口仍只列 **2025/2026 学年**：第一学期页覆盖 BITS 一至四年级、BCS 一至三年级，以及 MDS、MCS、DDS、DCS 一年级；第二学期页另列跨课程课表和对应年级附件。串行审计未在学院公开队列中发现 2026/2027 课表，因此不得把这些附件回答为新学年安排。
+截至 2026-08-09，学院已新增 **2026/2027 学年第一学期**课表入口，当前实际链接到智能科技与服务学士（附件文件名使用 `BIT`）一至四年级、计算机科学学士一至四年级，以及智能科技与服务学士跨课程选修课表。页面虽然还显示人工智能学士、数据科学硕士、计算机科学硕士、数据科学博士和计算机科学博士标题，但当前 HTML 没有为这些标题提供课表附件；不得仅凭栏目标题声称相应课表已经发布，也不得据此推断人工智能学士已经开放招生。
 
-公开 PDF 只能用于核对对应学年、课程和班级；学生本人的增修、重修、教室、任课教师及临时调课仍以 TronClass 个人课表和学院通知为准。
+本科附件中多数专业课的上课起止日为 2026-08-24 至 2026-12-04（BITS）或 2026-12-05（BCS）；BITS 四年级毕业实习设计另列至 2027-05-14。各附件均要求先登录 TronClass 确认本人修读科目，并明确上课时间、地点、教师、停开或并班及期末考试仍可调整。第一学期重修申请窗口列为 **2026-08-03 至 2026-08-09**；本轮核验日正是最后一日，附件没有写具体截止时刻，是否仍受理必须即时查看 TronClass，8 月 9 日过后不得继续提供为有效窗口。跨课程选修附件另写明加退选阶段后仍要退选者须在 **2026-09-03 17:00 前**向科目所属部门发邮件申请，但这只适用于该附件所述场景，不能泛化为全校统一退选期限。
+
+附件本身还存在两处须保留的官网冲突：BITS 二年级课表中的大学英语 III 行仍写 2025-08-25 至 2025-12-05，和附件标题及其他课程的 2026/2027 日期不一致；BCS 一至四年级附件在第一学期标题下却把重修说明写成“本学年第二学期”。Agent 不得擅自修正这些字段或用其安排个人行程，应让学生以 TronClass 和学院书面确认为准。
 
 ## 35. 招生事务处与学校层面
 
