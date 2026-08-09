@@ -23,6 +23,10 @@ import urllib.parse
 
 import numpy as np
 
+MANIFEST_REPLACE_ATTEMPTS = 10
+MANIFEST_REPLACE_BASE_DELAY_SECONDS = 0.1
+MANIFEST_REPLACE_MAX_DELAY_SECONDS = 2.0
+
 try:
     import pypdfium2 as pdfium
 except ImportError as error:  # pragma: no cover - exercised by operator setup
@@ -202,7 +206,25 @@ def save_manifest(path: Path, entries: dict[str, dict[str, object]]) -> None:
         ),
         encoding="utf-8",
     )
-    os.replace(temporary, path)
+    for attempt in range(1, MANIFEST_REPLACE_ATTEMPTS + 1):
+        try:
+            os.replace(temporary, path)
+            return
+        except PermissionError as error:
+            if attempt == MANIFEST_REPLACE_ATTEMPTS:
+                raise
+            delay = min(
+                MANIFEST_REPLACE_BASE_DELAY_SECONDS * (2 ** (attempt - 1)),
+                MANIFEST_REPLACE_MAX_DELAY_SECONDS,
+            )
+            print(
+                "OCR MANIFEST RETRY "
+                f"attempt={attempt}/{MANIFEST_REPLACE_ATTEMPTS} "
+                f"delay={delay:.1f}s error={error}",
+                file=sys.stderr,
+                flush=True,
+            )
+            time.sleep(delay)
 
 
 def fetched_content_digests(database: Path) -> set[str]:
