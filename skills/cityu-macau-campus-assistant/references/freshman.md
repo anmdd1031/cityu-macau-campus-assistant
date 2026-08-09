@@ -1162,6 +1162,8 @@ Agent 不应固定回答一个永久开放时间，应建议学生查看图书�
 
 澳门及珠海校外资源页包含 24 小时热线、医院及社区辅导机构，但电话、服务时间和收费可能调整。Agent 应把学生引导到学校当前资源页复核，不长期背诵整张号码表；如存在即时自伤、他伤、失联、严重精神症状或其他紧急危险，应立即联系所在地紧急服务、医院或可信任的现实支持者，不能等待普通预约回电。
 
+学生事务处仍保留一页标题为“新生心理健康普查 现正开始”的通知，但正文明确只适用于 **2025/2026 学年入学的新生**，两轮填报期分别为 2025-09-15 至 09-24、2025-10-13 至 10-22，现均已结束。不得把页面标题中的“现正开始”解释为当前学年仍开放，也不得沿用该旧通知中的登录方式或初始密码规则；新生应以本学年学校邮件、TronClass 或学生事务处最新通知为准。
+
 ### 14.4 学生权益、安全与合理支持
 
 学生事务处当前“学校各类规章制度”页公开链接以下文件；其中学生纪律规章为 **2018/2019 学年起施行的 2018 文件**，其余多标为“试行”。“当前仍链接”只证明它们是现有公开入口，不代表附件刚在 2026 年制定；发生个案时仍须索取当前处理程序和表格。
@@ -1860,6 +1862,7 @@ knowledge_record_schema:
 - 欺凌行为处理指引（试行）：https://sao.cityu.edu.mo/uploads/userfiles/%E6%BE%B3%E9%96%80%E5%9F%8E%E5%B8%82%E5%A4%A7%E5%AD%B8%E6%AC%BA%E5%87%8C%E8%A1%8C%E7%82%BA%E4%B9%8B%E8%99%95%E7%90%86%E6%8C%87%E5%BC%95_%28%E8%A9%A6%E8%A1%8C%29Guidelines%20for%20Handling%20Bullying%20Behaviors%20%28Trial%20Implementation%29%281%29.pdf
 - 身心障碍学生保障指引（试行）：https://sao.cityu.edu.mo/uploads/userfiles/%E6%BE%B3%E9%96%80%E5%9F%8E%E5%B8%82%E5%A4%A7%E5%AD%B8%E8%BA%AB%E5%BF%83%E9%9A%9C%E7%A4%99%E4%BF%9D%E9%9A%9C%E6%8C%87%E5%BC%95_%28%E8%A9%A6%E8%A1%8C%29Guidelines%20on%20the%20Protection%20of%20Students%20with%20Physical%20and%20Mental%20Disabilities%20%28Trial%20Implementation%29.pdf
 - 心理辅导和咨询服务：https://sao.cityu.edu.mo/SAO_Counselling
+- 2025/2026 学年新生心理健康普查（历史通知；两轮均已结束）：https://sao.cityu.edu.mo/list-16/1604
 - 澳门校外辅导资源：https://sao.cityu.edu.mo/page-126
 - 珠海及其他地区辅导资源：https://sao.cityu.edu.mo/page-116
 - 宿舍公告：https://sao.cityu.edu.mo/list-18
