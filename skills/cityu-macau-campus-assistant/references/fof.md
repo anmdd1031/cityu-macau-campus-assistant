@@ -642,6 +642,26 @@ Agent 回答时要提醒：
 - 署名须包含澳门城市大学金融学院，并满足唯一作者、第一作者、第二作者、或第三作者且通讯作者之一。
 - 学生提交答辩申请时，学院会根据审核情况要求提供证据；无法判断时由学院学术委员会裁决。
 
+#### 11.5.1 2026 级及以后的博士认可会议清单
+
+学院当前所链接的《博士毕业认可会议列表（2026 级以后适用）》列有以下会议或系列。中国内地及学院主办/承办类包括：
+
+- 中国经济学年会（CEA）、中国金融学年会、中国金融国际年会（CICF）、中国数量经济学会年会；
+- 劳动经济学会年会及季会、中国世界经济学会年会、香樟经济学年会/英文会议/各地 Seminar；
+- 中国青年经济学者论坛、中国青年经济学家联谊会（YES）年会及各地论坛、中国留美经济学会中国年会（CES China）；
+- 全欧/全英中国经济学会中国年会（CEA Europe/UK），以及澳门城市大学金融学院举办或承办的学术会议。
+
+国际、港澳台及其他区域清单包括：
+
+- AFA、WFA、SFS Cavalcade、SFA、SWFA、EFA-US、MFA、European Finance Association、FIRS Conference；
+- FMA Annual Meeting、FMA European Conference、FMA Asian Conference、Asian Finance Association Annual Conference、CICF、ABFER Conference；
+- HKUST Finance Symposium、CUHK Conference on Financial Technology、HKU Summer Finance Conference；
+- Nippon Finance Association Annual Meeting、International Conferences on Corporate Finance（Hitotsubashi University）、ABEF Conference、Asian Quantitative Finance Conference；
+- IFABS Conference、Australasian Finance and Banking Conference、CFRC、CAFC、China International Forum on Finance and Policy；
+- CES China Annual Conference、PKU-NUS Annual International Conference on Quantitative Finance and Economics、EFMA Conference、CES NA Annual Conference 及 CESA Annual Conference。
+
+该清单的标题明确只适用于 **2026 级及以后**，不应倒套至早期届别，也不代表只要参会就必然满足毕业要求。学生还须满足当届公告的“在认可会议/沙龙宣讲与学位论文有关的工作论文”及署名、证明材料等要求；具体届次、分会场、报告形式和论文是否获认定，由金融学院审核。由于会议名称、主办方和认可范围可变，申请答辩前应从学院当前公告重新下载清单并让导师/学院确认。
+
 ### 11.6 博士学术讲座要求
 
 当前博士 FAQ 列明：
@@ -929,6 +949,7 @@ Agent 可以把该页作为结构示例入口，但不得从范例反推出统�
 | 金融科技硕士课程简章（文件名标注 2025-11-14 updated） | https://fof.cityu.edu.mo/uploads/userfiles/%2820251114updated%29%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80%E7%A2%A9%E5%A3%AB%E8%AA%B2%E7%A8%8B%20-%20%E8%AA%B2%E7%A8%8B%E7%B0%A1%E7%AB%A0.pdf | 2026-08-01 | 中英授课、全日制日/夜间、2–4 年、46 学分及公开成果要求；相较 2025-09-30 版，正文课程规则不变，招生事务处电话更新为 +853 8590 2333 |
 | 金融学博士 | https://fof.cityu.edu.mo/page-46 | 2026-07-27 | 中文课程页；学制、课程与论文 |
 | 金融学博士发表要求公告 | https://fof.cityu.edu.mo/notice/1201 | 2026-07-31 | 中文公告；2026-07-29 更新，不同入学年适用不同规则 |
+| 金融学院博士认可会议列表（2026 级及以后） | https://fof.cityu.edu.mo/uploads/userfiles/%E9%87%91%E8%9E%8D%E5%AD%B8%E9%99%A2%E5%8D%9A%E5%A3%AB%E8%AA%8D%E5%8F%AF%E6%9C%83%E8%AD%B0%E5%88%97%E8%A1%A8%EF%BC%882026%E7%B4%9A%E4%BB%A5%E5%BE%8C%E9%81%A9%E7%94%A8%EF%BC%89.pdf | 2026-08-09 | 中国内地及国际/港澳台认可会议；须与当届发表要求合并使用 |
 | 金融学院通用 FAQ | https://fof.cityu.edu.mo/faq-general | 2026-07-31 | 课表、出席、重修、学分转移、证明、邮箱与实习口径 |
 | 金融学院本科 FAQ | https://fof.cityu.edu.mo/faq-bachelor | 2026-07-31 | 转入、方向选择、金融精英班 |
 | 金融学院硕士 FAQ | https://fof.cityu.edu.mo/faq-master | 2026-07-31 | 导师、开题、答辩、论文语言与转读 |
