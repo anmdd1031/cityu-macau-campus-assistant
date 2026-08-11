@@ -18,9 +18,11 @@ from pathlib import Path
 from crawl_official_sites import (
     MIN_RETRY_AFTER_SECONDS,
     ROBOTS_RETRY_EXHAUSTED,
+    SOFT_404_RECLASSIFICATION_KEY,
     CrawlDatabase,
     FetchResult,
     OfficialCrawler,
+    reclassify_stored_soft_404,
     retry_after_seconds,
     write_report,
 )
@@ -315,6 +317,56 @@ class CrawlRetrySemanticsTests(unittest.TestCase):
             "not_found",
             {row["state"] for row in self.database.unresolved()},
         )
+
+    def test_soft_404_legacy_scan_is_persistently_completed_once(self) -> None:
+        host = "legacy-soft-404.cityu.edu.mo"
+        url = f"https://{host}/missing"
+        body = b"<html><title>404 error - page not found</title></html>"
+        digest = "legacy-soft-404"
+        relative_body_path = Path("bodies") / "legacy-soft-404.html"
+        body_path = self.state_dir / relative_body_path
+        body_path.parent.mkdir(parents=True, exist_ok=True)
+        body_path.write_bytes(body)
+        self.database.ensure_host(host)
+        self.database.enqueue(url, 0, None, "test")
+        self.database.mark_result(
+            url,
+            "fetched",
+            FetchResult(
+                requested_url=url,
+                final_url=url,
+                status=200,
+                content_type="text/html",
+                body=body,
+                headers={},
+            ),
+            digest,
+            str(relative_body_path),
+            None,
+        )
+
+        self.assertEqual(
+            reclassify_stored_soft_404(self.database, self.state_dir),
+            1,
+        )
+        self.assertEqual(self.page(url)["state"], "soft_404")
+        marker = self.database.connection.execute(
+            "SELECT value FROM metadata WHERE key=?",
+            (SOFT_404_RECLASSIFICATION_KEY,),
+        ).fetchone()
+        self.assertEqual(marker[0], "complete")
+
+        self.database.connection.execute(
+            "UPDATE urls SET state='fetched' WHERE url=?",
+            (url,),
+        )
+        self.database.connection.commit()
+        body_path.unlink()
+        self.assertEqual(
+            reclassify_stored_soft_404(self.database, self.state_dir),
+            0,
+        )
+        self.assertEqual(self.page(url)["state"], "fetched")
 
     def test_report_exposes_terminal_coverage_states(self) -> None:
         host = "coverage-state.cityu.edu.mo"

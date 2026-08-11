@@ -56,6 +56,7 @@ MIN_RETRY_AFTER_SECONDS = 5.0
 # also assigned to pre-budget robots states during migration, because their
 # historical request count cannot be reconstructed safely.
 ROBOTS_RETRY_EXHAUSTED = -1
+SOFT_404_RECLASSIFICATION_KEY = "soft_404_reclassification_v1"
 BEIJING = ZoneInfo("Asia/Shanghai")
 TRACKING_QUERY_KEYS = {
     "fbclid",
@@ -1971,6 +1972,13 @@ def reclassify_stored_soft_404(
 ) -> int:
     """Reclassify stored HTML fetched by an older crawler version."""
 
+    completed = database.connection.execute(
+        "SELECT value FROM metadata WHERE key=?",
+        (SOFT_404_RECLASSIFICATION_KEY,),
+    ).fetchone()
+    if completed is not None and completed[0] == "complete":
+        return 0
+
     changed = 0
     rows = database.connection.execute(
         """
@@ -2014,6 +2022,13 @@ def reclassify_stored_soft_404(
                 f"RECLASSIFY scan={index}/{len(rows)} changed={changed}",
                 flush=True,
             )
+    database.connection.execute(
+        """
+        INSERT INTO metadata(key, value) VALUES (?, 'complete')
+        ON CONFLICT(key) DO UPDATE SET value=excluded.value
+        """,
+        (SOFT_404_RECLASSIFICATION_KEY,),
+    )
     database.connection.commit()
     return changed
 
