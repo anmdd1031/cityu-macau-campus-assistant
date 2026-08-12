@@ -707,8 +707,9 @@ def official_evidence_markdown(faculty: list[Faculty], verified: str) -> str:
     lines = [
         "# 澳门城市大学数据科学学院导师官网科研证据",
         "",
+        f"> 信息更新时间：{verified}（北京时间）。",
+        f"> 最近审计时间：{verified}（北京时间）。",
         "> 数据来源：澳门城市大学数据科学学院中英文教师个人页。",
-        f"> 核验日期：{verified}。",
         "> 本文件保存官网公开的完整科研经历、研究项目和论文成果栏目，供官网访问失败或需要完整上下文时按教师读取。",
         "> 官网页面可能未及时更新，也不保证列出全部成果；本地内容只能作为参考，不能证明项目仍在进行、成果列表完整或教师当前招生。",
         "> 默认导师匹配请先读取 [fds_mentors.md](fds_mentors.md)；只有需要科研证据详情时再读取本文件中的对应教师章节。",
@@ -769,8 +770,9 @@ def markdown(
     lines = [
         "# 澳门城市大学数据科学学院导师基础画像",
         "",
+        f"> 信息更新时间：{verified}（北京时间）。",
+        f"> 最近审计时间：{verified}（北京时间）。",
         "> 数据来源：澳门城市大学数据科学学院官网 Academic Staff 及教师个人页。",
-        f"> 核验日期：{verified}。",
         "> 本表来源等级：1（学院官方教师主页）；个人主页仅作为官方页公开的补充入口。",
         f"> 当前收录：{len(faculty)} 名本校 Academic Staff；不含 Academic Advisors、External Instructors 和行政人员。",
         f"> 方向来源：中文官网优先（{chinese_directions} 人）；中文页未明确时回退英文官网（{english_fallbacks} 人）。",
@@ -887,7 +889,7 @@ def main() -> int:
     verified = args.date
     if verified is None and args.check and args.output.exists():
         existing = args.output.read_text(encoding="utf-8")
-        match = re.search(r"核验日期：(\d{4}-\d{2}-\d{2})", existing)
+        match = re.search(r"最近审计时间：(\d{4}-\d{2}-\d{2})", existing)
         verified = match.group(1) if match else None
     verified = verified or datetime.now(BEIJING_TIMEZONE).date().isoformat()
     faculty, review = build_faculty(args.timeout, args.retries, args.delay)
