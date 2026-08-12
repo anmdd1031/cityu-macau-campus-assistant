@@ -477,22 +477,29 @@ def extract_doc(body: bytes) -> dict[str, object]:
             None,
             "antiword is not installed; legacy DOC text was not extracted",
         )
+    document_path: Path | None = None
     try:
-        with tempfile.TemporaryDirectory(prefix="cityu-official-audit-doc-") as temp:
-            document_path = Path(temp) / "document.doc"
-            document_path.write_bytes(body)
-            environment = os.environ.copy()
-            antiword_home = executable.parent.parent / "share" / "antiword"
-            if antiword_home.is_dir():
-                environment["ANTIWORDHOME"] = str(antiword_home)
-            completed = subprocess.run(
-                [str(executable), "-m", "UTF-8.txt", str(document_path)],
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                check=False,
-                timeout=60,
-                env=environment,
-            )
+        # Python 3.13 can create TemporaryDirectory children with restrictive
+        # Windows ACLs that a managed process cannot reopen.  A closed named
+        # file avoids the extra directory and also gives antiword an ordinary
+        # path that is safe to open from a subprocess.
+        with tempfile.NamedTemporaryFile(
+            prefix="cityu-official-audit-doc-", suffix=".doc", delete=False
+        ) as temporary:
+            temporary.write(body)
+            document_path = Path(temporary.name)
+        environment = os.environ.copy()
+        antiword_home = executable.parent.parent / "share" / "antiword"
+        if antiword_home.is_dir():
+            environment["ANTIWORDHOME"] = str(antiword_home)
+        completed = subprocess.run(
+            [str(executable), "-m", "UTF-8.txt", str(document_path)],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+            timeout=60,
+            env=environment,
+        )
         text = completed.stdout.decode("utf-8", errors="replace")
         if completed.returncode != 0 and not text.strip():
             error = completed.stderr.decode("utf-8", errors="replace").strip()
@@ -510,6 +517,14 @@ def extract_doc(body: bytes) -> dict[str, object]:
             None,
             f"DOC extraction failed: {type(error).__name__}: {error}",
         )
+    finally:
+        if document_path is not None:
+            try:
+                document_path.unlink(missing_ok=True)
+            except OSError:
+                # Extraction evidence is more important than a transient
+                # Windows cleanup failure; the task-local temp root is ignored.
+                pass
 
 
 def zip_xml_text(
@@ -783,6 +798,7 @@ def extract_document(
     url: str,
     content_type: str,
     ocr_text: str | None = None,
+    ocr_reviewed_no_text: bool = False,
 ) -> dict[str, object]:
     suffix = Path(urllib.parse.urlsplit(url).path).suffix.lower()
     media_type = content_type.partition(";")[0].strip().lower()
@@ -849,6 +865,9 @@ def extract_document(
     if result["issue"] and ocr_text and ocr_text.strip():
         result["text"] = ocr_text
         result["text_source"] = "supplemental_text_cache"
+        result["issue"] = None
+    elif result["issue"] and ocr_reviewed_no_text:
+        result["text_source"] = "supplemental_ocr_review_no_text"
         result["issue"] = None
     return result
 
@@ -1024,6 +1043,7 @@ def build_report(
 ) -> dict[str, object]:
     known_sources = skill_url_sources(skill_root)
     ocr_text_by_sha: dict[str, str] = {}
+    ocr_reviewed_no_text_by_sha: set[str] = set()
     ocr_manifest_by_sha: dict[str, dict[str, object]] = {}
     manifest_path = ocr_dir / "manifest.json"
     if manifest_path.is_file():
@@ -1045,6 +1065,13 @@ def build_report(
                     encoding="utf-8",
                     errors="replace",
                 )
+            elif (
+                digest
+                and item.get("kind") == "pdf"
+                and item.get("status") == "no_text"
+                and source.is_file()
+            ):
+                ocr_reviewed_no_text_by_sha.add(digest)
     connection = sqlite3.connect(
         f"{database_path.resolve().as_uri()}?mode=ro",
         uri=True,
@@ -1102,6 +1129,7 @@ def build_report(
                         document_url,
                         content_type,
                         ocr_text_by_sha.get(digest),
+                        digest in ocr_reviewed_no_text_by_sha,
                     )
                     if digest:
                         document_cache[document_cache_key] = document
@@ -1211,8 +1239,12 @@ def build_report(
                        SUM(CASE WHEN u.state='deferred' THEN 1 ELSE 0 END) AS deferred,
                        SUM(CASE WHEN u.state='robots_denied' THEN 1 ELSE 0 END)
                            AS robots_denied,
+                       SUM(CASE WHEN u.state='robots_unavailable' THEN 1 ELSE 0 END)
+                           AS robots_unavailable,
                        SUM(CASE WHEN u.state='soft_404' THEN 1 ELSE 0 END)
                            AS soft_404,
+                       SUM(CASE WHEN u.state='not_found' THEN 1 ELSE 0 END)
+                           AS not_found,
                        SUM(CASE WHEN u.state='skipped' THEN 1 ELSE 0 END) AS skipped
                 FROM hosts h
                 LEFT JOIN urls u ON u.host=h.host
@@ -1292,7 +1324,9 @@ def build_report(
         "failed",
         "fetching",
         "pending",
+        "not_found",
         "robots_denied",
+        "robots_unavailable",
         "soft_404",
     }
     unresolved = [
@@ -1525,13 +1559,14 @@ def markdown_report(report: dict[str, object]) -> str:
         "",
         "## 主机覆盖",
         "",
-        "| 主机 | robots | 成功 | 待处理 | 失败 | 暂缓 | 禁止 | 软 404 | 跳过/规范化 |",
-        "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+        "| 主机 | robots | 成功 | 待处理 | 失败 | 暂缓 | 禁止 | robots 不可用 | 软 404 | 确认不存在 | 跳过/规范化 |",
+        "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
     ]
     for host in hosts:
         lines.append(
             "| {host} | {robots_state} | {fetched} | {pending} | {failed} | "
-            "{deferred} | {robots_denied} | {soft_404} | {skipped} |".format(
+            "{deferred} | {robots_denied} | {robots_unavailable} | {soft_404} | "
+            "{not_found} | {skipped} |".format(
                 **{key: host.get(key) or 0 for key in host}
             )
         )

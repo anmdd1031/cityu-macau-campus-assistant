@@ -23,6 +23,10 @@ import urllib.parse
 
 import numpy as np
 
+MANIFEST_REPLACE_ATTEMPTS = 10
+MANIFEST_REPLACE_BASE_DELAY_SECONDS = 0.1
+MANIFEST_REPLACE_MAX_DELAY_SECONDS = 2.0
+
 try:
     import pypdfium2 as pdfium
 except ImportError as error:  # pragma: no cover - exercised by operator setup
@@ -38,7 +42,7 @@ except ImportError as error:  # pragma: no cover - exercised by operator setup
     ) from error
 
 try:
-    from PIL import Image, ImageOps
+    from PIL import Image, ImageFile, ImageOps
 except ImportError as error:  # pragma: no cover - exercised by operator setup
     raise SystemExit(
         "Pillow is required; install scripts/requirements-ocr.txt"
@@ -202,7 +206,25 @@ def save_manifest(path: Path, entries: dict[str, dict[str, object]]) -> None:
         ),
         encoding="utf-8",
     )
-    os.replace(temporary, path)
+    for attempt in range(1, MANIFEST_REPLACE_ATTEMPTS + 1):
+        try:
+            os.replace(temporary, path)
+            return
+        except PermissionError as error:
+            if attempt == MANIFEST_REPLACE_ATTEMPTS:
+                raise
+            delay = min(
+                MANIFEST_REPLACE_BASE_DELAY_SECONDS * (2 ** (attempt - 1)),
+                MANIFEST_REPLACE_MAX_DELAY_SECONDS,
+            )
+            print(
+                "OCR MANIFEST RETRY "
+                f"attempt={attempt}/{MANIFEST_REPLACE_ATTEMPTS} "
+                f"delay={delay:.1f}s error={error}",
+                file=sys.stderr,
+                flush=True,
+            )
+            time.sleep(delay)
 
 
 def fetched_content_digests(database: Path) -> set[str]:
@@ -455,20 +477,33 @@ def ocr_document(
     tile_height: int,
     tile_overlap: int,
     force: bool,
+    page_numbers: list[int] | None = None,
+    embedded_text: str = "",
 ) -> tuple[int, str, int, list[str]]:
     document = pdfium.PdfDocument(body)
-    page_texts: list[str] = []
+    page_texts: list[tuple[int, str]] = []
     resumed_pages = 0
     try:
-        for page_index in range(len(document)):
-            page_number = page_index + 1
+        if page_numbers:
+            selected_page_numbers = [
+                page_number
+                for page_number in dict.fromkeys(page_numbers)
+                if 1 <= page_number <= len(document)
+            ]
+        else:
+            selected_page_numbers = list(range(1, len(document) + 1))
+        for page_number in selected_page_numbers:
+            page_index = page_number - 1
             stem = f"page-{page_number:03d}"
             image_path = output_dir / f"{stem}.png"
             text_path = output_dir / f"{stem}.txt"
             json_path = output_dir / f"{stem}.json"
             if not force and text_path.is_file() and json_path.is_file():
                 page_texts.append(
-                    text_path.read_text(encoding="utf-8", errors="replace")
+                    (
+                        page_number,
+                        text_path.read_text(encoding="utf-8", errors="replace"),
+                    )
                 )
                 resumed_pages += 1
                 print(f"OCR RESUME page={page_number}/{len(document)}", flush=True)
@@ -511,21 +546,25 @@ def ocr_document(
                 ),
                 encoding="utf-8",
             )
-            page_texts.append(page_text)
+            page_texts.append((page_number, page_text))
             print(
                 f"OCR PAGE page={page_number}/{len(document)} lines={len(lines)}",
                 flush=True,
             )
     finally:
         document.close()
-    combined = "\n".join(
-        f"--- page {index} ---\n{text.strip()}"
-        for index, text in enumerate(page_texts, start=1)
-    ).strip()
+    combined_parts: list[str] = []
+    if embedded_text.strip():
+        combined_parts.append(f"--- embedded PDF text ---\n{embedded_text.strip()}")
+    combined_parts.extend(
+        f"--- OCR reviewed page {page_number} ---\n{text.strip()}"
+        for page_number, text in page_texts
+    )
+    combined = "\n".join(combined_parts).strip()
     return len(page_texts), combined, resumed_pages, []
 
 
-def ocr_image_asset(
+def _ocr_image_asset_once(
     engine: RapidOCR,
     body: bytes,
     output_dir: Path,
@@ -535,7 +574,7 @@ def ocr_image_asset(
     max_image_side: int,
     force: bool,
 ) -> tuple[int, str, int, list[str]]:
-    """Decode and OCR every frame/page of one locally stored raster asset."""
+    """Decode and OCR every frame/page of one locally stored raster asset once."""
 
     image_texts: list[str] = []
     resumed_frames = 0
@@ -561,7 +600,7 @@ def ocr_image_asset(
 
             try:
                 source.seek(frame_index)
-            except (EOFError, ValueError) as error:
+            except (EOFError, SyntaxError, ValueError) as error:
                 warning = (
                     f"frame {frame_number}/{frame_count} is not decodable: "
                     f"{type(error).__name__}: {error}"
@@ -633,6 +672,59 @@ def ocr_image_asset(
     if not image_texts:
         raise ValueError("raster asset has no decodable image frame")
     return len(image_texts), combined, resumed_frames, decode_warnings
+
+
+def ocr_image_asset(
+    engine: RapidOCR,
+    body: bytes,
+    output_dir: Path,
+    min_confidence: float,
+    tile_height: int,
+    tile_overlap: int,
+    max_image_side: int,
+    force: bool,
+) -> tuple[int, str, int, list[str]]:
+    """OCR one raster asset, retaining usable pixels from truncated source files."""
+
+    try:
+        return _ocr_image_asset_once(
+            engine,
+            body,
+            output_dir,
+            min_confidence,
+            tile_height,
+            tile_overlap,
+            max_image_side,
+            force,
+        )
+    except OSError as error:
+        if "image file is truncated" not in str(error).lower():
+            raise
+
+        previous = ImageFile.LOAD_TRUNCATED_IMAGES
+        ImageFile.LOAD_TRUNCATED_IMAGES = True
+        try:
+            pages, combined, resumed_frames, decode_warnings = (
+                _ocr_image_asset_once(
+                    engine,
+                    body,
+                    output_dir,
+                    min_confidence,
+                    tile_height,
+                    tile_overlap,
+                    max_image_side,
+                    force,
+                )
+            )
+        finally:
+            ImageFile.LOAD_TRUNCATED_IMAGES = previous
+
+        decode_warnings.insert(
+            0,
+            "strict image decode reported a truncated source; OCR used all "
+            f"available pixels ({type(error).__name__}: {error})",
+        )
+        return pages, combined, resumed_frames, decode_warnings
 
 
 def main() -> int:
@@ -746,6 +838,15 @@ def main() -> int:
                 issue = str(inspection.get("issue") or "")
                 if not issue:
                     continue
+                low_text_pages = inspection.get("low_text_pages")
+                item = dict(item)
+                item["document_pages"] = inspection.get("pages")
+                item["embedded_pdf_text"] = str(inspection.get("text") or "")
+                item["ocr_page_numbers"] = (
+                    [int(value) for value in low_text_pages]
+                    if isinstance(low_text_pages, list) and low_text_pages
+                    else None
+                )
             else:
                 issue = "raster image requires local OCR review"
             queue.append((item, issue))
@@ -809,6 +910,9 @@ def main() -> int:
                 "inference_provider": inference_provider,
                 "generated_at": now_beijing(),
             }
+            if kind == "pdf":
+                entry["document_pages"] = item.get("document_pages")
+                entry["reviewed_pages"] = item.get("ocr_page_numbers") or "all"
             if hashlib.sha256(body).hexdigest() != digest:
                 failures += 1
                 entry.update(
@@ -842,6 +946,8 @@ def main() -> int:
                         args.tile_height,
                         args.tile_overlap,
                         args.force,
+                        item.get("ocr_page_numbers"),
+                        str(item.get("embedded_pdf_text") or ""),
                     )
                 else:
                     pages, combined, resumed_units, decode_warnings = ocr_image_asset(
