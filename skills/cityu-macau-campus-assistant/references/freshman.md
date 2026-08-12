@@ -52,6 +52,7 @@
 | 2026/2027 硕/博士招生简章（内地生） | https://ado.cityu.edu.mo/list-26/155 | 内地硕博报名资格、课程、学费、材料、面试、录取 |
 | 2026/2027 本地和国际生招生简章 | https://ado.cityu.edu.mo/list-6/12 | 本地、香港、台湾及国际学生报名信息 |
 | 2026/2027 本地和国际生招生简章英文页 | https://ado.cityu.edu.mo/en/list-6/12 | 英文正文“至另行通知”与中文页/附件固定截止日冲突，不作当前开放依据 |
+| 2026/2027 本地和国际生通用招生简章 PDF | https://ado.cityu.edu.mo/en/uploads/userfiles/Prospectus%202026-2027.pdf | 2025 年 10 月定稿的学士/硕士/博士报名期、学费、报名费和材料；以官网后续更新为准 |
 | 入学奖学金 | https://ado.cityu.edu.mo/list-53/49 | 入学奖学金计划 |
 | 未入学新生退费政策 | https://ado.cityu.edu.mo/page-65 | 未入学新生退费和保证金申请规则 |
 | 教务处 | https://registry.cityu.edu.mo/ | 新生注册、学籍、选科、学生手册、证明文件、毕业证书 |

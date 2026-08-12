@@ -525,6 +525,10 @@ BCS 公开课程结构及学院 2026-04-29 说明会列明 Final Year Project �
 
 “3.0 / 3.5”是公告使用的**建议申请人最低积点**，不是达到后自动录取的承诺。学院仍会结合笔试、面试和申请材料择优录取。
 
+#### 旧英文页面的时效与数值冲突
+
+学院英文旧页 `https://fds.cityu.edu.mo/en/upcoming_events/310` 仍保留 2024 年转读通知：页面写申请期至 **2024 年 7 月 26 日**，并把 BCS 的建议最低 GPA 写成 **3.7**。该页不是 2026 年公告，不能用来覆盖当前中文通知；回答当前或后续年度时，应以最新的 `https://fds.cityu.edu.mo/upcoming_events/555` 为准（本轮 BITS 3.0、BCS 3.5）。
+
 ### 7.2 Agent 回答转专业问题的建议
 
 #### 可以回答
@@ -1906,6 +1910,7 @@ PhD CS 页面提到与医学、药学、创新工程、金融等交叉；PhD DS 
 | 本科生专区 | https://fds.cityu.edu.mo/page-79 |
 | 研究生专区 | https://fds.cityu.edu.mo/page-120 |
 | 转入 BITS/BCS（2026 年 6 月通知） | https://fds.cityu.edu.mo/upcoming_events/555 |
+| 转入 BITS/BCS（2024 年英文旧通知，仅作冲突核对） | https://fds.cityu.edu.mo/en/upcoming_events/310 |
 | 本科毕业实习与毕业设计资料公告 | https://fds.cityu.edu.mo/upcoming_events/235 |
 | 本科实习评价表（官网文件名 2026、页脚 FDS2024/5） | https://fds.cityu.edu.mo/uploads/userfiles/%E5%AF%A6%E7%BF%92%E8%A9%95%E5%83%B9%E8%A1%A8%202026.pdf |
 | 2027 届 BITS 毕业设计工作说明 | https://fds.cityu.edu.mo/upcoming_events/551 |
