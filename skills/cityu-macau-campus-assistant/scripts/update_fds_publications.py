@@ -348,10 +348,12 @@ def render(
     lines = [
         "# 暂时停用：澳门城市大学数据科学学院教师论文检索索引",
         "",
+        f"> 信息更新时间：{verified}（北京时间）。",
+        f"> 最近审计时间：{verified}（北京时间；当前已停用）。",
         "> 状态：暂时停用。本文件仅为维护者保留；Agent 不得读取、引用或将其内容用于导师推荐。",
         "> 教师身份来源：澳门城市大学数据科学学院 Academic Staff 与官方个人页。",
         "> 论文元数据来源：Crossref REST API；仅保留作者姓名准确匹配且作者隶属明确包含 City University of Macau 的记录。",
-        f"> 核验日期：{verified}；检索范围：{since_year} 年至今；每位教师最多展示 {max_papers} 篇。",
+        f"> 检索范围：{since_year} 年至今；每位教师最多展示 {max_papers} 篇。",
         "> 本表论文来源等级：4（DOI/出版社元数据索引）；当前停用，不作为导师方向或推荐证据。",
         "> 贡献证据：当前 Crossref 记录未提供可靠的 Author Contributions/CRediT 声明；作者位置仅作弱证据，不能反推算法、代码、实验或数据分析角色。",
         "> 导师基础画像：[fds_mentors.md](fds_mentors.md)；匹配规则：[fds_rules.md](fds_rules.md)。",
@@ -468,7 +470,7 @@ def main() -> int:
     verified = args.date
     if verified is None and args.check and args.output.exists():
         current = args.output.read_text(encoding="utf-8")
-        match = re.search(r"核验日期：(\d{4}-\d{2}-\d{2})", current)
+        match = re.search(r"最近审计时间：(\d{4}-\d{2}-\d{2})", current)
         verified = match.group(1) if match else None
     verified = verified or datetime.now(BEIJING_TIMEZONE).date().isoformat()
 
