@@ -6,6 +6,16 @@
 
 初次参与时，使用 GitHub Desktop 完成 Git 操作；可以让 Codex 帮助理解项目、修改文件和执行检查，但提交、推送、评审与合并由成员确认。
 
+如果使用已登录 GitHub 且对本仓库有写权限的 Codex，也可以直接用自然语言完成同一条协作路径。例如：
+
+```text
+请连接 https://github.com/anmdd1031/cityu-macau-campus-assistant，
+从最新 main 创建一个 codex/ 开头的短分支，只完成本次任务所需的修改并运行适用检查。
+先向我展示变更和检查结果；得到确认后再提交、推送并创建 Pull Request，不要自行合并。
+```
+
+无论使用 GitHub Desktop 还是 Codex，都必须遵守下文的分支、检查、评审与合并规则。
+
 ## 开始前
 
 1. 安装并登录 GitHub Desktop。
