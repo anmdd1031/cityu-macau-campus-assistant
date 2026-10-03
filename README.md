@@ -75,7 +75,7 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 - [完整说明文档](docs/guide.md)
 - [更新日志](docs/changelog.md)
 - [智能体规则文件](skills/cityu-macau-campus-assistant/SKILL.md)
-- [新生与校园知识库](skills/cityu-macau-campus-assistant/references/freshman.md)
+- [学校概况、新生与校园知识库](skills/cityu-macau-campus-assistant/references/freshman.md)（校史、办学特色、统计口径、校区和部门入口）
 - [数据科学学院知识库](skills/cityu-macau-campus-assistant/references/fds.md)
 - [人文社会科学学院知识库](skills/cityu-macau-campus-assistant/references/fhss.md)
 - [创新设计学院知识库](skills/cityu-macau-campus-assistant/references/fiad.md)
@@ -93,9 +93,13 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 - [荣誉班知识库](skills/cityu-macau-campus-assistant/references/honours_class.md)
 - [氹仔校区餐饮指南](skills/cityu-macau-campus-assistant/references/澳门城市大学氹仔校区_校内餐饮指南.md)
 
-> 知识库资料本轮深度复核窗口为 2026-08-01 至 2026-08-05；FDS 师资正文核验日期为 2026-07-13，并已于 2026-07-27 通过 58 页在线漂移检查；餐饮菜单为 2026 年 6 月本地快照。本轮严格串行官网审计新增 IUSD 与 IROPC 知识库，并补齐当届校历、全球交流、暑期项目、创业就业、科研资助、培训测试及专题研究平台边界，记录官网自身的年份、学分、人员职称、过期标题、旧域名和中英文复制冲突。商学院部分中文页面模板在串行审计中出现博彩、SEO 垃圾外链及关键词，相关异常内容已从知识候选中隔离，商学院高变动规则须用其他官方来源或学院联系方式交叉核对。招生日期、费用、宿舍、签注、注册、师资、项目报名、菜单价格和学业规则以最新官方通知为准。
+> 2026-10-01 本轮串行刷新知识库引用的官方页面和正式附件：660 个去重引用中 635 个完成请求（599 成功、32 软 404、3 个 404、1 个 TLS/网络失败），另有 25 个受访问保护。按核验结果更新本地当期招生、宿舍、考试、交流、课程表、导师及开题信息；严格全站审计仍未通过（未解决 3,614 项，43,502 个候选 URL、33,733 份候选正文尚未全部人工复核），因此不宣称全站资料已完整更新，详见[更新日志](docs/changelog.md)。商学院部分中文页面出现 SEO/博彩垃圾内容，已从知识候选中隔离；高变动事项以对应官方最新通知为准。
 
-维护者使用的离线 OCR 工具默认在 CPU 上逐个资源运行；Windows 环境也可在安装 `onnxruntime-directml` 后加 `--directml` 使用 GPU 推理。两种模式都只读取本地抓取缓存，保持单进程和可恢复清单，不会增加官网请求并发。PDF 已有可提取正文时只识别审计标出的低文字页，并把嵌入正文与复核页文字合并；整份正文不足或解析失败时才逐页识别全文件。已完成 OCR 且确认无可读文字的 PDF 会保留视觉复核提示，但不再误报为未处理附件。抓取器和 OCR 都在整个运行期持有操作系统级排他锁；异常退出时该锁由系统释放，保留的锁文件只作诊断记录，不应手动删除。运行中的任务会明确拒绝第二个同类进程。HTTP 429 和 `robots.txt` 暂不可用均使用有界重试预算与冷却期；预算耗尽的 robots 受阻 URL 会保留为 `robots_unavailable` 并阻止完整性验证，直至冷却期后由维护者显式重试。
+维护者使用的离线 OCR 工具默认在 CPU 上逐个资源运行；Windows 环境也可在安装 `onnxruntime-directml` 后加 `--directml` 使用 GPU 推理。两种模式都只读取本地抓取缓存，保持单进程和可恢复清单，不会增加官网请求并发。PDF 已有可提取正文时只识别审计标出的低文字页，并把嵌入正文与复核页文字合并；整份正文不足或解析失败时才逐页识别全文件。已完成 OCR 且确认无可读文字的 PDF 会保留视觉复核提示，但不再误报为未处理附件。官网爬虫除状态目录锁外，还持有跨仓库副本、跨状态目录共享的单用户操作系统排他锁，并持久化全局请求冷却时间；最终完整性审计也在同一把锁内生成快照。例行更新优先用 `--refresh-url` 精确刷新变更所涉及的官方来源；`--refresh-references` 用于一次复核全部知识库引用。两种模式只跟进直接链接的正式文档，不顺带下载导航页、未引用图片或缩略图；全站发现与覆盖检查单独串行执行。锁占用时必须等待当前任务结束，不得改状态目录、删锁文件或并行启动；异常退出时操作系统会释放锁，保留的锁文件只作诊断记录。OCR 使用独立锁。HTTP 429 和 `robots.txt` 暂不可用均使用有界重试预算与冷却期；预算耗尽的 robots 受阻 URL 会保留为 `robots_unavailable` 并阻止完整性验证，直至冷却期后由维护者显式重试。
+
+维护者运行离线审计前，须用同一 Python 安装 `skills/cityu-macau-campus-assistant/scripts/requirements-audit.txt` 中的依赖。审计现在会在缺少依赖时立即退出，保留原报告。2026-10-01 报告中的 2,534 项附件提取问题均由依赖缺失触发，不等于官网附件损坏；修复环境也不代表全站完整性已通过。普通用户使用知识库不需要安装这些维护依赖。
+
+维护更新（2026-10-02）：已修复部分历史来源链接及旧失败状态分类。OCR 维护工具使用独立 Python 3.12 环境，配置见[详细说明](docs/guide.md)；普通用户无需安装该环境。网络恢复结果与未覆盖范围见[更新日志](docs/changelog.md)。
 
 ## License
 

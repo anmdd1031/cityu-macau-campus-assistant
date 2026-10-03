@@ -3,7 +3,8 @@
 
 The crawler is intentionally conservative:
 
-- one process lock prevents simultaneous crawls using the same state directory;
+- a per-user process lock prevents simultaneous crawls across repository copies
+  and state directories;
 - one global rate limiter spaces every request start by at least one second;
 - no thread pool, asyncio, multiprocessing, or parallel request path exists;
 - HTTP 403 is never retried automatically;
@@ -31,18 +32,18 @@ import os
 import re
 import sqlite3
 import sys
+import tempfile
 import time
 import urllib.error
 import urllib.parse
 import urllib.request
 import urllib.robotparser
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 from pathlib import Path
-from typing import Iterable
-from zoneinfo import ZoneInfo
+from typing import Iterable, Iterator
 
 
 OFFICIAL_SUFFIX = "cityu.edu.mo"
@@ -57,7 +58,9 @@ MIN_RETRY_AFTER_SECONDS = 5.0
 # historical request count cannot be reconstructed safely.
 ROBOTS_RETRY_EXHAUSTED = -1
 SOFT_404_RECLASSIFICATION_KEY = "soft_404_reclassification_v1"
-BEIJING = ZoneInfo("Asia/Shanghai")
+# Crawl timestamps are contemporary UTC+8; no historical timezone conversion.
+# A fixed offset keeps the stdlib crawler usable on Windows without tzdata.
+BEIJING = timezone(timedelta(hours=8), "Asia/Shanghai")
 TRACKING_QUERY_KEYS = {
     "fbclid",
     "gclid",
@@ -91,6 +94,21 @@ SKIP_EXTENSIONS = {
     ".ttf",
     ".woff",
     ".woff2",
+}
+REFERENCE_REFRESH_DOCUMENT_EXTENSIONS = {
+    ".csv",
+    ".doc",
+    ".docx",
+    ".odt",
+    ".odp",
+    ".ods",
+    ".pdf",
+    ".ppt",
+    ".pptx",
+    ".rtf",
+    ".txt",
+    ".xls",
+    ".xlsx",
 }
 RETRYABLE_HTTP = {408, 425, 429, 500, 502, 503, 504}
 MAX_REDIRECT_HOPS = 8
@@ -204,6 +222,7 @@ class AdvisoryProcessLock:
         self.path = path
         self.purpose = purpose
         self.descriptor: int | None = None
+        self.metadata: dict[str, object] = {}
 
     def __enter__(self) -> "AdvisoryProcessLock":
         self.path.parent.mkdir(parents=True, exist_ok=True)
@@ -223,20 +242,37 @@ class AdvisoryProcessLock:
             ) from error
 
         self.descriptor = descriptor
-        payload = {
-            "pid": os.getpid(),
-            "purpose": self.purpose,
-            "started_at": now_beijing(),
-            "argv": sys.argv,
-        }
-        encoded = (json.dumps(payload, ensure_ascii=False) + "\n").encode("utf-8")
+        os.lseek(descriptor, 0, os.SEEK_SET)
+        existing = os.read(descriptor, min(os.fstat(descriptor).st_size, 65_536))
+        try:
+            previous = json.loads(existing.decode("utf-8"))
+        except (UnicodeDecodeError, json.JSONDecodeError):
+            # If a prior process was interrupted while writing, conservatively
+            # enforce a fresh cooldown instead of losing the shared timestamp.
+            previous = {"last_request_started_at": time.time()} if existing else {}
+        if isinstance(previous, dict):
+            self.metadata = previous
+        self.update_metadata(
+            pid=os.getpid(),
+            purpose=self.purpose,
+            started_at=now_beijing(),
+            argv=sys.argv,
+            sync=True,
+        )
+        return self
+
+    def update_metadata(self, *, sync: bool = False, **values: object) -> None:
+        if self.descriptor is None:
+            raise RuntimeError("Cannot update metadata without holding the process lock")
+        self.metadata.update(values)
+        encoded = (json.dumps(self.metadata, ensure_ascii=False) + "\n").encode("utf-8")
+        descriptor = self.descriptor
         os.lseek(descriptor, 0, os.SEEK_SET)
         os.write(descriptor, encoded)
         with contextlib.suppress(OSError):
             os.ftruncate(descriptor, len(encoded))
-        with contextlib.suppress(OSError):
+        if sync:
             os.fsync(descriptor)
-        return self
 
     def __exit__(self, exc_type: object, exc: object, traceback: object) -> None:
         if self.descriptor is None:
@@ -249,19 +285,74 @@ class AdvisoryProcessLock:
 
 
 class CrawlLock(AdvisoryProcessLock):
-    """Prevent two crawler processes from sharing one state directory."""
+    """Prevent overlapping official-site crawler or verification processes."""
 
-    def __init__(self, path: Path) -> None:
-        super().__init__(path, "crawler")
+    def __init__(self, path: Path, purpose: str = "crawler") -> None:
+        super().__init__(path, purpose)
+
+
+def global_crawl_lock_path() -> Path:
+    """Return the per-user lock shared by repository copies and state folders."""
+
+    return Path(tempfile.gettempdir()) / "cityu-official-site-crawl.lock"
+
+
+def crawl_process_lock_paths(
+    state_dir: Path, *, global_lock_path: Path | None = None
+) -> tuple[Path, Path]:
+    return global_lock_path or global_crawl_lock_path(), state_dir / "crawl.lock"
+
+
+@contextlib.contextmanager
+def crawl_process_locks(
+    state_dir: Path,
+    purpose: str = "crawler",
+    *,
+    global_lock_path: Path | None = None,
+) -> Iterator[AdvisoryProcessLock]:
+    """Hold a machine-wide lock and a state-directory lock in a fixed order."""
+
+    global_path, state_path = crawl_process_lock_paths(
+        state_dir, global_lock_path=global_lock_path
+    )
+    with contextlib.ExitStack() as stack:
+        global_lock = stack.enter_context(CrawlLock(global_path, purpose))
+        stack.enter_context(CrawlLock(state_path, purpose))
+        yield global_lock
+
+
+def crawl_process_lock_is_held(state_dir: Path) -> bool:
+    return any(
+        advisory_lock_is_held(path)
+        for path in crawl_process_lock_paths(state_dir)
+    )
 
 
 class RateLimiter:
-    def __init__(self, database: "CrawlDatabase", minimum_delay: float) -> None:
+    def __init__(
+        self,
+        database: "CrawlDatabase",
+        minimum_delay: float,
+        global_lock: AdvisoryProcessLock | None = None,
+    ) -> None:
         if minimum_delay < 1.0:
             raise ValueError("minimum_delay must be at least 1.0 second")
         self.database = database
         self.minimum_delay = minimum_delay
-        self.last_started_at = database.last_request_started_at()
+        self.global_lock = global_lock
+        shared_last_started = 0.0
+        if global_lock is not None:
+            try:
+                shared_last_started = float(
+                    global_lock.metadata.get("last_request_started_at", 0.0)
+                )
+            except (TypeError, ValueError):
+                # A damaged timestamp delays the next request instead of
+                # silently disabling the cross-process cooldown.
+                shared_last_started = time.time()
+        self.last_started_at = max(
+            database.last_request_started_at(), shared_last_started
+        )
 
     def wait(self) -> None:
         remaining = self.minimum_delay - (time.time() - self.last_started_at)
@@ -271,6 +362,11 @@ class RateLimiter:
         # Persist before each outbound request so a later serial process also
         # respects the delay after this one exits unexpectedly.
         self.database.record_request_started_at(self.last_started_at)
+        if self.global_lock is not None:
+            self.global_lock.update_metadata(
+                sync=True,
+                last_request_started_at=self.last_started_at,
+            )
 
 
 class LinkExtractor(HTMLParser):
@@ -435,6 +531,17 @@ def should_skip_by_extension(url: str) -> bool:
     return suffix in SKIP_EXTENSIONS
 
 
+def should_follow_reference_refresh_link(
+    url: str, reference_urls: set[str] | frozenset[str]
+) -> bool:
+    """Keep routine refreshes to cited sources and their formal documents."""
+
+    if url in reference_urls:
+        return True
+    suffix = Path(urllib.parse.urlsplit(url).path).suffix.lower()
+    return suffix in REFERENCE_REFRESH_DOCUMENT_EXTENSIONS
+
+
 def soft_404_reason(result: FetchResult) -> str | None:
     """Return a reason when a nominal success response is actually an error page."""
 
@@ -478,6 +585,25 @@ def retry_after_seconds(headers: dict[str, str]) -> float:
         )
     except (TypeError, ValueError, OverflowError):
         return MIN_RETRY_AFTER_SECONDS
+
+
+def read_bounded_response(response: object, limit: int, seconds: float) -> bytes:
+    """Bound slow-drip transfers as well as response size, without threads."""
+    deadline = time.monotonic() + seconds
+    chunks: list[bytes] = []
+    size = 0
+    read = getattr(response, "read1", response.read)
+    while size < limit:
+        if time.monotonic() >= deadline:
+            raise TimeoutError(f"response body exceeded {seconds:g}s transfer budget")
+        chunk = read(min(65_536, limit - size))
+        if time.monotonic() >= deadline:
+            raise TimeoutError(f"response body exceeded {seconds:g}s transfer budget")
+        if not chunk:
+            break
+        chunks.append(chunk)
+        size += len(chunk)
+    return b"".join(chunks)
 
 
 class CrawlDatabase:
@@ -905,12 +1031,21 @@ class CrawlDatabase:
         return len(supported)
 
     def next_pending(self, max_attempts: int) -> sqlite3.Row | None:
+        target_filter = ""
+        if self.connection.execute(
+            "SELECT 1 FROM sqlite_temp_master WHERE type='table' "
+            "AND name='reference_refresh_targets'"
+        ).fetchone():
+            target_filter = (
+                "AND url IN (SELECT url FROM reference_refresh_targets)"
+            )
         return self.connection.execute(
-            """
+            f"""
             SELECT * FROM urls
             WHERE state IN ('pending', 'deferred')
               AND next_attempt_at <= ?
               AND attempts < ?
+              {target_filter}
             ORDER BY
                 depth,
                 CASE
@@ -1005,6 +1140,25 @@ class CrawlDatabase:
             """,
             (time.time(), max_attempts),
         ).fetchone()
+
+    def set_reference_refresh_targets(self, urls: Iterable[str]) -> None:
+        self.connection.execute(
+            "CREATE TEMP TABLE IF NOT EXISTS reference_refresh_targets "
+            "(url TEXT PRIMARY KEY)"
+        )
+        self.connection.execute("DELETE FROM reference_refresh_targets")
+        self.connection.executemany(
+            "INSERT OR IGNORE INTO reference_refresh_targets(url) VALUES (?)",
+            ((url,) for url in urls),
+        )
+        self.connection.commit()
+
+    def add_reference_refresh_target(self, url: str) -> None:
+        self.connection.execute(
+            "INSERT OR IGNORE INTO reference_refresh_targets(url) VALUES (?)",
+            (url,),
+        )
+        self.connection.commit()
 
     def mark_fetching(self, url: str) -> None:
         self.connection.execute(
@@ -1128,6 +1282,52 @@ class CrawlDatabase:
         )
         self.connection.commit()
         return cursor.rowcount
+
+    def reconcile_legacy_http_errors(self) -> int:
+        """Preserve evidence while classifying terminal HTTP errors correctly."""
+        rows = self.connection.execute(
+            "SELECT url, http_status FROM urls "
+            "WHERE state='failed' AND http_status IN (404, 410)"
+        ).fetchall()
+        for row in rows:
+            self.connection.execute(
+                "UPDATE urls SET state='not_found', next_attempt_at=0 WHERE url=?",
+                (row["url"],),
+            )
+            self.event(
+                "legacy_http_reclassified", row["url"],
+                f"failed -> not_found; HTTP {row['http_status']}; evidence retained",
+            )
+        self.connection.commit()
+        return len(rows)
+
+    def reconcile_recovered_aliases(self) -> int:
+        """Link failed legacy encodings to an already fetched canonical URL."""
+        changed = 0
+        rows = self.connection.execute(
+            "SELECT url, error FROM urls WHERE state='failed' "
+            "AND http_status IN (0, 400)"
+        ).fetchall()
+        for row in rows:
+            canonical = normalize_url(row["url"])
+            if not canonical or canonical == row["url"]:
+                continue
+            target = self.connection.execute(
+                "SELECT 1 FROM urls WHERE url=? AND state='fetched' "
+                "AND sha256 IS NOT NULL AND body_path IS NOT NULL",
+                (canonical,),
+            ).fetchone()
+            if target is None:
+                continue
+            self.event("recovered_alias", row["url"],
+                       f"{row['error']}; canonical={canonical}")
+            self.connection.execute(
+                "UPDATE urls SET state='skipped', next_attempt_at=0, error=? WHERE url=?",
+                (f"canonicalized to {canonical}", row["url"]),
+            )
+            changed += 1
+        self.connection.commit()
+        return changed
 
     def exhaust_page_attempt_budget(self, max_attempts: int) -> int:
         """Make interrupted/legacy page retries terminal once their budget is used.
@@ -1273,6 +1473,57 @@ class CrawlDatabase:
         self.connection.commit()
         return cursor.rowcount
 
+    def refresh_reference_urls(self, urls: Iterable[str]) -> dict[str, int]:
+        """Revisit only sources cited by the knowledge base, respecting blocks."""
+
+        counts = {"unique": 0, "requeued": 0, "already_pending": 0, "protected": 0}
+        now = time.time()
+        for url in sorted(set(urls)):
+            host = urllib.parse.urlsplit(url).hostname or ""
+            if not is_official_host(host):
+                continue
+            counts["unique"] += 1
+            row = self.connection.execute(
+                "SELECT state, http_status, next_attempt_at, error FROM urls WHERE url=?",
+                (url,),
+            ).fetchone()
+            if row is None:
+                if self.enqueue(url, 0, None, "reference-refresh"):
+                    counts["requeued"] += 1
+                continue
+
+            state = str(row["state"])
+            if state in {"pending", "fetching"}:
+                counts["already_pending"] += 1
+                continue
+            if state in {"robots_denied", "robots_unavailable", "skipped"}:
+                counts["protected"] += 1
+                continue
+            if state == "failed" and row["http_status"] == 403:
+                counts["protected"] += 1
+                continue
+            if state == "deferred" and (
+                float(row["next_attempt_at"] or 0) > now
+                or str(row["error"] or "").startswith("robots.txt unavailable:")
+            ):
+                counts["protected"] += 1
+                continue
+            if state not in {"fetched", "soft_404", "failed", "not_found", "deferred"}:
+                counts["protected"] += 1
+                continue
+
+            self.connection.execute(
+                """
+                UPDATE urls
+                SET state='pending', next_attempt_at=0, attempts=0, error=NULL
+                WHERE url=?
+                """,
+                (url,),
+            )
+            counts["requeued"] += 1
+        self.connection.commit()
+        return counts
+
     def counts(self) -> dict[str, int]:
         rows = self.connection.execute(
             "SELECT state, COUNT(*) AS count FROM urls GROUP BY state ORDER BY state"
@@ -1308,17 +1559,32 @@ class OfficialCrawler:
         timeout: float,
         max_bytes: int,
         max_attempts: int,
+        global_lock: AdvisoryProcessLock | None = None,
+        reference_refresh_urls: set[str] | None = None,
     ) -> None:
         self.database = database
         self.state_dir = state_dir
         self.bodies_dir = state_dir / "bodies"
         self.bodies_dir.mkdir(parents=True, exist_ok=True)
-        self.rate_limiter = RateLimiter(database, delay)
+        self.rate_limiter = RateLimiter(database, delay, global_lock)
         self.timeout = timeout
         self.max_bytes = max_bytes
         self.max_attempts = max_attempts
+        self.reference_refresh_urls = reference_refresh_urls
+        if reference_refresh_urls is not None:
+            self.database.set_reference_refresh_targets(reference_refresh_urls)
         self.robots: dict[str, urllib.robotparser.RobotFileParser] = {}
         self.opener = urllib.request.build_opener(NoRedirectHandler())
+
+    def should_enqueue_discovered_url(self, url: str) -> bool:
+        if self.reference_refresh_urls is None:
+            return True
+        if not should_follow_reference_refresh_link(
+            url, self.reference_refresh_urls
+        ):
+            return False
+        self.database.add_reference_refresh_target(url)
+        return True
 
     def store_body(self, body: bytes) -> tuple[str, str]:
         digest = hashlib.sha256(body).hexdigest()
@@ -1373,7 +1639,9 @@ class OfficialCrawler:
                 status = int(response.status)
                 headers = {key.lower(): value for key, value in response.headers.items()}
                 content_type = headers.get("content-type", "").split(";", 1)[0].lower()
-                body = response.read(self.max_bytes + 1)
+                body = read_bounded_response(
+                    response, self.max_bytes + 1, max(60.0, self.timeout * 4)
+                )
                 oversized = len(body) > self.max_bytes
                 if oversized:
                     body = body[: self.max_bytes]
@@ -1394,7 +1662,9 @@ class OfficialCrawler:
             content_type = headers.get("content-type", "").split(";", 1)[0].lower()
             body = b""
             with contextlib.suppress(OSError):
-                body = error.read(min(self.max_bytes, 1_048_576))
+                body = read_bounded_response(
+                    error, min(self.max_bytes, 1_048_576), max(60.0, self.timeout * 4)
+                )
             return FetchResult(
                 requested_url=url,
                 final_url=url,
@@ -1642,8 +1912,12 @@ class OfficialCrawler:
                 continue
             self.database.record_link(source_url, normalized, link_context)
             host = urllib.parse.urlsplit(normalized).hostname or ""
-            if is_official_host(host) and self.database.enqueue(
+            if (
+                is_official_host(host)
+                and self.should_enqueue_discovered_url(normalized)
+                and self.database.enqueue(
                 normalized, depth + 1, source_url, link_context
+                )
             ):
                 discovered += 1
         self.database.connection.commit()
@@ -1694,8 +1968,12 @@ class OfficialCrawler:
                     continue
                 self.database.record_link(source_url, normalized, link_context)
                 host = urllib.parse.urlsplit(normalized).hostname or ""
-                if is_official_host(host) and self.database.enqueue(
+                if (
+                    is_official_host(host)
+                    and self.should_enqueue_discovered_url(normalized)
+                    and self.database.enqueue(
                     normalized, depth + 1, source_url, link_context
+                    )
                 ):
                     discovered += 1
 
@@ -1705,8 +1983,12 @@ class OfficialCrawler:
                 continue
             self.database.record_link(source_url, normalized, "xml:loc")
             host = urllib.parse.urlsplit(normalized).hostname or ""
-            if is_official_host(host) and self.database.enqueue(
+            if (
+                is_official_host(host)
+                and self.should_enqueue_discovered_url(normalized)
+                and self.database.enqueue(
                 normalized, depth + 1, source_url, "xml:loc"
+                )
             ):
                 discovered += 1
 
@@ -1914,7 +2196,10 @@ def iter_skill_urls(skill_root: Path) -> Iterable[str]:
     for path in sorted(skill_root.rglob("*")):
         if not path.is_file() or any(part in {".cache", "__pycache__"} for part in path.parts):
             continue
-        if path.suffix.lower() not in {".md", ".py", ".yaml", ".yml"}:
+        relative_parts = path.relative_to(skill_root).parts
+        if "scripts" in relative_parts:
+            continue
+        if path.suffix.lower() not in {".md", ".yaml", ".yml"}:
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
         for candidate in iter_http_urls(text):
@@ -1923,6 +2208,22 @@ def iter_skill_urls(skill_root: Path) -> Iterable[str]:
                 host = urllib.parse.urlsplit(normalized).hostname or ""
                 if is_official_host(host):
                     yield normalized
+
+
+def iter_reference_urls(references_root: Path) -> Iterable[str]:
+    """Yield deduplicable official URLs directly cited by reference Markdown."""
+
+    if not references_root.is_dir():
+        return
+    for path in sorted(references_root.rglob("*.md")):
+        text = path.read_text(encoding="utf-8", errors="replace")
+        for candidate in iter_http_urls(text):
+            normalized = normalize_url(candidate)
+            if not normalized:
+                continue
+            host = urllib.parse.urlsplit(normalized).hostname or ""
+            if is_official_host(host):
+                yield normalized
 
 
 def seed_database(
@@ -2108,12 +2409,32 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Requeue retryable failures with fewer than --max-attempts attempts",
     )
-    parser.add_argument(
+    refresh_group = parser.add_mutually_exclusive_group()
+    refresh_group.add_argument(
         "--refresh-seeds",
         action="store_true",
         help=(
             "Re-fetch completed depth-zero Skill sources, host roots, and "
             "sitemaps once after a long crawl"
+        ),
+    )
+    refresh_group.add_argument(
+        "--refresh-references",
+        action="store_true",
+        help=(
+            "Revisit official URLs directly cited by reference Markdown and "
+            "their linked formal documents; skip full-site seeds, navigation, "
+            "and uncited media"
+        ),
+    )
+    refresh_group.add_argument(
+        "--refresh-url",
+        action="append",
+        default=[],
+        metavar="URL",
+        help=(
+            "Refresh one official source URL and its linked formal documents; "
+            "repeat for additional URLs"
         ),
     )
     parser.add_argument(
@@ -2148,7 +2469,46 @@ def parse_args() -> argparse.Namespace:
         parser.error("--max-fetches cannot be negative")
     if args.max_attempts < 1:
         parser.error("--max-attempts must be positive")
+    if (args.refresh_references or args.refresh_url) and args.retry_errors:
+        parser.error("targeted refresh cannot be combined with --retry-errors")
+    if (args.refresh_references or args.refresh_url) and args.seed:
+        parser.error("use --refresh-url instead of --seed with a targeted refresh")
+    if args.refresh_url:
+        normalized_urls: set[str] = set()
+        for raw in args.refresh_url:
+            normalized = normalize_url(raw)
+            host = urllib.parse.urlsplit(normalized or "").hostname or ""
+            if not normalized or not is_official_host(host):
+                parser.error("--refresh-url must be an official cityu.edu.mo URL")
+            normalized_urls.add(normalized)
+        args.refresh_url = sorted(normalized_urls)
     return args
+
+
+def report_only(
+    database_path: Path, state_dir: Path, *, verify_complete: bool, lock_guarded: bool
+) -> int:
+    if not lock_guarded and crawl_process_lock_is_held(state_dir):
+        print("SNAPSHOT active_crawler_lock=true (non-final)", flush=True)
+    database = CrawlDatabase(
+        database_path,
+        recover_interrupted=False,
+        readonly=True,
+    )
+    try:
+        write_report(database, state_dir / "report.json")
+        counts = database.counts()
+        print(
+            f"COUNTS {json.dumps(counts, ensure_ascii=False, sort_keys=True)}",
+            flush=True,
+        )
+        unresolved = database.unresolved()
+        if verify_complete and unresolved:
+            print(f"INCOMPLETE unresolved={len(unresolved)}", file=sys.stderr)
+            return 2
+        return 0
+    finally:
+        database.close()
 
 
 def main() -> int:
@@ -2160,41 +2520,39 @@ def main() -> int:
     if args.report_only:
         if not database_path.is_file():
             raise SystemExit(f"Crawl database not found: {database_path}")
-        lock_held = advisory_lock_is_held(state_dir / "crawl.lock")
-        if args.verify_complete and lock_held:
-            print(
-                "Cannot verify a final crawl snapshot while the crawler process lock is held",
-                file=sys.stderr,
+        if not args.verify_complete:
+            return report_only(
+                database_path,
+                state_dir,
+                verify_complete=False,
+                lock_guarded=False,
             )
-            return 2
-        if lock_held:
-            print("SNAPSHOT active_crawler_lock=true (non-final)", flush=True)
-        database = CrawlDatabase(
-            database_path,
-            recover_interrupted=False,
-            readonly=True,
-        )
         try:
-            write_report(database, state_dir / "report.json")
-            counts = database.counts()
-            print(
-                f"COUNTS {json.dumps(counts, ensure_ascii=False, sort_keys=True)}",
-                flush=True,
-            )
-            unresolved = database.unresolved()
-            if args.verify_complete and unresolved:
-                print(f"INCOMPLETE unresolved={len(unresolved)}", file=sys.stderr)
-                return 2
-            return 0
-        finally:
-            database.close()
+            with crawl_process_locks(
+                state_dir, purpose="final crawl verification"
+            ):
+                return report_only(
+                    database_path,
+                    state_dir,
+                    verify_complete=True,
+                    lock_guarded=True,
+                )
+        except RuntimeError as error:
+            print(f"Cannot verify a final crawl snapshot: {error}", file=sys.stderr)
+            return 2
 
     # Acquire the process lock before opening a writable database. This keeps an
     # accidental second invocation from resetting an active row or seeding URLs
     # before it discovers that another crawler is already running.
-    with CrawlLock(state_dir / "crawl.lock"):
+    with crawl_process_locks(state_dir) as global_lock:
         database = CrawlDatabase(database_path)
         try:
+            terminal_errors = database.reconcile_legacy_http_errors()
+            if terminal_errors:
+                print(f"RECLASSIFY legacy_http={terminal_errors}", flush=True)
+            recovered_aliases = database.reconcile_recovered_aliases()
+            if recovered_aliases:
+                print(f"RECONCILE recovered_aliases={recovered_aliases}", flush=True)
             canonicalized = database.canonicalize_queued_urls()
             if canonicalized:
                 print(f"CANONICALIZE queued={canonicalized}", flush=True)
@@ -2204,15 +2562,35 @@ def main() -> int:
             exhausted_pages = database.exhaust_page_attempt_budget(args.max_attempts)
             if exhausted_pages:
                 print(f"EXHAUST page_retry_budget={exhausted_pages}", flush=True)
-            requeued_assets = database.requeue_newly_supported_assets()
-            if requeued_assets:
-                print(f"REQUEUE supported_assets={requeued_assets}", flush=True)
-            seeded = seed_database(database, args.skill_root.resolve(), args.seed)
-            print(
-                f"SEED added={seeded['added']} hosts={seeded['hosts']} "
-                f"state={state_dir}",
-                flush=True,
-            )
+            targeted_refresh = args.refresh_references or bool(args.refresh_url)
+            reference_urls: set[str] | None = None
+            if targeted_refresh:
+                reference_urls = (
+                    set(
+                        iter_reference_urls(
+                            args.skill_root.resolve() / "references"
+                        )
+                    )
+                    if args.refresh_references
+                    else set(args.refresh_url)
+                )
+                database.set_reference_refresh_targets(reference_urls)
+                print(
+                    "SEED reference-only="
+                    f"{len(reference_urls)} full-site-discovery=skipped "
+                    f"state={state_dir}",
+                    flush=True,
+                )
+            else:
+                requeued_assets = database.requeue_newly_supported_assets()
+                if requeued_assets:
+                    print(f"REQUEUE supported_assets={requeued_assets}", flush=True)
+                seeded = seed_database(database, args.skill_root.resolve(), args.seed)
+                print(
+                    f"SEED added={seeded['added']} hosts={seeded['hosts']} "
+                    f"state={state_dir}",
+                    flush=True,
+                )
             reclassified = reclassify_stored_soft_404(database, state_dir)
             if reclassified:
                 print(f"RECLASSIFY soft_404={reclassified}", flush=True)
@@ -2230,6 +2608,18 @@ def main() -> int:
             if args.refresh_seeds:
                 refreshed = database.refresh_completed_seeds()
                 print(f"REFRESH seeds={refreshed}", flush=True)
+            if targeted_refresh:
+                assert reference_urls is not None
+                refreshed = database.refresh_reference_urls(
+                    reference_urls
+                )
+                print(
+                    "REFRESH targeted="
+                    f"unique:{refreshed['unique']},requeued:{refreshed['requeued']},"
+                    f"already_pending:{refreshed['already_pending']},"
+                    f"protected:{refreshed['protected']}",
+                    flush=True,
+                )
 
             crawler = OfficialCrawler(
                 database=database,
@@ -2238,10 +2628,14 @@ def main() -> int:
                 timeout=args.timeout,
                 max_bytes=args.max_bytes,
                 max_attempts=args.max_attempts,
+                global_lock=global_lock,
+                reference_refresh_urls=reference_urls,
             )
             completed = crawler.run(args.max_fetches)
             print(f"RUN fetched_attempts={completed}", flush=True)
-
+            recovered_aliases = database.reconcile_recovered_aliases()
+            if recovered_aliases:
+                print(f"RECONCILE recovered_aliases={recovered_aliases}", flush=True)
             write_report(database, state_dir / "report.json")
             counts = database.counts()
             print(
