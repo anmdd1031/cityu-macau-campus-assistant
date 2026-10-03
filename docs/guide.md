@@ -16,6 +16,8 @@ skills/cityu-macau-campus-assistant/
 
 Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assistant/SKILL.md)，再按问题读取 `references/` 中对应的知识库。
 
+> 2026-10-01 已按单进程刷新 660 个知识库官方引用；635 个实际请求中 599 个成功，另有软 404、404、网络失败和受保护来源。全站审计仍有 3,614 个未解决 URL，且数万份新候选正文尚未人工复核；因此各文件的“已完成”仅表示其既定范围，不代表全站所有网页均已覆盖。
+
 ## 可以回答什么
 
 可以回答：
@@ -37,25 +39,25 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 
 | 知识库 | 文件 | 状态 | 用途 |
 |---|---|---|---|
-| 新生与校园通用知识库 | [freshman.md](../skills/cityu-macau-campus-assistant/references/freshman.md) | 已完成 | 招生、注册、学费、奖学金、体检、D 签注、逗留许可、宿舍、图书馆、全球交流、暑期项目、创业就业服务、校园服务、恶劣天气 |
-| 数据科学学院 FDS | [fds.md](../skills/cityu-macau-campus-assistant/references/fds.md) | 已完成 | BITS、BCS、人工智能学士规划、MDS、MCS、人工智能硕士规划、PhD DS、PhD CS、招生状态、学分、资格考试、论文成果、导师、毕业 |
+| 学校概况、新生与校园通用知识库 | [freshman.md](../skills/cityu-macau-campus-assistant/references/freshman.md) | 2026-10-03 补充学校概况；统计依据 2026 年 8 月版官方手册，不是实时主站快照 | 校史、办学性质与特色、规模及排名口径、校区、部门分工；保留招生、注册、学费、宿舍、图书馆、交流与校园服务。校领导、新校区启用及最新统计待实时核验 |
+| 数据科学学院 FDS | [fds.md](../skills/cityu-macau-campus-assistant/references/fds.md) | 已局部更新（2027/2028 内地硕博项目/学费、2026/2027 第一学期课表；学院其余内容未全量复审） | BITS、BCS、BAI、MDS、MCS、MAI、DDS、DCS、招生状态、学分、资格考试、论文成果、导师、毕业 |
 | FDS 导师基础画像 | [fds_mentors.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_mentors.md) | 已完成 | 58 名 Academic Staff、中文官网职称/职务、导师资格、58 个可核验校内工作邮箱、官网研究方向、科研证据覆盖提示、招募说明和官方主页 |
 | FDS 官网完整科研证据 | [fds_official_evidence.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_official_evidence.md) | 已完成 | 58 名教师官网公开的完整科研经历、研究项目和论文成果栏目；按需读取，官网访问失败时可使用本地核验版本 |
 | FDS 论文检索索引 | [fds_papers.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_papers.md) | 暂时停用 | 仅为维护者保留，不参与 Agent 路由、回答或导师推荐 |
 | FDS 导师匹配规则 | [fds_rules.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_rules.md) | 已完成 | 官网准入、研究方向匹配、官方证据来源和回答边界 |
-| 商学院 FOB | [fob.md](../skills/cityu-macau-campus-assistant/references/fob.md) | 已完成 | BBA、MBA、管理分析学硕士（MMA）、DBA、IBC、4+1 项目、导师、论文与毕业要求 |
-| 金融学院 FOF | [fof.md](../skills/cityu-macau-campus-assistant/references/fof.md) | 已完成 | BAE、金融精英班、金融学硕士、金融科技硕士、金融学博士、导师、发表与毕业要求 |
-| 大健康学院 FH | [fh.md](../skills/cityu-macau-campus-assistant/references/fh.md) | 已完成 | BSW、MSW、MAP、DAP、智慧养老与健康管理、导师、实习与毕业要求 |
-| 教育学院 FE/SOE | [fe.md](../skills/cityu-macau-campus-assistant/references/fe.md) | 已完成 | 教育学硕士、教学研究硕士、教育学博士、教育博士（公开状态须确认）、学分、导师、论文与毕业要求 |
+| 商学院 FOB | [fob.md](../skills/cityu-macau-campus-assistant/references/fob.md) | 已局部更新（2027/2028 内地招生、2026 年研究生手册） | BBA、MBA、管理分析学硕士（MMA）、DBA、IBC、4+1 项目、导师、论文与毕业要求 |
+| 金融学院 FOF | [fof.md](../skills/cityu-macau-campus-assistant/references/fof.md) | 已局部更新（2027/2028 招生、2026/2027 博士开题/答辩日程、导师名单、课表及研究生手册） | BAE、金融精英班、金融学硕士、金融科技硕士、金融学博士、导师、发表与毕业要求 |
+| 大健康学院 FH | [fh.md](../skills/cityu-macau-campus-assistant/references/fh.md) | 已局部更新（2027/2028 内地简章列出智慧养老与健康管理硕士；学院课程页仍有旧届次和“即将获批”文字，适用范围已注明） | BSW、MSW、MAP、DAP、智慧养老与健康管理、导师、实习与毕业要求 |
+| 教育学院 FE/SOE | [fe.md](../skills/cityu-macau-campus-assistant/references/fe.md) | 已局部更新（2027/2028 内地招生简章学制、语言及费用） | 教育学硕士、教学研究硕士、教育学博士、教育博士（该届内地招生简章已列；其他类别及报名系统状态仍须核验）、学分、导师、论文与毕业要求 |
 | 法学院 FL/SOL | [fl.md](../skills/cityu-macau-campus-assistant/references/fl.md) | 已完成 | 法学硕士、专业方向、学分、导师、论文与毕业要求 |
-| 国际旅游与管理学院 FITM | [fitm.md](../skills/cityu-macau-campus-assistant/references/fitm.md) | 已完成 | 国际旅游与酒店管理、国际款待与旅游业管理、国际酒店管理、国际旅游管理、酒店管理、导师、项目报告、论文与毕业要求 |
+| 国际旅游与管理学院 FITM | [fitm.md](../skills/cityu-macau-campus-assistant/references/fitm.md) | 已局部更新（2026/2027 第一学期课表、2026–2027 实习手册及研究生手册） | 国际旅游与酒店管理、国际款待与旅游业管理、国际酒店管理、国际旅游管理、酒店管理、导师、项目报告、论文与毕业要求 |
 | 人文社会科学学院 FHSS | [fhss.md](../skills/cityu-macau-campus-assistant/references/fhss.md) | 已完成 | 应用语言学、英语、葡萄牙语、中国文化研究、文化产业管理与文化产业研究课程、学分、论文与毕业要求 |
 | FHSS 师资索引 | [fhss_faculty.md](../skills/cityu-macau-campus-assistant/references/faculty/fhss_faculty.md) | 已完成 | 中文官网当前58名全职、9名特聘、5名兼任学术人员，管理团队、课程督导和公开研究方向 |
-| 创新设计学院 FIAD | [fiad.md](../skills/cityu-macau-campus-assistant/references/fiad.md) | 已完成 | 设计艺术、设计学、艺术学本硕博课程、学分、学术活动、成果发表、导师与毕业要求 |
+| 创新设计学院 FIAD | [fiad.md](../skills/cityu-macau-campus-assistant/references/fiad.md) | 已完成；已补核 2026/2027 艺术学硕士/博士第一学期课表 | 设计艺术、设计学、艺术学本硕博课程、学分、学术活动、成果发表、导师与毕业要求 |
 | FIAD 师资索引 | [fiad_faculty.md](../skills/cityu-macau-campus-assistant/references/faculty/fiad_faculty.md) | 已完成 | 中文官网当前25名全职教学人员、6名特聘教授、课程负责人和课程督导 |
-| 城市与可持续发展研究院 IUSD | [iusd.md](../skills/cityu-macau-campus-assistant/references/iusd.md) | 已完成 | 城市规划与设计硕博课程、学分、资格考试、2025级学术活动与成果规则、导师、表格和毕业要求 |
-| 葡语国家研究院 IROPC | [iropc.md](../skills/cityu-macau-campus-assistant/references/iropc.md) | 已完成 | 葡语国家研究硕博、国际关系与政府治理硕士、学分、开题、论文、人员、文件和毕业流程 |
-| 荣誉班 Honours Class | [honours_class.md](../skills/cityu-macau-campus-assistant/references/honours_class.md) | 已完成 | 选拔、课程体系、导师指导、科研训练、实习、竞赛与毕业条件 |
+| 城市与可持续发展研究院 IUSD | [iusd.md](../skills/cityu-macau-campus-assistant/references/iusd.md) | 已局部更新（2026 级硕博细则、2026/2027 第一学期课表；导师名单仍为 2025/2026） | 城市规划与设计硕博课程、分届学术活动与成果规则、导师、表格和毕业要求 |
+| 葡语国家研究院 IROPC | [iropc.md](../skills/cityu-macau-campus-assistant/references/iropc.md) | 已局部更新（硕士开题已截止；博士开题申请将于 2026-10-16 截止） | 葡语国家研究硕博、国际关系与政府治理硕士、学分、开题、论文、人员、文件和毕业流程 |
+| 荣誉班 Honours Class | [honours_class.md](../skills/cityu-macau-campus-assistant/references/honours_class.md) | 已局部更新（第三届申请已截止；结果通知日期已过，官网未公开名单） | 选拔、课程体系、导师指导、科研训练、实习、竞赛与毕业条件 |
 | 氹仔校区餐饮指南 | [澳门城市大学氹仔校区_校内餐饮指南.md](../skills/cityu-macau-campus-assistant/references/澳门城市大学氹仔校区_校内餐饮指南.md) | 已完成 | 2026 年 6 月菜单和价格快照、用餐建议；实时状态须以现场或平台为准 |
 
 ## 路由规则
@@ -83,11 +85,16 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 | 葡语国家研究院、IROPC、MPSC、MIRG、DPSC、开题、论文或毕业流程 | `iropc.md`；招生、费用或校园通用流程同时读取 `freshman.md` |
 | 荣誉班、Honours Class、荣誉课程、选拔、科研训练、一对一导师、X-Challenge | `honours_class.md` |
 | 同时涉及学校通用流程和学院学业规则 | `freshman.md` + 已覆盖学院的对应知识库 |
+| 学校是什么性质、哪年创办、有什么特色、多少学生、在哪个校区 | `freshman.md` 第 2–3 节；按来源版本回答，不能把搜索抓取时间当作数据更新时间 |
 
 ## 使用示例
 
 ```text
 澳门城市大学内地本科新生拿到学号后还要完成哪些注册步骤？
+```
+
+```text
+2027/2028 学年内地硕士报名要不要考研？人工智能硕士学费和保证金各是多少？
 ```
 
 ```text
@@ -373,8 +380,42 @@ cityu-macau-campus-assistant/
 
 ### 完整官网抓取与离线审计
 
-普通使用者不需要运行本节命令。维护者需要全站复核时，先从仓库根目录
-运行严格串行爬虫：
+普通使用者不需要运行本节命令。日常更新知识库时，优先从已引用的中文官方来源
+定位相关页面，仅刷新与变更主题有关的官方页面/PDF，并只修改对应 reference；对
+招生日期、费用、校历、师资等时效字段，先核实页面或文件的适用学年和发布日期。
+这样比每次重抓整个站点更快，也更少触发官网限流。只有需要发现未收录的官方内容、
+或做周期性覆盖检查时，才运行下述全站串行复核。
+
+日常只更新某个事实时，优先从对应 reference 复制官方来源 URL，使用
+`--refresh-url URL`；该选项可以重复指定多条 URL。抓取器只访问指定页面及其直接链接的
+正式文档，不会重新排队全站或消费旧检查点中的无关待办。
+
+例如，只核对 2027/2028 内地硕博招生资料时，可刷新中文公告页及其直接链接的正式附件：
+
+```bash
+python skills/cityu-macau-campus-assistant/scripts/crawl_official_sites.py --refresh-url "https://ado.cityu.edu.mo/list-26/257"
+```
+
+需要一次性检查知识库中所有直接引用来源时，再运行 `--refresh-references`。它只重抓
+`references/**/*.md` 中引用的校方 URL，不会把整个已抓取站点重新排队；robots
+明确禁止、robots 暂不可用、HTTP 403 和尚未到期的延期请求都会保留原状态：
+
+```bash
+python skills/cityu-macau-campus-assistant/scripts/crawl_official_sites.py --refresh-references
+```
+
+两种定向刷新都不会运行全站种子、主机根页或 sitemap 发现，也不会顺着普通导航继续爬子页面。
+被引用页面直接链接的 PDF、Word、Excel、PowerPoint、RTF、CSV 和 TXT 文件会加入本轮；
+未被知识库直接引用的图片、缩略图、音视频、样式和脚本不会下载。已引用的图片 URL
+仍会刷新。旧全站检查点里与本轮无关的 `pending` 项会保留，但不会被定向任务消费。
+
+刷新结束后应查看新生成的 `.cache/cityu-official-crawl/report.json`，对照受影响的
+reference 逐项核实并编辑知识库。此命令只更新本地抓取缓存，不会自动改写知识库，
+也不代表全站完整审计；新发现的导航页需要周期性全站串行复核，不能把定向刷新当成
+完整覆盖证明。新增正式附件中的扫描型 PDF 再按下文运行本地 OCR。全站复核仍使用
+`--report-only --verify-complete` 和 `audit_official_crawl.py --verify-complete`。
+
+维护者执行全站复核时，先检查本地状态和当前进程，再从仓库根目录运行严格串行爬虫：
 
 ```bash
 python skills/cityu-macau-campus-assistant/scripts/crawl_official_sites.py
@@ -382,9 +423,11 @@ python skills/cityu-macau-campus-assistant/scripts/crawl_official_sites.py
 
 爬虫只访问 `cityu.edu.mo` 及其子域的公开页面，不提交表单或访问登录页。
 所有请求全局串行，请求启动时间至少相隔 1 秒；最近一次请求启动时间会写入
-状态数据库，恢复进程也不能缩短该间隔。抓取器在整个运行期持有操作系统级
-排他锁，禁止同时启动第二个爬虫；异常退出时锁由系统释放，保留的锁文件只作
-诊断记录，不应人工删除。每一跳 HTTP 重定向均重新限速，且只允许继续访问
+状态数据库和系统临时目录中的共享锁元数据，恢复进程也不能缩短该间隔。抓取器
+同时持有单用户全局锁与状态目录锁；全局锁跨仓库副本和不同 `--state-dir` 生效，
+最终完整性验证也会持同一把锁生成快照，避免审计与抓取同时读写。锁被占用时等待
+任务结束，不得改状态目录、删锁文件或启动第二份抓取器。异常退出时锁由系统释放，
+保留的锁文件只作诊断记录，不应人工删除。每一跳 HTTP 重定向均重新限速，且只允许继续访问
 `cityu.edu.mo` 及其子域；站外或无效跳转会标为失败而不跟随。HTTP 403 不自动
 重试，HTTP 429 遵守 `Retry-After`（缺失时至少等待 5 秒），到期前不会被普通
 重试提前重置，也不得更换身份、代理或 User-Agent 绕过限制。HTTP 429 页面和
@@ -425,6 +468,20 @@ URL 会在入队前去除跟踪/会话参数、把学院站点的单值分页参
 只抓到子路径而遗漏公开站点入口。
 
 生成不联网的证据清单和人工复核队列：
+
+恢复旧失败记录时，爬虫会把历史 HTTP 404/410 改归 `not_found`，保留证据并
+继续计入未覆盖范围；已成功抓取的规范 URL 可关联旧编码别名。正文下载使用
+分块读取和累计时间预算，避免持续少量返回数据的附件无限占用唯一爬虫。
+
+OCR 维护环境请使用 Python 3.12：当前固定的 `rapidocr-onnxruntime<2`
+不支持 Python 3.13。Windows 可先运行 `py -3.12 -m venv .cache/ocr-python312`，
+随后将下列命令中的 `python` 换成 `.cache/ocr-python312/Scripts/python.exe`。
+该环境只用于维护，不是普通用户安装智能体的前置要求。
+
+安装和运行须使用同一个 Python 解释器。审计启动时检查 `pypdf`、`olefile`、
+`xlrd`；缺失即退出并保留原报告，不把环境缺失累计成附件损坏。扫描期间每
+1,000 条 URL 输出进度。依赖补齐后仍须重新核验正文和 OCR，不能仅凭安装
+成功就把旧报告中的提取问题标为解决。
 
 ```bash
 python -m pip install -r skills/cityu-macau-campus-assistant/scripts/requirements-audit.txt

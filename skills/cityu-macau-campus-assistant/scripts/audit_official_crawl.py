@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import collections
+import contextlib
 import hashlib
 import html
 import io
@@ -21,6 +22,7 @@ import shutil
 import sqlite3
 import struct
 import subprocess
+import sys
 import tempfile
 import urllib.parse
 import zipfile
@@ -30,7 +32,7 @@ from pathlib import Path
 
 from crawl_official_sites import (
     FetchResult,
-    advisory_lock_is_held,
+    crawl_process_locks,
     is_official_host,
     iter_http_urls,
     normalize_url,
@@ -1084,7 +1086,11 @@ def build_report(
         tuple[str, str, str], dict[str, object]
     ] = {}
     try:
-        for row in connection.execute("SELECT * FROM urls ORDER BY url"):
+        for row_index, row in enumerate(
+            connection.execute("SELECT * FROM urls ORDER BY url"), start=1
+        ):
+            if row_index == 1 or row_index % 1000 == 0:
+                print(f"AUDIT inspecting URL {row_index}", file=sys.stderr, flush=True)
             item = dict(row)
             body_path = item.get("body_path")
             body, body_integrity_error = read_verified_cached_body(
@@ -1800,54 +1806,77 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+def require_extraction_dependencies() -> None:
+    missing = [
+        name for name, module in
+        (("pypdf", PdfReader), ("olefile", olefile), ("xlrd", xlrd))
+        if module is None
+    ]
+    if missing:
+        requirements = Path(__file__).with_name("requirements-audit.txt")
+        raise SystemExit(
+            "Audit environment incomplete; existing reports were not changed. "
+            f"Missing: {', '.join(missing)}. Install using the same interpreter: "
+            f'"{sys.executable}" -m pip install -r "{requirements}"'
+        )
+
+
 def main() -> int:
     args = parse_args()
+    require_extraction_dependencies()
     state_dir = args.state_dir.resolve()
     database_path = state_dir / "crawl.sqlite3"
     if not database_path.is_file():
         raise SystemExit(f"Crawl database not found: {database_path}")
-    if args.verify_complete and advisory_lock_is_held(state_dir / "crawl.lock"):
-        raise SystemExit(
-            "Cannot verify a final audit snapshot while the crawler process lock is held"
-        )
     skill_root = args.skill_root.resolve()
     output_dir = args.output_dir.resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
     ocr_dir = args.ocr_dir.resolve() if args.ocr_dir else state_dir / "ocr"
 
-    report = build_report(database_path, state_dir, skill_root, ocr_dir)
-    json_path = output_dir / "official-site-audit.json"
-    markdown_path = output_dir / "official-site-audit.md"
-    json_path.write_text(
-        json.dumps(report, ensure_ascii=False, indent=2),
-        encoding="utf-8",
+    guard = (
+        crawl_process_locks(state_dir, purpose="final official-site audit")
+        if args.verify_complete
+        else contextlib.nullcontext()
     )
-    markdown_path.write_text(markdown_report(report), encoding="utf-8")
-    print(f"JSON {json_path}")
-    print(f"MARKDOWN {markdown_path}")
-    print(
-        "SUMMARY "
-        f"complete={report['complete']} "
-        f"pages={report['page_count']} "
-        f"unresolved={len(report['unresolved'])} "
-        f"skill_source_issues="
-        f"{len(report['skill_source_issues']) + len(report['missing_skill_sources'])} "
-        f"resolved_skill_source_aliases="
-        f"{len(report['resolved_skill_source_aliases'])} "
-        f"content_integrity_issues={len(report['content_integrity_issues'])} "
-        f"body_integrity_issues={len(report['body_integrity_issues'])} "
-        f"robots_integrity_issues={len(report['robots_integrity_issues'])} "
-        f"document_issues={len(report['document_issues'])} "
-        f"unparsed_asset_issues={len(report['unparsed_asset_issues'])} "
-        f"visual_review_advisories={len(report['visual_review_advisories'])} "
-        f"image_ocr_issues={len(report['image_ocr_issues'])} "
-        f"image_ocr_warnings={len(report['image_ocr_warnings'])} "
-        f"new_candidate_urls={report['discovered_relevant_candidate_url_count']} "
-        f"new_candidate_bodies={len(report['discovered_relevant_candidates'])}"
-    )
-    if args.verify_complete and not report["complete"]:
-        return 2
-    return 0
+    try:
+        with guard:
+            report = build_report(database_path, state_dir, skill_root, ocr_dir)
+            json_path = output_dir / "official-site-audit.json"
+            markdown_path = output_dir / "official-site-audit.md"
+            json_path.write_text(
+                json.dumps(report, ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
+            markdown_path.write_text(markdown_report(report), encoding="utf-8")
+            print(f"JSON {json_path}")
+            print(f"MARKDOWN {markdown_path}")
+            print(
+                "SUMMARY "
+                f"complete={report['complete']} "
+                f"pages={report['page_count']} "
+                f"unresolved={len(report['unresolved'])} "
+                f"skill_source_issues="
+                f"{len(report['skill_source_issues']) + len(report['missing_skill_sources'])} "
+                f"resolved_skill_source_aliases="
+                f"{len(report['resolved_skill_source_aliases'])} "
+                f"content_integrity_issues={len(report['content_integrity_issues'])} "
+                f"body_integrity_issues={len(report['body_integrity_issues'])} "
+                f"robots_integrity_issues={len(report['robots_integrity_issues'])} "
+                f"document_issues={len(report['document_issues'])} "
+                f"unparsed_asset_issues={len(report['unparsed_asset_issues'])} "
+                f"visual_review_advisories={len(report['visual_review_advisories'])} "
+                f"image_ocr_issues={len(report['image_ocr_issues'])} "
+                f"image_ocr_warnings={len(report['image_ocr_warnings'])} "
+                f"new_candidate_urls={report['discovered_relevant_candidate_url_count']} "
+                f"new_candidate_bodies={len(report['discovered_relevant_candidates'])}"
+            )
+            if args.verify_complete and not report["complete"]:
+                return 2
+            return 0
+    except RuntimeError as error:
+        if args.verify_complete:
+            raise SystemExit(f"Cannot verify a final audit snapshot: {error}") from error
+        raise
 
 
 if __name__ == "__main__":
