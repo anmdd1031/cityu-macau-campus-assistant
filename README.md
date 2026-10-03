@@ -56,6 +56,7 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 可以：
 
 - 整理公开的申请、注册、宿舍、签注和校园办事流程
+- 查询[学校概况与各机构排名](skills/cityu-macau-campus-assistant/references/freshman.md#23-排名认证与学科优势)，区分世界总榜、区域榜、学科榜和评级
 - 解释 FDS、FOB、FOF、FH、FE、FL、FITM、FHSS、FIAD、IUSD、IROPC 和荣誉班公开课程、学分、论文成果和毕业要求
 - 按官网研究方向和导师资格查询 FDS 教师，并给出可解释的候选导师、校内工作邮箱和主页
 - 查询氹仔校区校内餐饮、菜单、价格和供应时段

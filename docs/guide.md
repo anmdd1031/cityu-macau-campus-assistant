@@ -39,7 +39,7 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 
 | 知识库 | 文件 | 状态 | 用途 |
 |---|---|---|---|
-| 学校概况、新生与校园通用知识库 | [freshman.md](../skills/cityu-macau-campus-assistant/references/freshman.md) | 2026-10-03 补充学校概况；统计依据 2026 年 8 月版官方手册，不是实时主站快照 | 校史、办学性质与特色、规模及排名口径、校区、部门分工；保留招生、注册、学费、宿舍、图书馆、交流与校园服务。校领导、新校区启用及最新统计待实时核验 |
+| 学校概况、新生与校园通用知识库 | [freshman.md](../skills/cityu-macau-campus-assistant/references/freshman.md) | 2026-10-03 补充学校概况并核验 THE、QS、软科排名；规模统计仍依据 2026 年 8 月版官方手册 | 校史、办学性质与特色、规模、世界总榜与学科榜、校区、部门分工；保留招生、注册、学费、宿舍、图书馆、交流与校园服务。校领导、新校区启用及最新规模统计待实时核验 |
 | 数据科学学院 FDS | [fds.md](../skills/cityu-macau-campus-assistant/references/fds.md) | 已局部更新（2027/2028 内地硕博项目/学费、2026/2027 第一学期课表；学院其余内容未全量复审） | BITS、BCS、BAI、MDS、MCS、MAI、DDS、DCS、招生状态、学分、资格考试、论文成果、导师、毕业 |
 | FDS 导师基础画像 | [fds_mentors.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_mentors.md) | 已完成 | 58 名 Academic Staff、中文官网职称/职务、导师资格、58 个可核验校内工作邮箱、官网研究方向、科研证据覆盖提示、招募说明和官方主页 |
 | FDS 官网完整科研证据 | [fds_official_evidence.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_official_evidence.md) | 已完成 | 58 名教师官网公开的完整科研经历、研究项目和论文成果栏目；按需读取，官网访问失败时可使用本地核验版本 |
@@ -185,7 +185,8 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 
 ### 官网核验与限流规则
 
-- 以中文官网、中文课程手册和中文正式通知为标准。中文页没有必要字段时，英文官网只能补缺，不能覆盖中文页面。
+- 校园与学业规则以中文官网、中文课程手册和中文正式通知为标准。中文页没有必要字段时，英文官网只能补缺，不能覆盖中文页面。
+- 排名单独采用发布机构原始榜单/排名模块优先，不仅依据学校官网。`freshman.md` 第 2.3 节于 2026-10-03 核验 THE 2027、QS 2027 和 ARWU 2026 世界总榜，并单列学科榜、区域参考值和评级。可以问“澳城大在 THE、QS、软科分别排多少？请附年份和来源”。访问受限的榜单标为未核验，不推断未上榜。
 - 所有官方页面逐个串行请求；同一站点请求启动时间至少间隔 1 秒，不使用线程池、异步并发或并行抓取。
 - 同一轮先去重 URL，避免重复访问；遇到 403 不自动重试，HTTP 429 遵守 `Retry-After`（缺失时至少等待 5 秒）；429 页面与暂不可用的 `robots.txt` 均受有界重试预算约束，不得绕过网站限制。
 - 页面临时访问失败不代表资料已经删除；保留最近一次已核验结果，注明核验日期并列入人工复核。
