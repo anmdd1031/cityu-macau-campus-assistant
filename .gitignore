@@ -4,3 +4,6 @@ __pycache__/
 
 docs/superpowers/
 .superpowers/
+
+# Maintenance tools are retained locally, not distributed with the skill.
+/skills/cityu-macau-campus-assistant/scripts/
