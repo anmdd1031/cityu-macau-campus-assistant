@@ -338,12 +338,6 @@ cityu-macau-campus-assistant/
 │   ├── iropc.md
 │   ├── honours_class.md
 │   └── 澳门城市大学氹仔校区_校内餐饮指南.md
-└── scripts/
-    ├── audit_official_crawl.py
-    ├── crawl_official_sites.py
-    ├── test_crawl_retry_semantics.py
-    ├── update_fds_faculty.py
-    └── update_fds_publications.py
 ```
 
 如果只复制 `SKILL.md`，Agent 无法读取学院知识库和餐饮指南。
@@ -380,6 +374,8 @@ cityu-macau-campus-assistant/
 5. 运行链接检查和 Skill 识别检查。
 
 ### 完整官网抓取与离线审计
+
+**仅限已保留本地工具的维护者**：自 2026-10-05 起，`skills/cityu-macau-campus-assistant/scripts/`（含测试和依赖清单）不再由 Git 跟踪，也不随 GitHub 下载或安装提供。下文抓取、审计、OCR、师资及论文更新命令仅作本地维护说明；新安装缺少脚本是预期行为，不是安装失败。日常问答不执行这些命令。现有维护者更新旧副本前应备份脚本，更新后可恢复至原路径；忽略规则防止普通 `git add` 再次上传，但不得用 `git add -f` 强制加入。
 
 普通使用者不需要运行本节命令。日常更新知识库时，优先从已引用的中文官方来源
 定位相关页面，仅刷新与变更主题有关的官方页面/PDF，并只修改对应 reference；对
