@@ -2,7 +2,7 @@
 
 ## 2026-10-05：维护脚本仅保留本地
 
-- 停止跟踪 `skills/cityu-macau-campus-assistant/scripts/` 的 11 个 Python 文件及 2 个依赖清单，加入目录级忽略规则；保留维护者原本地文件与使用路径。
+- 停止跟踪 `skills/cityu-macau-campus-assistant/scripts/` 的 10 个 Python 文件及 2 个依赖清单，加入目录级忽略规则；保留维护者原本地文件与使用路径。
 - GitHub 当前版本不再分发维护工具；正常问答继续使用 `SKILL.md`、`agents/` 与 `references/`。同步 README、安装结构和维护命令适用范围。
 - 旧提交仍保留脚本历史，不做历史重写。其他已有副本更新前应备份自用脚本，不能假定 `.gitignore` 会阻止 Git 应用已跟踪文件的删除。
 
