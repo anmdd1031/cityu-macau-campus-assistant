@@ -37,9 +37,11 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 
 ## 知识库总览
 
+联系学校时，先查看 [按事项联系部门](../skills/cityu-macau-campus-assistant/references/freshman.md#按事项联系部门)，按业务分流，并区分新核验信息与既有记录；未确认的电话和邮箱不补造。
+
 | 知识库 | 文件 | 状态 | 用途 |
 |---|---|---|---|
-| 学校概况、新生与校园通用知识库 | [freshman.md](../skills/cityu-macau-campus-assistant/references/freshman.md) | 2026-10-03 补充学校概况并核验 THE、QS、软科排名；规模统计仍依据 2026 年 8 月版官方手册 | 校史、办学性质与特色、规模、世界总榜与学科榜、校区、部门分工；保留招生、注册、学费、宿舍、图书馆、交流与校园服务。校领导、新校区启用及最新规模统计待实时核验 |
+| 学校概况、新生与校园通用知识库 | [freshman.md](../skills/cityu-macau-campus-assistant/references/freshman.md) | 2026-10-04 补充中文官方校庆资料中的校史、横琴科研平台和未来书院；排名核验仍为 10-03，规模统计保留手册版本 | 校史、校庆、办学特色、科研平台、微专业边界、排名、校区和部门分工；保留招生、学费、宿舍等校园事务。现任领导、新校区启用和当前项目报名仍须另核 |
 | 数据科学学院 FDS | [fds.md](../skills/cityu-macau-campus-assistant/references/fds.md) | 已局部更新（2027/2028 内地硕博项目/学费、2026/2027 第一学期课表；学院其余内容未全量复审） | BITS、BCS、BAI、MDS、MCS、MAI、DDS、DCS、招生状态、学分、资格考试、论文成果、导师、毕业 |
 | FDS 导师基础画像 | [fds_mentors.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_mentors.md) | 已完成 | 58 名 Academic Staff、中文官网职称/职务、导师资格、58 个可核验校内工作邮箱、官网研究方向、科研证据覆盖提示、招募说明和官方主页 |
 | FDS 官网完整科研证据 | [fds_official_evidence.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_official_evidence.md) | 已完成 | 58 名教师官网公开的完整科研经历、研究项目和论文成果栏目；按需读取，官网访问失败时可使用本地核验版本 |
