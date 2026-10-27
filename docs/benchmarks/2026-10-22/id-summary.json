@@ -1,0 +1,1807 @@
+{
+  "cli": [
+    {
+      "file": "campus_culture.md",
+      "median_ms": 209.92549997754395,
+      "chars": 1005
+    },
+    {
+      "file": "campus_map.md",
+      "median_ms": 200.08099998813123,
+      "chars": 1057
+    },
+    {
+      "file": "faculty/fhss_faculty.md",
+      "median_ms": 199.03690001228824,
+      "chars": 6130
+    },
+    {
+      "file": "faculty/fiad_faculty.md",
+      "median_ms": 203.47499998752028,
+      "chars": 2754
+    },
+    {
+      "file": "faculty/fitm_faculty.md",
+      "median_ms": 196.91990001592785,
+      "chars": 2499
+    },
+    {
+      "file": "faculty/fob_faculty.md",
+      "median_ms": 196.79470005212352,
+      "chars": 2641
+    },
+    {
+      "file": "fds.md",
+      "median_ms": 195.46799996169284,
+      "chars": 8995
+    },
+    {
+      "file": "fe.md",
+      "median_ms": 197.07789999665692,
+      "chars": 5941
+    },
+    {
+      "file": "fh.md",
+      "median_ms": 203.11210001818836,
+      "chars": 6240
+    },
+    {
+      "file": "fhss.md",
+      "median_ms": 196.94409996736795,
+      "chars": 18936
+    },
+    {
+      "file": "fiad.md",
+      "median_ms": 205.30659996438771,
+      "chars": 5717
+    },
+    {
+      "file": "fitm.md",
+      "median_ms": 200.05089999176562,
+      "chars": 7163
+    },
+    {
+      "file": "fl.md",
+      "median_ms": 197.759100003168,
+      "chars": 4117
+    },
+    {
+      "file": "fob.md",
+      "median_ms": 197.06370000494644,
+      "chars": 6099
+    },
+    {
+      "file": "fof.md",
+      "median_ms": 199.01330000720918,
+      "chars": 7169
+    },
+    {
+      "file": "freshman.md",
+      "median_ms": 201.2756000040099,
+      "chars": 15699
+    },
+    {
+      "file": "honours_class.md",
+      "median_ms": 197.8147000190802,
+      "chars": 6407
+    },
+    {
+      "file": "iropc.md",
+      "median_ms": 208.30899995053187,
+      "chars": 11217
+    },
+    {
+      "file": "iusd.md",
+      "median_ms": 199.26560000749305,
+      "chars": 12012
+    },
+    {
+      "file": "maintenance_policy.md",
+      "median_ms": 199.16109996847808,
+      "chars": 1176
+    },
+    {
+      "file": "mentors/fds_matching_policy.md",
+      "median_ms": 197.390399989672,
+      "chars": 1526
+    },
+    {
+      "file": "mentors/fds_mentors.md",
+      "median_ms": 198.32389999646693,
+      "chars": 22745
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "median_ms": 218.30369997769594,
+      "chars": 22272
+    },
+    {
+      "file": "mentors/fds_rules.md",
+      "median_ms": 201.9591999705881,
+      "chars": 2883
+    },
+    {
+      "file": "retrieval.md",
+      "median_ms": 200.89410000946373,
+      "chars": 2244
+    },
+    {
+      "file": "澳门城市大学氹仔校区_校内餐饮指南.md",
+      "median_ms": 201.30369998514652,
+      "chars": 4161
+    }
+  ],
+  "previous_ambiguities_resolved": [
+    {
+      "file": "fhss.md",
+      "line": 176,
+      "title": "课程特色",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:176"
+    },
+    {
+      "file": "fhss.md",
+      "line": 182,
+      "title": "毕业要求",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:182"
+    },
+    {
+      "file": "fhss.md",
+      "line": 190,
+      "title": "表一：必修科目",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:190"
+    },
+    {
+      "file": "fhss.md",
+      "line": 286,
+      "title": "课程介绍",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:286"
+    },
+    {
+      "file": "fhss.md",
+      "line": 293,
+      "title": "毕业要求",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:293"
+    },
+    {
+      "file": "fhss.md",
+      "line": 442,
+      "title": "课程介绍",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:442"
+    },
+    {
+      "file": "fhss.md",
+      "line": 478,
+      "title": "课程特色",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:478"
+    },
+    {
+      "file": "fhss.md",
+      "line": 483,
+      "title": "培养目标",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:483"
+    },
+    {
+      "file": "fhss.md",
+      "line": 492,
+      "title": "表一：必修科目",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:492"
+    },
+    {
+      "file": "fhss.md",
+      "line": 546,
+      "title": "表四：论文",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:546"
+    },
+    {
+      "file": "fhss.md",
+      "line": 570,
+      "title": "课程介绍",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:570"
+    },
+    {
+      "file": "fhss.md",
+      "line": 573,
+      "title": "课程特色",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:573"
+    },
+    {
+      "file": "fhss.md",
+      "line": 633,
+      "title": "课程特色",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:633"
+    },
+    {
+      "file": "fhss.md",
+      "line": 636,
+      "title": "培养目标",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:636"
+    },
+    {
+      "file": "fhss.md",
+      "line": 699,
+      "title": "课程特色",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:699"
+    },
+    {
+      "file": "fhss.md",
+      "line": 708,
+      "title": "重要毕业规则",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:708"
+    },
+    {
+      "file": "fhss.md",
+      "line": 735,
+      "title": "表一：必修科目",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:735"
+    },
+    {
+      "file": "fhss.md",
+      "line": 765,
+      "title": "课程介绍",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:765"
+    },
+    {
+      "file": "fhss.md",
+      "line": 782,
+      "title": "重要毕业规则",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:782"
+    },
+    {
+      "file": "fhss.md",
+      "line": 836,
+      "title": "表四：论文",
+      "id": "@362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d:836"
+    },
+    {
+      "file": "fiad.md",
+      "line": 51,
+      "title": "来源页面",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:51"
+    },
+    {
+      "file": "fiad.md",
+      "line": 126,
+      "title": "来源页面",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:126"
+    },
+    {
+      "file": "fiad.md",
+      "line": 129,
+      "title": "课程名称",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:129"
+    },
+    {
+      "file": "fiad.md",
+      "line": 149,
+      "title": "培养目标",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:149"
+    },
+    {
+      "file": "fiad.md",
+      "line": 156,
+      "title": "教学计划下载",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:156"
+    },
+    {
+      "file": "fiad.md",
+      "line": 210,
+      "title": "课程主任",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:210"
+    },
+    {
+      "file": "fiad.md",
+      "line": 222,
+      "title": "来源页面",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:222"
+    },
+    {
+      "file": "fiad.md",
+      "line": 226,
+      "title": "课程名称",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:226"
+    },
+    {
+      "file": "fiad.md",
+      "line": 230,
+      "title": "课程开办背景及特色",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:230"
+    },
+    {
+      "file": "fiad.md",
+      "line": 238,
+      "title": "培养目标",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:238"
+    },
+    {
+      "file": "fiad.md",
+      "line": 243,
+      "title": "培养方向",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:243"
+    },
+    {
+      "file": "fiad.md",
+      "line": 247,
+      "title": "学制与学费",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:247"
+    },
+    {
+      "file": "fiad.md",
+      "line": 252,
+      "title": "主要课程",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:252"
+    },
+    {
+      "file": "fiad.md",
+      "line": 259,
+      "title": "学分结构与毕业条件",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:259"
+    },
+    {
+      "file": "fiad.md",
+      "line": 270,
+      "title": "完整课程表（官方学习计划）",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:270"
+    },
+    {
+      "file": "fiad.md",
+      "line": 317,
+      "title": "教学计划下载",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:317"
+    },
+    {
+      "file": "fiad.md",
+      "line": 320,
+      "title": "修业规范下载",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:320"
+    },
+    {
+      "file": "fiad.md",
+      "line": 323,
+      "title": "课程主任",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:323"
+    },
+    {
+      "file": "fiad.md",
+      "line": 327,
+      "title": "论文导师",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:327"
+    },
+    {
+      "file": "fiad.md",
+      "line": 334,
+      "title": "来源页面",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:334"
+    },
+    {
+      "file": "fiad.md",
+      "line": 337,
+      "title": "课程名称",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:337"
+    },
+    {
+      "file": "fiad.md",
+      "line": 341,
+      "title": "课程开办背景及特色",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:341"
+    },
+    {
+      "file": "fiad.md",
+      "line": 348,
+      "title": "培养目标",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:348"
+    },
+    {
+      "file": "fiad.md",
+      "line": 353,
+      "title": "主要课程",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:353"
+    },
+    {
+      "file": "fiad.md",
+      "line": 359,
+      "title": "学制与学费",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:359"
+    },
+    {
+      "file": "fiad.md",
+      "line": 364,
+      "title": "学分结构与毕业条件",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:364"
+    },
+    {
+      "file": "fiad.md",
+      "line": 383,
+      "title": "课程咨询联系方式",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:383"
+    },
+    {
+      "file": "fiad.md",
+      "line": 387,
+      "title": "教学计划下载",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:387"
+    },
+    {
+      "file": "fiad.md",
+      "line": 390,
+      "title": "修业规范下载",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:390"
+    },
+    {
+      "file": "fiad.md",
+      "line": 393,
+      "title": "课程主任",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:393"
+    },
+    {
+      "file": "fiad.md",
+      "line": 396,
+      "title": "论文导师",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:396"
+    },
+    {
+      "file": "fiad.md",
+      "line": 411,
+      "title": "来源页面",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:411"
+    },
+    {
+      "file": "fiad.md",
+      "line": 414,
+      "title": "课程开办背景及特色",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:414"
+    },
+    {
+      "file": "fiad.md",
+      "line": 417,
+      "title": "培养方向",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:417"
+    },
+    {
+      "file": "fiad.md",
+      "line": 426,
+      "title": "主要课程",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:426"
+    },
+    {
+      "file": "fiad.md",
+      "line": 434,
+      "title": "学制",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:434"
+    },
+    {
+      "file": "fiad.md",
+      "line": 448,
+      "title": "完整课程表（官方学习计划）",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:448"
+    },
+    {
+      "file": "fiad.md",
+      "line": 493,
+      "title": "教学计划下载",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:493"
+    },
+    {
+      "file": "fiad.md",
+      "line": 499,
+      "title": "修业规范下载",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:499"
+    },
+    {
+      "file": "fiad.md",
+      "line": 502,
+      "title": "课程主任",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:502"
+    },
+    {
+      "file": "fiad.md",
+      "line": 505,
+      "title": "论文导师",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:505"
+    },
+    {
+      "file": "fiad.md",
+      "line": 512,
+      "title": "来源页面",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:512"
+    },
+    {
+      "file": "fiad.md",
+      "line": 515,
+      "title": "课程开办背景及特色",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:515"
+    },
+    {
+      "file": "fiad.md",
+      "line": 520,
+      "title": "培养目标",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:520"
+    },
+    {
+      "file": "fiad.md",
+      "line": 534,
+      "title": "主要课程",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:534"
+    },
+    {
+      "file": "fiad.md",
+      "line": 540,
+      "title": "学制",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:540"
+    },
+    {
+      "file": "fiad.md",
+      "line": 558,
+      "title": "课程咨询联系方式",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:558"
+    },
+    {
+      "file": "fiad.md",
+      "line": 562,
+      "title": "教学计划下载",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:562"
+    },
+    {
+      "file": "fiad.md",
+      "line": 565,
+      "title": "修业规范下载",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:565"
+    },
+    {
+      "file": "fiad.md",
+      "line": 568,
+      "title": "课程主任",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:568"
+    },
+    {
+      "file": "fiad.md",
+      "line": 618,
+      "title": "来源页面",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:618"
+    },
+    {
+      "file": "fiad.md",
+      "line": 654,
+      "title": "来源页面",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:654"
+    },
+    {
+      "file": "fiad.md",
+      "line": 699,
+      "title": "来源页面",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:699"
+    },
+    {
+      "file": "fiad.md",
+      "line": 724,
+      "title": "来源页面",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:724"
+    },
+    {
+      "file": "fiad.md",
+      "line": 787,
+      "title": "来源页面",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:787"
+    },
+    {
+      "file": "fiad.md",
+      "line": 855,
+      "title": "来源页面",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:855"
+    },
+    {
+      "file": "fiad.md",
+      "line": 896,
+      "title": "来源页面",
+      "id": "@c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2:896"
+    },
+    {
+      "file": "fitm.md",
+      "line": 121,
+      "title": "内地高考生",
+      "id": "@09ee888c5f10c3411cbaf25e1d9e693fc3f9ac1f9accfdfbe7c9fa08366f4cbe:121"
+    },
+    {
+      "file": "fitm.md",
+      "line": 130,
+      "title": "国际课程学生（非统考）",
+      "id": "@09ee888c5f10c3411cbaf25e1d9e693fc3f9ac1f9accfdfbe7c9fa08366f4cbe:130"
+    },
+    {
+      "file": "fitm.md",
+      "line": 138,
+      "title": "报名时间（参考，以当年通知为准）",
+      "id": "@09ee888c5f10c3411cbaf25e1d9e693fc3f9ac1f9accfdfbe7c9fa08366f4cbe:138"
+    },
+    {
+      "file": "fitm.md",
+      "line": 350,
+      "title": "内地高考生",
+      "id": "@09ee888c5f10c3411cbaf25e1d9e693fc3f9ac1f9accfdfbe7c9fa08366f4cbe:350"
+    },
+    {
+      "file": "fitm.md",
+      "line": 359,
+      "title": "国际课程学生（非统考）",
+      "id": "@09ee888c5f10c3411cbaf25e1d9e693fc3f9ac1f9accfdfbe7c9fa08366f4cbe:359"
+    },
+    {
+      "file": "fitm.md",
+      "line": 367,
+      "title": "报名时间（参考，以当年通知为准）",
+      "id": "@09ee888c5f10c3411cbaf25e1d9e693fc3f9ac1f9accfdfbe7c9fa08366f4cbe:367"
+    },
+    {
+      "file": "fob.md",
+      "line": 243,
+      "title": "专业方向二：人力资源管理",
+      "id": "@c6cb5e3bdc4f22ec8da68b443f482f87b50b5fb59cf4d414e3f1b348cb51bf4c:243"
+    },
+    {
+      "file": "fob.md",
+      "line": 413,
+      "title": "专业方向二：人力资源管理",
+      "id": "@c6cb5e3bdc4f22ec8da68b443f482f87b50b5fb59cf4d414e3f1b348cb51bf4c:413"
+    },
+    {
+      "file": "iropc.md",
+      "line": 251,
+      "title": "申请资格",
+      "id": "@db39baedc34f76ef73a6c1a5c6ad83dfb8beffb5733bddd155bfb0ecfd3f913e:251"
+    },
+    {
+      "file": "iropc.md",
+      "line": 261,
+      "title": "时间与联系",
+      "id": "@db39baedc34f76ef73a6c1a5c6ad83dfb8beffb5733bddd155bfb0ecfd3f913e:261"
+    },
+    {
+      "file": "iropc.md",
+      "line": 294,
+      "title": "申请资格",
+      "id": "@db39baedc34f76ef73a6c1a5c6ad83dfb8beffb5733bddd155bfb0ecfd3f913e:294"
+    },
+    {
+      "file": "iropc.md",
+      "line": 301,
+      "title": "时间与联系",
+      "id": "@db39baedc34f76ef73a6c1a5c6ad83dfb8beffb5733bddd155bfb0ecfd3f913e:301"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 28,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:28"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 34,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:34"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 40,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:40"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 55,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:55"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 61,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:61"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 67,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:67"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 82,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:82"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 88,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:88"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 94,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:94"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 109,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:109"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 115,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:115"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 121,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:121"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 136,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:136"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 142,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:142"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 148,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:148"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 163,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:163"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 169,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:169"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 175,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:175"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 190,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:190"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 196,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:196"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 202,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:202"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 217,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:217"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 223,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:223"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 229,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:229"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 244,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:244"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 250,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:250"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 256,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:256"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 271,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:271"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 277,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:277"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 283,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:283"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 298,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:298"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 304,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:304"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 310,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:310"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 325,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:325"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 331,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:331"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 337,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:337"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 352,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:352"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 358,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:358"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 364,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:364"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 379,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:379"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 385,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:385"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 391,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:391"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 406,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:406"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 412,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:412"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 418,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:418"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 433,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:433"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 439,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:439"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 445,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:445"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 460,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:460"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 466,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:466"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 472,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:472"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 487,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:487"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 493,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:493"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 499,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:499"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 514,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:514"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 520,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:520"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 526,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:526"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 541,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:541"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 547,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:547"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 553,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:553"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 568,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:568"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 574,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:574"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 580,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:580"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 595,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:595"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 601,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:601"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 607,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:607"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 622,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:622"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 628,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:628"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 634,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:634"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 649,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:649"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 655,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:655"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 661,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:661"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 676,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:676"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 682,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:682"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 688,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:688"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 703,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:703"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 709,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:709"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 715,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:715"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 730,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:730"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 736,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:736"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 742,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:742"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 757,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:757"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 763,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:763"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 769,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:769"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 784,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:784"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 790,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:790"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 796,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:796"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 811,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:811"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 817,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:817"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 823,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:823"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 838,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:838"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 844,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:844"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 850,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:850"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 865,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:865"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 871,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:871"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 877,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:877"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 892,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:892"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 898,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:898"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 904,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:904"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 919,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:919"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 925,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:925"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 931,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:931"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 946,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:946"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 952,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:952"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 958,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:958"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 973,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:973"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 979,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:979"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 985,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:985"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1000,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1000"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1006,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1006"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1012,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1012"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1027,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1027"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1033,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1033"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1039,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1039"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1054,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1054"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1060,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1060"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1066,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1066"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1081,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1081"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1087,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1087"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1093,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1093"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1108,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1108"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1114,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1114"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1120,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1120"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1135,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1135"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1141,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1141"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1147,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1147"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1162,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1162"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1168,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1168"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1174,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1174"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1189,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1189"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1195,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1195"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1201,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1201"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1216,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1216"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1222,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1222"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1228,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1228"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1243,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1243"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1249,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1249"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1255,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1255"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1270,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1270"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1276,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1276"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1282,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1282"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1297,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1297"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1303,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1303"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1309,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1309"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1324,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1324"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1330,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1330"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1336,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1336"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1351,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1351"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1357,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1357"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1363,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1363"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1378,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1378"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1384,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1384"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1390,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1390"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1405,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1405"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1411,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1411"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1417,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1417"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1432,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1432"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1438,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1438"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1444,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1444"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1459,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1459"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1465,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1465"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1471,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1471"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1486,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1486"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1492,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1492"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1498,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1498"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1513,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1513"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1519,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1519"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1525,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1525"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1540,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1540"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1546,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1546"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1552,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1552"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1567,
+      "title": "科研经历",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1567"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1573,
+      "title": "研究项目",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1573"
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "line": 1579,
+      "title": "论文成果",
+      "id": "@5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02:1579"
+    },
+    {
+      "file": "澳门城市大学氹仔校区_校内餐饮指南.md",
+      "line": 58,
+      "title": "推荐理由",
+      "id": "@b5e8ef51358bf5c7d11609b17fcf042224879a0ee7e2f67a8141420f3be2cffc:58"
+    },
+    {
+      "file": "澳门城市大学氹仔校区_校内餐饮指南.md",
+      "line": 80,
+      "title": "完整菜单（MOP）",
+      "id": "@b5e8ef51358bf5c7d11609b17fcf042224879a0ee7e2f67a8141420f3be2cffc:80"
+    },
+    {
+      "file": "澳门城市大学氹仔校区_校内餐饮指南.md",
+      "line": 127,
+      "title": "推荐理由",
+      "id": "@b5e8ef51358bf5c7d11609b17fcf042224879a0ee7e2f67a8141420f3be2cffc:127"
+    },
+    {
+      "file": "澳门城市大学氹仔校区_校内餐饮指南.md",
+      "line": 144,
+      "title": "完整菜单（MOP）",
+      "id": "@b5e8ef51358bf5c7d11609b17fcf042224879a0ee7e2f67a8141420f3be2cffc:144"
+    },
+    {
+      "file": "澳门城市大学氹仔校区_校内餐饮指南.md",
+      "line": 199,
+      "title": "推荐理由",
+      "id": "@b5e8ef51358bf5c7d11609b17fcf042224879a0ee7e2f67a8141420f3be2cffc:199"
+    },
+    {
+      "file": "澳门城市大学氹仔校区_校内餐饮指南.md",
+      "line": 216,
+      "title": "完整菜单（MOP）",
+      "id": "@b5e8ef51358bf5c7d11609b17fcf042224879a0ee7e2f67a8141420f3be2cffc:216"
+    },
+    {
+      "file": "澳门城市大学氹仔校区_校内餐饮指南.md",
+      "line": 233,
+      "title": "推荐理由",
+      "id": "@b5e8ef51358bf5c7d11609b17fcf042224879a0ee7e2f67a8141420f3be2cffc:233"
+    }
+  ],
+  "over_limit": [
+    {
+      "file": "freshman.md",
+      "title": "澳门城市大学新生答疑 AI Agent 知识库（公开资料整理）",
+      "readable_descendants": 25
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "title": "澳门城市大学数据科学学院导师官网科研证据",
+      "readable_descendants": 59
+    }
+  ],
+  "hashes": {
+    "campus_culture.md": "84cacd06eb7acea8826a57d5e4ace3e9bbcb2cd7dd58cefb405211c7173e5fa8",
+    "campus_map.md": "5fd1619ec853d5cedce750ff9d0aa174aa36b05997893cae0fff534e147ff5c3",
+    "fds.md": "d8b1c0cbecbb70a8ba20303fcf8f3f4a892c797c08b2c6e46c47ff8cef474198",
+    "fe.md": "b5bbfa6136c38ac49e8df60aea0a9a863d3875eb26f5e00429090eda729a41b9",
+    "fh.md": "33af835e33233515e08c815346035d9129b070001699eddbcc8759d2abe890fe",
+    "fhss.md": "362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d",
+    "fiad.md": "c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2",
+    "fitm.md": "09ee888c5f10c3411cbaf25e1d9e693fc3f9ac1f9accfdfbe7c9fa08366f4cbe",
+    "fl.md": "fcc0fecf42fc18fd21a261241e0df4b60fa61b8d48e484c93a3af3421d8e6a08",
+    "fob.md": "c6cb5e3bdc4f22ec8da68b443f482f87b50b5fb59cf4d414e3f1b348cb51bf4c",
+    "fof.md": "9002796e11bc722d173bf49317fc2f407e821edb376dd964bcd6083c0d955f22",
+    "freshman.md": "f3bd8d68bbe3ea9cf84fa082d029f065eda6bb0b574b92d4ce1ccba518fc21b4",
+    "honours_class.md": "92110ed17c86b9a5315360b5a3eed10ab8cc886cb875dafbb972084f587c574a",
+    "iropc.md": "db39baedc34f76ef73a6c1a5c6ad83dfb8beffb5733bddd155bfb0ecfd3f913e",
+    "iusd.md": "0ff9b12394d63afa917f621c658c83bb2c2791c69afc906019cf2f1f65119602",
+    "maintenance_policy.md": "790b1a4679febb404491b2df4907b96e45881a9a3e08f4e1310e887e29646be2",
+    "retrieval.md": "70e0ee15296616414b09e217a634f3f54f82c53c4cc7f3ac856ec75e43d9d3e1",
+    "澳门城市大学氹仔校区_校内餐饮指南.md": "b5e8ef51358bf5c7d11609b17fcf042224879a0ee7e2f67a8141420f3be2cffc",
+    "faculty/fhss_faculty.md": "c80bbf67ab9cd2d434d0cc9cef926afa6b6c61b72bafe2f7330eb8ed9d27f07e",
+    "faculty/fiad_faculty.md": "c5a317224b8cb0c0ce3bece23479ec47a77e278d8ea1a9cd947b76f35bf64892",
+    "faculty/fitm_faculty.md": "e18a2b78b8295ed3d6ad84d35ea2433cd2ebc7ee74429861d6a3cdf3d20c93a6",
+    "faculty/fob_faculty.md": "b311f446a4d016e4b23b02ef62142107fb9981b3d368a014fe410bdb08599e44",
+    "mentors/fds_matching_policy.md": "3a1301557e39c78a6e445e0cd2a730e6d9fe03c8d2c40e09461ac2a3146f595e",
+    "mentors/fds_mentors.md": "7b972c0b0659647a06e4cfe0d3d6ed063eda32799578682113329dbdf0f52fbd",
+    "mentors/fds_official_evidence.md": "5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02",
+    "mentors/fds_rules.md": "4546bccdd69d25897954e35dc7f73f35b8cf4d72e600bd936509c14cc870020b"
+  },
+  "section_timing": {
+    "median_ms": 1.8758499645628035,
+    "p95_ms": 3.207299974747002,
+    "max_ms": 3.744600049685687
+  },
+  "cli_timing": {
+    "median_ms": 199.21334998798557,
+    "p95_ms": 209.92549997754395,
+    "max_ms": 218.30369997769594
+  },
+  "unchanged_during_test": true
+}

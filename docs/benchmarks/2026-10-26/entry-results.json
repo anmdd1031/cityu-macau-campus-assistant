@@ -1,0 +1,143 @@
+{
+  "cases": [
+    {
+      "name": "eligibility_r1",
+      "question": "我是 IUSD 2026 级博士，已修完规定课程学分、通过资格考试和开题，有一篇在读期间接收的原创研究论文，与博士论文相关，导师共同署名且投稿前书面同意，IUSD 为第二署名单位。尚未提供期刊名称、活动记录，也不知道论文是否被其他学生认领。请按本地 2026 级规则逐项检查答辩条件，不替学校审批。",
+      "seconds": 67.00635429999966,
+      "returncode": 0,
+      "command_count": 2,
+      "tool_output_chars": 39278,
+      "usage": {
+        "input_tokens": 111442,
+        "cached_input_tokens": 75520,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1038,
+        "reasoning_output_tokens": 0
+      },
+      "answers": [
+        "我会读取本地技能及其引用的 2026 级规定，逐项核对已满足条件和待核实事项。",
+        "按本地 **IUSD 2026 级博士规则**，你的多项条件已符合，但**尚不能确认全部答辩条件满足**：期刊资格、成果唯一认领和学术活动要求仍待核实。**IUSD 为第二署名单位符合本届规定。**\n\n以下“已满足”仅指你的陈述与公开条件相符，不代表学校已核验或批准。\n\n| 条件及本地依据 | 初步状态 | 对照结果／待确认事项 |\n|---|---|---|\n| 修完规定课程学分 | 已满足 | 你已说明修完。 |\n| 资格考试须在修完规定课程学分后、正式开题前通过 | 已满足（通过考试）；无法确认（顺序） | 你已通过资格考试及开题，但未明确三者时间顺序；需核对课程完成、资格考试通过和正式开题日期。 |\n| 答辩前至少一篇与博士论文相关的研究论文，在读期间被接收或发表 | 已满足 | 你有一篇在读期间接收、与博士论文相关的论文；本届允许“接收或发表”，不要求必须已正式刊出。 |\n| 不接受综述类文章 | 已满足 | 按你所述为原创研究论文。 |\n| 导师共同署名，且投稿前取得导师同意 | 已满足 | 你已说明共同署名及投稿前书面同意。 |\n| IUSD 为第一或第二署名单位 | 已满足 | 第二署名单位符合要求。 |\n| 每篇成果只供一名学生认领 | 无法确认 | 需确认该论文是否已被其他学生认领。 |\n| 期刊属于细则所列 SSCI、SCI/SCIE、A&HCI、CSSCI、北大核心或指定澳门期刊范围，并符合预警期刊限制 | 无法确认 | 未提供期刊名称，不能判断收录范围及预警限制是否符合。 |\n| 第一学年完成研究院认可学术活动总量至少 75% | 无法确认 | 缺少第一学年活动总量、参与记录及认可记录。 |\n| 第二学年起，每学年至少参加 5 次学术活动 | 无法确认 | 需按学年核对，不能只看累计次数。 |\n| 至少参加一次研究院大型学术会议，并至少完成一次口头或海报报告 | 无法确认 | 缺少会议参与及报告记录。 |\n| 学术活动每次提交约 1,500–2,000 字心得及证明，经审核认可后计学分 | 无法确认 | 需核对提交及审核认可记录；“课程学分修完”不能直接证明这些活动要求已完成。 |\n\n本地同节还要求**在第一学年春季学期前选择专业方向**；你未提供该项信息，暂为“无法确认”。\n\n目前没有足够信息将上述未知项判为“尚缺”。下一步应补齐：**期刊全名及收录／预警核对材料、论文唯一认领确认、分学年活动与审核记录，以及考试和开题的时间顺序**。\n\n依据：[本地 iusd.md 第 3.8 节](E:/jintian/Documents/CodeX_projects/科研-蔡教授/cityu-macau-campus-assistant/skills/cityu-macau-campus-assistant/references/iusd.md:213)，该资料标注更新于 **2026年10月1日**，对应的 [2026 级 DUD 修业规范官方 PDF](https://iusd.cityu.edu.mo/uploads/ueditor/file/20260902/1788326413764020.pdf) 在本地来源表中的核验日期也是该日。这里未混用 2025 级更严格的发表细则；材料真实性、成果认可和最终答辩资格由研究院认定。"
+      ],
+      "errors": [],
+      "completed": true,
+      "phase": "initial_entry"
+    },
+    {
+      "name": "fees_status_r1",
+      "question": "按本地资料，2027/2028 内地申请人的人工智能硕士学费是多少？课程标为新课程就说明尚未获批、不能招生吗？请分别回答，标明适用年份和来源，不联网。",
+      "seconds": 43.56720470000437,
+      "returncode": 0,
+      "command_count": 2,
+      "tool_output_chars": 40437,
+      "usage": {
+        "input_tokens": 112480,
+        "cached_input_tokens": 75392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 440,
+        "reasoning_output_tokens": 0
+      },
+      "answers": [
+        "我会使用仓库中的 cityu-macau-campus-assistant 技能及其引用资料，核对适用年份和来源。",
+        "1. **2027/2028 学年，中国内地申请人的人工智能硕士学费为每学年 125,000 港元（HKD）**，这是年度学费，不是全程总学费。来源：本地 `references/fds.md` 第 3.2 节，所据为[招生事务处《2027/2028 内地硕博简章》](https://ado.cityu.edu.mo/list-26/257)，该项记录核验日期为 **2026年10月1日**。\n\n2. **不能。“新课程”标签本身不代表尚未获批，也不能据此判断不能招生。** 本地 `references/freshman.md` 第 0.2 节（版本 **2026年10月22日**）明确：只有对应学年、对应课程的正式资料写明“待登记／刊宪”，才能提示该限制，并注明资料日期。就 **2027/2028** 而言，上述内地硕博简章已列出人工智能硕士及其学费，实际申请以当届报名系统可选课程和正式公告为准。\n\n以上依据本地资料；后续收费和招生安排可能变化，以学校当届最新公告为准。"
+      ],
+      "errors": [],
+      "completed": true,
+      "phase": "initial_entry"
+    },
+    {
+      "name": "map_encoded_r1",
+      "question": "澳门城市大学氹仔校区地图中的 B1 是地下一层吗？列出正式名称和来源。",
+      "seconds": 43.970829899997625,
+      "returncode": 0,
+      "command_count": 2,
+      "tool_output_chars": 33660,
+      "usage": {
+        "input_tokens": 107515,
+        "cached_input_tokens": 75392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 297,
+        "reasoning_output_tokens": 0
+      },
+      "answers": [
+        "我会查阅仓库内的校园助手技能及校区地图资料，核对 B1 的正式名称和来源。\n",
+        "不是。氹仔校区地图中的 **B1 是楼宇标识，正式名称为「第一座」**，不表示地下一层。\n\n来源：\n\n- [澳门城市大学官方校园地图原图](https://www.cityu.edu.mo/wp-content/uploads/img/map.png)：图例对应 **B1＝第一座**。\n- [澳门城市大学「校園地圖」页面](https://www.cityu.edu.mo/zh/校園地圖/)。\n\n依据本地技能引用资料 `references/campus_map.md`，上述图例于 **2026年10月6日**核验；地图本身未标明修订日期。"
+      ],
+      "errors": [],
+      "completed": true,
+      "phase": "initial_entry"
+    },
+    {
+      "name": "mentors_r1",
+      "question": "我是硕士申请人，想做计算机视觉。根据本地 FDS 资料推荐方向相关教师，说明导师资格、匹配依据、公开邮箱和来源；不要把方向匹配说成有招生名额。",
+      "seconds": 110.55580099999497,
+      "returncode": 0,
+      "command_count": 6,
+      "tool_output_chars": 111645,
+      "usage": {
+        "input_tokens": 456424,
+        "cached_input_tokens": 380416,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2456,
+        "reasoning_output_tokens": 94
+      },
+      "answers": [
+        "我会读取仓库中的技能说明及本地 FDS 资料，核对研究方向、导师资格、公开邮箱和来源。",
+        "建议先关注 **辜嘉、孫鑫、丁聖勇、李悦翔、眭相傑**。本地 FDS 资料明确记录这五位具有硕士生导师资格，研究方向直接涉及计算机视觉。\n\n按“视觉／图像／computer vision／image”等公开方向及标签检索，并筛选明确硕士导师资格，共得到 **11 人**；下面展示 5 人，其余 6 人未展开。这是关键词匹配范围，并非全部语义相关教师，也不是导师质量排名。\n\n以下保留本地资料原文；官方主页是资料记录的来源，本次未联网核验。\n\n| 教师 | 导师资格 | 官网研究方向 | 公开工作邮箱 | 官方主页 |\n|---|---|---|---|---|\n| 辜嘉（Jia Gu） | 硕士生导师 | 計算機視覺 醫療人工智能 醫學影像 圖像引導機器人 | jiagu@cityu.edu.mo | https://fds.cityu.edu.mo/members/338 |\n| 孫鑫（Xin Sun） | 硕士生导师 | 機器學習、計算機視覺、具身智能、機器人技術、環境遙感 | xinsun@cityu.edu.mo | https://fds.cityu.edu.mo/members/337 |\n| 丁聖勇（Shengyong Ding） | 博士生导师、硕士生导师 | 基礎研究：融合大模型技術與傳統CV技術創新解決機器視覺的關鍵難點問題如位姿定位、三維重建與生成、空間導航等問題，聚焦模型幾何質量。 3D Avatar ：身份（ID）保持的3D人像重建與生成，研究如何從少量RGB圖像中獲得高質量的3D寫實模型或風格化模型，融合傳統CV技術、大模型技術以及強化學習技術創新解決關鍵難點問題。 Video3D ：視頻生成與3D視覺融合，研究如何在視頻生成中引入3D約束，有機融合2D視頻生成與3D模型重建/生成過程，重點研究人物的3D一致性保持… | syding@cityu.edu.mo | https://fds.cityu.edu.mo/members/238 |\n| 李悦翔（Yuexiang Li） | 硕士生导师 | 人工智能基礎模型： 該方向旨在 突破單一模態大模型（如純語言或純視覺）的能力局限，聚焦於多模態大模型（如大型視覺-語言模型） 的核心技術提升。重點探索其在複雜開放世界中的場景理解、邏輯推理與自主任務分解能力，並致力於解決模型在可信、安全、高效等方面的瓶頸問題。研究內容將緊密結合產業需求，推動其在智能內容生成、科學計算、具身智能與人機協同等關鍵領域的深度應用與價值落地。 電腦視覺： 該方向將不限於傳統的圖像分類與識別範式，以“創造與編輯”驅動電腦視覺技術的改進。 研究將圍繞擴… | yxli@cityu.edu.mo | https://fds.cityu.edu.mo/members/540 |\n| 眭相傑（Xiangjie Sui） | 硕士生导师 | 圖像質量評價 ：探索自動化方法以客觀評估真實/生成圖像的視覺質量 視覺顯著性檢測 ：模擬人類注意機制以預測圖像/視頻中最具吸引力的區域 多模態大模型魯棒性 ：探索提升多模態大模型在干擾下的穩定性與可靠性 深度偽造人臉圖像檢測 ：開發算法以識別並區分生成/篡改的虛假人臉圖像 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |\n\n具体选择可按兴趣细分，以下是基于上述公开方向的匹配判断：\n\n- **医学影像、医疗视觉：辜嘉**，方向明确包含医学影像和图像引导机器人。\n- **机器人视觉、具身智能、遥感：孫鑫**，计算机视觉与这些应用方向同时列出。\n- **三维视觉、重建、数字人、视频生成：丁聖勇**，公开方向具体覆盖位姿定位、3D 人像及视频与三维一致性。\n- **视觉语言模型、场景理解、视觉生成与编辑：李悦翔**，公开方向明确涉及多模态基础模型和电脑视觉。\n- **图像质量评价、显著性检测、深度伪造检测：眭相傑**，这些任务均有明确方向描述。\n\n来源为本地 [fds_mentors.md](E:/jintian/Documents/CodeX_projects/科研-蔡教授/cityu-macau-campus-assistant/skills/cityu-macau-campus-assistant/references/mentors/fds_mentors.md)。资料更新于 **2026年8月5日**，师资名单审计于 **2026年7月31日**，教师逐项资料核验于 **2026年7月13日**；如今可能已有变化。表中省略号沿用本地索引。此次依据公开方向和资格匹配，未使用外部论文索引，也不据此判断论文中的具体贡献。\n\n**上述五人的本地记录均为“官网未公开招募说明”，当前名额及接收意愿待确认。** 方向匹配与导师资格不代表有招生名额；联系时宜附简历和具体研究兴趣，询问目标入学年度是否接收硕士生。你也可以要求“显示全部相关教师”。\n\n以上仅为公开资料支持的方向匹配，不构成学校、学院或教师的官方推荐或录取承诺，请以学院和教师确认结果为准。\n\n"
+      ],
+      "errors": [],
+      "completed": true,
+      "phase": "initial_entry"
+    },
+    {
+      "name": "mentors_r1",
+      "question": "我是硕士申请人，想做计算机视觉。根据本地 FDS 资料推荐方向相关教师，说明导师资格、匹配依据、公开邮箱和来源；不要把方向匹配说成有招生名额。",
+      "seconds": 103.90662929999962,
+      "returncode": 0,
+      "command_count": 6,
+      "tool_output_chars": 82845,
+      "usage": {
+        "input_tokens": 280904,
+        "cached_input_tokens": 218624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1924,
+        "reasoning_output_tokens": 204
+      },
+      "answers": [
+        "我会依据本地校园助手技能和 FDS 资料核对研究方向、导师资格及公开联系方式。",
+        "建议先关注以下 **5 位明确具有硕士生导师资格、研究方向与计算机视觉直接相关的教师**。本地资料按视觉、图像等关键词及导师资格筛选，共返回 11 人；这里展示 5 人，另 6 人未展开。这不是全部语义相关教师名单，也不是导师质量排名；可继续要求“显示全部相关教师”。\n\n| 教师 | 导师资格 | 公开工作邮箱 | 官方主页 |\n|---|---|---|---|\n| 辜嘉（Jia Gu） | 硕士生导师 | jiagu@cityu.edu.mo | https://fds.cityu.edu.mo/members/338 |\n| 孫鑫（Xin Sun） | 硕士生导师 | xinsun@cityu.edu.mo | https://fds.cityu.edu.mo/members/337 |\n| 丁聖勇（Shengyong Ding） | 博士生导师、硕士生导师 | syding@cityu.edu.mo | https://fds.cityu.edu.mo/members/238 |\n| 李悦翔（Yuexiang Li） | 硕士生导师 | yxli@cityu.edu.mo | https://fds.cityu.edu.mo/members/540 |\n| 眭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |\n\n具体匹配依据如下，选题建议是根据本地保存的官网研究方向作出的判断：\n\n- **辜嘉：医疗视觉。** 公开方向明确包括计算机视觉、医疗人工智能、医学影像、图像引导机器人。若你偏好医学图像分析及视觉在医疗场景中的应用，可以重点考虑。\n- **孫鑫：机器人视觉、具身智能与遥感。** 公开方向包括机器学习、计算机视觉、具身智能、机器人技术、环境遥感，适合希望将视觉感知与机器人或遥感应用结合的申请人。\n- **丁聖勇：三维视觉与生成。** 公开方向具体涉及位姿定位、三维重建与生成、空间导航，以及 3D Avatar、视频生成与三维视觉融合。若你希望研究三维重建、数字人或生成模型与几何约束的结合，匹配依据较明确。\n- **李悦翔：视觉语言模型、视觉生成与编辑。** 公开方向包括多模态基础模型，尤其大型视觉语言模型的场景理解、推理，以及以“创造与编辑”推动计算机视觉技术改进。\n- **眭相傑：图像质量评价、显著性检测与视觉安全。** 公开方向包括真实／生成图像质量评价、图像／视频显著性检测、多模态大模型鲁棒性及深度伪造人脸图像检测，适合偏好视觉评价、检测和可靠性问题的申请人。\n\n来源为本地 [FDS 导师资料](E:/jintian/Documents/CodeX_projects/科研-蔡教授/cityu-macau-campus-assistant/skills/cityu-macau-campus-assistant/references/mentors/fds_mentors.md)，对应原始来源见表中学院官方主页。资料更新时间为 **2026年8月5日**，教师逐项资料核验日期为 **2026年7月13日**；以上是该本地版本记录，当前情况可能已变化。\n\n**这 5 人的本地记录均为“官网未公开招募说明”，当前招生名额和接收意愿待确认。** 方向匹配仅用于选择联系对象，不构成学校、学院或教师的官方推荐或录取承诺，最终以学院和教师确认结果为准。\n\n"
+      ],
+      "errors": [],
+      "completed": true,
+      "phase": "final_identity_table"
+    }
+  ],
+  "final_answer_table_check": {
+    "valid": true,
+    "issues": [],
+    "canonical_table": "| 教师 | 导师资格 | 公开工作邮箱 | 官方主页 |\n|---|---|---|---|\n| 辜嘉（Jia Gu） | 硕士生导师 | jiagu@cityu.edu.mo | https://fds.cityu.edu.mo/members/338 |\n| 孫鑫（Xin Sun） | 硕士生导师 | xinsun@cityu.edu.mo | https://fds.cityu.edu.mo/members/337 |\n| 丁聖勇（Shengyong Ding） | 博士生导师、硕士生导师 | syding@cityu.edu.mo | https://fds.cityu.edu.mo/members/238 |\n| 李悦翔（Yuexiang Li） | 硕士生导师 | yxli@cityu.edu.mo | https://fds.cityu.edu.mo/members/540 |\n| 眭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |",
+    "scope": "Validates the generated table only, not claims in surrounding prose or later model edits."
+  },
+  "excluded_attempt": {
+    "name": "mentors_r1",
+    "question": "我是硕士申请人，想做计算机视觉。根据本地 FDS 资料推荐方向相关教师，说明导师资格、匹配依据、公开邮箱和来源；不要把方向匹配说成有招生名额。",
+    "seconds": 12.792710299996543,
+    "returncode": 1,
+    "command_count": 0,
+    "tool_output_chars": 0,
+    "usage": null,
+    "answers": [],
+    "errors": [
+      {
+        "type": "error",
+        "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 6:47 PM."
+      },
+      {
+        "type": "turn.failed",
+        "error": {
+          "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 6:47 PM."
+        }
+      }
+    ],
+    "completed": false
+  }
+}

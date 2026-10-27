@@ -1,0 +1,1618 @@
+{
+  "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "section_repeats": 3,
+  "cli_repeats": 3,
+  "files": [
+    {
+      "file": "campus_culture.md",
+      "headings": 4,
+      "status_counts": {
+        "ok": 4
+      },
+      "section_medians": {
+        "n": 4,
+        "median_ms": 0.757,
+        "p95_ms": 0.803,
+        "max_ms": 0.803
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 207.44,
+          "p95_ms": 312.267,
+          "max_ms": 312.267
+        },
+        "output_bytes": 566
+      },
+      "sample_title": "校服及穿着要求",
+      "sample_chars": 437,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 217.583,
+          "p95_ms": 218.828,
+          "max_ms": 218.828
+        },
+        "output_bytes": 1666
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 220.011,
+          "p95_ms": 222.707,
+          "max_ms": 222.707
+        },
+        "output_bytes": 2662
+      }
+    },
+    {
+      "file": "campus_map.md",
+      "headings": 4,
+      "status_counts": {
+        "ok": 4
+      },
+      "section_medians": {
+        "n": 4,
+        "median_ms": 0.887,
+        "p95_ms": 0.939,
+        "max_ms": 0.939
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 197.348,
+          "p95_ms": 204.418,
+          "max_ms": 204.418
+        },
+        "output_bytes": 625
+      },
+      "sample_title": "氹仔校区楼宇名称与地图标识",
+      "sample_chars": 421,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 202.223,
+          "p95_ms": 202.33,
+          "max_ms": 202.33
+        },
+        "output_bytes": 1444
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 203.766,
+          "p95_ms": 208.438,
+          "max_ms": 208.438
+        },
+        "output_bytes": 2125
+      }
+    },
+    {
+      "file": "faculty/fhss_faculty.md",
+      "headings": 15,
+      "status_counts": {
+        "ok": 15
+      },
+      "section_medians": {
+        "n": 15,
+        "median_ms": 0.973,
+        "p95_ms": 1.137,
+        "max_ms": 1.137
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 196.402,
+          "p95_ms": 197.181,
+          "max_ms": 197.181
+        },
+        "output_bytes": 1831
+      },
+      "sample_title": "1.1 应用语言范畴（27人）",
+      "sample_chars": 2000,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 199.233,
+          "p95_ms": 204.036,
+          "max_ms": 204.036
+        },
+        "output_bytes": 4988
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 195.715,
+          "p95_ms": 199.643,
+          "max_ms": 199.643
+        },
+        "output_bytes": 8564
+      }
+    },
+    {
+      "file": "faculty/fiad_faculty.md",
+      "headings": 6,
+      "status_counts": {
+        "ok": 6
+      },
+      "section_medians": {
+        "n": 6,
+        "median_ms": 0.822,
+        "p95_ms": 0.997,
+        "max_ms": 0.997
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 198.606,
+          "p95_ms": 198.617,
+          "max_ms": 198.617
+        },
+        "output_bytes": 810
+      },
+      "sample_title": "一、全职教学人员",
+      "sample_chars": 1516,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 200.944,
+          "p95_ms": 209.254,
+          "max_ms": 209.254
+        },
+        "output_bytes": 3312
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 200.587,
+          "p95_ms": 223.709,
+          "max_ms": 223.709
+        },
+        "output_bytes": 5247
+      }
+    },
+    {
+      "file": "faculty/fitm_faculty.md",
+      "headings": 9,
+      "status_counts": {
+        "ok": 9
+      },
+      "section_medians": {
+        "n": 9,
+        "median_ms": 0.836,
+        "p95_ms": 1.051,
+        "max_ms": 1.051
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 198.489,
+          "p95_ms": 206.447,
+          "max_ms": 206.447
+        },
+        "output_bytes": 1161
+      },
+      "sample_title": "2.2 助理教授",
+      "sample_chars": 1145,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 202.953,
+          "p95_ms": 229.697,
+          "max_ms": 229.697
+        },
+        "output_bytes": 2564
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 199.227,
+          "p95_ms": 205.789,
+          "max_ms": 205.789
+        },
+        "output_bytes": 3656
+      }
+    },
+    {
+      "file": "faculty/fob_faculty.md",
+      "headings": 10,
+      "status_counts": {
+        "ok": 10
+      },
+      "section_medians": {
+        "n": 10,
+        "median_ms": 0.827,
+        "p95_ms": 1.006,
+        "max_ms": 1.006
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 200.284,
+          "p95_ms": 201.013,
+          "max_ms": 201.013
+        },
+        "output_bytes": 1214
+      },
+      "sample_title": "2.3 助理教授",
+      "sample_chars": 1008,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 198.644,
+          "p95_ms": 202.21,
+          "max_ms": 202.21
+        },
+        "output_bytes": 2385
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 200.285,
+          "p95_ms": 205.09,
+          "max_ms": 205.09
+        },
+        "output_bytes": 3427
+      }
+    },
+    {
+      "file": "fds.md",
+      "headings": 238,
+      "status_counts": {
+        "ok": 238
+      },
+      "section_medians": {
+        "n": 238,
+        "median_ms": 2.628,
+        "p95_ms": 2.876,
+        "max_ms": 2.946
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 206.323,
+          "p95_ms": 207.04,
+          "max_ms": 207.04
+        },
+        "output_bytes": 28863
+      },
+      "sample_title": "34.1 公开课表的年度边界",
+      "sample_chars": 5311,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 197.463,
+          "p95_ms": 213.539,
+          "max_ms": 213.539
+        },
+        "output_bytes": 7690
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 198.286,
+          "p95_ms": 204.837,
+          "max_ms": 204.837
+        },
+        "output_bytes": 10357
+      }
+    },
+    {
+      "file": "fe.md",
+      "headings": 113,
+      "status_counts": {
+        "ok": 113
+      },
+      "section_medians": {
+        "n": 113,
+        "median_ms": 1.658,
+        "p95_ms": 1.831,
+        "max_ms": 1.889
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 198.237,
+          "p95_ms": 203.533,
+          "max_ms": 203.533
+        },
+        "output_bytes": 13085
+      },
+      "sample_title": "22. 主要信息来源",
+      "sample_chars": 3073,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 199.658,
+          "p95_ms": 200.48,
+          "max_ms": 200.48
+        },
+        "output_bytes": 4386
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 202.242,
+          "p95_ms": 208.048,
+          "max_ms": 208.048
+        },
+        "output_bytes": 5628
+      }
+    },
+    {
+      "file": "fh.md",
+      "headings": 118,
+      "status_counts": {
+        "ok": 118
+      },
+      "section_medians": {
+        "n": 118,
+        "median_ms": 1.789,
+        "p95_ms": 1.968,
+        "max_ms": 2.368
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 205.62,
+          "p95_ms": 205.704,
+          "max_ms": 205.704
+        },
+        "output_bytes": 13751
+      },
+      "sample_title": "26. 主要信息来源",
+      "sample_chars": 5222,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 197.913,
+          "p95_ms": 212.036,
+          "max_ms": 212.036
+        },
+        "output_bytes": 8192
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 200.296,
+          "p95_ms": 209.63,
+          "max_ms": 209.63
+        },
+        "output_bytes": 11900
+      }
+    },
+    {
+      "file": "fhss.md",
+      "headings": 128,
+      "status_counts": {
+        "ok": 108,
+        "ambiguous": 20
+      },
+      "section_medians": {
+        "n": 108,
+        "median_ms": 1.917,
+        "p95_ms": 2.102,
+        "max_ms": 2.241
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 208.071,
+          "p95_ms": 214.215,
+          "max_ms": 214.215
+        },
+        "output_bytes": 15080
+      },
+      "sample_title": "14. 数据来源汇总",
+      "sample_chars": 4470,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 199.13,
+          "p95_ms": 208.502,
+          "max_ms": 208.502
+        },
+        "output_bytes": 6469
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 200.585,
+          "p95_ms": 201.741,
+          "max_ms": 201.741
+        },
+        "output_bytes": 8707
+      }
+    },
+    {
+      "file": "fiad.md",
+      "headings": 141,
+      "status_counts": {
+        "ok": 84,
+        "ambiguous": 57
+      },
+      "section_medians": {
+        "n": 84,
+        "median_ms": 1.742,
+        "p95_ms": 1.932,
+        "max_ms": 2.084
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 202.21,
+          "p95_ms": 207.985,
+          "max_ms": 207.985
+        },
+        "output_bytes": 15806
+      },
+      "sample_title": "16. 主要公开来源",
+      "sample_chars": 1037,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 201.473,
+          "p95_ms": 204.552,
+          "max_ms": 204.552
+        },
+        "output_bytes": 1818
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 196.55,
+          "p95_ms": 211.758,
+          "max_ms": 211.758
+        },
+        "output_bytes": 2271
+      }
+    },
+    {
+      "file": "fitm.md",
+      "headings": 126,
+      "status_counts": {
+        "ok": 120,
+        "ambiguous": 6
+      },
+      "section_medians": {
+        "n": 120,
+        "median_ms": 1.857,
+        "p95_ms": 1.988,
+        "max_ms": 2.188
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 198.397,
+          "p95_ms": 208.436,
+          "max_ms": 208.436
+        },
+        "output_bytes": 14770
+      },
+      "sample_title": "22. 主要信息来源",
+      "sample_chars": 3435,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 200.199,
+          "p95_ms": 201.262,
+          "max_ms": 201.262
+        },
+        "output_bytes": 4952
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 197.819,
+          "p95_ms": 198.796,
+          "max_ms": 198.796
+        },
+        "output_bytes": 6488
+      }
+    },
+    {
+      "file": "fl.md",
+      "headings": 74,
+      "status_counts": {
+        "ok": 74
+      },
+      "section_medians": {
+        "n": 74,
+        "median_ms": 1.383,
+        "p95_ms": 1.545,
+        "max_ms": 1.766
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 199.873,
+          "p95_ms": 203.448,
+          "max_ms": 203.448
+        },
+        "output_bytes": 8479
+      },
+      "sample_title": "0.1 本知识库的回答边界",
+      "sample_chars": 924,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 202.815,
+          "p95_ms": 206.918,
+          "max_ms": 206.918
+        },
+        "output_bytes": 2858
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 198.857,
+          "p95_ms": 203.656,
+          "max_ms": 203.656
+        },
+        "output_bytes": 5012
+      }
+    },
+    {
+      "file": "fob.md",
+      "headings": 119,
+      "status_counts": {
+        "ok": 117,
+        "ambiguous": 2
+      },
+      "section_medians": {
+        "n": 117,
+        "median_ms": 1.7,
+        "p95_ms": 1.916,
+        "max_ms": 1.948
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 199.185,
+          "p95_ms": 200.987,
+          "max_ms": 200.987
+        },
+        "output_bytes": 13992
+      },
+      "sample_title": "24. 主要信息来源",
+      "sample_chars": 3784,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 199.444,
+          "p95_ms": 201.978,
+          "max_ms": 201.978
+        },
+        "output_bytes": 6340
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 194.532,
+          "p95_ms": 198.369,
+          "max_ms": 198.369
+        },
+        "output_bytes": 9436
+      }
+    },
+    {
+      "file": "fof.md",
+      "headings": 96,
+      "status_counts": {
+        "ok": 96
+      },
+      "section_medians": {
+        "n": 96,
+        "median_ms": 1.777,
+        "p95_ms": 2.006,
+        "max_ms": 2.491
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 207.771,
+          "p95_ms": 208.38,
+          "max_ms": 208.38
+        },
+        "output_bytes": 11406
+      },
+      "sample_title": "22. 主要信息来源",
+      "sample_chars": 6440,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 215.485,
+          "p95_ms": 217.078,
+          "max_ms": 217.078
+        },
+        "output_bytes": 10195
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 198.078,
+          "p95_ms": 200.427,
+          "max_ms": 200.427
+        },
+        "output_bytes": 15070
+      }
+    },
+    {
+      "file": "freshman.md",
+      "headings": 190,
+      "status_counts": {
+        "over_limit": 1,
+        "ok": 189
+      },
+      "section_medians": {
+        "n": 189,
+        "median_ms": 3.049,
+        "p95_ms": 3.359,
+        "max_ms": 3.708
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 211.929,
+          "p95_ms": 216.601,
+          "max_ms": 216.601
+        },
+        "output_bytes": 23014
+      },
+      "sample_title": "21.1 澳门城市大学官方",
+      "sample_chars": 14861,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 203.574,
+          "p95_ms": 211.151,
+          "max_ms": 211.151
+        },
+        "output_bytes": 21862
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 200.403,
+          "p95_ms": 201.597,
+          "max_ms": 201.597
+        },
+        "output_bytes": 31264
+      }
+    },
+    {
+      "file": "honours_class.md",
+      "headings": 82,
+      "status_counts": {
+        "ok": 82
+      },
+      "section_medians": {
+        "n": 82,
+        "median_ms": 1.466,
+        "p95_ms": 1.653,
+        "max_ms": 1.715
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 205.92,
+          "p95_ms": 218.815,
+          "max_ms": 218.815
+        },
+        "output_bytes": 9477
+      },
+      "sample_title": "17. 主要信息来源",
+      "sample_chars": 2253,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 218.918,
+          "p95_ms": 220.833,
+          "max_ms": 220.833
+        },
+        "output_bytes": 3842
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 219.757,
+          "p95_ms": 222.224,
+          "max_ms": 222.224
+        },
+        "output_bytes": 5489
+      }
+    },
+    {
+      "file": "iropc.md",
+      "headings": 47,
+      "status_counts": {
+        "ok": 43,
+        "ambiguous": 4
+      },
+      "section_medians": {
+        "n": 43,
+        "median_ms": 1.21,
+        "p95_ms": 1.385,
+        "max_ms": 1.459
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 198.813,
+          "p95_ms": 202.466,
+          "max_ms": 202.466
+        },
+        "output_bytes": 5377
+      },
+      "sample_title": "0.1 信息可靠性顺序",
+      "sample_chars": 1141,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 208.375,
+          "p95_ms": 214.795,
+          "max_ms": 214.795
+        },
+        "output_bytes": 3452
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 200.029,
+          "p95_ms": 202.76,
+          "max_ms": 202.76
+        },
+        "output_bytes": 6173
+      }
+    },
+    {
+      "file": "iusd.md",
+      "headings": 43,
+      "status_counts": {
+        "ok": 43
+      },
+      "section_medians": {
+        "n": 43,
+        "median_ms": 1.166,
+        "p95_ms": 1.302,
+        "max_ms": 1.423
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 200.201,
+          "p95_ms": 208.264,
+          "max_ms": 208.264
+        },
+        "output_bytes": 5126
+      },
+      "sample_title": "11. 主要公开来源",
+      "sample_chars": 2031,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 202.543,
+          "p95_ms": 213.104,
+          "max_ms": 213.104
+        },
+        "output_bytes": 3318
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 198.198,
+          "p95_ms": 205.058,
+          "max_ms": 205.058
+        },
+        "output_bytes": 4371
+      }
+    },
+    {
+      "file": "maintenance_policy.md",
+      "headings": 2,
+      "status_counts": {
+        "ok": 2
+      },
+      "section_medians": {
+        "n": 2,
+        "median_ms": 0.823,
+        "p95_ms": 0.83,
+        "max_ms": 0.83
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 199.009,
+          "p95_ms": 201.115,
+          "max_ms": 201.115
+        },
+        "output_bytes": 358
+      },
+      "sample_title": "联网核验与抓取约束",
+      "sample_chars": 1176,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 197.359,
+          "p95_ms": 198.207,
+          "max_ms": 198.207
+        },
+        "output_bytes": 3433
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 199.47,
+          "p95_ms": 199.473,
+          "max_ms": 199.473
+        },
+        "output_bytes": 6097
+      }
+    },
+    {
+      "file": "mentors/fds_matching_policy.md",
+      "headings": 5,
+      "status_counts": {
+        "ok": 5
+      },
+      "section_medians": {
+        "n": 5,
+        "median_ms": 0.937,
+        "p95_ms": 1.013,
+        "max_ms": 1.013
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 200.073,
+          "p95_ms": 210.516,
+          "max_ms": 210.516
+        },
+        "output_bytes": 685
+      },
+      "sample_title": "FDS 导师方向匹配",
+      "sample_chars": 1059,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 195.186,
+          "p95_ms": 198.645,
+          "max_ms": 198.645
+        },
+        "output_bytes": 3239
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 198.106,
+          "p95_ms": 204.402,
+          "max_ms": 204.402
+        },
+        "output_bytes": 5771
+      }
+    },
+    {
+      "file": "mentors/fds_mentors.md",
+      "headings": 5,
+      "status_counts": {
+        "ok": 5
+      },
+      "section_medians": {
+        "n": 5,
+        "median_ms": 1.035,
+        "p95_ms": 1.113,
+        "max_ms": 1.113
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 198.009,
+          "p95_ms": 203.377,
+          "max_ms": 203.377
+        },
+        "output_bytes": 666
+      },
+      "sample_title": "师资索引",
+      "sample_chars": 22060,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 199.141,
+          "p95_ms": 213.684,
+          "max_ms": 213.684
+        },
+        "output_bytes": 40131
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 198.886,
+          "p95_ms": 199.47,
+          "max_ms": 199.47
+        },
+        "output_bytes": 66285
+      }
+    },
+    {
+      "file": "mentors/fds_official_evidence.md",
+      "headings": 234,
+      "status_counts": {
+        "over_limit": 1,
+        "ok": 59,
+        "ambiguous": 174
+      },
+      "section_medians": {
+        "n": 59,
+        "median_ms": 2.478,
+        "p95_ms": 2.709,
+        "max_ms": 2.794
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 202.013,
+          "p95_ms": 218.771,
+          "max_ms": 218.771
+        },
+        "output_bytes": 24250
+      },
+      "sample_title": "快速索引",
+      "sample_chars": 1647,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 197.593,
+          "p95_ms": 352.148,
+          "max_ms": 352.148
+        },
+        "output_bytes": 3023
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 199.895,
+          "p95_ms": 202.38,
+          "max_ms": 202.38
+        },
+        "output_bytes": 4343
+      }
+    },
+    {
+      "file": "mentors/fds_rules.md",
+      "headings": 11,
+      "status_counts": {
+        "ok": 11
+      },
+      "section_medians": {
+        "n": 11,
+        "median_ms": 0.836,
+        "p95_ms": 0.939,
+        "max_ms": 0.939
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 201.121,
+          "p95_ms": 210.496,
+          "max_ms": 210.496
+        },
+        "output_bytes": 1255
+      },
+      "sample_title": "官网证据",
+      "sample_chars": 595,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 200.17,
+          "p95_ms": 202.589,
+          "max_ms": 202.589
+        },
+        "output_bytes": 2221
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 198.874,
+          "p95_ms": 201.576,
+          "max_ms": 201.576
+        },
+        "output_bytes": 3802
+      }
+    },
+    {
+      "file": "retrieval.md",
+      "headings": 5,
+      "status_counts": {
+        "ok": 5
+      },
+      "section_medians": {
+        "n": 5,
+        "median_ms": 0.827,
+        "p95_ms": 0.83,
+        "max_ms": 0.83
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 197.317,
+          "p95_ms": 200.917,
+          "max_ms": 200.917
+        },
+        "output_bytes": 625
+      },
+      "sample_title": "常见批量组合",
+      "sample_chars": 763,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 196.185,
+          "p95_ms": 219.222,
+          "max_ms": 219.222
+        },
+        "output_bytes": 1839
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 205.562,
+          "p95_ms": 205.972,
+          "max_ms": 205.972
+        },
+        "output_bytes": 2580
+      }
+    },
+    {
+      "file": "澳门城市大学氹仔校区_校内餐饮指南.md",
+      "headings": 32,
+      "status_counts": {
+        "ok": 25,
+        "ambiguous": 7
+      },
+      "section_medians": {
+        "n": 25,
+        "median_ms": 1.017,
+        "p95_ms": 1.14,
+        "max_ms": 1.308
+      },
+      "catalog_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 196.758,
+          "p95_ms": 196.846,
+          "max_ms": 196.846
+        },
+        "output_bytes": 3664
+      },
+      "sample_title": "主推套餐饭",
+      "sample_chars": 703,
+      "read_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 196.907,
+          "p95_ms": 200.884,
+          "max_ms": 200.884
+        },
+        "output_bytes": 2172
+      },
+      "ascii_cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 200.508,
+          "p95_ms": 219.39,
+          "max_ms": 219.39
+        },
+        "output_bytes": 3500
+      }
+    }
+  ],
+  "routes": [
+    {
+      "route": "学校介绍、学校概况、公立或私立、校史、创校、更名、校训、办学特色、学生人数、学院数量、排名、校区、参观、学校与香港城市大学的区别",
+      "selectors": [
+        "freshman.md::21.1 澳门城市大学官方"
+      ],
+      "text_chars": 14861,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 204.334,
+          "p95_ms": 210.464,
+          "max_ms": 210.464
+        },
+        "output_bytes": 21862
+      }
+    },
+    {
+      "route": "葡文校名、校庆、横琴高等研究院、知识转移转化中心、未来书院、微专业",
+      "selectors": [
+        "freshman.md::21.1 澳门城市大学官方"
+      ],
+      "text_chars": 14861,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 202.925,
+          "p95_ms": 203.039,
+          "max_ms": 203.039
+        },
+        "output_bytes": 21862
+      }
+    },
+    {
+      "route": "招生、费用、学费、收费表、保证金、报名费、注册、校历、行事历、开学、下学期、上课时间、注册日程、体检、D 签注、逗留许可、宿舍、TronClass、图书馆、科研管理处、科研项目、校外科研资助、科研规章、粤港澳大湾区研究院、澳门社会经济发展研究中心、全球事务、交换、暑期项目、创业就业中心、求职、校外实习机会、校园生活、部门联系、台风或暴雨",
+      "selectors": [
+        "freshman.md::21.1 澳门城市大学官方"
+      ],
+      "text_chars": 14861,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 200.457,
+          "p95_ms": 201.338,
+          "max_ms": 201.338
+        },
+        "output_bytes": 21862
+      }
+    },
+    {
+      "route": "校内餐饮、食堂、餐厅、菜单、价格、午餐、咖啡、打包、City Canteen、香舍、ÉLYSÉE、blu cafe",
+      "selectors": [
+        "澳门城市大学氹仔校区_校内餐饮指南.md::主推套餐饭"
+      ],
+      "text_chars": 703,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 197.686,
+          "p95_ms": 201.717,
+          "max_ms": 201.717
+        },
+        "output_bytes": 2172
+      }
+    },
+    {
+      "route": "FDS 教师名单、职称、导师资格、官方邮箱、联系方式或教师主页",
+      "selectors": [
+        "mentors/fds_mentors.md::师资索引"
+      ],
+      "text_chars": 22060,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 203.705,
+          "p95_ms": 203.961,
+          "max_ms": 203.961
+        },
+        "output_bytes": 40131
+      }
+    },
+    {
+      "route": "FDS 导师推荐、找导师、研究方向，或询问谁研究人工智能、大模型、数据科学、隐私计算、联邦学习、网络安全、区块链、计算机视觉、机器人等主题",
+      "selectors": [
+        "mentors/fds_rules.md::官网证据",
+        "mentors/fds_mentors.md::师资索引",
+        "mentors/fds_matching_policy.md::FDS 导师方向匹配"
+      ],
+      "text_chars": 23714,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 202.655,
+          "p95_ms": 203.082,
+          "max_ms": 203.082
+        },
+        "output_bytes": 45180
+      }
+    },
+    {
+      "route": "FDS 教师完整科研经历、完整研究项目、官网论文成果，或官网访问失败时查询本地完整官网资料",
+      "selectors": [
+        "mentors/fds_rules.md::官网证据",
+        "mentors/fds_mentors.md::师资索引",
+        "mentors/fds_official_evidence.md::快速索引",
+        "mentors/fds_matching_policy.md::FDS 导师方向匹配"
+      ],
+      "text_chars": 25361,
+      "requires_larger_budget": true,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 203.508,
+          "p95_ms": 204.502,
+          "max_ms": 204.502
+        },
+        "output_bytes": 47997
+      }
+    },
+    {
+      "route": "FDS 具体论文、DOI、作者位置、论文贡献或导师负责论文哪一部分",
+      "selectors": [
+        "mentors/fds_rules.md::官网证据",
+        "mentors/fds_mentors.md::师资索引",
+        "mentors/fds_official_evidence.md::快速索引",
+        "mentors/fds_matching_policy.md::FDS 导师方向匹配"
+      ],
+      "text_chars": 25361,
+      "requires_larger_budget": true,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 203.327,
+          "p95_ms": 209.267,
+          "max_ms": 209.267
+        },
+        "output_bytes": 47997
+      }
+    },
+    {
+      "route": "FDS、BITS、BCS、人工智能学士、AI Bachelor、MDS、MCS、人工智能硕士、AI Master、PhD DS、PhD CS、学分、转专业、资格考试、论文成果或毕业",
+      "selectors": [
+        "fds.md::34.1 公开课表的年度边界"
+      ],
+      "text_chars": 5311,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 205.368,
+          "p95_ms": 214.083,
+          "max_ms": 214.083
+        },
+        "output_bytes": 7690
+      }
+    },
+    {
+      "route": "商学院、FOB、工商管理、BBA、MBA、MMA、管理分析学硕士、DBA、IBC、国际商务领袖实验班、4+1、商学院导师、商学院论文或毕业",
+      "selectors": [
+        "fob.md::24. 主要信息来源"
+      ],
+      "text_chars": 3784,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 200.084,
+          "p95_ms": 204.864,
+          "max_ms": 204.864
+        },
+        "output_bytes": 6340
+      }
+    },
+    {
+      "route": "FOB 全职学术人员、完整师资名单、职称人数、学院主管或课程主任",
+      "selectors": [
+        "faculty/fob_faculty.md::2.3 助理教授",
+        "fob.md::24. 主要信息来源"
+      ],
+      "text_chars": 4792,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 199.813,
+          "p95_ms": 205.309,
+          "max_ms": 205.309
+        },
+        "output_bytes": 8519
+      }
+    },
+    {
+      "route": "金融学院、FOF、应用经济学、BAE、金融精英班、金融学硕士、金融科技硕士、金融学博士、金融方向、经济方向、金融学院导师、金融学院论文发表或毕业",
+      "selectors": [
+        "fof.md::22. 主要信息来源"
+      ],
+      "text_chars": 6440,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 195.994,
+          "p95_ms": 198.541,
+          "max_ms": 198.541
+        },
+        "output_bytes": 10195
+      }
+    },
+    {
+      "route": "大健康学院、FH、社会工作、BSW、MSW、应用心理学、MAP、DAP、智慧养老与健康管理、大健康学院导师、实习或毕业",
+      "selectors": [
+        "fh.md::26. 主要信息来源"
+      ],
+      "text_chars": 5222,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 198.899,
+          "p95_ms": 200.99,
+          "max_ms": 200.99
+        },
+        "output_bytes": 8192
+      }
+    },
+    {
+      "route": "教育学院、FE、SOE、教育学硕士、MEd、教学研究硕士、MTLR、教育学博士、PhD in Education、教育博士、EdD、教育学院导师、教育学院论文或毕业",
+      "selectors": [
+        "fe.md::22. 主要信息来源"
+      ],
+      "text_chars": 3073,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 205.129,
+          "p95_ms": 224.799,
+          "max_ms": 224.799
+        },
+        "output_bytes": 4386
+      }
+    },
+    {
+      "route": "法学院、FL、SOL、法学硕士、LL.M、公法、刑事法、民事法、国际商法、法学院导师、法学院论文或毕业",
+      "selectors": [
+        "fl.md::0.1 本知识库的回答边界"
+      ],
+      "text_chars": 924,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 202.958,
+          "p95_ms": 400.881,
+          "max_ms": 400.881
+        },
+        "output_bytes": 2858
+      }
+    },
+    {
+      "route": "国际旅游与管理学院、FITM、国旅学院、国际旅游与酒店管理、BBA in IHTM、国际款待与旅游业管理、MHTM、国际酒店管理、MHM、国际旅游管理博士、PhD in ITM、酒店管理博士、DHM、旅游学院导师、项目报告或毕业",
+      "selectors": [
+        "fitm.md::22. 主要信息来源"
+      ],
+      "text_chars": 3435,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 197.972,
+          "p95_ms": 198.888,
+          "max_ms": 198.888
+        },
+        "output_bytes": 4952
+      }
+    },
+    {
+      "route": "FITM 全职学术人员、完整师资名单、导师标签、课程负责人、校内邮箱或人员联系方式",
+      "selectors": [
+        "faculty/fitm_faculty.md::2.2 助理教授",
+        "fitm.md::22. 主要信息来源"
+      ],
+      "text_chars": 4580,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 202.519,
+          "p95_ms": 209.311,
+          "max_ms": 209.311
+        },
+        "output_bytes": 7310
+      }
+    },
+    {
+      "route": "人文社会科学学院、FHSS、应用语言学、英语学士、葡萄牙语学士、中国文化研究硕士、文化产业管理硕士、文化产业研究博士、学分、论文或毕业",
+      "selectors": [
+        "fhss.md::14. 数据来源汇总"
+      ],
+      "text_chars": 4470,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 205.354,
+          "p95_ms": 205.699,
+          "max_ms": 205.699
+        },
+        "output_bytes": 6469
+      }
+    },
+    {
+      "route": "FHSS 教师名单、职称、所属范畴、特聘或兼任身份、研究方向、管理团队或课程督导",
+      "selectors": [
+        "faculty/fhss_faculty.md::1.1 应用语言范畴（27人）",
+        "fhss.md::14. 数据来源汇总"
+      ],
+      "text_chars": 6470,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 196.614,
+          "p95_ms": 210.752,
+          "max_ms": 210.752
+        },
+        "output_bytes": 11251
+      }
+    },
+    {
+      "route": "创新设计学院、FIAD、设计艺术学士、设计学硕士、艺术学硕士、设计学博士、艺术学博士、作品展览、设计竞赛、发表、论文导师或毕业",
+      "selectors": [
+        "fiad.md::16. 主要公开来源"
+      ],
+      "text_chars": 1037,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 194.581,
+          "p95_ms": 198.715,
+          "max_ms": 198.715
+        },
+        "output_bytes": 1818
+      }
+    },
+    {
+      "route": "FIAD 全职教学人员、特聘教授、课程负责人、课程督导或人员联系方式",
+      "selectors": [
+        "faculty/fiad_faculty.md::一、全职教学人员",
+        "fiad.md::16. 主要公开来源"
+      ],
+      "text_chars": 2553,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 201.042,
+          "p95_ms": 205.716,
+          "max_ms": 205.716
+        },
+        "output_bytes": 4924
+      }
+    },
+    {
+      "route": "城市与可持续发展研究院、IUSD、城市规划与设计硕士、MUD、城市规划与设计博士、DUD、研究院导师、资格考试、学术活动、成果要求或毕业",
+      "selectors": [
+        "iusd.md::11. 主要公开来源",
+        "freshman.md::21.1 澳门城市大学官方"
+      ],
+      "text_chars": 16892,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 200.464,
+          "p95_ms": 207.991,
+          "max_ms": 207.991
+        },
+        "output_bytes": 24974
+      }
+    },
+    {
+      "route": "荣誉班、Honours Class、荣誉课程、选拔、科研训练、一对一导师、X-Challenge、竞赛、实习、深圳零一学院",
+      "selectors": [
+        "honours_class.md::17. 主要信息来源"
+      ],
+      "text_chars": 2253,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 197.943,
+          "p95_ms": 203.044,
+          "max_ms": 203.044
+        },
+        "output_bytes": 3842
+      }
+    },
+    {
+      "route": "葡语国家研究院、IROPC、葡语国家研究硕士、MPSC、国际关系与政府治理硕士、MIRG、葡语国家研究博士、DPSC、开题、论文、人员或毕业流程",
+      "selectors": [
+        "iropc.md::0.1 信息可靠性顺序",
+        "freshman.md::21.1 澳门城市大学官方"
+      ],
+      "text_chars": 16002,
+      "requires_larger_budget": false,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 198.024,
+          "p95_ms": 200.793,
+          "max_ms": 200.793
+        },
+        "output_bytes": 25108
+      }
+    },
+    {
+      "route": "同时涉及学校通用流程和学院学业规则，或用户问“各学院/所有学院/全部专业”的费用、课程、毕业要求",
+      "selectors": [
+        "freshman.md::21.1 澳门城市大学官方",
+        "fds.md::34.1 公开课表的年度边界",
+        "fob.md::24. 主要信息来源",
+        "fof.md::22. 主要信息来源",
+        "fh.md::26. 主要信息来源",
+        "fe.md::22. 主要信息来源",
+        "fl.md::0.1 本知识库的回答边界",
+        "fitm.md::22. 主要信息来源",
+        "fhss.md::14. 数据来源汇总",
+        "fiad.md::16. 主要公开来源",
+        "iusd.md::11. 主要公开来源",
+        "iropc.md::0.1 信息可靠性顺序",
+        "honours_class.md::17. 主要信息来源"
+      ],
+      "text_chars": 53982,
+      "requires_larger_budget": true,
+      "cli": {
+        "timing": {
+          "n": 3,
+          "median_ms": 231.299,
+          "p95_ms": 236.081,
+          "max_ms": 236.081
+        },
+        "output_bytes": 82903
+      }
+    }
+  ],
+  "hashes": {
+    "campus_culture.md": "84cacd06eb7acea8826a57d5e4ace3e9bbcb2cd7dd58cefb405211c7173e5fa8",
+    "campus_map.md": "5fd1619ec853d5cedce750ff9d0aa174aa36b05997893cae0fff534e147ff5c3",
+    "faculty/fhss_faculty.md": "c80bbf67ab9cd2d434d0cc9cef926afa6b6c61b72bafe2f7330eb8ed9d27f07e",
+    "faculty/fiad_faculty.md": "c5a317224b8cb0c0ce3bece23479ec47a77e278d8ea1a9cd947b76f35bf64892",
+    "faculty/fitm_faculty.md": "e18a2b78b8295ed3d6ad84d35ea2433cd2ebc7ee74429861d6a3cdf3d20c93a6",
+    "faculty/fob_faculty.md": "b311f446a4d016e4b23b02ef62142107fb9981b3d368a014fe410bdb08599e44",
+    "fds.md": "d8b1c0cbecbb70a8ba20303fcf8f3f4a892c797c08b2c6e46c47ff8cef474198",
+    "fe.md": "b5bbfa6136c38ac49e8df60aea0a9a863d3875eb26f5e00429090eda729a41b9",
+    "fh.md": "33af835e33233515e08c815346035d9129b070001699eddbcc8759d2abe890fe",
+    "fhss.md": "362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d",
+    "fiad.md": "c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2",
+    "fitm.md": "09ee888c5f10c3411cbaf25e1d9e693fc3f9ac1f9accfdfbe7c9fa08366f4cbe",
+    "fl.md": "fcc0fecf42fc18fd21a261241e0df4b60fa61b8d48e484c93a3af3421d8e6a08",
+    "fob.md": "c6cb5e3bdc4f22ec8da68b443f482f87b50b5fb59cf4d414e3f1b348cb51bf4c",
+    "fof.md": "9002796e11bc722d173bf49317fc2f407e821edb376dd964bcd6083c0d955f22",
+    "freshman.md": "f3bd8d68bbe3ea9cf84fa082d029f065eda6bb0b574b92d4ce1ccba518fc21b4",
+    "honours_class.md": "92110ed17c86b9a5315360b5a3eed10ab8cc886cb875dafbb972084f587c574a",
+    "iropc.md": "db39baedc34f76ef73a6c1a5c6ad83dfb8beffb5733bddd155bfb0ecfd3f913e",
+    "iusd.md": "0ff9b12394d63afa917f621c658c83bb2c2791c69afc906019cf2f1f65119602",
+    "maintenance_policy.md": "790b1a4679febb404491b2df4907b96e45881a9a3e08f4e1310e887e29646be2",
+    "mentors/fds_matching_policy.md": "3a1301557e39c78a6e445e0cd2a730e6d9fe03c8d2c40e09461ac2a3146f595e",
+    "mentors/fds_mentors.md": "7b972c0b0659647a06e4cfe0d3d6ed063eda32799578682113329dbdf0f52fbd",
+    "mentors/fds_official_evidence.md": "5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02",
+    "mentors/fds_rules.md": "4546bccdd69d25897954e35dc7f73f35b8cf4d72e600bd936509c14cc870020b",
+    "retrieval.md": "79d01e52e1e850e31229dc906a130d15c86ad8bcc42c1abd0578536f14a0baa9",
+    "澳门城市大学氹仔校区_校内餐饮指南.md": "b5e8ef51358bf5c7d11609b17fcf042224879a0ee7e2f67a8141420f3be2cffc"
+  },
+  "status_counts": {
+    "ok": 1585,
+    "ambiguous": 270,
+    "over_limit": 2
+  },
+  "leaf_status_counts": {
+    "ok": 1156,
+    "ambiguous": 267
+  },
+  "all_successful_section_medians": {
+    "n": 1585,
+    "median_ms": 1.81,
+    "p95_ms": 3.113,
+    "max_ms": 3.708
+  },
+  "all_read_cli_medians": {
+    "n": 26,
+    "median_ms": 199.914,
+    "p95_ms": 217.583,
+    "max_ms": 218.918
+  },
+  "all_route_cli_medians": {
+    "n": 25,
+    "median_ms": 201.042,
+    "p95_ms": 205.368,
+    "max_ms": 231.299
+  },
+  "corpus_unchanged": true
+}
