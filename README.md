@@ -1,5 +1,7 @@
 # 澳门城市大学智能校园助手agent
 
+2026-10-07：依据校方 2026-07-14 新增课程公告，将人工智能学士纳入数据科学学院与全校本科清单，修正旧目录遗漏导致的“仅规划”说法；开设状态与当前报名窗口分别判断。定向更新 `references/fds.md` 与 `references/freshman.md`。
+
 2026-10-06：新增 `references/campus_map.md`，根据官方校园地图图片核对氹仔校区 10 个楼宇标识与大致分布；不推断各学院教室分配，地图修订日期未明。地图中的名称“蔡繼有樓”按原图保留。
 
 2026-10-05 校服补充：维护者反馈平时不需要穿校服，已在校园文化资料中标明来源，并与官方历史活动着装要求分开；特定活动仍以通知为准。
@@ -82,6 +84,36 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 - 对个人、学院或群体作政治立场推断、政治可靠性评价，或按国籍、民族、宗教等无关敏感属性筛选和排序
 
 本智能校园助手仅整合校园公开信息供参考，不替代澳门城市大学官方通知，不具备招生、签注、学分、毕业等审批效力。所有办事、升学、毕业相关事宜，请以学校、学院及澳门相关部门最新正式公告为准，使用者依据助手内容做出的相关决策，责任由本人自行承担。
+## 单次证据入口与导师字段校验
+
+支持 Python 的宿主现在可以直接调用 `skills/cityu-macau-campus-assistant/runtime/query.py`：
+
+```sh
+python skills/cityu-macau-campus-assistant/runtime/query.py bundle map
+python skills/cityu-macau-campus-assistant/runtime/query.py bundle fds-fees-mainland-2027
+python skills/cityu-macau-campus-assistant/runtime/query.py bundle iusd-phd-2026
+python skills/cityu-macau-campus-assistant/runtime/query.py mentors --query 计算机视觉 --level master
+```
+
+证据包名称明确适用年份/类别，不能套用到其他学生。导师入口按公开方向和标签作固定关键词匹配，并按明确导师资格筛选，返回本次口径、人数、原文记录和表格，不代表所有语义相关教师或招生名额。
+
+用返回 ID 和 `source_sha256` 调用 `render --ids ... --sha256 ...` 可生成选中教师的原文表格；用 `check --ids ... --sha256 ... --answer-file ...` 校验 UTF-8 草稿，成功返回 0，不一致返回 2 并附规范表格。此检查仅覆盖表格字段，不校验周围论述或之后的编辑。详见[检索说明](skills/cityu-macau-campus-assistant/references/retrieval.md)。
+
+主 Skill 的快速命令已前置，详细问题路由按需读取。本仓库提供脚本入口，未替宿主注册 MCP 或修改全局配置；实际采用率以模型调用轨迹为准。没有 Python 时仍可直接读 Markdown。
+
+## 可选的本地快速检索
+
+支持 Python 3.9+ 的 Agent 可通过 `skills/cityu-macau-campus-assistant/runtime/read_sections.py` 按标题建立实时索引、一次读取多个完整章节，减少重复加载大文件。无需第三方依赖、联网或缓存写入；没有 Python 时仍直接使用 Markdown。详见[章节检索说明](skills/cityu-macau-campus-assistant/references/retrieval.md)。
+
+```sh
+python skills/cityu-macau-campus-assistant/runtime/read_sections.py catalog --file freshman.md --query 学费
+python skills/cityu-macau-campus-assistant/runtime/read_sections.py read --select "fds.md::3.2" --select "freshman.md::0.2"
+```
+
+中文传输乱码时在 `read` / `catalog` 前加 `--ascii`。目录提供完整标题路径和版本绑定的章节 ID，重复标题可按 ID 唯一读取；文件更新后重新获取目录。超限会返回可选子章节及预计读取量，便于直接缩小范围或分批读取。输出包含本地版本哈希、原文行号和上级适用范围；同级来源章节仍需按问题选取，不能把局部检索当作全库审计。导师匹配与联网维护的详细规则改为按需读取，内容保留。新发布的 `runtime/` 是可选只读工具，与仍仅留在维护者本地的 `scripts/` 不同。下游若固定 Skill 快照或仅加载 Markdown，需单独接入新版本，安装本仓库不会自动更新下游应用。
+
+开发验证：`python -m unittest discover -s tests -v`。
+
 ## 更多说明
 
 - [完整说明文档](docs/guide.md)

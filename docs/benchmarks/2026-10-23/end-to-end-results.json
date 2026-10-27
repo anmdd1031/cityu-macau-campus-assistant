@@ -1,0 +1,231 @@
+{
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "cases": [
+    {
+      "name": "fees_status_r1",
+      "question": "按本地资料，2027/2028 内地申请人的人工智能硕士学费是多少？课程标为新课程就说明尚未获批、不能招生吗？请分别回答，标明适用年份和来源，不联网。",
+      "seconds": 40.67208059999393,
+      "returncode": 0,
+      "command_count": 3,
+      "tool_output_chars": 77455,
+      "usage": {
+        "input_tokens": 133200,
+        "cached_input_tokens": 78720,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 702,
+        "reasoning_output_tokens": 0
+      },
+      "answers": [
+        "我会读取本地校园助手 Skill 及相关资料，分别核对学费和“新课程”的说明。\n",
+        "1. **2027/2028 学年内地申请人的人工智能硕士学费：每学年 125,000 港元（HKD）**，这是年度学费，不是全程总学费。来源：本地 `references/fds.md` 第 3.2 节，所引[2027/2028 内地硕博招生简章](https://ado.cityu.edu.mo/list-26/257)，该项记录核验日期为 **2026年10月1日**。仅适用于该学年、该申请人类别；最终以学校当年收费通知为准。\n\n2. **不能因标为“新课程”，就判断尚未获批或不能招生。** 本地 `references/freshman.md` 第 0.2 节（版本 **2026年10月22日**）明确：“新课程”标签本身不说明审批状态。只有**对应学年、对应课程**的正式资料明确写明“待登记／刊宪”，才应说明该限制并标注资料日期。就 **2027/2028 人工智能硕士**而言，本地资料确认其已列入上述内地招生简章；实际可报课程以报名系统为准。\n\n以上依据本地资料，未作在线更新核验。"
+      ],
+      "errors": [],
+      "completed": true,
+      "reader_calls": 1,
+      "command_failures": 0,
+      "test_date": "2026-10-22",
+      "quality": "key_facts_pass"
+    },
+    {
+      "name": "map_encoded_r1",
+      "question": "澳门城市大学氹仔校区地图中的 B1 是地下一层吗？列出正式名称和来源。",
+      "seconds": 28.45943490002537,
+      "returncode": 0,
+      "command_count": 2,
+      "tool_output_chars": 78079,
+      "usage": {
+        "input_tokens": 123323,
+        "cached_input_tokens": 73344,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 382,
+        "reasoning_output_tokens": 0
+      },
+      "answers": [
+        "我会按校园助手 Skill 查阅校区地图资料和正式名称。",
+        "不是。氹仔校区官方地图中的 **B1 是楼宇标识，正式名称为“第一座”**，不表示地下一层。\n\n来源：\n\n- [澳门城市大学官方校园地图原图](https://www.cityu.edu.mo/wp-content/uploads/img/map.png)：图例对应 **B1 → 第一座**。\n- [官方“校園地圖”页面](https://www.cityu.edu.mo/zh/校園地圖/)：上述地图的发布入口。\n\n依据当前仓库 `references/campus_map.md` 的图例转写与核验记录，核验日期为 **2026年10月6日**；地图修订日期未注明。"
+      ],
+      "errors": [],
+      "completed": true,
+      "reader_calls": 0,
+      "command_failures": 0,
+      "test_date": "2026-10-22",
+      "quality": "key_facts_pass"
+    },
+    {
+      "name": "eligibility_r1",
+      "question": "我是 IUSD 2026 级博士，已修完规定课程学分、通过资格考试和开题，有一篇在读期间接收的原创研究论文，与博士论文相关，导师共同署名且投稿前书面同意，IUSD 为第二署名单位。尚未提供期刊名称、活动记录，也不知道论文是否被其他学生认领。请按本地 2026 级规则逐项检查答辩条件，不替学校审批。",
+      "seconds": 76.78324600000633,
+      "returncode": 0,
+      "command_count": 4,
+      "tool_output_chars": 70986,
+      "usage": {
+        "input_tokens": 179515,
+        "cached_input_tokens": 128384,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1669,
+        "reasoning_output_tokens": 56
+      },
+      "answers": [
+        "我会使用本地 cityu-macau-campus-assistant 技能及其引用资料，逐项核对 2026 级博士答辩条件。",
+        "**按本地 IUSD 2026 级博士规则，你已满足多项前置条件，但目前无法确认全部答辩条件已满足。**主要待确认的是：期刊资格及预警限制、成果是否由你唯一认领，以及学术活动完成与审核记录。现有信息中，没有可直接判为“尚缺”的项目；未提供材料的项目应标为“无法确认”。\n\n依据为本地 [iusd.md 第 3.8 节](E:/jintian/Documents/CodeX_projects/科研-蔡教授/cityu-macau-campus-assistant/skills/cityu-macau-campus-assistant/references/iusd.md:213)，资料更新时间为 **2026年10月1日**。以下“已满足”仅表示你的陈述与该条规则相符。\n\n| 检查项目 | 2026 级适用条件 | 初步状态及待确认事项 |\n|---|---|---|\n| 规定课程学分 | 修完规定课程学分 | **已满足**：你已明确完成；不据此推定学术活动学分也已取得。 |\n| 资格考试 | 修完规定课程学分后、正式开题前通过 | **已满足通过要求**；你未说明具体时间顺序，顺序仍需通过记录核对。 |\n| 开题 | 通过开题 | **已满足**：据你的陈述。 |\n| 论文数量及相关性 | 至少一篇与博士论文相关的研究论文 | **已满足**：你有一篇相关原创研究论文。 |\n| 接收或发表时间 | 在就读期间被接收或发表，申请答辩前具备该成果 | **已满足**：你明确为在读期间已接收；此项不要求必须等到正式见刊。 |\n| 文章类型 | 不接受综述类文章 | **已满足**：按你所述为原创研究论文。 |\n| 导师共同署名 | 导师须为共同署名作者 | **已满足**。 |\n| 投稿前导师同意 | 投稿前取得导师同意 | **已满足**：你已有投稿前书面同意。 |\n| 机构署名 | IUSD 列第一或第二署名单位 | **已满足**：第二署名单位符合要求。 |\n| 期刊范围 | 属于 SSCI、SCI/SCIE、A&HCI、CSSCI、北大核心或细则指定的澳门期刊范围 | **无法确认**：尚无期刊名称及相应收录信息；不能仅凭“已接收”认定。 |\n| 预警期刊限制 | 须遵守细则中的预警期刊限制 | **无法确认**：需结合具体期刊核对。 |\n| 成果认领 | 每篇成果只供一名学生认领 | **无法确认**：需确认是否已被其他学生认领，并明确由谁认领。 |\n| 第一学年学术活动 | 完成研究院认可学术活动总量的至少 **75%** | **无法确认**：需第一学年活动记录及研究院认可的总量口径。 |\n| 第二学年起学术活动 | 每学年至少 **5 次** | **无法确认**：需按学年列出活动及认可记录，不能只看累计次数。 |\n| 大型学术会议 | 至少参加一次研究院大型学术会议 | **无法确认**：未提供记录。 |\n| 口头或海报报告 | 至少完成一次口头或海报报告 | **无法确认**：未提供报告证明。 |\n| 活动材料及学分审核 | 每次提交约 **1,500–2,000 字**心得及证明，经审核认可后计学分 | **无法确认**：需心得、证明及审核记录。 |\n\n**不要把 2025 级更严格的发表规则套用到你身上。**本地 2026 级条款要求至少一篇符合规定范围的论文，不能额外套用“CSSCI／北大核心必须两篇”或 2025 级特定作者排序要求。学术活动也应以 2026 级的“首年至少 75%、第二学年起每年至少 5 次”核对。\n\n下一步需补充的核心信息是：\n\n1. **期刊全名、收录类别及接收日期**，用于核对期刊范围、时间和预警限制。\n2. **成果唯一认领确认**，明确该论文是否已被其他学生使用。\n3. **按学年整理的活动及审核记录**，包含大型会议、口头／海报报告、心得和证明。\n4. **课程完成、资格考试、开题的时间记录**，核对先后顺序。\n\n本地资料所列原始依据为 [IUSD 2026 级 DUD 修业规范](https://iusd.cityu.edu.mo/uploads/ueditor/file/20260902/1788326413764020.pdf)，本次未联网核验。上述是条件对照；材料真实性、成果认可及最终答辩资格由研究院认定。"
+      ],
+      "errors": [],
+      "completed": true,
+      "reader_calls": 0,
+      "command_failures": 0,
+      "test_date": "2026-10-23",
+      "quality": "key_facts_pass"
+    },
+    {
+      "name": "eligibility_r2",
+      "question": "我是 IUSD 2026 级博士，已修完规定课程学分、通过资格考试和开题，有一篇在读期间接收的原创研究论文，与博士论文相关，导师共同署名且投稿前书面同意，IUSD 为第二署名单位。尚未提供期刊名称、活动记录，也不知道论文是否被其他学生认领。请按本地 2026 级规则逐项检查答辩条件，不替学校审批。",
+      "seconds": 68.77776189998258,
+      "returncode": 0,
+      "command_count": 3,
+      "tool_output_chars": 82144,
+      "usage": {
+        "input_tokens": 198935,
+        "cached_input_tokens": 139648,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1401,
+        "reasoning_output_tokens": 0
+      },
+      "answers": [
+        "我会使用仓库中的 cityu-macau-campus-assistant 技能及其引用资料，逐项核对 2026 级博士答辩条件。",
+        "**目前可确认部分条件与你的陈述相符，但尚无法确认已齐备答辩申请条件。**待核实的重点是期刊资格及预警限制、学术活动完成情况、论文是否由你独占认领。\n\n以下依据本地 [iusd.md 第 3.8 节](E:/jintian/Documents/CodeX_projects/科研-蔡教授/cityu-macau-campus-assistant/skills/cityu-macau-campus-assistant/references/iusd.md:213)的 **2026 级 DUD 规则**。资料更新及该规则来源核验日期为 **2026年10月1日**；“已满足”仅指你的陈述与条件相符，未经材料真实性核验。\n\n| 条件 | 本地规则依据 | 初步状态 | 待补充或确认事项 |\n|---|---|---|---|\n| 规定课程学分 | 须修完规定课程学分 | **已满足** | 你已说明修完；正式审核以成绩及学分记录为准 |\n| 资格考试 | 须在修完课程学分后、正式开题前通过 | **已满足（通过本身）** | 你已说明通过；具体先后顺序尚需记录确认 |\n| 开题 | 答辩前须通过开题 | **已满足** | 你已说明通过 |\n| 第一学年学术活动 | 完成研究院认可学术活动总量至少 **75%** | **无法确认** | 缺活动记录、总量口径及认可情况；不能自行换算次数 |\n| 第二学年起学术活动 | **每学年至少5次** | **无法确认** | 缺逐学年活动记录 |\n| 大型会议及报告 | 至少参加一次研究院大型学术会议，并至少完成一次口头或海报报告 | **无法确认** | 缺参会及报告证明 |\n| 活动心得与学分认可 | 每次提交约 **1,500–2,000字**心得及证明，经审核认可后计学分 | **无法确认** | 缺心得提交及审核记录；课程学分修完不能直接证明此项完成 |\n| 论文数量、关联性与时间 | 申请答辩前至少一篇相关研究论文，在读期间接收或发表 | **已满足** | 你所述一篇在读期间已接收、与博士论文相关，符合这几个子条件 |\n| 文章类型 | 不接受综述类文章 | **已满足** | 按你所述为原创研究论文判断 |\n| 导师署名及同意 | 导师共同署名，投稿前取得导师同意 | **已满足** | 你已说明共同署名并有投稿前书面同意 |\n| 机构顺位 | IUSD 为第一或第二署名单位 | **已满足** | 第二署名单位符合要求 |\n| 期刊范围 | 须属 SSCI、SCI/SCIE、A&HCI、CSSCI、北大核心或细则指定澳门期刊范围 | **无法确认** | 需期刊名称及相应收录／指定资格信息 |\n| 预警期刊限制 | 须遵守细则的预警期刊限制 | **无法确认** | 需期刊名称及适用预警情况；本地摘要未展开具体限制口径 |\n| 成果认领 | 每篇成果只供一名学生认领 | **无法确认** | 需确认该论文是否已被其他学生认领，以及由谁申报 |\n\n**不能把2025级的更严格要求套到你身上。**本地2026级条文明示不得混用，因此不能额外要求你“CSSCI／北大核心必须两篇”，也不能直接套用2025级列出的特定学生、导师作者顺序。你的一篇论文能否计入，仍取决于期刊资格、预警限制及认领等条件全部成立。\n\n下一步需要补齐：**期刊名称与收录信息、逐学年活动及审核记录、论文唯一认领确认**，并核对资格考试与开题的时间顺序。现有信息没有显示明确未达到的项目，因此上述缺信息项标为“无法确认”，不判为“尚缺条件”。\n\n本地资料列出的原始依据为 [IUSD 2026级博士修业规范](https://iusd.cityu.edu.mo/uploads/ueditor/file/20260902/1788326413764020.pdf)。最终成果认可和答辩资格由研究院审核决定。"
+      ],
+      "errors": [],
+      "completed": true,
+      "reader_calls": 0,
+      "command_failures": 0,
+      "test_date": "2026-10-23",
+      "quality": "key_facts_pass"
+    },
+    {
+      "name": "fees_status_r2",
+      "question": "按本地资料，2027/2028 内地申请人的人工智能硕士学费是多少？课程标为新课程就说明尚未获批、不能招生吗？请分别回答，标明适用年份和来源，不联网。",
+      "seconds": 45.483204999996815,
+      "returncode": 0,
+      "command_count": 3,
+      "tool_output_chars": 74253,
+      "usage": {
+        "input_tokens": 126436,
+        "cached_input_tokens": 76672,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 568,
+        "reasoning_output_tokens": 0
+      },
+      "answers": [
+        "我会使用仓库内的 cityu-macau-campus-assistant 技能及相关资料，核对适用年份和原文来源。",
+        "1. **2027/2028 学年内地申请人的人工智能硕士学费为每学年 125,000 港元（12.5 万港元）**，不是全程总学费。来源：本地 `references/fds.md` 第 3.2 节，所引[2027/2028 内地硕博招生简章](https://ado.cityu.edu.mo/list-26/257)，该项记录的核验日期为 **2026年10月1日**。此金额仅适用于该学年、该学生类别。\n\n2. **不能。“新课程”标签本身不代表尚未获批，也不能据此判断不能招生。** 应查看对应学年、具体课程的正式资料；只有明确写有“待登记／刊宪”等条件时，才能提示该限制，并注明资料日期。来源：本地 `references/freshman.md` 第 0.2 节（版本 **2026年10月22日**）。就 **2027/2028 人工智能硕士**而言，本地资料确认其已列入内地硕博简章；实际可报读状态仍以当届报名系统和正式公告为准。\n\n以上依据本地资料，未在线核验后续变动；收费及招生安排以学校当届最新公告为准。"
+      ],
+      "errors": [],
+      "completed": true,
+      "reader_calls": 1,
+      "command_failures": 0,
+      "test_date": "2026-10-23",
+      "quality": "key_facts_pass"
+    },
+    {
+      "name": "map_encoded_r2",
+      "question": "澳门城市大学氹仔校区地图中的 B1 是地下一层吗？列出正式名称和来源。",
+      "seconds": 33.87666219996754,
+      "returncode": 0,
+      "command_count": 2,
+      "tool_output_chars": 70372,
+      "usage": {
+        "input_tokens": 117834,
+        "cached_input_tokens": 79232,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 381,
+        "reasoning_output_tokens": 0
+      },
+      "answers": [
+        "我会查阅指定 Skill 及校区地图资料，核对 B1 的正式名称和来源。\n",
+        "不是。澳门城市大学氹仔校区地图中的 **B1 是楼宇标识，正式名称为“第一座”**，不表示地下一层。\n\n来源：\n\n- [澳门城市大学官方校园地图原图](https://www.cityu.edu.mo/wp-content/uploads/img/map.png)：图例对应 **B1＝第一座**。\n- [学校官网“校園地圖”页面](https://www.cityu.edu.mo/zh/校園地圖/)。\n\n依据当前仓库 Skill 的 `references/campus_map.md`，上述图例于 **2026年10月6日**经人工核对；地图本身未注明修订日期。"
+      ],
+      "errors": [],
+      "completed": true,
+      "reader_calls": 0,
+      "command_failures": 0,
+      "test_date": "2026-10-23",
+      "quality": "key_facts_pass"
+    },
+    {
+      "name": "mentors_r1",
+      "question": "我是硕士申请人，想做计算机视觉。根据本地 FDS 资料推荐方向相关教师，说明导师资格、匹配依据、公开邮箱和来源；不要把方向匹配说成有招生名额。",
+      "seconds": 82.9707889999845,
+      "returncode": 0,
+      "command_count": 7,
+      "tool_output_chars": 185623,
+      "usage": {
+        "input_tokens": 549685,
+        "cached_input_tokens": 443264,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1808,
+        "reasoning_output_tokens": 84
+      },
+      "answers": [
+        "我会使用仓库中的 cityu-macau-campus-assistant Skill，查阅本地 FDS 教师方向、导师资格及公开联系方式资料。\n",
+        "你是硕士申请人，建议优先关注下列 **5 位本地资料明确标注“硕士生导师”、且研究方向直接涉及计算机视觉的教师**。具体选择可按医学影像、机器人视觉、三维视觉、视觉生成等兴趣细分。\n\n| 教师 | 导师资格（本地记录） | 匹配方向与依据 | 公开工作邮箱 | 来源 |\n|---|---|---|---|---|\n| **辜嘉** | 硕士生导师 | 中文官网方向明确列有计算机视觉、医疗人工智能、医学影像、图像引导机器人；适合关注**医学视觉与影像应用** | jiagu@cityu.edu.mo | [官方主页](https://fds.cityu.edu.mo/members/338) |\n| **孫鑫** | 硕士生导师 | 明确列有机器学习、计算机视觉、具身智能、机器人技术、环境遥感；适合关注**机器人视觉、具身感知或遥感** | xinsun@cityu.edu.mo | [官方主页](https://fds.cityu.edu.mo/members/337) |\n| **丁聖勇** | 博士生导师、硕士生导师 | 明确研究传统 CV 与大模型融合，涉及位姿定位、三维重建与生成、空间导航、3D Avatar、视频生成与三维视觉融合；适合关注**三维视觉与生成** | syding@cityu.edu.mo | [官方主页](https://fds.cityu.edu.mo/members/238) |\n| **李悦翔** | 硕士生导师 | 明确列有电脑视觉、多模态基础模型、视觉—语言模型，以及以“创造与编辑”推动视觉技术改进；适合关注**视觉生成、编辑与多模态理解** | yxli@cityu.edu.mo | [官方主页](https://fds.cityu.edu.mo/members/540) |\n| **睭相傑** | 硕士生导师 | 明确列有图像质量评价、视觉显著性检测、多模态大模型鲁棒性、深度伪造人脸图像检测；适合关注**视觉质量评价、检测与可信视觉** | xjsui@cityu.edu.mo | [官方主页](https://fds.cityu.edu.mo/members/390) |\n\n按“明确硕士导师资格＋方向涉及视觉、图像处理、几何视觉或多模态生成”的本次筛选口径，共整理出 **9 位候选，展开 5 位，另 4 位为張琪、朱泓光、劉銀龍、周大為**；可继续要求“显示全部相关教师”。这不是所有潜在交叉方向教师的穷尽名单。\n\n资格方面需要特别区分：**郭永德**的图像处理、计算机视觉与遥感方向也很相关，但本地记录仅明确标注“博士生导师”，不能据此自动称其为硕士生导师候选。\n\n以上依据为仓库中的 [fds_mentors.md](E:/jintian/Documents/CodeX_projects/科研-蔡教授/cityu-macau-campus-assistant/skills/cityu-macau-campus-assistant/references/mentors/fds_mentors.md:25)。文件更新于 **2026年8月5日**，师资名单审计于 **2026年7月31日**，教师逐项资料核验于 **2026年7月13日**；表中链接是本地记录的官方来源，本次未实时核验。匹配依据采用官网研究方向，未使用外部论文索引或推断个人论文贡献。\n\n**上述 5 位的本地记录均未提供公开招募说明，当前名额和接收意愿待确认。**这些建议仅为公开资料支持的方向匹配，不构成学校、学院或教师的官方推荐、质量排名或录取承诺。"
+      ],
+      "errors": [],
+      "completed": true,
+      "reader_calls": 0,
+      "command_failures": 0,
+      "test_date": "2026-10-23",
+      "quality": "needs_fix_teacher_name"
+    },
+    {
+      "name": "mentors_r2",
+      "question": "我是硕士申请人，想做计算机视觉。根据本地 FDS 资料推荐方向相关教师，说明导师资格、匹配依据、公开邮箱和来源；不要把方向匹配说成有招生名额。",
+      "seconds": 80.93590729997959,
+      "returncode": 0,
+      "command_count": 5,
+      "tool_output_chars": 143322,
+      "usage": {
+        "input_tokens": 409093,
+        "cached_input_tokens": 313984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1800,
+        "reasoning_output_tokens": 71
+      },
+      "answers": [
+        "我会使用仓库中的 cityu-macau-campus-assistant Skill，查阅本地 FDS 教师方向、导师资格和联系方式资料。",
+        "你是硕士申请人，建议优先关注**明确标注硕士生导师资格、且公开方向直接涉及计算机视觉的教师**。以下按本地 FDS 资料匹配，重点展示 5 位，不是导师水平排名。\n\n资料版本：`fds_mentors.md` 更新于 **2026年8月5日**；师资名单审计于 **2026年7月31日**，教师逐项资料核验于 **2026年7月13日**。以下链接是本地资料保存的官方来源，本次未联网核验。\n\n| 教师 | 本地记录的导师资格 | 匹配方向 | 匹配依据与适合的兴趣 | 公开工作邮箱 | 官方来源 |\n|---|---|---|---|---|---|\n| **辜嘉** | 硕士生导师 | 计算机视觉、医学影像、医疗人工智能、图像引导机器人 | 官网明确列出上述方向；适合希望把视觉技术用于医学影像或医疗机器人的申请人 | jiagu@cityu.edu.mo | [教师主页](https://fds.cityu.edu.mo/members/338) |\n| **孫鑫** | 硕士生导师 | 计算机视觉、机器学习、具身智能、机器人技术、环境遥感 | 官网将计算机视觉与机器人、遥感并列；适合视觉感知与机器人或遥感应用的交叉兴趣 | xinsun@cityu.edu.mo | [教师主页](https://fds.cityu.edu.mo/members/337) |\n| **丁聖勇** | 博士生导师、硕士生导师 | 三维视觉、位姿定位、三维重建与生成、3D Avatar、视频生成 | 官网明确描述传统 CV 与大模型结合，以及少量 RGB 图像重建、视频生成中的三维约束；适合三维视觉和视觉生成方向 | syding@cityu.edu.mo | [教师主页](https://fds.cityu.edu.mo/members/238) |\n| **李悦翔** | 硕士生导师 | 计算机视觉、视觉语言模型、多模态大模型 | 官网明确列出视觉语言模型、场景理解与推理，以及以“创造与编辑”推动视觉技术；适合多模态理解和视觉内容生成、编辑 | yxli@cityu.edu.mo | [教师主页](https://fds.cityu.edu.mo/members/540) |\n| **睭相傑** | 硕士生导师 | 图像质量评价、视觉显著性检测、深度伪造人脸检测、多模态鲁棒性 | 官网直接列出具体视觉任务，包括真实／生成图像质量评估、图像／视频显著区域预测和伪造人脸检测；适合视觉质量、安全与可靠性方向 | xjsui@cityu.edu.mo | [教师主页](https://fds.cityu.edu.mo/members/390) |\n\n按“**明确硕导资格＋明确视觉或图像任务**”这一口径，本次筛出 **8 位**，上表展示 **5 位**，另外 **3 位**未展开：**張琪**（图像处理、模式识别）、**劉銀龍**（几何视觉）、**周大為​**（医学影像增强、视觉内容生成）。这不是所有潜在交叉方向教师的穷尽名单；可以要求“显示全部相关教师”。\n\n另一个值得区分的例子是 **郭永德**：公开方向确实包括计算机视觉、图像处理和遥感，但本地仅明确记录其**博士生导师**资格，因此不能据此直接称其为已确认的硕士生导师。[官方主页](https://fds.cityu.edu.mo/members/175)\n\n**上述 5 位在本地记录中均未公开招募说明，当前硕士招生名额和接收意愿均待确认。**这些建议仅依据公开方向及导师资格，不使用外部论文索引，也不推断具体论文贡献；属于方向匹配，不构成学校、学院或教师的官方推荐、评价、录取承诺或招生状态确认。\n\n"
+      ],
+      "errors": [],
+      "completed": true,
+      "reader_calls": 0,
+      "command_failures": 0,
+      "test_date": "2026-10-23",
+      "quality": "needs_fix_teacher_name"
+    }
+  ],
+  "excluded_attempts": [
+    {
+      "name": "eligibility_r1",
+      "question": "我是 IUSD 2026 级博士，已修完规定课程学分、通过资格考试和开题，有一篇在读期间接收的原创研究论文，与博士论文相关，导师共同署名且投稿前书面同意，IUSD 为第二署名单位。尚未提供期刊名称、活动记录，也不知道论文是否被其他学生认领。请按本地 2026 级规则逐项检查答辩条件，不替学校审批。",
+      "seconds": 8.096771299955435,
+      "returncode": 1,
+      "command_count": 0,
+      "tool_output_chars": 0,
+      "usage": null,
+      "answers": [],
+      "errors": [
+        {
+          "type": "error",
+          "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at Oct 23rd, 2026 2:07 AM."
+        },
+        {
+          "type": "turn.failed",
+          "error": {
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at Oct 23rd, 2026 2:07 AM."
+          }
+        }
+      ],
+      "completed": false
+    }
+  ]
+}

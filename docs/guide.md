@@ -18,6 +18,8 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 
 > 2026-10-01 已按单进程刷新 660 个知识库官方引用；635 个实际请求中 599 个成功，另有软 404、404、网络失败和受保护来源。全站审计仍有 3,614 个未解决 URL，且数万份新候选正文尚未人工复核；因此各文件的“已完成”仅表示其既定范围，不代表全站所有网页均已覆盖。
 
+> 2026-10-22 对现有直接引用及其链接正式文档作定向刷新（668 个引用、643 个重排、25 个受保护；本轮 662 次请求尝试），并人工核对 ADO 当前 2027/2028 本地及非内地生招生入口及中文扫描简章。已同步招生日期、资格摘要与课程学费至 `freshman.md`、FDS、FOF、FH、FITM；该工作不是全站重审，受保护、软 404、超时或访问失败的地址不等同于已删除。
+
 ## 可以回答什么
 
 可以回答：
@@ -41,18 +43,18 @@ Agent 被触发后，会先读取 [SKILL.md](../skills/cityu-macau-campus-assist
 
 | 知识库 | 文件 | 状态 | 用途 |
 |---|---|---|---|
-| 学校概况、新生与校园通用知识库 | [freshman.md](../skills/cityu-macau-campus-assistant/references/freshman.md) | 2026-10-04 补充中文官方校庆资料中的校史、横琴科研平台和未来书院；排名核验仍为 10-03，规模统计保留手册版本 | 校史、校庆、办学特色、科研平台、微专业边界、排名、校区和部门分工；保留招生、学费、宿舍等校园事务。现任领导、新校区启用和当前项目报名仍须另核 |
-| 数据科学学院 FDS | [fds.md](../skills/cityu-macau-campus-assistant/references/fds.md) | 已局部更新（2027/2028 内地硕博项目/学费、2026/2027 第一学期课表；学院其余内容未全量复审） | BITS、BCS、BAI、MDS、MCS、MAI、DDS、DCS、招生状态、学分、资格考试、论文成果、导师、毕业 |
+| 学校概况、新生与校园通用知识库 | [freshman.md](../skills/cityu-macau-campus-assistant/references/freshman.md) | 2026-10-22 增补 ADO 2027/2028 本地及非内地生简章、报名期、资格摘要和学费；其他章节仍按各自日期/范围核验 | 校史、校庆、办学特色、科研平台、微专业边界、排名、校区和部门分工；保留招生、学费、宿舍等校园事务。现任领导、新校区启用和当前项目报名仍须另核 |
+| 数据科学学院 FDS | [fds.md](../skills/cityu-macau-campus-assistant/references/fds.md) | 已局部更新（2027/2028 内地招生、学费及本地/非内地简章中的 FDS 课程费用；2026/2027 第一学期课表；学院其余内容未全量复审） | BITS、BCS、BAI、MDS、MCS、MAI、DDS、DCS、招生状态、学分、资格考试、论文成果、导师、毕业 |
 | FDS 导师基础画像 | [fds_mentors.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_mentors.md) | 已完成 | 58 名 Academic Staff、中文官网职称/职务、导师资格、58 个可核验校内工作邮箱、官网研究方向、科研证据覆盖提示、招募说明和官方主页 |
 | FDS 官网完整科研证据 | [fds_official_evidence.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_official_evidence.md) | 已完成 | 58 名教师官网公开的完整科研经历、研究项目和论文成果栏目；按需读取，官网访问失败时可使用本地核验版本 |
 | FDS 论文检索索引 | [fds_papers.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_papers.md) | 暂时停用 | 仅为维护者保留，不参与 Agent 路由、回答或导师推荐 |
 | FDS 导师匹配规则 | [fds_rules.md](../skills/cityu-macau-campus-assistant/references/mentors/fds_rules.md) | 已完成 | 官网准入、研究方向匹配、官方证据来源和回答边界 |
 | 商学院 FOB | [fob.md](../skills/cityu-macau-campus-assistant/references/fob.md) | 已局部更新（2027/2028 内地招生、2026 年研究生手册） | BBA、MBA、管理分析学硕士（MMA）、DBA、IBC、4+1 项目、导师、论文与毕业要求 |
-| 金融学院 FOF | [fof.md](../skills/cityu-macau-campus-assistant/references/fof.md) | 已局部更新（2027/2028 招生、2026/2027 博士开题/答辩日程、导师名单、课表及研究生手册） | BAE、金融精英班、金融学硕士、金融科技硕士、金融学博士、导师、发表与毕业要求 |
-| 大健康学院 FH | [fh.md](../skills/cityu-macau-campus-assistant/references/fh.md) | 已局部更新（2027/2028 内地简章列出智慧养老与健康管理硕士；学院课程页仍有旧届次和“即将获批”文字，适用范围已注明） | BSW、MSW、MAP、DAP、智慧养老与健康管理、导师、实习与毕业要求 |
+| 金融学院 FOF | [fof.md](../skills/cityu-macau-campus-assistant/references/fof.md) | 已局部更新（新增 2027/2028 本地及非内地简章中的 BAE/MSF/金融科技硕士/PhD Finance 日期与费用；另含 2026/2027 博士开题/答辩日程、导师名单、课表及研究生手册） | BAE、金融精英班、金融学硕士、金融科技硕士、金融学博士、导师、发表与毕业要求 |
+| 大健康学院 FH | [fh.md](../skills/cityu-macau-campus-assistant/references/fh.md) | 已局部更新（智慧养老与健康管理硕士的 2027/2028 内地及本地/非内地招生和费用；学院课程页仍有旧届次和“即将获批”文字，适用范围已注明） | BSW、MSW、MAP、DAP、智慧养老与健康管理、导师、实习与毕业要求 |
 | 教育学院 FE/SOE | [fe.md](../skills/cityu-macau-campus-assistant/references/fe.md) | 已局部更新（2027/2028 内地招生简章学制、语言及费用） | 教育学硕士、教学研究硕士、教育学博士、教育博士（该届内地招生简章已列；其他类别及报名系统状态仍须核验）、学分、导师、论文与毕业要求 |
 | 法学院 FL/SOL | [fl.md](../skills/cityu-macau-campus-assistant/references/fl.md) | 已完成 | 法学硕士、专业方向、学分、导师、论文与毕业要求 |
-| 国际旅游与管理学院 FITM | [fitm.md](../skills/cityu-macau-campus-assistant/references/fitm.md) | 已局部更新（2026/2027 第一学期课表、2026–2027 实习手册及研究生手册） | 国际旅游与酒店管理、国际款待与旅游业管理、国际酒店管理、国际旅游管理、酒店管理、导师、项目报告、论文与毕业要求 |
+| 国际旅游与管理学院 FITM | [fitm.md](../skills/cityu-macau-campus-assistant/references/fitm.md) | 已局部更新（新增 2027/2028 本地及非内地生 IHTM/MHTM/MHM/PhD in ITM/DHM 学费；另含 2026/2027 第一学期课表、2026–2027 实习手册及研究生手册） | 国际旅游与酒店管理、国际款待与旅游业管理、国际酒店管理、国际旅游管理、酒店管理、导师、项目报告、论文与毕业要求 |
 | 人文社会科学学院 FHSS | [fhss.md](../skills/cityu-macau-campus-assistant/references/fhss.md) | 已完成 | 应用语言学、英语、葡萄牙语、中国文化研究、文化产业管理与文化产业研究课程、学分、论文与毕业要求 |
 | FHSS 师资索引 | [fhss_faculty.md](../skills/cityu-macau-campus-assistant/references/faculty/fhss_faculty.md) | 已完成 | 中文官网当前58名全职、9名特聘、5名兼任学术人员，管理团队、课程督导和公开研究方向 |
 | 创新设计学院 FIAD | [fiad.md](../skills/cityu-macau-campus-assistant/references/fiad.md) | 已完成；已补核 2026/2027 艺术学硕士/博士第一学期课表 | 设计艺术、设计学、艺术学本硕博课程、学分、学术活动、成果发表、导师与毕业要求 |
@@ -621,3 +623,16 @@ npx skills add . --list
 ## License
 
 [MIT](../LICENSE)
+
+
+## 2026-10-22：可选章节读取入口
+
+支持 Python 3.9+ 的宿主可使用 [runtime/read_sections.py](../skills/cityu-macau-campus-assistant/runtime/read_sections.py) 的实时章节索引和批量读取功能，详见[检索说明](../skills/cityu-macau-campus-assistant/references/retrieval.md)。无额外依赖、无联网、查询不写文件；无 Python 时仍按标题读取 Markdown。维护用 `scripts/` 继续仅保存在本地；可选 `runtime/` 随 Skill 发布。规则拆分不改变学校事实或核验日期，宿主或下游固定快照须另行更新才能受益。
+
+
+章节导航补充（2026-10-22）：目录现提供完整路径和版本绑定 ID，同名标题用 ID 读取；文件变更后刷新目录。超限响应直接返回子章节选择器和读取量。见[章节唯一定位修复报告](section-navigation-fix.md)。日常问答依旧优先读取对应年份、学生类别和问题所需的原文章节，无需安装额外库。
+
+
+## 2026-10-26：单次证据与导师表格校验
+
+新增 `runtime/query.py`：按指定主题一次读取证据包；导师方向查询返回固定关键词口径与人数，按原始记录生成表格并支持草稿一致性检查。字段校验不覆盖周围文字或之后的编辑，宿主是否实际执行须通过调用轨迹验证。命令及限制见[README](../README.md#单次证据入口与导师字段校验)和[检索说明](../skills/cityu-macau-campus-assistant/references/retrieval.md)。
