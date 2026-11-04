@@ -636,3 +636,7 @@ npx skills add . --list
 ## 2026-10-26：单次证据与导师表格校验
 
 新增 `runtime/query.py`：按指定主题一次读取证据包；导师方向查询返回固定关键词口径与人数，按原始记录生成表格并支持草稿一致性检查。字段校验不覆盖周围文字或之后的编辑，宿主是否实际执行须通过调用轨迹验证。命令及限制见[README](../README.md#单次证据入口与导师字段校验)和[检索说明](../skills/cityu-macau-campus-assistant/references/retrieval.md)。
+
+## 2026-10-28 查询流程优化
+
+基础邮箱和地图标识可用 query.py contact/building 直接返回；通用 Agent 导师推荐使用 mentors 并校验实际草稿；宿主直接展示字面初选可用 recommend，个性化场景用 mentors --view selection 加宿主 finalize。原文身份字段自动渲染，规则无需重复加载。新接口和限制见 README 的“减少模型往返的查询方式”；不代表下游应用已完成自动集成。

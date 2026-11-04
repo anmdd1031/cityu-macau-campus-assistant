@@ -1,0 +1,803 @@
+{
+  "scope": "Serial live experiments, not randomized; timing eligibility is not answer correctness. Identity check excludes surrounding prose.",
+  "results": [
+    {
+      "name": "fees_status_r1",
+      "seconds": 148.91178989998298,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 2,
+      "tool_output_chars": 40760,
+      "usage": {
+        "input_tokens": 113154,
+        "cached_input_tokens": 75776,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 440,
+        "reasoning_output_tokens": 0
+      },
+      "timeout": null,
+      "phase": "before",
+      "errors": [
+        {
+          "type": "error",
+          "message": "Reconnecting... 2/5 (request timed out)"
+        },
+        {
+          "type": "error",
+          "message": "Reconnecting... 3/5 (request timed out)"
+        },
+        {
+          "type": "error",
+          "message": "Reconnecting... 4/5 (request timed out)"
+        },
+        {
+          "type": "error",
+          "message": "Reconnecting... 5/5 (request timed out)"
+        }
+      ],
+      "timing_eligible": false,
+      "exclusion": "Incomplete response or transport/provider/quota error; not a clean timing sample."
+    },
+    {
+      "name": "map_encoded_r1",
+      "seconds": 153.69750380000914,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 3,
+      "tool_output_chars": 38378,
+      "usage": {
+        "input_tokens": 106890,
+        "cached_input_tokens": 73472,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 409,
+        "reasoning_output_tokens": 0
+      },
+      "timeout": null,
+      "phase": "before",
+      "errors": [
+        {
+          "type": "error",
+          "message": "Reconnecting... 2/5 (request timed out)"
+        },
+        {
+          "type": "error",
+          "message": "Reconnecting... 3/5 (request timed out)"
+        },
+        {
+          "type": "error",
+          "message": "Reconnecting... 4/5 (request timed out)"
+        },
+        {
+          "type": "error",
+          "message": "Reconnecting... 5/5 (request timed out)"
+        }
+      ],
+      "timing_eligible": false,
+      "exclusion": "Incomplete response or transport/provider/quota error; not a clean timing sample."
+    },
+    {
+      "name": "eligibility_r1",
+      "seconds": 0.08031099999789149,
+      "completed": false,
+      "returncode": 1,
+      "command_count": 0,
+      "tool_output_chars": 0,
+      "usage": null,
+      "timeout": null,
+      "phase": "before-http",
+      "errors": [],
+      "timing_eligible": false,
+      "exclusion": "Incomplete response or transport/provider/quota error; not a clean timing sample."
+    },
+    {
+      "name": "fees_status_r1",
+      "seconds": 0.08241960001760162,
+      "completed": false,
+      "returncode": 1,
+      "command_count": 0,
+      "tool_output_chars": 0,
+      "usage": null,
+      "timeout": null,
+      "phase": "before-http",
+      "errors": [],
+      "timing_eligible": false,
+      "exclusion": "Incomplete response or transport/provider/quota error; not a clean timing sample."
+    },
+    {
+      "name": "map_encoded_r1",
+      "seconds": 0.08774649997940287,
+      "completed": false,
+      "returncode": 1,
+      "command_count": 0,
+      "tool_output_chars": 0,
+      "usage": null,
+      "timeout": null,
+      "phase": "before-http",
+      "errors": [],
+      "timing_eligible": false,
+      "exclusion": "Incomplete response or transport/provider/quota error; not a clean timing sample."
+    },
+    {
+      "name": "mentors_r1",
+      "seconds": 0.07598259998485446,
+      "completed": false,
+      "returncode": 1,
+      "command_count": 0,
+      "tool_output_chars": 0,
+      "usage": null,
+      "timeout": null,
+      "phase": "before-http",
+      "errors": [],
+      "timing_eligible": false,
+      "exclusion": "Incomplete response or transport/provider/quota error; not a clean timing sample."
+    },
+    {
+      "name": "eligibility_r1",
+      "seconds": 69.17188259999966,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 2,
+      "tool_output_chars": 39601,
+      "usage": {
+        "input_tokens": 103031,
+        "cached_input_tokens": 61696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1168,
+        "reasoning_output_tokens": 39
+      },
+      "timeout": null,
+      "phase": "before-http-custom",
+      "errors": [],
+      "timing_eligible": true
+    },
+    {
+      "name": "fees_status_r1",
+      "seconds": 37.988367799989646,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 2,
+      "tool_output_chars": 40760,
+      "usage": {
+        "input_tokens": 105808,
+        "cached_input_tokens": 57472,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 463,
+        "reasoning_output_tokens": 0
+      },
+      "timeout": null,
+      "phase": "before-http-custom",
+      "errors": [],
+      "timing_eligible": true
+    },
+    {
+      "name": "map_encoded_r1",
+      "seconds": 37.34314159999485,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 3,
+      "tool_output_chars": 38378,
+      "usage": {
+        "input_tokens": 102269,
+        "cached_input_tokens": 62976,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 404,
+        "reasoning_output_tokens": 0
+      },
+      "timeout": null,
+      "phase": "before-http-custom",
+      "errors": [],
+      "timing_eligible": true
+    },
+    {
+      "name": "mentors_r1",
+      "seconds": 96.39961409999523,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 7,
+      "tool_output_chars": 97897,
+      "usage": {
+        "input_tokens": 418604,
+        "cached_input_tokens": 341760,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2180,
+        "reasoning_output_tokens": 54
+      },
+      "timeout": null,
+      "phase": "before-http-custom",
+      "errors": [],
+      "timing_eligible": true,
+      "final_identity_valid": true,
+      "identity_issues": [],
+      "identified_source_ids": [
+        "8",
+        "9",
+        "11",
+        "13",
+        "36"
+      ],
+      "final_answer": "建议先关注以下 **5 位具有明确硕士生导师资格、公开方向与计算机视觉直接相关的教师**。本地资料按“视觉／图像”等关键词及硕士导师资格共召回 **11 人**，这里展示 5 人，其余 6 人未展开；这不是全部语义相关教师名单，也不是导师质量排名。\n\n| 教师 | 导师资格 | 公开工作邮箱 | 官方主页 |\n|---|---|---|---|\n| 辜嘉（Jia Gu） | 硕士生导师 | jiagu@cityu.edu.mo | https://fds.cityu.edu.mo/members/338 |\n| 孫鑫（Xin Sun） | 硕士生导师 | xinsun@cityu.edu.mo | https://fds.cityu.edu.mo/members/337 |\n| 丁聖勇（Shengyong Ding） | 博士生导师、硕士生导师 | syding@cityu.edu.mo | https://fds.cityu.edu.mo/members/238 |\n| 李悦翔（Yuexiang Li） | 硕士生导师 | yxli@cityu.edu.mo | https://fds.cityu.edu.mo/members/540 |\n| 眭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |\n\n具体匹配依据来自本地保存的官方研究方向，对应来源为上表各教师主页：\n\n- **辜嘉：医学视觉、图像引导机器人。** 明确列出计算机视觉、医疗人工智能、医学影像、图像引导机器人。适合对视觉技术在医疗中的应用感兴趣的申请人。\n- **孫鑫：视觉与具身智能、机器人、遥感。** 明确列出机器学习、计算机视觉、具身智能、机器人技术、环境遥感。适合希望把视觉感知与机器人或遥感结合的申请人。\n- **丁聖勇：三维视觉与生成。** 方向涉及位姿定位、三维重建与生成、空间导航，以及保持身份一致性的 3D 人像、视频生成与 3D 视觉融合。若你偏向 **3D 重建、数字人、视频生成中的三维一致性**，值得重点了解。\n- **李悦翔：视觉语言模型与视觉生成、编辑。** 公开方向涉及多模态大模型、视觉语言模型的场景理解与推理，以及以“创造与编辑”驱动的计算机视觉。适合偏向 **多模态理解、视觉生成与编辑** 的申请人。\n- **眭相傑：视觉质量评价与伪造检测。** 明确列出图像质量评价、视觉显著性检测、多模态大模型鲁棒性、深度伪造人脸图像检测。适合偏向 **图像评价、视觉感知与内容真实性检测** 的申请人。\n\n资料依据为本地 `references/mentors/fds_mentors.md`：信息更新于 **2026年8月5日**，师资名单审计于 **2026年7月31日**，上述教师逐项资料核验于 **2026年7月13日**。这些是本地保存的官网资料，资格、方向及邮箱可能已有变化；本次未使用外部论文索引。\n\n**上述 5 人在本地记录中均为“官网未公开招募说明”，当前招生名额和接收意愿待确认。** 方向匹配不代表有招生名额。联系时可附简历和简短研究兴趣，询问目标入学年度是否接收硕士生、拟研究课题及所属课程要求。你也可以要求“显示全部相关教师”。\n\n以上仅为基于公开资料的研究方向匹配，不构成学校官方推荐或录取承诺，请以学院和教师确认结果为准。",
+      "answer_sha256": "68a3013f7fa11568b73706bcb6b3e7e5e53f4cc46124767517f561756086e39c",
+      "quality_eligible": true
+    },
+    {
+      "name": "eligibility_r1",
+      "seconds": 62.219049100007396,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 2,
+      "tool_output_chars": 31529,
+      "usage": {
+        "input_tokens": 93070,
+        "cached_input_tokens": 57728,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 978,
+        "reasoning_output_tokens": 0
+      },
+      "timeout": null,
+      "phase": "after-http",
+      "errors": [],
+      "timing_eligible": true
+    },
+    {
+      "name": "fees_status_r1",
+      "seconds": 46.30664500000421,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 2,
+      "tool_output_chars": 32606,
+      "usage": {
+        "input_tokens": 94110,
+        "cached_input_tokens": 57600,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 430,
+        "reasoning_output_tokens": 0
+      },
+      "timeout": null,
+      "phase": "after-http",
+      "errors": [],
+      "timing_eligible": true
+    },
+    {
+      "name": "map_encoded_r1",
+      "seconds": 37.131225000019185,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 2,
+      "tool_output_chars": 25407,
+      "usage": {
+        "input_tokens": 91403,
+        "cached_input_tokens": 64384,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 264,
+        "reasoning_output_tokens": 0
+      },
+      "timeout": null,
+      "phase": "after-http",
+      "errors": [],
+      "timing_eligible": true
+    },
+    {
+      "name": "map_encoded_r2",
+      "seconds": 7.485482599993702,
+      "completed": false,
+      "returncode": 1,
+      "command_count": 0,
+      "tool_output_chars": 0,
+      "usage": null,
+      "timeout": null,
+      "phase": "after-http",
+      "errors": [
+        {
+          "type": "error",
+          "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 11:58 PM."
+        },
+        {
+          "type": "turn.failed",
+          "error": {
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 11:58 PM."
+          }
+        }
+      ],
+      "timing_eligible": false,
+      "exclusion": "Incomplete response or transport/provider/quota error; not a clean timing sample."
+    },
+    {
+      "name": "mentors_r1",
+      "seconds": 57.29738920001546,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 2,
+      "tool_output_chars": 53788,
+      "usage": {
+        "input_tokens": 109373,
+        "cached_input_tokens": 51712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 979,
+        "reasoning_output_tokens": 0
+      },
+      "timeout": null,
+      "phase": "after-http",
+      "errors": [],
+      "timing_eligible": true,
+      "final_identity_valid": false,
+      "identity_issues": [
+        {
+          "kind": "missing_or_modified_row",
+          "expected_row": "| 眭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |"
+        },
+        {
+          "kind": "unexpected_or_duplicate_table_rows"
+        }
+      ],
+      "identified_source_ids": [
+        "8",
+        "11",
+        "13",
+        "36",
+        "50"
+      ],
+      "final_answer": "你可以先关注以下 **5 位具有明确硕士生导师资格、研究方向与计算机视觉相关的教师**。本地资料核验日期为 **2026年7月13日**，本次未实时核验。\n\n按公开方向及标签关键词检索、再筛选导师资格，共召回 **11 人，展示 5 人，未展开 6 人**；可继续要求展示全部。以下按官网方向命中词数、标签命中词数及官网顺序排列，仅作方向初选，不是学术水平或个人适配程度排名，也不代表全部语义相关教师。\n\n| 教师 | 导师资格 | 公开工作邮箱 | 官方主页 |\n|---|---|---|---|\n| 辜嘉（Jia Gu） | 硕士生导师 | jiagu@cityu.edu.mo | https://fds.cityu.edu.mo/members/338 |\n| 丁聖勇（Shengyong Ding） | 博士生导师、硕士生导师 | syding@cityu.edu.mo | https://fds.cityu.edu.mo/members/238 |\n| 李悦翔（Yuexiang Li） | 硕士生导师 | yxli@cityu.edu.mo | https://fds.cityu.edu.mo/members/540 |\n| 睭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |\n| 周大為​（Dawei Zhou） | 硕士生导师 | dwzhou@cityu.edu.mo | https://fds.cityu.edu.mo/members/497 |\n\n具体匹配依据来自本地保存的上述 FDS 官方个人页方向记录：\n\n- **辜嘉：医学影像、医疗视觉。**公开方向包括“計算機視覺、醫療人工智能、醫學影像、圖像引導機器人”。如果你希望将视觉方法用于医疗场景，可以重点了解。\n- **丁聖勇：三维视觉、重建与生成。**公开方向涵盖位姿定位、三维重建与生成、空间导航，以及从少量 RGB 图像重建或生成 3D 人像、视频生成与 3D 视觉融合。适合关注三维几何、数字人和视频生成的申请人。\n- **李悦翔：视觉语言模型、视觉内容创造与编辑。**公开方向包括大型视觉语言模型的场景理解、推理，以及以“创造与编辑”驱动的计算机视觉研究。适合关注多模态模型与生成式视觉的申请人。\n- **睭相傑：图像质量、显著性与视觉安全。**公开方向明确包括真实／生成图像质量评价、视觉显著性检测、多模态大模型鲁棒性、深度伪造人脸图像检测。\n- **周大為​：可信视觉、医学影像与多模态生成。**公开方向包括对抗鲁棒性、伪造检测、医学影像增强、可靠自动化诊断、异质图像合成与多模态生成。\n\n**导师资格、方向匹配和招生名额是三件不同的事。**以上资料支持将他们列为硕士方向候选；当前招生名额与接收意愿均待确认，联系时应说明申请年份、课程和具体研究兴趣。上述依据仅涉及公开研究方向，未使用 Crossref 数据，也不据此推断教师在具体论文中负责的技术模块。\n\n以上仅为基于公开资料的研究方向匹配，不构成学校、学院或教师的官方推荐或录取承诺；资格、联系方式及招生安排请以学院和教师确认结果为准。",
+      "answer_sha256": "155349bbc37620a1ba4f86fc05cfa2d25ff2e71f0b5bb523a3382c44a62d4f8e",
+      "quality_eligible": false
+    },
+    {
+      "name": "mentors_r1",
+      "seconds": 111.69248159998097,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 6,
+      "tool_output_chars": 71546,
+      "usage": {
+        "input_tokens": 324885,
+        "cached_input_tokens": 253568,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2227,
+        "reasoning_output_tokens": 43
+      },
+      "timeout": null,
+      "phase": "final-mentors",
+      "errors": [],
+      "timing_eligible": true,
+      "final_identity_valid": false,
+      "identity_issues": [
+        {
+          "kind": "missing_or_modified_row",
+          "expected_row": "| 眭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |"
+        },
+        {
+          "kind": "unexpected_or_duplicate_table_rows"
+        }
+      ],
+      "identified_source_ids": [
+        "8",
+        "11",
+        "13",
+        "36",
+        "50"
+      ],
+      "final_answer": "建议先关注以下 5 位澳门城市大学数据科学学院（FDS）教师，均在本地资料中明确列有硕士生导师资格。\n\n本次按公开方向及标签关键词召回、按硕士导师资格筛选，共匹配 11 人，展示 5 人，另 6 人未展开；可继续要求“显示全部相关教师”。排序按官网方向关键词命中数、标签命中数、官网顺序，属于方向初选，不代表全部语义相关教师或学术水平排名。\n\n| 教师 | 导师资格 | 公开工作邮箱 | 官方主页 |\n|---|---|---|---|\n| 辜嘉（Jia Gu） | 硕士生导师 | jiagu@cityu.edu.mo | https://fds.cityu.edu.mo/members/338 |\n| 丁聖勇（Shengyong Ding） | 博士生导师、硕士生导师 | syding@cityu.edu.mo | https://fds.cityu.edu.mo/members/238 |\n| 李悦翔（Yuexiang Li） | 硕士生导师 | yxli@cityu.edu.mo | https://fds.cityu.edu.mo/members/540 |\n| 睭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |\n| 周大為​（Dawei Zhou） | 硕士生导师 | dwzhou@cityu.edu.mo | https://fds.cityu.edu.mo/members/497 |\n\n匹配依据来自本地保存的上述官方主页研究方向记录：\n\n- **辜嘉**：明确列出计算机视觉、医疗人工智能、医学影像、图像引导机器人。若你偏向医学影像或医疗场景中的视觉应用，可重点了解。\n- **丁聖勇**：方向涉及位姿定位、三维重建与生成、空间导航，以及 3D Avatar、视频生成与 3D 视觉融合。适合进一步了解三维视觉、数字人和视觉生成方向。\n- **李悦翔**：方向涉及视觉—语言等多模态大模型、场景理解与推理，以及以“创造与编辑”为重点的电脑视觉。若你对视觉大模型、图像生成与编辑感兴趣，可重点了解。\n- **睭相傑**：明确列出图像质量评价、视觉显著性检测、多模态大模型鲁棒性、深度伪造人脸图像检测。适合关注视觉质量、感知与检测安全方向。\n- **周大為​**：方向涉及医学影像增强、自动化诊断、异质图像合成、多模态生成，以及对抗鲁棒性和伪造检测。适合关注医学视觉、视觉生成与可信机器学习的交叉方向。\n\n以上依据是公开研究方向，不据此推断具体论文中的技术分工；未使用 Crossref 等外部论文索引。\n\n**资料时效与名额**：本地记录核验日期为 **2026年7月13日**，本次未实时核验。导师资格与方向匹配均不等于有招生名额；当前名额、接收意愿及你所申请课程是否适用，仍需向教师或学院确认。\n\n这些建议仅为基于公开资料的研究方向匹配，不构成学校、学院或教师的官方推荐、评价或录取承诺，请以学院和教师确认结果为准。",
+      "answer_sha256": "dacc669363f443561b349099c70415610a14e47fb74b5f40df6b810bd447bc08",
+      "quality_eligible": false
+    },
+    {
+      "name": "mentors_r2",
+      "seconds": 121.10623520001536,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 6,
+      "tool_output_chars": 58323,
+      "usage": {
+        "input_tokens": 325819,
+        "cached_input_tokens": 273792,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2841,
+        "reasoning_output_tokens": 27
+      },
+      "timeout": null,
+      "phase": "final-mentors",
+      "errors": [],
+      "timing_eligible": true,
+      "final_identity_valid": false,
+      "identity_issues": [
+        {
+          "kind": "missing_or_modified_row",
+          "expected_row": "| 眭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |"
+        },
+        {
+          "kind": "unexpected_or_duplicate_table_rows"
+        }
+      ],
+      "identified_source_ids": [
+        "8",
+        "11",
+        "13",
+        "36",
+        "50"
+      ],
+      "final_answer": "建议先关注以下 5 位教师，均有本地资料明确记录的硕士生导师资格。本次按公开方向及标签关键词匹配、筛选资格，共召回 11 人，展示 5 人，另有 6 人未展开，可要求显示全部相关教师。顺序依据官网方向命中词数、标签命中词数和官网顺序；这是字面初选，不是全部语义相关教师名单或学术水平排名。\n\n| 教师 | 导师资格 | 公开工作邮箱 | 官方主页 |\n|---|---|---|---|\n| 辜嘉（Jia Gu） | 硕士生导师 | jiagu@cityu.edu.mo | https://fds.cityu.edu.mo/members/338 |\n| 丁聖勇（Shengyong Ding） | 博士生导师、硕士生导师 | syding@cityu.edu.mo | https://fds.cityu.edu.mo/members/238 |\n| 李悦翔（Yuexiang Li） | 硕士生导师 | yxli@cityu.edu.mo | https://fds.cityu.edu.mo/members/540 |\n| 睭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |\n| 周大為​（Dawei Zhou） | 硕士生导师 | dwzhou@cityu.edu.mo | https://fds.cityu.edu.mo/members/497 |\n\n对应的匹配依据来自上列官方主页的本地记录：\n\n- **辜嘉**：明确列出计算机视觉、医疗人工智能、医学影像、图像引导机器人，适合关注医学视觉与医疗应用。\n- **丁聖勇**：传统 CV 与大模型融合，涉及位姿定位、三维重建与生成、空间导航、3D Avatar，以及视频生成与 3D 视觉融合，适合关注三维视觉。\n- **李悦翔**：视觉语言模型、场景理解与推理，以及以创造和编辑驱动的电脑视觉，适合关注多模态与视觉生成编辑。\n- **睭相傑**：图像质量评价、视觉显著性检测、多模态大模型鲁棒性、深度伪造人脸图像检测，适合关注视觉质量与可信视觉。\n- **周大為​**：医学影像增强、可靠的自动化诊断、异质图像合成、多模态生成，以及对抗鲁棒性和伪造检测。\n\n来源为本地 `references/mentors/fds_mentors.md` 保存的官网资料，记录核验日期为 **2026年7月13日**，本次未实时核验。未使用外部论文索引或 Crossref 数据，也不据此判断具体论文贡献。\n\n**方向匹配不等于有招生名额；上述教师当前名额与接收意愿均待确认。** 以上仅为公开资料的研究方向匹配，不构成学校、学院或教师的官方推荐或录取承诺。申请前请向学院或教师核实最新资格、方向及招生安排。",
+      "answer_sha256": "039e24e62db948ff526832bfaed992b53dfd18a0eb7b1be96334bd953272f326",
+      "quality_eligible": false
+    },
+    {
+      "name": "eligibility_r1",
+      "seconds": 63.81667359999847,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 2,
+      "tool_output_chars": 32624,
+      "usage": {
+        "input_tokens": 93007,
+        "cached_input_tokens": 51584,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1114,
+        "reasoning_output_tokens": 0
+      },
+      "timeout": null,
+      "phase": "final-all",
+      "errors": [],
+      "timing_eligible": true
+    },
+    {
+      "name": "fees_status_r1",
+      "seconds": 52.4415130999987,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 3,
+      "tool_output_chars": 24929,
+      "usage": {
+        "input_tokens": 105648,
+        "cached_input_tokens": 69504,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 522,
+        "reasoning_output_tokens": 0
+      },
+      "timeout": null,
+      "phase": "final-all",
+      "errors": [],
+      "timing_eligible": true
+    },
+    {
+      "name": "map_encoded_r1",
+      "seconds": 47.82205360001535,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 2,
+      "tool_output_chars": 32984,
+      "usage": {
+        "input_tokens": 93531,
+        "cached_input_tokens": 54400,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 479,
+        "reasoning_output_tokens": 0
+      },
+      "timeout": null,
+      "phase": "final-all",
+      "errors": [],
+      "timing_eligible": true
+    },
+    {
+      "name": "mentors_r1",
+      "seconds": 81.67441629999666,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 4,
+      "tool_output_chars": 87180,
+      "usage": {
+        "input_tokens": 252940,
+        "cached_input_tokens": 166272,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1625,
+        "reasoning_output_tokens": 17
+      },
+      "timeout": null,
+      "phase": "final-all",
+      "errors": [],
+      "timing_eligible": true,
+      "final_identity_valid": false,
+      "identity_issues": [
+        {
+          "kind": "missing_or_modified_row",
+          "expected_row": "| 眭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |"
+        },
+        {
+          "kind": "unexpected_or_duplicate_table_rows"
+        }
+      ],
+      "identified_source_ids": [
+        "8",
+        "11",
+        "13",
+        "36",
+        "50"
+      ],
+      "final_answer": "你可以先关注以下 **5 位具有明确硕士生导师资格、研究方向与计算机视觉相关的教师**。依据本地 FDS 资料，按公开方向及标签关键词召回，共匹配 **11 人，展示 5 人，未展开 6 人**；可继续要求“显示全部相关教师”。\n\n本次初选按官网方向关键词命中数、标签命中数排序，同分沿用官网顺序；不代表学术水平排名或全部语义相关教师。\n\n| 教师 | 导师资格 | 公开工作邮箱 | 官方主页 |\n|---|---|---|---|\n| 辜嘉（Jia Gu） | 硕士生导师 | jiagu@cityu.edu.mo | https://fds.cityu.edu.mo/members/338 |\n| 丁聖勇（Shengyong Ding） | 博士生导师、硕士生导师 | syding@cityu.edu.mo | https://fds.cityu.edu.mo/members/238 |\n| 李悦翔（Yuexiang Li） | 硕士生导师 | yxli@cityu.edu.mo | https://fds.cityu.edu.mo/members/540 |\n| 睭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |\n| 周大為​（Dawei Zhou） | 硕士生导师 | dwzhou@cityu.edu.mo | https://fds.cityu.edu.mo/members/497 |\n\n具体匹配依据如下，来源均为本地保存的上述官方主页方向记录：\n\n- **辜嘉：医学视觉、图像引导机器人。** 官网明确列出计算机视觉、医疗人工智能、医学影像、图像引导机器人。若你希望把视觉技术用于医疗场景，这些方向直接相关。\n- **丁聖勇：三维视觉、重建与生成。** 方向包括位姿定位、三维重建与生成、空间导航，以及 3D Avatar、视频生成与 3D 视觉融合。适合进一步了解三维几何、数字人和生成式视觉。\n- **李悦翔：视觉语言模型、视觉创造与编辑。** 公开方向涉及多模态大模型、视觉语言模型的场景理解与推理，以及以“创造与编辑”驱动的计算机视觉研究。\n- **睭相傑：图像质量、视觉感知与伪造检测。** 明确涉及图像质量评价、视觉显著性检测、多模态大模型鲁棒性、深度伪造人脸图像检测。\n- **周大為​：可信视觉、医学影像与视觉生成。** 方向包括对抗鲁棒性、伪造检测、医学影像增强、可靠自动诊断，以及异质图像合成、多模态生成。\n\n本地记录核验日期为 **2026年7月13日**，本次未实时核验；使用的是官网资料本地记录，未使用 Crossref 数据，也未据此推断教师在具体论文中的技术贡献。\n\n**方向匹配与导师资格不代表当前有招生名额。** 上述教师的当前名额、接收意愿及适用课程均待学院或教师确认。这是公开资料支持的方向初选，不构成学校、学院或教师的官方推荐、评价、录取承诺或招生状态确认。",
+      "answer_sha256": "4fa43b9ac3a19a367b897a2ebb0cf208b408dfecb0065d5499db5b1707774e53",
+      "quality_eligible": false
+    },
+    {
+      "name": "mentors_r1",
+      "seconds": 39.478788700012956,
+      "completed": false,
+      "returncode": 1,
+      "command_count": 4,
+      "tool_output_chars": 103496,
+      "usage": null,
+      "timeout": null,
+      "phase": "utf8-before",
+      "errors": [
+        {
+          "type": "error",
+          "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 4:37 PM."
+        },
+        {
+          "type": "turn.failed",
+          "error": {
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 4:37 PM."
+          }
+        }
+      ],
+      "timing_eligible": false,
+      "exclusion": "Incomplete response or transport/provider/quota error; not a clean timing sample."
+    },
+    {
+      "name": "mentors_r1",
+      "seconds": 8.632252600014908,
+      "completed": false,
+      "returncode": 1,
+      "command_count": 0,
+      "tool_output_chars": 0,
+      "usage": null,
+      "timeout": null,
+      "phase": "utf8-after",
+      "errors": [
+        {
+          "type": "error",
+          "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 4:37 PM."
+        },
+        {
+          "type": "turn.failed",
+          "error": {
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 4:37 PM."
+          }
+        }
+      ],
+      "timing_eligible": false,
+      "exclusion": "Incomplete response or transport/provider/quota error; not a clean timing sample."
+    },
+    {
+      "name": "mentors_r1",
+      "seconds": 142.31773899999098,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 6,
+      "tool_output_chars": 116026,
+      "usage": {
+        "input_tokens": 411534,
+        "cached_input_tokens": 340352,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2696,
+        "reasoning_output_tokens": 115
+      },
+      "timeout": null,
+      "phase": "utf8-before-retry",
+      "errors": [],
+      "timing_eligible": true,
+      "final_identity_valid": true,
+      "identity_issues": [],
+      "identified_source_ids": [
+        "8",
+        "9",
+        "11",
+        "13",
+        "36"
+      ],
+      "final_answer": "建议先关注下面 **5 位教师**，覆盖医学视觉、机器人视觉、三维视觉、视觉语言模型及视觉质量评价。按本地公开方向和标签关键词检索，并筛选明确具有硕士生导师资格者，共返回 **11 人，展示 5 人，另 6 人未展开**。这不是全部语义相关教师的穷尽名单，也不是导师质量排名；可进一步要求“显示全部相关教师”。\n\n| 教师 | 导师资格 | 公开工作邮箱 | 官方主页 |\n|---|---|---|---|\n| 辜嘉（Jia Gu） | 硕士生导师 | jiagu@cityu.edu.mo | https://fds.cityu.edu.mo/members/338 |\n| 孫鑫（Xin Sun） | 硕士生导师 | xinsun@cityu.edu.mo | https://fds.cityu.edu.mo/members/337 |\n| 丁聖勇（Shengyong Ding） | 博士生导师、硕士生导师 | syding@cityu.edu.mo | https://fds.cityu.edu.mo/members/238 |\n| 李悦翔（Yuexiang Li） | 硕士生导师 | yxli@cityu.edu.mo | https://fds.cityu.edu.mo/members/540 |\n| 眭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |\n\n匹配依据均来自本地保存的上述 FDS 官方个人页方向：\n\n- **辜嘉：医学视觉。** 明确列有计算机视觉、医疗人工智能、医学影像、图像引导机器人，适合关注视觉与医学影像交叉的申请人。\n- **孫鑫：机器人与具身视觉。** 明确列有机器学习、计算机视觉、具身智能、机器人技术、环境遥感，适合关注视觉感知与机器人、遥感交叉的申请人。\n- **丁聖勇：三维视觉与生成。** 公开方向包括位姿定位、三维重建与生成、空间导航，以及 3D Avatar、视频生成与 3D 视觉融合，适合关注三维几何、数字人和生成式视觉的申请人。\n- **李悦翔：视觉语言模型与视觉生成编辑。** 公开方向强调大型视觉语言模型、场景理解与推理，并以“创造与编辑”推动电脑视觉技术，适合关注多模态模型及视觉生成编辑的申请人。\n- **眭相傑：视觉质量与可信视觉。** 明确列有图像质量评价、视觉显著性检测、多模态大模型鲁棒性、深度伪造人脸图像检测，适合关注视觉评价、检测与可靠性的申请人。\n\n资料来自本地 `references/mentors/fds_mentors.md`，源头为 FDS 官方师资及个人页（表内链接）。资料更新时间为 **2026-08-05**，师资名单审计日期为 **2026-07-31**，上述个人资料核验日期均为 **2026-07-13**；这些是本地记录日期，并非今天的官网核验结果。\n\n**上述 5 人的本地记录均为“官网未公开招募说明”，当前招生名额和接收意愿待确认。** 导师资格与方向匹配不能推出有名额。联系时可附简历、项目经历与研究兴趣，询问对应入学年度是否接收硕士生及具体课题。此次未使用 Crossref 等外部论文索引，也未推断教师在论文中的具体技术分工。\n\n以上仅为基于公开资料的研究方向匹配，不构成学校、学院或教师的官方推荐或录取承诺，请以学院和教师确认结果为准。\n\n",
+      "answer_sha256": "3cf86279ef8aa200e405a8f6df40b868ae3eed3059d00becbbca607f1da9e461",
+      "quality_eligible": true
+    },
+    {
+      "name": "mentors_r1",
+      "seconds": 128.7300165000197,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 8,
+      "tool_output_chars": 97519,
+      "usage": {
+        "input_tokens": 378693,
+        "cached_input_tokens": 308864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2240,
+        "reasoning_output_tokens": 56
+      },
+      "timeout": null,
+      "phase": "utf8-after-retry",
+      "errors": [],
+      "timing_eligible": true,
+      "final_identity_valid": false,
+      "identity_issues": [
+        {
+          "kind": "missing_or_modified_row",
+          "expected_row": "| 眭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |"
+        },
+        {
+          "kind": "unexpected_or_duplicate_table_rows"
+        }
+      ],
+      "identified_source_ids": [
+        "8",
+        "11",
+        "13",
+        "36",
+        "50"
+      ],
+      "final_answer": "你可以先关注以下 **5 位明确具有硕士生导师资格、方向与计算机视觉相关的教师**。依据本地 FDS 资料，记录核验日期为 **2026-07-13**，本次未实时核验官网。\n\n| 教师 | 导师资格 | 公开工作邮箱 | 官方主页 |\n|---|---|---|---|\n| 辜嘉（Jia Gu） | 硕士生导师 | jiagu@cityu.edu.mo | https://fds.cityu.edu.mo/members/338 |\n| 丁聖勇（Shengyong Ding） | 博士生导师、硕士生导师 | syding@cityu.edu.mo | https://fds.cityu.edu.mo/members/238 |\n| 李悦翔（Yuexiang Li） | 硕士生导师 | yxli@cityu.edu.mo | https://fds.cityu.edu.mo/members/540 |\n| 睭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |\n| 周大為​（Dawei Zhou） | 硕士生导师 | dwzhou@cityu.edu.mo | https://fds.cityu.edu.mo/members/497 |\n\n匹配依据来自本地 `references/mentors/fds_mentors.md` 保存的官网方向记录，对应来源为表中各教师官方主页：\n\n- **辜嘉**：明确列有计算机视觉、医疗人工智能、医学影像、图像引导机器人。若你偏向**医学图像与医疗视觉应用**，值得关注。\n- **丁聖勇**：方向包括位姿定位、三维重建与生成、空间导航，以及 3D Avatar、视频生成与 3D 视觉融合。若你偏向 **3D 视觉、数字人或视觉生成**，匹配较直接。\n- **李悦翔**：列有大型视觉—语言模型、场景理解，以及以“创造与编辑”驱动的电脑视觉研究。若你偏向**视觉语言模型、多模态理解或图像生成编辑**，值得关注。\n- **睭相傑**：方向包括图像质量评价、视觉显著性检测、多模态大模型鲁棒性、深度伪造人脸图像检测。若你偏向**视觉感知评价、鲁棒性或图像鉴伪**，匹配较直接。\n- **周大為​**：方向包括医学影像增强、可靠自动化诊断、异质图像合成、多模态生成，以及对抗鲁棒性和伪造检测。若你偏向**医学视觉、可信视觉或生成技术**，值得关注。\n\n本次按公开方向及标签关键词筛选，共命中 **11 人，展示 5 人，另 6 人未展开**；可要求显示全部。顺序依据官网方向关键词命中数、标签命中数及官网顺序，是方向初选，不是学术水平或个人适配度排名，也不代表所有语义相关教师。\n\n**方向匹配和导师资格均不等于有招生名额。**上述教师当前名额及接收意愿均待确认；申请前应向教师或学院核实。本建议仅基于公开资料，不构成官方推荐或录取承诺。\n",
+      "answer_sha256": "3919fc97d42567aa9a54190f9704c33e305b141804d813ca7c90f2a153648441",
+      "quality_eligible": false
+    },
+    {
+      "name": "mentors_r2",
+      "seconds": 92.36454260000028,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 4,
+      "tool_output_chars": 32370,
+      "usage": {
+        "input_tokens": 146103,
+        "cached_input_tokens": 115072,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1662,
+        "reasoning_output_tokens": 35
+      },
+      "timeout": null,
+      "phase": "utf8-after-retry",
+      "errors": [],
+      "timing_eligible": true,
+      "final_identity_valid": true,
+      "identity_issues": [],
+      "identified_source_ids": [
+        "8",
+        "11",
+        "13",
+        "36",
+        "50"
+      ],
+      "final_answer": "根据本地 FDS 官网资料，以下 **5 位教师可作为计算机视觉方向的硕士导师初选**，均明确记录有硕士生导师资格。资料核验日期为 **2026年7月13日**，本次未实时核验。\n\n| 教师 | 导师资格 | 公开工作邮箱 | 官方主页 |\n|---|---|---|---|\n| 辜嘉（Jia Gu） | 硕士生导师 | jiagu@cityu.edu.mo | https://fds.cityu.edu.mo/members/338 |\n| 丁聖勇（Shengyong Ding） | 博士生导师、硕士生导师 | syding@cityu.edu.mo | https://fds.cityu.edu.mo/members/238 |\n| 李悦翔（Yuexiang Li） | 硕士生导师 | yxli@cityu.edu.mo | https://fds.cityu.edu.mo/members/540 |\n| 眭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |\n| 周大為​（Dawei Zhou） | 硕士生导师 | dwzhou@cityu.edu.mo | https://fds.cityu.edu.mo/members/497 |\n\n结合各自公开研究方向，可以这样选择：\n\n- **辜嘉：医学视觉。** 官网方向包括计算机视觉、医疗人工智能、医学影像、图像引导机器人。如果想把视觉方法用于医疗问题，可以重点了解。\n- **丁聖勇：三维视觉与生成。** 公开方向涉及位姿定位、三维重建与生成、空间导航，以及保持身份特征的 3D 人像重建、视频生成与三维视觉融合。适合关注三维建模、数字人或视频三维一致性的申请人。\n- **李悦翔：视觉语言模型与视觉创作。** 公开方向包括多模态基础模型、大型视觉语言模型、场景理解与推理，以及以“创造与编辑”驱动的计算机视觉研究。适合关注视觉与语言结合、图像生成编辑的申请人。\n- **眭相傑：视觉质量与可信检测。** 官网明确列出图像质量评价、视觉显著性检测、多模态大模型鲁棒性及深度伪造人脸检测。适合关注生成图像评价、视觉注意力或伪造检测的申请人。\n- **周大為​：可信视觉、医学影像与内容生成。** 公开方向包括对抗鲁棒性、伪造检测、医学影像增强、可靠自动化诊断、异质图像合成和多模态生成。\n\n以上依据来自本地 `references/mentors/fds_mentors.md` 保存的官网记录，对应来源见表中各教师主页；未使用 Crossref 或外部论文索引，也未据此推断教师在具体论文中的技术贡献。\n\n此次按明确导师资格筛选，以官网方向关键词命中数、标签命中数及官网顺序进行初选，共召回 **11 人，展示 5 人，未展开 6 人**；可要求“显示全部相关教师”。这个顺序不是学术水平排名，也不代表涵盖全部语义相关教师。\n\n**方向匹配不等于有招生名额：上述教师当前名额及接收意愿均待确认。** 结果仅为公开资料方向匹配，不构成学校、学院或教师的官方推荐或录取承诺，请以学院和教师确认结果为准。",
+      "answer_sha256": "c96b7c3650e40b1effe9f782edda236106083f0179715b4d005d4942b29fd000",
+      "quality_eligible": true
+    },
+    {
+      "name": "mentors_r1",
+      "seconds": 109.84601160002057,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 4,
+      "tool_output_chars": 94700,
+      "usage": {
+        "input_tokens": 268604,
+        "cached_input_tokens": 189952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1501,
+        "reasoning_output_tokens": 17
+      },
+      "timeout": null,
+      "phase": "retained-agent-results",
+      "errors": [],
+      "timing_eligible": true,
+      "final_identity_valid": false,
+      "identity_issues": [
+        {
+          "kind": "missing_or_modified_row",
+          "expected_row": "| 眭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |"
+        },
+        {
+          "kind": "unexpected_or_duplicate_table_rows"
+        }
+      ],
+      "identified_source_ids": [
+        "8",
+        "9",
+        "11",
+        "13",
+        "36"
+      ],
+      "final_answer": "建议先关注以下 **5 位明确具有硕士生导师资格、公开方向直接涉及计算机视觉的教师**。\n\n本地 FDS 资料按“视觉／图像”等方向及标签关键词、硕士导师资格筛出 **11 人**，以下展示 5 人，其余 6 人未展开；这不是全部语义相关教师名单，也不是学术水平排名。你可要求“显示全部相关教师”。\n\n| 教师 | 导师资格 | 公开工作邮箱 | 官方主页 |\n|---|---|---|---|\n| 辜嘉（Jia Gu） | 硕士生导师 | jiagu@cityu.edu.mo | https://fds.cityu.edu.mo/members/338 |\n| 孫鑫（Xin Sun） | 硕士生导师 | xinsun@cityu.edu.mo | https://fds.cityu.edu.mo/members/337 |\n| 丁聖勇（Shengyong Ding） | 博士生导师、硕士生导师 | syding@cityu.edu.mo | https://fds.cityu.edu.mo/members/238 |\n| 李悦翔（Yuexiang Li） | 硕士生导师 | yxli@cityu.edu.mo | https://fds.cityu.edu.mo/members/540 |\n| 睭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |\n\n**匹配依据与选择建议**（来源均为上表对应官方主页的本地记录）：\n\n- **辜嘉**：公开方向包括“計算機視覺、醫療人工智能、醫學影像、圖像引導機器人”。如果想做**医学影像、医疗视觉或图像引导机器人**，可重点考虑。\n- **孫鑫**：公开方向包括“機器學習、計算機視覺、具身智能、機器人技術、環境遙感”。适合关注**视觉与机器人、具身智能或遥感结合**的申请人。\n- **丁聖勇**：方向明确涉及大模型与传统 CV 融合、位姿定位、三维重建与生成、空间导航，以及 **3D Avatar、视频生成与 3D 视觉融合**。若偏向三维视觉或生成式视觉，匹配较直接。\n- **李悦翔**：公开方向涉及**视觉—语言模型、开放世界场景理解与推理**，并明确提出以“创造与编辑”推动电脑视觉技术改进。适合关注多模态大模型和视觉生成、编辑的申请人。\n- **睭相傑**：公开方向包括“圖像質量評價、視覺顯著性檢測、多模態大模型魯棒性、深度偽造人臉圖像檢測”。适合关注**视觉质量评价、显著性检测、模型可靠性或伪造检测**的申请人。\n\n资料依据为本地 `references/mentors/fds_mentors.md`：更新于 **2026年8月5日**，上述教师逐项资料核验日期为 **2026年7月13日**；本次未实时核验网页。匹配使用官网方向与资格记录，未使用 Crossref，也不据此判断论文中的具体技术贡献。\n\n**这 5 人的本地记录均为“官网未公开招募说明”，当前名额与接收意愿待确认。**以上仅为公开资料支持的方向匹配，不构成官方推荐或录取承诺；申请时应向教师或学院确认资格、课题及招生安排。",
+      "answer_sha256": "8f356eaab4046c34f6f8daa574fecb8adbdb1cb8a301fb29c50b235e1fb5bcbd",
+      "quality_eligible": false
+    },
+    {
+      "name": "mentors_r2",
+      "seconds": 92.4899640000076,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 4,
+      "tool_output_chars": 78374,
+      "usage": {
+        "input_tokens": 239646,
+        "cached_input_tokens": 190336,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1462,
+        "reasoning_output_tokens": 15
+      },
+      "timeout": null,
+      "phase": "retained-agent-results",
+      "errors": [],
+      "timing_eligible": true,
+      "final_identity_valid": false,
+      "identity_issues": [
+        {
+          "kind": "missing_or_modified_row",
+          "expected_row": "| 眭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |"
+        },
+        {
+          "kind": "unexpected_or_duplicate_table_rows"
+        }
+      ],
+      "identified_source_ids": [
+        "8",
+        "9",
+        "11",
+        "13",
+        "36"
+      ],
+      "final_answer": "建议先关注以下 **5 位明确具有硕士生导师资格、且公开方向直接涉及计算机视觉的教师**。\n\n本地资料按“视觉、图像及其英文”等关键词检索官方方向和标签，并筛选硕士导师资格，共返回 **11 人**；此处展示 5 人，其余 6 人未展开。这不是全部语义相关教师名单，也不是学术水平排名。\n\n| 教师 | 导师资格 | 公开工作邮箱 | 官方主页 |\n|---|---|---|---|\n| 辜嘉（Jia Gu） | 硕士生导师 | jiagu@cityu.edu.mo | https://fds.cityu.edu.mo/members/338 |\n| 孫鑫（Xin Sun） | 硕士生导师 | xinsun@cityu.edu.mo | https://fds.cityu.edu.mo/members/337 |\n| 丁聖勇（Shengyong Ding） | 博士生导师、硕士生导师 | syding@cityu.edu.mo | https://fds.cityu.edu.mo/members/238 |\n| 李悦翔（Yuexiang Li） | 硕士生导师 | yxli@cityu.edu.mo | https://fds.cityu.edu.mo/members/540 |\n| 睭相傑（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |\n\n匹配依据均来自本地保存的上述官方主页方向：\n\n- **辜嘉**：明确列有“計算機視覺、醫療人工智能、醫學影像、圖像引導機器人”。如果想做**医学影像或医疗视觉应用**，值得重点了解。\n- **孫鑫**：明确列有“機器學習、計算機視覺、具身智能、機器人技術、環境遙感”。适合关注**视觉与机器人、具身智能或遥感结合**的申请人。\n- **丁聖勇**：方向涉及大模型与传统 CV 融合、位姿定位、三维重建与生成、3D Avatar，以及视频生成与 3D 视觉融合。适合关注**三维视觉、数字人和视频生成**。\n- **李悦翔**：方向涉及视觉—语言模型、开放世界场景理解，以及以“创造与编辑”推动计算机视觉技术改进。适合关注**多模态视觉理解、视觉内容生成与编辑**。\n- **睭相傑**：明确列有图像质量评价、视觉显著性检测、多模态大模型鲁棒性、深度伪造人脸图像检测。适合关注**视觉质量评估、显著性检测或伪造检测**。\n\n来源为本地 `references/mentors/fds_mentors.md`：资料更新于 **2026年8月5日**，上述教师逐项资料核验于 **2026年7月13日**；官方原始来源见表中链接。本次未实时核验，未使用外部论文索引，也不据此推断教师在具体论文中的技术贡献。\n\n**这 5 人的本地记录均为“官网未公开招募说明”，当前招生名额和接收意愿待确认。**以上仅为基于公开资料的研究方向匹配，不构成官方推荐或录取承诺；申请前应向教师或学院核实。若需要，可继续展开其余 6 位候选。",
+      "answer_sha256": "41f8cf8339898243cfaee6045ccc05e9348c29a9defd6c9adf8c1f7ff9cca7f0",
+      "quality_eligible": false
+    },
+    {
+      "name": "mentors_r1",
+      "seconds": 92.18766600001254,
+      "completed": true,
+      "returncode": 0,
+      "command_count": 4,
+      "tool_output_chars": 79527,
+      "usage": {
+        "input_tokens": 240358,
+        "cached_input_tokens": 174464,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1666,
+        "reasoning_output_tokens": 22
+      },
+      "timeout": null,
+      "phase": "portable-results",
+      "errors": [],
+      "timing_eligible": true,
+      "final_identity_valid": true,
+      "identity_issues": [],
+      "identified_source_ids": [
+        "8",
+        "9",
+        "11",
+        "13",
+        "36"
+      ],
+      "final_answer": "建议先关注下面 **5 位具有明确硕士生导师资格、研究方向直接涉及计算机视觉的教师**。本地资料按“视觉／图像”等关键词及硕士导师资格召回 **11 人**，这里展示 5 人，其余 6 人未展开；该口径并不覆盖全部语义相关教师，也不是学术水平排名。\n\n| 教师 | 导师资格 | 公开工作邮箱 | 官方主页 |\n|---|---|---|---|\n| &#x8F9C;&#x5609;（Jia Gu） | 硕士生导师 | jiagu@cityu.edu.mo | https://fds.cityu.edu.mo/members/338 |\n| &#x5B6B;&#x946B;（Xin Sun） | 硕士生导师 | xinsun@cityu.edu.mo | https://fds.cityu.edu.mo/members/337 |\n| &#x4E01;&#x8056;&#x52C7;（Shengyong Ding） | 博士生导师、硕士生导师 | syding@cityu.edu.mo | https://fds.cityu.edu.mo/members/238 |\n| &#x674E;&#x60A6;&#x7FD4;（Yuexiang Li） | 硕士生导师 | yxli@cityu.edu.mo | https://fds.cityu.edu.mo/members/540 |\n| &#x772D;&#x76F8;&#x5091;（Xiangjie Sui） | 硕士生导师 | xjsui@cityu.edu.mo | https://fds.cityu.edu.mo/members/390 |\n\n具体匹配依据均来自本地保存的对应官方主页研究方向：\n\n- **&#x8F9C;&#x5609;：医学视觉。** 官网方向包括“計算機視覺、醫療人工智能、醫學影像、圖像引導機器人”。如果你希望做医学影像或视觉与医疗机器人结合，可优先关注。\n- **&#x5B6B;&#x946B;：视觉与具身智能、遥感。** 官网明确列出“機器學習、計算機視覺、具身智能、機器人技術、環境遙感”。适合希望把视觉用于机器人感知或遥感场景的申请人。\n- **&#x4E01;&#x8056;&#x52C7;：三维视觉与生成。** 官网方向涉及位姿定位、三维重建与生成、空间导航，以及 **3D Avatar、Video3D**，包括少量 RGB 图像重建和视频生成中的三维一致性。若你偏好三维视觉、数字人或生成式视觉，这一方向很直接。\n- **&#x674E;&#x60A6;&#x7FD4;：视觉语言模型与视觉生成、编辑。** 官网方向包括大型视觉—语言模型、场景理解、逻辑推理，并提出以“創造與編輯”推动电脑视觉技术改进。适合对多模态模型及视觉内容生成、编辑感兴趣的申请人。\n- **&#x772D;&#x76F8;&#x5091;：图像质量、显著性与伪造检测。** 官网明确列出“圖像質量評價、視覺顯著性檢測、多模態大模型魯棒性、深度偽造人臉圖像檢測”。适合偏好图像评价、视觉感知或可信视觉的申请人。\n\n来源为本地 `references/mentors/fds_mentors.md`，对应官方来源见表中主页。资料更新时间为 **2026年8月5日**，教师逐项信息核验于 **2026年7月13日**；以上是本地资料记录，未作实时核验。此次依据公开方向与资格匹配，未使用外部论文索引或推断论文具体贡献。你也可以要求“显示全部相关教师”。\n\n**这 5 人的本地记录均为“官网未公开招募说明”，当前名额和接收意愿待确认。** 方向匹配不代表有招生名额，也不构成学校官方推荐或录取承诺；申请前应向教师或学院确认相应年度、课程的指导安排。",
+      "answer_sha256": "5e7db28e4b6f87ed8f28f37457900675032d095a1874db8239cf516ccdeac712",
+      "quality_eligible": true
+    },
+    {
+      "name": "mentors_r2",
+      "seconds": 50.71590730000753,
+      "completed": false,
+      "returncode": 1,
+      "command_count": 4,
+      "tool_output_chars": 78502,
+      "usage": null,
+      "timeout": null,
+      "phase": "portable-results",
+      "errors": [
+        {
+          "type": "error",
+          "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 9:58 PM."
+        },
+        {
+          "type": "turn.failed",
+          "error": {
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 9:58 PM."
+          }
+        }
+      ],
+      "timing_eligible": false,
+      "exclusion": "Incomplete response or transport/provider/quota error; not a clean timing sample."
+    }
+  ]
+}

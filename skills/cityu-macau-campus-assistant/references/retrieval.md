@@ -55,3 +55,25 @@
 这些入口无需第三方库、网络服务或宿主配置变更；宿主支持调用脚本时按上述流程采用。并未自动注册 MCP，也不保证所有 Agent 必然调用。
 
 导师返回字段明确为 `records`（候选详情）、`verbatim_table`（姓名、资格、邮箱、主页四列）、`rules`（匹配规则）。表格保持精简，方向依据按 records 在表外解释；`check` 的输入必须是实际待发送草稿，不能仅将 render 结果再传回充当草稿检查。
+
+## 直接查询与一次生成（2026-10-28）
+
+- `query.py building --code B1`：原始地图表唯一查找，返回名称、地图适用范围、官方链接和原始核验日期。
+- `query.py contact --name "眭相傑"`：按原文姓名或 ID 唯一查找邮箱，不接受模糊身份推断。
+- `query.py recommend --query 计算机视觉 --level master`：普通方向初选，返回完整 `answer`、匹配规则、人数及版本。按官网方向/标签命中词数排序，同分按官网顺序，默认 5 人；`--limit 0` 返回全部。需明确字面匹配口径；个性化适配仍需模型判断。
+- `query.py mentors --query 计算机视觉 --level master --view selection`：个性化分析用，模型只接收候选 ID 与方向等字段，避免重复身份表格。
+- `query.py finalize --ids 8,36 --sha256 <版本> --reasons-file reasons.json`：理由文件形如 `{"8":"解释", "36":"解释"}`，必须与 ID 一一对应。表格由程序原文生成并检查；理由不作事实校验。宿主也可直接导入 `finalize(ids, digest, reasons)`。
+- `query.py evidence map`：返回原始完整证据文本、行号与文件版本；其他证据包名称与 bundle 相同。
+
+宿主程序直接展示已生成表格时无需重复检查；通用 Agent 的最终答案经过模型生成，即使自认为复制，也须对实际草稿运行 check。recommend/mentors 已返回规则时无需再次读取同一规则文件。关键身份字段不能简繁转换。既有 bundle/mentors/render/check 接口保留。
+
+`query.py tuition --course 人工智能硕士 --year 2027/2028 --audience mainland` 直接查询该届内地 FDS 硕博费用表，返回币种、每学年口径、适用范围、课程列项边界、核验日期和官方来源。参数必须明确；未知课程、其他身份或年份不猜测，转为读取适用原文。
+
+导师普通 Agent 默认仍使用 mentors 返回的原始候选与规则，并校验实际草稿；recommend 仅建议用于宿主直接展示程序结果。实验发现模型可在草稿校验后再次抄错罕见姓名，不能把程序生成成功当成最终答案正确。mentors 返回 check_template 与姓名 Unicode 码位，减少额外帮助查询及罕见字混淆。
+
+### Markdown 姓名无损传递
+
+支持 CommonMark 的客户端可在子命令前加 `--portable-names`，将中文姓名编码成数字字符引用。模型在最终 Markdown 表格和解释中保留引用原样，渲染后显示原始中文；不会替换为别名或改变姓名。普通文本/JSON 数据消费者不加此参数。`check` 按解码后的字段校验，仍拒绝错字、邮箱或主页错配。已用 Markdown-it 验证编码前后表格 HTML 完全相同；运行库仍只依赖 Python 标准库。通用 Agent 的实际草稿校验仍保留，不能把生成器自检当作最终答案保证。
+## 应用常驻查询
+
+宿主已确定问题类型和完整参数时，可启动一次 `python runtime/host.py`，用 UTF-8 JSON 行连续请求；每行一个请求并返回一行结果。例如 `{"action":"building","code":"B1"}`。支持 building、contact、tuition、recommend，与 query.py 对应参数相同（recommend 可选 limit）。`status=answer` 时直接展示完整 answer；fallback 转回普通 Skill 问答，error 交宿主处理。该入口不分类自然语言，不能丢掉多问题中的未覆盖部分。进程每次读取当前资料，无答案缓存；共享进程由宿主串行读写。普通一次性 Agent 查询仍用 query.py，无需为了单次问题维持进程。

@@ -1,0 +1,69 @@
+{
+  "baseline_commit": "7d30eaed8eecd3280d28eda6133e41967a3686e0",
+  "scope": "Final working tree and tested snapshot hashes; test phase mappings described in report.",
+  "final_skill": {
+    "SKILL.md": "60fe2d21974666ff037535f041cea3c4bbea9cfd279ebf722f0acb1667245acb",
+    "runtime/query.py": "03798c58993249912ff8b927b398957437ec1a857989d1450ade90bc8e7886e1",
+    "runtime/read_sections.py": "2c0c7ac3cbfe185935325b63a509c040dc2522eece34fcdf855a4a22dfbcf247",
+    "references/answer_boundaries.md": "ab033d3c2b4be02970d0e2c7704395da0e65d5127d2d6c9f606e8c5e40ac0298",
+    "references/campus_culture.md": "84cacd06eb7acea8826a57d5e4ace3e9bbcb2cd7dd58cefb405211c7173e5fa8",
+    "references/campus_map.md": "5fd1619ec853d5cedce750ff9d0aa174aa36b05997893cae0fff534e147ff5c3",
+    "references/faculty/fhss_faculty.md": "c80bbf67ab9cd2d434d0cc9cef926afa6b6c61b72bafe2f7330eb8ed9d27f07e",
+    "references/faculty/fiad_faculty.md": "c5a317224b8cb0c0ce3bece23479ec47a77e278d8ea1a9cd947b76f35bf64892",
+    "references/faculty/fitm_faculty.md": "e18a2b78b8295ed3d6ad84d35ea2433cd2ebc7ee74429861d6a3cdf3d20c93a6",
+    "references/faculty/fob_faculty.md": "b311f446a4d016e4b23b02ef62142107fb9981b3d368a014fe410bdb08599e44",
+    "references/fds.md": "d8b1c0cbecbb70a8ba20303fcf8f3f4a892c797c08b2c6e46c47ff8cef474198",
+    "references/fe.md": "b5bbfa6136c38ac49e8df60aea0a9a863d3875eb26f5e00429090eda729a41b9",
+    "references/fh.md": "33af835e33233515e08c815346035d9129b070001699eddbcc8759d2abe890fe",
+    "references/fhss.md": "362470bfa3fa967cb87c1d660c11ff7c6f4357e89021c3866a96bafe37bd452d",
+    "references/fiad.md": "c4250b358b3cf7f0a72dff4a556de02566a12b1c19e5ddd2beee31d2bff5c4e2",
+    "references/fitm.md": "09ee888c5f10c3411cbaf25e1d9e693fc3f9ac1f9accfdfbe7c9fa08366f4cbe",
+    "references/fl.md": "fcc0fecf42fc18fd21a261241e0df4b60fa61b8d48e484c93a3af3421d8e6a08",
+    "references/fob.md": "c6cb5e3bdc4f22ec8da68b443f482f87b50b5fb59cf4d414e3f1b348cb51bf4c",
+    "references/fof.md": "9002796e11bc722d173bf49317fc2f407e821edb376dd964bcd6083c0d955f22",
+    "references/freshman.md": "f3bd8d68bbe3ea9cf84fa082d029f065eda6bb0b574b92d4ce1ccba518fc21b4",
+    "references/honours_class.md": "92110ed17c86b9a5315360b5a3eed10ab8cc886cb875dafbb972084f587c574a",
+    "references/iropc.md": "db39baedc34f76ef73a6c1a5c6ad83dfb8beffb5733bddd155bfb0ecfd3f913e",
+    "references/iusd.md": "0ff9b12394d63afa917f621c658c83bb2c2791c69afc906019cf2f1f65119602",
+    "references/maintenance_policy.md": "e8dff4d248c46c119f61197f6f59e7c605e9c8ed54a16b35c45b424deadc14e5",
+    "references/mentors/fds_matching_policy.md": "0900f22aadffba2b536e79baec21465d0f6873818f819937bf3836cb56eaa2c1",
+    "references/mentors/fds_mentors.md": "7b972c0b0659647a06e4cfe0d3d6ed063eda32799578682113329dbdf0f52fbd",
+    "references/mentors/fds_official_evidence.md": "5d1be9205b9898765d80bf56bff9bd23f9599df6e6f170892ae6fb3c2f030b02",
+    "references/mentors/fds_papers.md": "a219386c34c5bf32693d0a7ede52ddb4f55c93914fbedcf40cc3660ca92db60e",
+    "references/mentors/fds_rules.md": "e45985a130a02b19126a28c9a7f6161cc6cc9307d9288f9797ea2d2b9bc00eb5",
+    "references/retrieval.md": "f8e640f601324e363ff1639e0660bc5c1bc2a61120aa3f28240cbb660178d615",
+    "references/routing.md": "4484c07cf3933286006fb1ae759896d8cbf97dbbf4f99af5dab48fd2fe34ae35",
+    "references/澳门城市大学氹仔校区_校内餐饮指南.md": "b5e8ef51358bf5c7d11609b17fcf042224879a0ee7e2f67a8141420f3be2cffc"
+  },
+  "tested_snapshots": {
+    "baseline": {
+      "SKILL.md": "718daba9686ba4efca9e7b900e2a5eab708a7103e409163fb0a8f81eaa841b82",
+      "runtime/query.py": "6fa97c94d2ea690345b54d4e77edb052d95355815383b37ceff2296b9b7e217d"
+    },
+    "optimized": {
+      "SKILL.md": "dd8992e30f1f1fec555d9aa3e27d83242416b3992cb955ced3fc89cafa9b7b1e",
+      "runtime/query.py": "9d9622b4413ea535c7ecd0b767e5a947533f58698ecd3950a2bf937e6b6712ad"
+    },
+    "optimized-v2": {
+      "SKILL.md": "ad6831faece0f213bb6c780f377163635a83012f397947352b93b5301636aa87",
+      "runtime/query.py": "9d9622b4413ea535c7ecd0b767e5a947533f58698ecd3950a2bf937e6b6712ad"
+    },
+    "final": {
+      "SKILL.md": "54a37969aa4c379d13ee7fcdb9f924fcb6175a420e403ba2bea6ee7b61e2d8df",
+      "runtime/query.py": "5ce7b32d93e0d49893fbeec953024f3211736729100dc1acce1fb30d79629f46"
+    },
+    "retained-agent": {
+      "SKILL.md": "efe589166bafbe20e9d506c59df81d52a19bd375402745576cc2e73308f13eb6",
+      "runtime/query.py": "eb6085881f381a68ef3e4e4b95dd921f06b315871757c1dd070401040880fa0d"
+    },
+    "portable": {
+      "SKILL.md": "60fe2d21974666ff037535f041cea3c4bbea9cfd279ebf722f0acb1667245acb",
+      "runtime/query.py": "03798c58993249912ff8b927b398957437ec1a857989d1450ade90bc8e7886e1"
+    }
+  },
+  "host_followup_2026_10_30": {
+    "runtime/host.py": "d13bd6755eabc3fa016f5e02c3ba71996423ab8e7bdb12b497f874033618c886",
+    "runtime/query.py": "03798c58993249912ff8b927b398957437ec1a857989d1450ade90bc8e7886e1",
+    "references/retrieval.md": "093b3a94d6dc044f40151577446f96da97933dcab1cf533f23ecec2317926434"
+  }
+}

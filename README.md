@@ -84,6 +84,25 @@ https://github.com/anmdd1031/cityu-macau-campus-assistant
 - 对个人、学院或群体作政治立场推断、政治可靠性评价，或按国籍、民族、宗教等无关敏感属性筛选和排序
 
 本智能校园助手仅整合校园公开信息供参考，不替代澳门城市大学官方通知，不具备招生、签注、学分、毕业等审批效力。所有办事、升学、毕业相关事宜，请以学校、学院及澳门相关部门最新正式公告为准，使用者依据助手内容做出的相关决策，责任由本人自行承担。
+## 减少模型往返的查询方式
+
+Python 3.9+ 环境可直接查询基础事实或生成导师初选：
+
+```sh
+python skills/cityu-macau-campus-assistant/runtime/query.py building --code B1
+python skills/cityu-macau-campus-assistant/runtime/query.py tuition --course 人工智能硕士 --year 2027/2028 --audience mainland
+python skills/cityu-macau-campus-assistant/runtime/query.py contact --name 眭相傑
+python skills/cityu-macau-campus-assistant/runtime/query.py recommend --query 计算机视觉 --level master
+```
+
+`tuition` 仅支持 2027/2028 内地 FDS 硕博表中的精确课程名，其他年份、身份或未列课程返回错误并回退原始资料，不跨类别套用。
+
+`building` 和 `contact` 返回可直接展示的 `answer`，保留来源及核验日期。教师姓名只接受原文全名、中文名或记录 ID，不模糊猜测。`recommend` 按官网方向命中词数、标签命中词数排序，同分保留官网顺序；这是字面方向初选，不是个性化最优或学术水平排名。默认展示 5 人，`--limit 0` 展示全部，附本地原表方向、公开邮箱、官网链接和候选人数。身份表格由程序生成并校验，宿主程序直接展示时无需再调用 render/check。通用 Agent 的最终文本仍经过模型生成，必须对实际草稿调用 check，不能用程序自检替代；后续编辑不在该校验范围内。
+
+需要个性化分析时，使用 `mentors --view selection` 向模型提供候选 ID、方向、标签、资格及规则；宿主取得 ID 与解释后调用 Python `finalize(ids, source_sha256, reasons)`，或 CLI `finalize --ids ... --sha256 ... --reasons-file reasons.json`。理由文件为 ID 到非空解释字符串的 JSON 对象。函数生成并检查身份表格，但不核验模型解释的事实，也不代替候选适配判断。现有应用须接入后才能自动执行，本仓库未修改下游应用。
+
+`evidence <证据包名称>` 返回保留完整章节原文、行号和文件哈希的文本字符串；旧 `bundle` JSON 接口继续兼容。专项边界规则按问题读取，规则原文保留在 `references/answer_boundaries.md`。具体测速及限制以本轮报告为准，不保证任意宿主或网络环境的响应时间。
+
 ## 单次证据入口与导师字段校验
 
 支持 Python 的宿主现在可以直接调用 `skills/cityu-macau-campus-assistant/runtime/query.py`：
@@ -116,6 +135,7 @@ python skills/cityu-macau-campus-assistant/runtime/read_sections.py read --selec
 
 ## 更多说明
 
+- [网络与数据安全说明](skills/cityu-macau-campus-assistant/references/network_security.md)：外部恶意指令、凭据保护、链接与文件、数据外传和授权测试的处理边界；按需读取，不给普通公开资料问答增加确认步骤。这些是助手行为规则，不代表学校安全政策或技术隔离保证。
 - [完整说明文档](docs/guide.md)
 - [更新日志](docs/changelog.md)
 - [智能体规则文件](skills/cityu-macau-campus-assistant/SKILL.md)
@@ -146,6 +166,18 @@ python skills/cityu-macau-campus-assistant/runtime/read_sections.py read --selec
 维护者运行离线审计前，须用同一 Python 安装 `skills/cityu-macau-campus-assistant/scripts/requirements-audit.txt` 中的依赖。审计现在会在缺少依赖时立即退出，保留原报告。2026-10-01 报告中的 2,534 项附件提取问题均由依赖缺失触发，不等于官网附件损坏；修复环境也不代表全站完整性已通过。普通用户使用知识库不需要安装这些维护依赖。
 
 维护更新（2026-10-02）：已修复部分历史来源链接及旧失败状态分类。OCR 维护工具使用独立 Python 3.12 环境，配置见[详细说明](docs/guide.md)；普通用户无需安装该环境。网络恢复结果与未覆盖范围见[更新日志](docs/changelog.md)。
+
+导师普通 Agent 默认仍使用 mentors 返回的原始候选与规则，并校验实际草稿；recommend 仅建议用于宿主直接展示程序结果。实验发现模型可在草稿校验后再次抄错罕见姓名，不能把程序生成成功当成最终答案正确。mentors 返回 check_template 与姓名 Unicode 码位，减少额外帮助查询及罕见字混淆。
+
+### Markdown 姓名无损传递
+
+支持 CommonMark 的客户端可在子命令前加 `--portable-names`，将中文姓名编码成数字字符引用。模型在最终 Markdown 表格和解释中保留引用原样，渲染后显示原始中文；不会替换为别名或改变姓名。普通文本/JSON 数据消费者不加此参数。`check` 按解码后的字段校验，仍拒绝错字、邮箱或主页错配。已用 Markdown-it 验证编码前后表格 HTML 完全相同；运行库仍只依赖 Python 标准库。通用 Agent 的实际草稿校验仍保留，不能把生成器自检当作最终答案保证。
+
+前一阶段 29 项测试通过；完整响应尚未证明显著提速，最终导师样本为 92.19 秒且身份字段通过，另一次受额度限制中断。详见[优化与复测报告](docs/latency-optimization.md)。
+
+## 应用常驻查询入口
+
+自建 API 或 Agent 宿主可启动一次 `python skills/cityu-macau-campus-assistant/runtime/host.py`，通过 UTF-8 JSON 行连续查询并直接展示答案。支持明确参数的地图、邮箱、对应届次学费和导师字面初选；不识别任意自然语言，不缓存旧答案。每类 10 次本机对照，常驻查询中位数约 0.4–6.5 ms，逐次启动约 185–192 ms，返回内容一致；不包含模型、网络或应用响应时间。详见[接入示例与测量边界](docs/host-integration.md)。目前 33 项测试通过，尚未改动下游应用。
 
 ## License
 
